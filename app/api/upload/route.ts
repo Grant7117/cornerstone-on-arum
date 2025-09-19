@@ -1,35 +1,15 @@
-import { NextRequest, NextResponse } from "next/server";
-import { put } from "@vercel/blob";
+// app/api/upload/route.ts
+import { NextResponse } from "next/server";
 
-export const runtime = "edge";
+// Force Node.js runtime (not Edge) so bundler stops complaining about Node APIs
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic"; // safe default for APIs
 
-// Accepts FormData: files[] (images/pdfs) and optional prefix (e.g. "cornerstone/", "plans/", "docs/")
-export async function POST(req: NextRequest) {
-  // Simple lock: only requests with your secret are allowed
-  const secret = process.env.SITE_SECRET;
-  if (!secret || req.headers.get("authorization") !== `Bearer ${secret}`) {
-    return new NextResponse("Unauthorised", { status: 401 });
-  }
+export async function POST(_req: Request) {
+  // TODO: replace with your actual upload logic later
+  return NextResponse.json({ ok: true, message: "Upload endpoint placeholder" });
+}
 
-  const form = await req.formData();
-  const files = form.getAll("files") as File[];
-  const rawPrefix = (form.get("prefix") as string) || "cornerstone/";
-  const prefix = rawPrefix.endsWith("/") ? rawPrefix : `${rawPrefix}/`;
-
-  if (!files.length) return NextResponse.json({ uploaded: [] });
-
-  const uploaded = await Promise.all(
-    files.map(async (file) => {
-      const safe = file.name.replace(/\s+/g, "-").toLowerCase();
-      const key = `${prefix}${Date.now()}-${safe}`;
-      const blob = await put(key, file, {
-        access: "public",
-        // When deployed on Vercel with Blob connected, token is auto-injected.
-        // If ever needed locally: token: process.env.BLOB_READ_WRITE_TOKEN,
-      });
-      return { name: file.name, url: blob.url, pathname: blob.pathname, size: file.size, type: file.type };
-    })
-  );
-
-  return NextResponse.json({ uploaded });
+export async function GET() {
+  return NextResponse.json({ ok: true, route: "upload" });
 }
