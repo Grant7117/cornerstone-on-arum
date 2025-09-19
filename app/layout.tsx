@@ -1,19 +1,11 @@
-// app/layout.tsx
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css"; // remove this line if you don't have the file
+import { Inter, Roboto_Mono } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
-export const metadata: Metadata = {
-  title: "Cornerstone on Arum",
-  description: "Modern living, redefined.",
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
-}
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
