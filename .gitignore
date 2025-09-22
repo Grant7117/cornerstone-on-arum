@@ -1,23 +1,25 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
+﻿# Node
+node_modules/
+.pnpm-store/
 
-# testing
-/coverage
+# Next.js
+.next/
+out/
+.vercel/
 
-# production
-/.next/
-/out
-
-# misc
-.DS_Store
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
+pnpm-debug.log*
+*.log
 
-# local env files
-.env*
-!.env.example
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.swp
+
+# Env
+.env
+.env.local
+.env.*.local
