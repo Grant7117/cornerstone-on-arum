@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { VideoSection } from "@/components/video-section"
 import { UnitsCarousel } from "@/components/units-carousel"
+import { ChatWidget } from "@/components/chat-widget"
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Navigation />
       <VideoSection />
       <UnitsCarousel />
+      <ChatWidget />
     </main>
   )
 }
