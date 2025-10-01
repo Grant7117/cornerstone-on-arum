@@ -1,34 +1,34 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import "./globals.css"
+import type { Metadata } from "next";
+import { Inter, JetBrains_Mono } from 'next/font/google';
+import "./globals.css";
+import FloatingChatWidget from "@/components/floating-chat-widget";
 
-const geistSans = Geist({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
-})
+  variable: "--font-inter",
+});
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
-})
+  variable: "--font-jetbrains-mono",
+});
 
 export const metadata: Metadata = {
-  title: "Cornerstone on Arum - Premium Property Development",
-  description:
-    "Discover luxury living at Cornerstone on Arum - modern apartments with stunning views and intelligent property assistance",
-  keywords: "luxury apartments, Arum District, property rental, modern living, city views, amenities",
-    generator: 'v0.app'
-}
+  title: "Property Assistant",
+  description: "AI-powered property management assistant",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className="font-sans">{children}</body>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className="font-sans antialiased">
+        {children}
+        <FloatingChatWidget />
+      </body>
     </html>
-  )
+  );
 }
