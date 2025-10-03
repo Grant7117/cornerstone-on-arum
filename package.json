@@ -1,15 +1,13 @@
-﻿{
+{
   "name": "cornerstoneonarum",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "postbuild": "next-sitemap"
   },
-
   "dependencies": {
     "ai": "5.0.60",
     "@ai-sdk/openai": "2.0.42",
@@ -18,7 +16,6 @@
     "react-dom": "18.3.1",
     "next-sitemap": "4.2.3"
   },
-
   "devDependencies": {
     "@types/node": "20.19.19",
     "@types/react": "18.3.25",
@@ -26,7 +23,6 @@
     "tailwindcss": "4.1.14",
     "@tailwindcss/postcss": "4.1.14"
   },
-
   "pnpm": {
     "onlyBuiltDependencies": ["@tailwindcss/oxide"]
   }
