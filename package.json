@@ -1,8 +1,13 @@
-{
+﻿{
   "name": "v0-intelligent-chatbot-for-property",
   "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "next dev -p 3000 -H 127.0.0.1",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
     "next": "15.5.4",
     "react": "18.3.1",
