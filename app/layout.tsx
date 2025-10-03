@@ -1,44 +1,24 @@
-// add this near the top with your other imports
-import ChatWidget from "./components/ChatWidget";
-
-// inside the RootLayout return, just before </body>
-<ChatWidget />
-// app/layout.tsx
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import ChatLauncher from "./components/ChatLauncher";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.cornerstoneonarum.co.za"),
-  title: {
-    default: "Cornerstone on Arum",
-    template: "%s | Cornerstone on Arum",
-  },
-  description:
-    "Modern apartments at Cornerstone on Arum. View floor plans, features, finance options, and enquire now.",
-  openGraph: {
-    title: "Cornerstone on Arum",
-    description:
-      "Modern apartments at Cornerstone on Arum. View floor plans, features, finance options, and enquire now.",
-    url: "/",
-    siteName: "Cornerstone on Arum",
-    type: "website",
-  },
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/" },
+  title: "Cornerstone on Arum",
+  description: "Residential apartments in Table View",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="antialiased">
+        {children}
+        <ChatLauncher offsetPx={112} rightPx={16} showOnScrollUp minScrollToShow={32} />
+      </body>
     </html>
   );
 }
