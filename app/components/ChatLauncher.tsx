@@ -10,7 +10,7 @@ type LauncherProps = {
 };
 
 export default function ChatLauncher({
-  offsetPx = 200,   // higher so it clears WhatsApp
+  offsetPx = 200,   // high enough to clear WhatsApp
   rightPx = 16,
   id = "chat-launcher",
 }: LauncherProps) {
@@ -37,24 +37,27 @@ export default function ChatLauncher({
         aria-label="Cornerstone on Arum chat"
         aria-modal={open ? "true" : "false"}
         className={[
-          "fixed z-[999] w-[88vw] max-w-[420px] h-[70vh] max-h-[720px]",
+          "fixed z-[999] w-[88vw] max-w-[420px] h-[60vh] max-h-[560px]", // reduced height
           open ? "opacity-100" : "opacity-0 pointer-events-none",
           "transition-opacity duration-300",
         ].join(" ")}
         style={{ right: rightPx, bottom: offsetPx + 64 }}
       >
         <div className="flex h-full w-full flex-col rounded-2xl shadow-2xl border border-slate-200 bg-white overflow-hidden">
+          {/* Header with top-right X */}
           <header className="flex items-center justify-between px-4 py-3 border-b">
             <div className="text-sm font-semibold">Chat support</div>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close chat panel"
-              className="rounded-full p-2 hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-slate-400"
+              className="text-lg font-bold rounded-full p-2 hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-slate-400"
             >
-              ✕
+              ×
             </button>
           </header>
-          <ChatPanel />
+
+          {/* Messages + composer */}
+          <ChatPanel onRequestClose={() => setOpen(false)} />
         </div>
       </div>
 
@@ -82,7 +85,7 @@ export default function ChatLauncher({
   );
 }
 
-function ChatPanel() {
+function ChatPanel({ onRequestClose }: { onRequestClose: () => void }) {
   const [input, setInput] = useState("");
   const [items, setItems] = useState<Array<{ role: "user" | "assistant"; text: string }>>([]);
   const [busy, setBusy] = useState(false);
@@ -112,6 +115,7 @@ function ChatPanel() {
 
   return (
     <div className="flex flex-col h-full">
+      {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3">
         {items.map((m, i) => (
           <div
@@ -126,13 +130,24 @@ function ChatPanel() {
           </div>
         ))}
       </div>
+
+      {/* Composer with bottom Close button */}
       <form
-        className="border-t p-3 flex gap-2"
+        className="border-t p-3 flex items-center gap-2"
         onSubmit={e => {
           e.preventDefault();
           if (!busy) void send();
         }}
       >
+        <button
+          type="button"
+          onClick={onRequestClose}
+          className="rounded-xl px-3 py-2 border text-slate-700 hover:bg-slate-100"
+          aria-label="Close chat"
+          title="Close"
+        >
+          Close
+        </button>
         <input
           aria-label="Type your message"
           className="flex-1 rounded-xl border px-3 py-2 focus:outline-none focus-visible:ring focus-visible:ring-slate-400"
