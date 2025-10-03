@@ -1,9 +1,6 @@
 ﻿import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import dynamic from "next/dynamic";
-
-// Load the client component only on the client, so SSR never references it.
-const ChatLauncher = dynamic(() => import("./components/ChatLauncher"), { ssr: false });
+import ChatLauncher from "./components/ChatLauncher";
 
 export const metadata: Metadata = {
   title: "Cornerstone on Arum",
@@ -20,7 +17,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="antialiased">
         {children}
-        {/* Adjust rightPx if you want the icon nudged further */}
         <ChatLauncher offsetPx={200} rightPx={16} />
       </body>
     </html>
