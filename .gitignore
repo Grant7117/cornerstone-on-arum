@@ -7,3 +7,9 @@ public/sitemap-*.xml
 
 # optional helper scripts (uncomment if you don't want them in git)
 # *.cmd
+node_modules/
+.next/
+.vercel/
+public/sitemap-*.xml
+app/*.bak*
+*.cmd
