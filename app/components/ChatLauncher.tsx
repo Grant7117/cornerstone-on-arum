@@ -10,8 +10,8 @@ type LauncherProps = {
 };
 
 export default function ChatLauncher({
-  offsetPx = 200,   // high enough to clear WhatsApp
-  rightPx = 16,
+  offsetPx = 200,     // higher so it clears WhatsApp
+  rightPx = 24,       // aligns visually with WhatsApp bubble gutter
   id = "chat-launcher",
 }: LauncherProps) {
   const [mounted, setMounted] = useState(false);
@@ -31,53 +31,60 @@ export default function ChatLauncher({
         />
       )}
 
-      {/* Panel */}
+      {/* Panel (reduced height + tighter header) */}
       <div
         role="dialog"
         aria-label="Cornerstone on Arum chat"
         aria-modal={open ? "true" : "false"}
         className={[
-          "fixed z-[999] w-[88vw] max-w-[420px] h-[60vh] max-h-[560px]", // reduced height
+          "fixed z-[999] w-[88vw] max-w-[420px] h-[52vh] max-h-[520px]",
           open ? "opacity-100" : "opacity-0 pointer-events-none",
-          "transition-opacity duration-300",
+          "transition-opacity duration-200",
         ].join(" ")}
         style={{ right: rightPx, bottom: offsetPx + 64 }}
       >
         <div className="flex h-full w-full flex-col rounded-2xl shadow-2xl border border-slate-200 bg-white overflow-hidden">
-          {/* Header with top-right X */}
-          <header className="flex items-center justify-between px-4 py-3 border-b">
-            <div className="text-sm font-semibold">Chat support</div>
+          {/* compact header */}
+          <header className="flex items-center justify-between px-4 py-2 border-b">
+            <div className="text-[13px] font-semibold">Chat support</div>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close chat panel"
-              className="text-lg font-bold rounded-full p-2 hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-slate-400"
+              className="text-base font-bold rounded-full p-1.5 hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-slate-400"
+              title="Close"
             >
               ×
             </button>
           </header>
 
-          {/* Messages + composer */}
           <ChatPanel onRequestClose={() => setOpen(false)} />
         </div>
       </div>
 
-      {/* Launcher Button */}
+      {/* Launcher Button (centered icon, consistent sizing) */}
       <button
         id={id}
         aria-label={open ? "Close chat" : "Open chat"}
         onClick={() => setOpen(v => !v)}
         className={[
-          "fixed z-[1100] h-16 w-16 rounded-full shadow-xl border-2 border-white",
+          "fixed z-[1100] h-16 w-16 rounded-full shadow-xl border-[2.5px] border-white",
           "bg-[#0b1f3a] text-white",
           "flex items-center justify-center",
-          "transition-transform duration-300 hover:scale-110 active:scale-95",
+          "transition-transform duration-200 hover:scale-110 active:scale-95",
           "focus:outline-none focus-visible:ring-4 focus-visible:ring-white/60",
         ].join(" ")}
         style={{ right: rightPx, bottom: offsetPx }}
       >
-        {/* Simple chat icon */}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-7 w-7" aria-hidden="true" fill="currentColor">
-          <path d="M2 12c0-4.97 4.48-9 10-9s10 4.03 10 9-4.48 9-10 9c-1.39 0-2.72-.26-3.92-.74L4 21l1.09-3.27A8.55 8.55 0 0 1 2 12z"/>
+        {/* perfectly centered chat icon (Heroicons-style) */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="h-7 w-7"
+          fill="currentColor"
+        >
+          <path d="M7 8.25a.75.75 0 0 1 .75-.75h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 7 8.25Zm0 3.5a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75Z"/>
+          <path fillRule="evenodd" d="M12 3.75c-4.556 0-8.25 3.35-8.25 7.5 0 1.736.647 3.334 1.743 4.621a.75.75 0 0 1 .17.488l-.14 2.208a.75.75 0 0 0 1.013.747l2.324-.86a.75.75 0 0 1 .493.01c.79.287 1.648.446 2.647.446 4.556 0 8.25-3.35 8.25-7.5s-3.694-7.5-8.25-7.5Z" clipRule="evenodd"/>
         </svg>
       </button>
     </>,
@@ -115,8 +122,8 @@ function ChatPanel({ onRequestClose }: { onRequestClose: () => void }) {
 
   return (
     <div className="flex flex-col h-full">
-      {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-3">
+      {/* reduce top padding so the content sits higher */}
+      <div className="flex-1 overflow-y-auto p-3 space-y-3">
         {items.map((m, i) => (
           <div
             key={i}
@@ -131,7 +138,7 @@ function ChatPanel({ onRequestClose }: { onRequestClose: () => void }) {
         ))}
       </div>
 
-      {/* Composer with bottom Close button */}
+      {/* bottom row with Close + input + Send */}
       <form
         className="border-t p-3 flex items-center gap-2"
         onSubmit={e => {
