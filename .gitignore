@@ -1,15 +1,18 @@
-# lockfiles we don't use & generated files
+﻿*.backup-*
+*.bak
+*.broken-*
+*.cmd
+.DS_Store
+.env*
+.idea/
+.next/
+.vercel
+.vercel/
+.vscode/
+app/*.bak*
+node_modules/
+npm-debug.log*
+out/
 package-lock.json
 public/sitemap-*.xml
-*.bak
-*.backup-*
-*.broken-*
-
-# optional helper scripts (uncomment if you don't want them in git)
-# *.cmd
-node_modules/
-.next/
-.vercel/
-public/sitemap-*.xml
-app/*.bak*
-*.cmd
+Thumbs.db

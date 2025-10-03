@@ -9,21 +9,24 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "ai": "5.0.60",
     "@ai-sdk/openai": "2.0.42",
+    "ai": "5.0.60",
     "next": "15.5.4",
+    "next-sitemap": "4.2.3",
+    "openai": "^4.104.0",
     "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "next-sitemap": "4.2.3"
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "4.1.14",
     "@types/node": "20.19.19",
     "@types/react": "18.3.25",
-    "typescript": "5.9.3",
     "tailwindcss": "4.1.14",
-    "@tailwindcss/postcss": "4.1.14"
+    "typescript": "5.9.3"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["@tailwindcss/oxide"]
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide"
+    ]
   }
 }
