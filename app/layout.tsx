@@ -17,8 +17,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="antialiased">
         {children}
-        <ChatLauncher offsetPx={112} rightPx={16} showOnScrollUp minScrollToShow={32} />
+        <ChatLauncher offsetPx={176} rightPx={16} showOnScrollUp minScrollToShow={32} />
       </body>
     </html>
   );
 }
+
+

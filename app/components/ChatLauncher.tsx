@@ -1,49 +1,55 @@
 ﻿'use client';
 
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
+import React, { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 
-type Props = { offsetPx?: number; rightPx?: number; showOnScrollUp?: boolean; minScrollToShow?: number; id?: string };
+type LauncherProps = {
+  offsetPx?: number;
+  rightPx?: number;
+  id?: string;
+};
 
 export default function ChatLauncher({
-  offsetPx = 112,
+  offsetPx = 200,   // higher so it clears WhatsApp
   rightPx = 16,
-}: Props) {
+  id = "chat-launcher",
+}: LauncherProps) {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
 
-  const target = document.body;
+  useEffect(() => setMounted(true), []);
+  const target = useMemo(() => (typeof window !== "undefined" ? document.body : null), []);
+  if (!mounted || !target) return null;
 
   return createPortal(
     <>
       {open && (
         <div
+          aria-hidden="true"
           className="fixed inset-0 z-[998] bg-black/30"
           onClick={() => setOpen(false)}
-          aria-hidden="true"
         />
       )}
 
+      {/* Panel */}
       <div
         role="dialog"
         aria-label="Cornerstone on Arum chat"
-        aria-modal={open ? 'true' : 'false'}
+        aria-modal={open ? "true" : "false"}
         className={[
-          'fixed z-[999] w-[88vw] max-w-[420px] h-[70vh] max-h-[720px]',
-          open ? 'opacity-100' : 'opacity-0 pointer-events-none',
-          'transition-opacity duration-300',
-        ].join(' ')}
+          "fixed z-[999] w-[88vw] max-w-[420px] h-[70vh] max-h-[720px]",
+          open ? "opacity-100" : "opacity-0 pointer-events-none",
+          "transition-opacity duration-300",
+        ].join(" ")}
         style={{ right: rightPx, bottom: offsetPx + 64 }}
       >
-        <div className="flex h-full w-full flex-col rounded-2xl shadow-2xl border bg-white overflow-hidden">
+        <div className="flex h-full w-full flex-col rounded-2xl shadow-2xl border border-slate-200 bg-white overflow-hidden">
           <header className="flex items-center justify-between px-4 py-3 border-b">
             <div className="text-sm font-semibold">Chat support</div>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close chat panel"
-              className="rounded-full p-2 hover:bg-slate-100"
+              className="rounded-full p-2 hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-slate-400"
             >
               ✕
             </button>
@@ -52,13 +58,24 @@ export default function ChatLauncher({
         </div>
       </div>
 
+      {/* Launcher Button */}
       <button
-        aria-label={open ? 'Close chat' : 'Open chat'}
+        id={id}
+        aria-label={open ? "Close chat" : "Open chat"}
         onClick={() => setOpen(v => !v)}
-        className="fixed z-[1000] h-14 w-14 rounded-full shadow-2xl border bg-white flex items-center justify-center text-xl"
+        className={[
+          "fixed z-[1100] h-16 w-16 rounded-full shadow-xl border-2 border-white",
+          "bg-[#0b1f3a] text-white",
+          "flex items-center justify-center",
+          "transition-transform duration-300 hover:scale-110 active:scale-95",
+          "focus:outline-none focus-visible:ring-4 focus-visible:ring-white/60",
+        ].join(" ")}
         style={{ right: rightPx, bottom: offsetPx }}
       >
-        💬
+        {/* Simple chat icon */}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-7 w-7" aria-hidden="true" fill="currentColor">
+          <path d="M2 12c0-4.97 4.48-9 10-9s10 4.03 10 9-4.48 9-10 9c-1.39 0-2.72-.26-3.92-.74L4 21l1.09-3.27A8.55 8.55 0 0 1 2 12z"/>
+        </svg>
       </button>
     </>,
     target
@@ -66,28 +83,28 @@ export default function ChatLauncher({
 }
 
 function ChatPanel() {
-  const [input, setInput] = useState('');
-  const [items, setItems] = useState<Array<{ role: 'user' | 'assistant'; text: string }>>([]);
+  const [input, setInput] = useState("");
+  const [items, setItems] = useState<Array<{ role: "user" | "assistant"; text: string }>>([]);
   const [busy, setBusy] = useState(false);
 
   async function send() {
     const t = input.trim();
     if (!t) return;
-    setItems(prev => [...prev, { role: 'user', text: t }]);
-    setInput('');
+    setItems(prev => [...prev, { role: "user", text: t }]);
+    setInput("");
     setBusy(true);
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        cache: 'no-store',
-        body: JSON.stringify({ messages: [{ role: 'user', content: t }] }),
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        cache: "no-store",
+        body: JSON.stringify({ messages: [{ role: "user", content: t }] }),
       });
       const data = await res.json();
-      const reply = data?.reply ?? 'No response.';
-      setItems(prev => [...prev, { role: 'assistant', text: reply }]);
+      const reply = data?.reply ?? "No response.";
+      setItems(prev => [...prev, { role: "assistant", text: reply }]);
     } catch {
-      setItems(prev => [...prev, { role: 'assistant', text: 'Network error.' }]);
+      setItems(prev => [...prev, { role: "assistant", text: "Network error." }]);
     } finally {
       setBusy(false);
     }
@@ -100,9 +117,9 @@ function ChatPanel() {
           <div
             key={i}
             className={
-              m.role === 'user'
-                ? 'ml-auto max-w-[80%] rounded-2xl px-3 py-2 bg-slate-900 text-white'
-                : 'mr-auto max-w-[80%] rounded-2xl px-3 py-2 bg-slate-100'
+              m.role === "user"
+                ? "ml-auto max-w-[80%] rounded-2xl px-3 py-2 bg-slate-900 text-white"
+                : "mr-auto max-w-[80%] rounded-2xl px-3 py-2 bg-slate-100"
             }
           >
             <p className="text-sm leading-relaxed">{m.text}</p>
@@ -118,7 +135,7 @@ function ChatPanel() {
       >
         <input
           aria-label="Type your message"
-          className="flex-1 rounded-xl border px-3 py-2"
+          className="flex-1 rounded-xl border px-3 py-2 focus:outline-none focus-visible:ring focus-visible:ring-slate-400"
           placeholder="Ask about availability, pricing, or floor plans"
           value={input}
           onChange={e => setInput(e.target.value)}
