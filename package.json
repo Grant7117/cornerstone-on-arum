@@ -1,4 +1,10 @@
 {
+  "name": "v0-intelligent-chatbot-for-property",
+  "version": "1.0.0",
+  ...
+  "packageManager": "pnpm@10.0.0"
+}
+{
   "name": "cornerstoneonarum",
   "version": "0.1.0",
   "private": true,
