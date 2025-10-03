@@ -1,3 +1,8 @@
+// add this near the top with your other imports
+import ChatWidget from "./components/ChatWidget";
+
+// inside the RootLayout return, just before </body>
+<ChatWidget />
 // app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
