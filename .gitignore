@@ -16,3 +16,15 @@ out/
 package-lock.json
 public/sitemap-*.xml
 Thumbs.db
+
+# local logs & scratch
+build-debug.log
+package.backup.json
+package.broken.*.json
+
+
+# local logs & scratch
+build-debug.log
+package.backup.json
+package.broken.*.json
+
