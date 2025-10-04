@@ -1,7 +1,7 @@
 ﻿{
     "name":  "v0-intelligent-chatbot-for-property",
     "version":  "0.0.0",
-    "private":  true,
+    "private":  "true",
     "packageManager":  "pnpm@10.0.0",
     "scripts":  {
                     "dev":  "next dev -p 3000 -H 127.0.0.1",
@@ -17,8 +17,9 @@
                          "openai":  "4.104.0"
                      },
     "devDependencies":  {
-                            "typescript":  "^5.6.3",
-                            "@types/react":  "^18.3.25",
-                            "tailwindcss":  "^3.4.13"
-                        }
+                            "typescript":  "5.6.3",
+                            "@types/react":  "18.3.25",
+                            "tailwindcss":  "3.4.13"
+                        },
+    "type":  "module"
 }
