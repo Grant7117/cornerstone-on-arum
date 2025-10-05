@@ -1,61 +1,66 @@
-// app/api/chat/route.ts
-import { NextRequest } from "next/server";
-import OpenAI from "openai";
-
-export const runtime = "nodejs"; // easier debugging
-
-export async function GET() {
-  // Smoke test in the browser: http://127.0.0.1:3000/api/chat
-  const k = process.env.OPENAI_API_KEY ?? "";
-  return Response.json({
-    ok: true,
-    hasKey: !!k,
-    keyLen: k.length,
-    model: process.env.OPENAI_MODEL ?? "gpt-4o-mini",
-    temperature: Number(process.env.OPENAI_TEMPERATURE ?? "0.2"),
-  });
-}
+﻿import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const messages = body?.messages;
+    const { messages } = await req.json();
 
-    if (!Array.isArray(messages)) {
-      return Response.json(
-        { error: "Body must contain messages: [{ role, content }, ...]" },
-        { status: 400 }
-      );
+    if (!process.env.OPENAI_API_KEY) {
+      return new Response(JSON.stringify({ error: "Missing OPENAI_API_KEY" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey) {
-      return Response.json(
-        { error: "OPENAI_API_KEY is missing (check .env.local and restart dev server)" },
-        { status: 500 }
-      );
+    // Basic guard
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return new Response(JSON.stringify({ error: "Invalid messages" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    const client = new OpenAI({ apiKey });
+    const sys = {
+      role: "system",
+      content:
+        "You are Cornerstone on Arum's property sales assistant in Table View, Cape Town. " +
+        "Be concise, friendly, and practical. If you do not know something, say you will ask the sales team. " +
+        "Always offer to help with viewings and finance. Currency is ZAR.",
+    };
 
-    const completion = await client.chat.completions.create({
-      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
-      messages,
-      temperature: Number(process.env.OPENAI_TEMPERATURE ?? "0.2"),
+    const resp = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        temperature: 0.2,
+        messages: [sys, ...messages],
+      }),
     });
 
-    const reply = completion.choices?.[0]?.message?.content ?? "(no content)";
-    return Response.json({ reply });
-  } catch (e: any) {
-    const status =
-      e?.status ?? e?.response?.status ?? 500;
-    const message =
-      e?.response?.data?.error?.message ??
-      e?.error?.message ??
-      e?.message ??
-      "Unknown error calling OpenAI";
+    if (!resp.ok) {
+      const text = await resp.text();
+      return new Response(
+        JSON.stringify({ error: "Upstream error", details: text }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
 
-    console.error("route.ts error:", { status, message });
-    return Response.json({ error: message }, { status });
+    const data = await resp.json();
+    const reply =
+      data?.choices?.[0]?.message?.content?.trim() ||
+      "Thanks. I will confirm with the sales team and get back to you.";
+
+    return new Response(JSON.stringify({ reply }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err?.message || "Server error" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }

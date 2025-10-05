@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -48,14 +48,14 @@ export function UnitCard({ unit }: UnitCardProps) {
   }
 
   const nextImage = () => {
-    if (unit.images && unit.images.length > 1) {
-      setCurrentImageIndex((prev) => (prev + 1) % unit.images.length)
+    if (unit.images && (unit.images?.length ?? 1) > 1) {
+      setCurrentImageIndex((prev) => (prev + 1) % (unit.images?.length ?? 1))
     }
   }
 
   const prevImage = () => {
-    if (unit.images && unit.images.length > 1) {
-      setCurrentImageIndex((prev) => (prev - 1 + unit.images.length) % unit.images.length)
+    if (unit.images && (unit.images?.length ?? 1) > 1) {
+      setCurrentImageIndex((prev) => (prev - 1 + (unit.images?.length ?? 1)) % (unit.images?.length ?? 1))
     }
   }
 
@@ -67,7 +67,7 @@ export function UnitCard({ unit }: UnitCardProps) {
           style={{ backgroundColor: unit.color }}
         ></div>
 
-        {unit.images && unit.images.length > 0 ? (
+        {unit.images && (unit.images?.length ?? 1) > 0 ? (
           <>
             <img
               src={unit.images[currentImageIndex] || "/placeholder.svg"}
@@ -75,7 +75,7 @@ export function UnitCard({ unit }: UnitCardProps) {
               className="w-full h-full object-cover"
             />
 
-            {unit.images.length > 1 && (
+            {(unit.images?.length ?? 1) > 1 && (
               <>
                 <Button
                   variant="ghost"
@@ -95,7 +95,7 @@ export function UnitCard({ unit }: UnitCardProps) {
                 </Button>
 
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
-                  {unit.images.map((_, index) => (
+                  {(unit.images ?? []).map((_, index) => (
                     <button
                       key={index}
                       className={`w-2 h-2 rounded-full ${index === currentImageIndex ? "bg-white" : "bg-white/50"}`}
@@ -134,7 +134,7 @@ export function UnitCard({ unit }: UnitCardProps) {
           </div>
           <div className="flex justify-between">
             <span className="text-gray-400">Size:</span>
-            <span className="text-white">{unit.size}m²</span>
+            <span className="text-white">{unit.size}mÂ²</span>
           </div>
         </div>
 
@@ -145,3 +145,4 @@ export function UnitCard({ unit }: UnitCardProps) {
     </div>
   )
 }
+

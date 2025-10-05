@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import type React from "react"
 
@@ -37,14 +37,14 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (inputValue.trim() && status !== "in_progress") {
+    if (inputValue.trim() && String(status) !== "in_progress") {
       sendMessage({ text: inputValue })
       setInputValue("")
     }
   }
 
   const handleQuickAction = (message: string) => {
-    if (status !== "in_progress") {
+    if (String(status) !== "in_progress") {
       sendMessage({ text: message })
     }
   }
@@ -117,7 +117,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   size="sm"
                   className="h-8 text-xs bg-transparent"
                   onClick={() => handleQuickAction("Show me available 2-bedroom apartments")}
-                  disabled={status === "in_progress"}
+                  disabled={String(status) === "in_progress"}
                 >
                   <Home className="h-3 w-3 mr-1" />
                   2BR Units
@@ -127,7 +127,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   size="sm"
                   className="h-8 text-xs bg-transparent"
                   onClick={() => handleQuickAction("What amenities are available?")}
-                  disabled={status === "in_progress"}
+                  disabled={String(status) === "in_progress"}
                 >
                   <Info className="h-3 w-3 mr-1" />
                   Amenities
@@ -137,7 +137,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   size="sm"
                   className="h-8 text-xs bg-transparent"
                   onClick={() => handleQuickAction("Tell me about the neighborhood")}
-                  disabled={status === "in_progress"}
+                  disabled={String(status) === "in_progress"}
                 >
                   <MapPin className="h-3 w-3 mr-1" />
                   Location
@@ -147,7 +147,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   size="sm"
                   className="h-8 text-xs bg-transparent"
                   onClick={() => handleQuickAction("I'd like to schedule a viewing")}
-                  disabled={status === "in_progress"}
+                  disabled={String(status) === "in_progress"}
                 >
                   <Calendar className="h-3 w-3 mr-1" />
                   Schedule Tour
@@ -194,7 +194,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                 </div>
               ))}
 
-              {status === "in_progress" && (
+              {String(status) === "in_progress" && (
                 <div className="flex justify-start">
                   <div className="bg-muted text-muted-foreground rounded-lg px-3 py-2 text-sm">
                     <div className="flex items-center gap-2">
@@ -224,22 +224,26 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Ask about properties, amenities, or schedule a viewing..."
-                disabled={status === "in_progress"}
+                disabled={String(status) === "in_progress"}
                 className="flex-1 text-sm"
               />
               <Button
                 type="submit"
                 size="icon"
-                disabled={status === "in_progress" || !inputValue.trim()}
+                disabled={String(status) === "in_progress" || !inputValue.trim()}
                 className="shrink-0"
               >
                 <Send className="h-4 w-4" />
               </Button>
             </form>
-            <div className="text-xs text-muted-foreground mt-2 text-center">Powered by AI • Cornerstone on Arum</div>
+            <div className="text-xs text-muted-foreground mt-2 text-center">Powered by AI â€¢ Cornerstone on Arum</div>
           </div>
         </>
       )}
     </Card>
   )
 }
+
+
+
+
