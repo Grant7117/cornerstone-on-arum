@@ -1,4 +1,4 @@
-﻿import Script from "next/script";
+import Script from "next/script";
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
@@ -35,7 +35,7 @@ export default function RootLayout({
   src="https://v0-intelligent-chatbot-for-property-nob127i5l.vercel.app/cornerstone-embed.js"
   strategy="afterInteractive"
 />
-  <script src="/cs-chat-widget.js" defer></script>
+  <script src="/cs-chat-widget.js?v=20251005200000" defer></script>
 </body>
     </html>
   );
