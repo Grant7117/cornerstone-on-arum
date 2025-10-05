@@ -1,234 +1,88 @@
 ﻿"use client";
+import { useEffect, useRef, useState } from "react";
 
-import { useState, useRef, useEffect } from "react";
+const WELCOME = "Welcome! 👋 I am your friendly assistant. Feel free to ask me anything about Cornerstone on Arum.";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState<Msg[]>([
-    {
-      role: "assistant",
-      content:
-        "Hi. I can help with pricing, availability, viewings and finance. Ask a question below.",
-    },
-  ]);
-  const [text, setText] = useState("");
-  const [busy, setBusy] = useState(false);
-  const scroller = useRef<HTMLDivElement>(null);
+  const [input, setInput] = useState("");
+  const [log, setLog] = useState<Msg[]>([{ role: "assistant", content: WELCOME }]);
+  const boxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    scroller.current?.scrollTo({ top: 9e6, behavior: "smooth" });
-  }, [messages.length]);
+    boxRef.current?.scrollTo({ top: boxRef.current.scrollHeight, behavior: "smooth" });
+  }, [log]);
 
   async function send() {
-    const t = text.trim();
-    if (!t || busy) return;
-    setText("");
-    setMessages((m) => [...m, { role: "user", content: t }]);
-    setBusy(true);
-
+    const q = input.trim();
+    if (!q) return;
+    setLog(l => [...l, { role: "user", content: q }]);
+    setInput("");
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: messages
-            .concat({ role: "user", content: t })
-            .map((m) => ({ role: m.role, content: m.content })),
-        }),
-      });
+      const res = await fetch("/api/chat", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ message: q }) });
       const data = await res.json();
-      if (!res.ok) throw new Error(data?.error || "Chat failed");
-      setMessages((m) => [...m, { role: "assistant", content: data.reply }]);
-    } catch (e: any) {
-      setMessages((m) => [
-        ...m,
-        {
-          role: "assistant",
-          content:
-            "Sorry, I could not reach the assistant. Please try again or call 072 450 3626.",
-        },
-      ]);
-    } finally {
-      setBusy(false);
+      setLog(l => [...l, { role: "assistant", content: String(data.reply ?? data.error ?? "I could not reach the assistant. Please contact Grant at 072 450 3626.") }]);
+    } catch {
+      setLog(l => [...l, { role: "assistant", content: "I could not reach the assistant. Please contact Grant at 072 450 3626." }]);
     }
   }
 
-  return (
-    <main
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background:
-          "radial-gradient(1000px 600px at 50% -20%, #e5e7eb 0%, transparent 60%)",
-        padding: 16,
-      }}
-    >
-      <div
-        style={{
-          width: 720,
-          maxWidth: "95vw",
-          background: "#ffffff",
-          borderRadius: 16,
-          boxShadow:
-            "0 22px 48px rgba(0,0,0,0.18), 0 10px 24px rgba(0,0,0,0.10)",
-          border: "1px solid #eee",
-          overflow: "hidden",
-          fontFamily:
-            '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial',
-        }}
-      >
-        <header
-          style={{
-            padding: "14px 18px",
-            borderBottom: "1px solid #eee",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            background:
-              "linear-gradient(135deg,#0f172a 0%, #1e293b 65%, #334155 100%)",
-            color: "#fff",
-          }}
-        >
-          <div style={{ fontWeight: 700 }}>Cornerstone Assistant</div>
-          <nav style={{ display: "flex", gap: 8 }}>
-            <a
-              href="https://digiapp.betterbond.co.za/YolandaKensley/38613/129015"
-              target="_blank"
-              rel="noreferrer"
-              style={cta("solid")}
-            >
-              100% Home Loans
-            </a>
-            <a href="#units" style={cta()}>
-              View Apartments
-            </a>
-            <a href="#enquire" style={cta()}>
-              Book a Viewing
-            </a>
-          </nav>
-        </header>
+  function keyDown(e: React.KeyboardEvent<HTMLInputElement>) { if (e.key === "Enter") send(); }
 
-        <div
-          ref={scroller}
-          style={{
-            maxHeight: "60vh",
-            overflow: "auto",
-            padding: "12px 16px 16px",
-            background: "#fafafa",
-          }}
-        >
-          {messages.map((m, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                justifyContent: m.role === "user" ? "flex-end" : "flex-start",
-                margin: "10px 0",
-              }}
-            >
-              <div
-                style={{
-                  maxWidth: "85%",
-                  padding: "10px 12px",
-                  borderRadius: 12,
-                  background: m.role === "user" ? "#2563eb" : "#fff",
-                  color: m.role === "user" ? "#fff" : "#111",
-                  border:
-                    m.role === "user"
-                      ? "none"
-                      : "1px solid rgba(0,0,0,0.08)",
-                  boxShadow:
-                    m.role === "user"
-                      ? "none"
-                      : "0 1px 3px rgba(0,0,0,0.06)",
-                  whiteSpace: "pre-wrap",
-                }}
-              >
+  return (
+    <div className="min-h-[80vh] w-full bg-white text-slate-900 p-4">
+      {/* Header actions */}
+      <div className="max-w-2xl mx-auto mb-4">
+        <div className="grid grid-cols-3 gap-2">
+          <a
+            href="https://digiapp.betterbond.co.za/YolandaKensley/38613/129015"
+            target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-10 rounded-xl bg-blue-600 text-white font-medium shadow hover:opacity-90"
+            title="BetterBond — 100% finance"
+          >
+            BetterBond — 100% finance
+          </a>
+          <a
+            href="/documents"
+            className="inline-flex items-center justify-center h-10 rounded-xl bg-slate-800 text-white font-medium shadow hover:opacity-90"
+            title="Schedule of Finishes"
+          >
+            Schedule of Finishes
+          </a>
+          <a
+            href="/apartments"
+            className="inline-flex items-center justify-center h-10 rounded-xl bg-slate-800 text-white font-medium shadow hover:opacity-90"
+            title="Units available"
+          >
+            Units available
+          </a>
+        </div>
+      </div>
+
+      {/* Chat area */}
+      <div className="max-w-2xl mx-auto border rounded-2xl p-3 bg-slate-50">
+        <div ref={boxRef} className="h-[50vh] overflow-auto space-y-3">
+          {log.map((m, i) => (
+            <div key={i} className={m.role === "user" ? "text-right" : "text-left"}>
+              <div className={"inline-block px-3 py-2 rounded-2xl " + (m.role === "user" ? "bg-blue-600 text-white" : "bg-white border")}>
                 {m.content}
               </div>
             </div>
           ))}
         </div>
-
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            send();
-          }}
-          style={{
-            display: "flex",
-            gap: 8,
-            padding: 12,
-            borderTop: "1px solid #eee",
-            background: "#fff",
-          }}
-        >
+        <div className="mt-3 flex gap-2">
           <input
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Ask about pricing, availability, floor plans…"
-            aria-label="Type a message"
-            style={{
-              flex: 1,
-              height: 44,
-              borderRadius: 10,
-              border: "1px solid #dcdcdc",
-              padding: "0 12px",
-              fontSize: 14,
-            }}
+            className="flex-1 border rounded-xl px-3 py-2"
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            placeholder="Ask about pricing, availability, viewings, finance…"
+            onKeyDown={keyDown}
           />
-          <button
-            disabled={busy}
-            type="submit"
-            style={{
-              height: 44,
-              padding: "0 16px",
-              borderRadius: 10,
-              border: "none",
-              background:
-                "linear-gradient(135deg,#2563eb 0%,#3b82f6 60%,#60a5fa 100%)",
-              color: "#fff",
-              fontWeight: 700,
-              opacity: busy ? 0.7 : 1,
-              cursor: busy ? "not-allowed" : "pointer",
-            }}
-          >
-            {busy ? "Sending…" : "Send"}
-          </button>
-        </form>
+          <button onClick={send} className="px-4 py-2 rounded-xl bg-blue-600 text-white font-semibold">Send</button>
+        </div>
+        <p className="mt-2 text-xs text-slate-500">If you need immediate help, contact Grant at 072 450 3626.</p>
       </div>
-    </main>
+    </div>
   );
-}
-
-function cta(kind: "solid" | "ghost" = "ghost"): React.CSSProperties {
-  if (kind === "solid") {
-    return {
-      display: "inline-flex",
-      alignItems: "center",
-      height: 34,
-      padding: "0 12px",
-      borderRadius: 999,
-      background:
-        "linear-gradient(135deg,#10b981 0%,#34d399 60%,#6ee7b7 100%)",
-      color: "#083344",
-      fontWeight: 700,
-      textDecoration: "none",
-    };
-  }
-  return {
-    display: "inline-flex",
-    alignItems: "center",
-    height: 34,
-    padding: "0 12px",
-    borderRadius: 999,
-    border: "1px solid #e5e7eb",
-    background: "#fff",
-    color: "#111827",
-    fontWeight: 600,
-    textDecoration: "none",
-  };
 }
