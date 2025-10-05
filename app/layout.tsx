@@ -35,10 +35,12 @@ export default function RootLayout({
   src="https://v0-intelligent-chatbot-for-property-nob127i5l.vercel.app/cornerstone-embed.js"
   strategy="afterInteractive"
 />
+  <script src="/cs-chat-widget.js" defer></script>
 </body>
     </html>
   );
 }
+
 
 
 
