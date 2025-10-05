@@ -31,7 +31,7 @@ export default function ChatPage() {
   function keyDown(e: React.KeyboardEvent<HTMLInputElement>) { if (e.key === "Enter") send(); }
 
   return (
-    <div className="min-h-[80vh] w-full bg-white text-slate-900 p-4">
+    <div className="min-h-[48vh] w-full bg-white text-slate-900 p-4">
       {/* Header actions */}
       <div className="max-w-2xl mx-auto mb-4">
         <div className="grid grid-cols-3 gap-2">
@@ -62,7 +62,7 @@ export default function ChatPage() {
 
       {/* Chat area */}
       <div className="max-w-2xl mx-auto border rounded-2xl p-3 bg-slate-50">
-        <div ref={boxRef} className="h-[50vh] overflow-auto space-y-3">
+        <div ref={boxRef} className="h-[48vh] overflow-auto space-y-3">
           {log.map((m, i) => (
             <div key={i} className={m.role === "user" ? "text-right" : "text-left"}>
               <div className={"inline-block px-3 py-2 rounded-2xl " + (m.role === "user" ? "bg-blue-600 text-white" : "bg-white border")}>
@@ -86,3 +86,4 @@ export default function ChatPage() {
     </div>
   );
 }
+

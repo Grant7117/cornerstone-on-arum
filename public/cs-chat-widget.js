@@ -1,77 +1,83 @@
 ﻿(() => {
-  const SRC = "/chat";           // same-origin route
-  const W = 420, H = 640, Z = 2147483000;
+  const Z = 2147483000;
+  const SRC = "/chat";            // same-origin chat page
+  const CARD_TOP = "2cm";         // lower the card
 
-  if (window.__csChatWidgetInit) return;
-  window.__csChatWidgetInit = true;
+  function css(el, o){ Object.assign(el.style, o); }
 
-  const css = (el, s) => Object.assign(el.style, s);
+  function build(){
+    if (document.getElementById("cs-chat-root")) return;
 
-  const root = document.createElement("div");
-  root.id = "cs-chat-root";
-  css(root, { position: "fixed", right: "20px", bottom: "20px", zIndex: Z });
+    // Root
+    const root = document.createElement("div");
+    root.id = "cs-chat-root";
+    css(root, { position:"fixed", right:"20px", bottom:"20px", zIndex:String(Z) });
+    document.body.appendChild(root);
 
-  const bubble = document.createElement("button");
-  bubble.id = "cs-chat-bubble";
-  bubble.type = "button";
-  bubble.setAttribute("aria-label", "Open chat");
-  css(bubble, { width: "56px", height: "56px", borderRadius: "28px", border: "none",
-    boxShadow: "0 6px 18px rgba(0,0,0,.18)", cursor: "pointer",
-    background: "linear-gradient(180deg,#1976d2,#115293)", color: "#fff",
-    fontSize: "26px", lineHeight: "56px" });
-  bubble.textContent = "💬";
+    // Pill bubble with text
+    const bubble = document.createElement("button");
+    bubble.id = "cs-chat-bubble";
+    bubble.type = "button";
+    bubble.setAttribute("aria-label","Open chat");
+    bubble.innerHTML = '<span style="font-size:18px;line-height:1">💬</span><span style="font-weight:600">Any questions? Chat with me</span>';
+    css(bubble, {
+      display:"flex", alignItems:"center", gap:"10px",
+      padding:"12px 16px", borderRadius:"9999px",
+      background:"#2563eb", color:"#fff", border:"0",
+      boxShadow:"0 12px 30px rgba(0,0,0,.25)", cursor:"pointer",
+      fontFamily:"system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+      fontSize:"14px"
+    });
+    root.appendChild(bubble);
 
-  const modal = document.createElement("div");
-  modal.id = "cs-chat-modal";
-  modal.setAttribute("role", "dialog");
-  modal.setAttribute("aria-modal", "true");
-  css(modal, { position: "fixed", right: "20px", bottom: "86px", width: W+"px", height: H+"px",
-    display: "none", zIndex: Z, borderRadius: "12px", overflow: "hidden",
-    boxShadow: "0 16px 40px rgba(0,0,0,.25)", background: "#fff" });
+    // Modal
+    const modal = document.createElement("div");
+    modal.id = "cs-chat-modal";
+    css(modal, {
+      position:"fixed", right:"20px", top:CARD_TOP,
+      width:"420px", maxWidth:"92vw", height:"72vh",
+      background:"#fff", borderRadius:"20px",
+      boxShadow:"0 20px 50px rgba(0,0,0,.25)",
+      display:"none", overflow:"hidden", zIndex:String(Z)
+    });
+    root.appendChild(modal);
 
-  const header = document.createElement("div");
-  css(header, { height: "44px", background: "#0b2241", color: "#fff",
-    display: "flex", alignItems: "center", justifyContent: "space-between",
-    padding: "0 12px", fontFamily: "system-ui, Arial, sans-serif", fontSize: "14px" });
-  const title = document.createElement("div");
-  title.textContent = "Cornerstone on Arum";
-  const closeBtn = document.createElement("button");
-  closeBtn.textContent = "×";
-  closeBtn.type = "button";
-  closeBtn.setAttribute("aria-label", "Close chat");
-  css(closeBtn, { background: "transparent", border: "none", color: "#fff", fontSize: "24px", cursor: "pointer" });
-  closeBtn.addEventListener("click", (e) => { e.preventDefault(); toggle(false); });
+    // Header + close ×
+    const header = document.createElement("div");
+    css(header, { height:"44px", display:"flex", alignItems:"center", padding:"0 12px", background:"#0f172a", color:"#fff" });
+    header.innerHTML = '<div style="font-weight:600">Cornerstone Assistant</div>';
+    const close = document.createElement("button");
+    close.type = "button";
+    close.setAttribute("aria-label","Close chat");
+    close.textContent = "×";
+    css(close, { marginLeft:"auto", width:"36px", height:"36px", border:"0", background:"transparent", color:"#fff", fontSize:"22px", cursor:"pointer" });
+    header.appendChild(close);
+    modal.appendChild(header);
 
-  const headerBar = document.createElement("div");
-  css(headerBar, { display: "flex", width: "100%", alignItems: "center", justifyContent: "space-between" });
-  headerBar.appendChild(title); headerBar.appendChild(closeBtn);
+    // Iframe
+    const frame = document.createElement("iframe");
+    frame.src = SRC;
+    frame.setAttribute("title","Cornerstone chat");
+    frame.loading = "eager";
+    css(frame, { width:"100%", height:"calc(100% - 44px)", border:"0" });
+    modal.appendChild(frame);
 
-  const frame = document.createElement("iframe");
-  frame.title = "Cornerstone Chat";
-  frame.src = SRC;
-  frame.allow = "clipboard-read; clipboard-write; microphone; geolocation; camera";
-  frame.referrerPolicy = "strict-origin-when-cross-origin";
-  css(frame, { width: "100%", height: "calc(100% - 44px)", border: "0", display: "block" });
+    function toggle(open){ modal.style.display = open ? "block" : "none"; }
+    bubble.addEventListener("click", e => { e.preventDefault(); toggle(true); });
+    close.addEventListener("click", () => toggle(false));
+    document.addEventListener("keydown", e => { if (e.key === "Escape") toggle(false); });
 
-  modal.appendChild(header); header.appendChild(headerBar);
-  modal.appendChild(frame);
-  root.appendChild(modal);
-  root.appendChild(bubble);
-  document.body.appendChild(root);
+    // Guard against client navigations removing the node
+    const obs = new MutationObserver(() => {
+      if (!document.getElementById("cs-chat-root")) { obs.disconnect(); setTimeout(build, 0); }
+    });
+    obs.observe(document.body, { childList:true, subtree:false });
+  }
 
-  // Neutralise any legacy anchors that used to navigate away
-  const killers = document.querySelectorAll("#cornerstone-chat-link, a[data-cornerstone-chat]");
-  killers.forEach(a => {
-    a.removeAttribute("href");
-    a.removeAttribute("target");
-    a.style.cursor = "pointer";
-    a.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); toggle(true); });
-  });
-
-  bubble.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); toggle(true); });
-  document.addEventListener("keydown", e => { if (e.key === "Escape") toggle(false); });
-
-  function toggle(open) { modal.style.display = open ? "block" : "none"; }
+  // Load after DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", build, { once:true });
+  } else {
+    build();
+  }
 })();
-
-
