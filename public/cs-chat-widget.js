@@ -1,5 +1,5 @@
 ﻿(() => {
-  const SRC = "/cornerstone-chat/";           // same-origin route
+  const SRC = "/chat";           // same-origin route
   const W = 420, H = 640, Z = 2147483000;
 
   if (window.__csChatWidgetInit) return;
@@ -73,3 +73,4 @@
 
   function toggle(open) { modal.style.display = open ? "block" : "none"; }
 })();
+
