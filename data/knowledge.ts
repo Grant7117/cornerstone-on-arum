@@ -2,8 +2,8 @@
 
 const knowledge: KBItem[] = [
   { id: "welcome", question: "What is Cornerstone on Arum?", answer: "A modern residential development at 154 Arum Road, Table View, Cape Town. Approximately 2.3 km to the beach and close to the MyCiTi Table View stop.", category: "General" },
-  { id: "pricing-range", question: "What is the price range for units?", answer: "1-bedroom R1,500,000 to R1,600,000. 2-bedroom R2,100,000. 2-bedroom loft R2,600,000.", category: "Pricing" },
-  { id: "availability", question: "Which units are sold or available?", answer: "Unit 301 is SOLD. Example available 2-bedroom: Unit 306 at R2,200,000. Enquire for the latest live stock.", category: "Availability" },
+  { id: "pricing-range", question: "What is the price range for units?", answer: "1-bedroom from R1,500,000. 2-bedroom from R2,100,000. 2-bedroom loft R2,600,000.", category: "Pricing" },
+  { id: "availability", question: "Which units are sold or available?", answer: "Many units are sold. Available units include CS101, CS102, CS103, CS104, CS105, CS106, CS107, CS202, CS302 and CS304. Prices range from R1,500,000 to R2,600,000.", category: "Availability" },
   { id: "deposit", question: "What deposit is required?", answer: "R5,000 within 7 days of Offer to Purchase signature. Applies to cash and bond buyers.", category: "Finance" },
   { id: "bond-window", question: "How long is the bond approval window?", answer: "30 days from Offer to Purchase signature.", category: "Finance" },
   { id: "transfers", question: "When do transfers start and when is completion?", answer: "Transfers commence approximately 60 days before completion. Target completion date is 01 May 2026.", category: "Process" },
