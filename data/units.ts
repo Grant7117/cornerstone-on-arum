@@ -12,18 +12,18 @@ export interface Unit {
 
 export const units: Unit[] = [
     // First Floor
-    { unitNo: "CS101", floor: "First", bedrooms: 1, bathrooms: 1, size: 47, color: "#3b82f6", status: "Available", price: "R1,600,000" },
+    { unitNo: "CS101", floor: "First", bedrooms: 1, bathrooms: 1, size: 47, color: "#3b82f6", status: "Reserved", price: "R1,600,000" },
     { unitNo: "CS102", floor: "First", bedrooms: 2, bathrooms: 1, size: 67, color: "#8b5cf6", status: "Available", price: "R2,100,000" },
     { unitNo: "CS103", floor: "First", bedrooms: 1, bathrooms: 1, size: 45, color: "#3b82f6", status: "Available", price: "R1,600,000" },
     { unitNo: "CS104", floor: "First", bedrooms: 1, bathrooms: 1, size: 48, color: "#3b82f6", status: "Available", price: "R1,600,000" },
-    { unitNo: "CS105", floor: "First", bedrooms: 1, bathrooms: 1, size: 48, color: "#3b82f6", status: "Available", price: "R1,600,000" },
+    { unitNo: "CS105", floor: "First", bedrooms: 1, bathrooms: 1, size: 48, color: "#3b82f6", status: "Sold", price: "R1,600,000" },
     { unitNo: "CS106", floor: "First", bedrooms: 1, bathrooms: 1, size: 45, color: "#3b82f6", status: "Available", price: "R1,500,000" },
-    { unitNo: "CS107", floor: "First", bedrooms: 2, bathrooms: 1, size: 67, color: "#8b5cf6", status: "Available", price: "R2,100,000" },
+    { unitNo: "CS107", floor: "First", bedrooms: 2, bathrooms: 1, size: 67, color: "#8b5cf6", status: "Sold", price: "R2,100,000" },
     { unitNo: "CS108", floor: "First", bedrooms: 1, bathrooms: 1, size: 47, color: "#3b82f6", status: "Reserved", price: "R1,600,000" },
 
     // Second Floor
     { unitNo: "CS201", floor: "Second", bedrooms: 1, bathrooms: 1, size: 47, color: "#3b82f6", status: "Sold", price: "R1,600,000" },
-    { unitNo: "CS202", floor: "Second", bedrooms: 2, bathrooms: 1, size: 68, color: "#8b5cf6", status: "Available", price: "R2,100,000" },
+    { unitNo: "CS202", floor: "Second", bedrooms: 2, bathrooms: 1, size: 68, color: "#8b5cf6", status: "Sold", price: "R2,100,000" },
     { unitNo: "CS203", floor: "Second", bedrooms: 1, bathrooms: 1, size: 45, color: "#3b82f6", status: "Sold", price: "R1,500,000" },
     { unitNo: "CS204", floor: "Second", bedrooms: 1, bathrooms: 1, size: 48, color: "#3b82f6", status: "Sold", price: "R1,600,000" },
     { unitNo: "CS205", floor: "Second", bedrooms: 1, bathrooms: 1, size: 48, color: "#3b82f6", status: "Sold", price: "R1,600,000" },
