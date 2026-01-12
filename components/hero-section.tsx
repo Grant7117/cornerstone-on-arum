@@ -16,6 +16,13 @@ export function HeroSection() {
         sizes="100vw"
       />
 
+      {/* SOLD OUT Banner */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] bg-red-600 text-white text-center py-6 -rotate-45 z-20 opacity-50 transform-gpu pointer-events-none select-none">
+        <h2 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-widest uppercase">
+          SOLD OUT
+        </h2>
+      </div>
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end justify-center pb-16 md:pb-20 lg:pb-24">
         <div className="text-center px-6 max-w-4xl">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/90 mb-12 md:mb-16 drop-shadow-2xl">
