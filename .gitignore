@@ -1,25 +1,30 @@
-﻿# Node
-node_modules/
-.pnpm-store/
-
-# Next.js
-.next/
-out/
-.vercel/
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-*.log
-
-# OS/editor junk
+﻿*.backup-*
+*.bak
+*.broken-*
+*.cmd
 .DS_Store
+.env*
+.idea/
+.next/
+.vercel
+.vercel/
+.vscode/
+app/*.bak*
+node_modules/
+npm-debug.log*
+out/
+package-lock.json
+public/sitemap-*.xml
 Thumbs.db
-*.swp
 
-# Env
-.env
-.env.local
-.env.*.local
+# local logs & scratch
+build-debug.log
+package.backup.json
+package.broken.*.json
+
+
+# local logs & scratch
+build-debug.log
+package.backup.json
+package.broken.*.json
+

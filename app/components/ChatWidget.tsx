@@ -1,0 +1,56 @@
+﻿"use client";
+
+import { useState } from "react";
+
+type Msg = { role: "user" | "assistant"; content: string };
+
+export default function ChatWidget() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState<Msg[]>([]);
+
+  async function onSend() {
+    const text = input.trim();
+    if (!text) return;
+
+    const next: Msg[] = [...messages, { role: "user", content: text }];
+    setMessages(next);
+    setInput("");
+
+    // Stubbed assistant reply so builds pass
+    setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: "Thanks, we will reply shortly." },
+      ]);
+    }, 200);
+  }
+
+  return (
+    <div className="rounded-xl border border-black/10 p-3 space-y-3">
+      <div className="text-sm font-medium">Chat (local stub)</div>
+
+      <div className="space-y-1 max-h-60 overflow-auto">
+        {messages.map((m, i) => (
+          <div key={i} className="text-sm">
+            <strong>{m.role}:</strong> {m.content}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex gap-2">
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Type a message…"
+          className="flex-1 rounded-lg border px-3 py-2 text-sm"
+        />
+        <button
+          onClick={onSend}
+          className="rounded-lg bg-black text-white px-3 py-2 text-sm"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  );
+}
