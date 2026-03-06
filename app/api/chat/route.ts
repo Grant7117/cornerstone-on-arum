@@ -21,7 +21,7 @@ let kbEmbeddings: number[][] | null = null;
 function instantAnswer(q: string): string | null {
   const s = q.toLowerCase().replace(/\s+/g, " ").trim();
 
-  const price = "1 bedroom R1 500 000 to R1 600 000. 2 bedroom R2 100 000. 2 bedroom loft R2 600 000. Tap Enquire Now or message Grant on 072 450 3626.";
+  const price = "Prices have recently been adjusted to reflect current market value. Most 1-bedroom units are R1,700,000, and 2-bedroom/lofts are R2,300,000 to R2,725,000. Tap Enquire Now or message Grant on 072 450 3626.";
   if (/(price|pricing|cost|how much|1 ?bed|one bedroom|2 ?bed|two bedroom)/.test(s)) return price;
 
   if (/(deposit|reservation)/.test(s))
@@ -34,7 +34,7 @@ function instantAnswer(q: string): string | null {
     return "Viewings are not available while under construction. We provide renders, floor plans and specifications. For details message Grant on 072 450 3626.";
 
   if (/(availability|available|stock|units? available|sold)/.test(s))
-    return "Unit 301 is SOLD. Example available 2 bedroom is Unit 306 at R2 200 000. For the latest live stock, message Grant on 072 450 3626.";
+    return "Most units are officially SOLD, but we have a unique opportunity on a few specific selection of units (e.g. 101, 102, 302). There is currently an accepted offer, but it is still suspensive. If you submit a clean offer now, there is a very strong chance of securing the property via the 72-hour clause. For the latest live stock, message Grant on 072 450 3626.";
 
   if (/(bond|home loan|finance|betterbond)/.test(s))
     return "BetterBond can assist with up to 100 percent finance. Use the digital application link above or message Grant on 072 450 3626.";
