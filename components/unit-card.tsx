@@ -40,7 +40,7 @@ export function UnitCard({ unit }: UnitCardProps) {
         return "bg-green-500"
       case "Sold":
         return "bg-red-500"
-      case "Pending":
+      case "Under Offer":
         return "bg-orange-500"
       case "Prequalified":
         return "bg-yellow-500"
