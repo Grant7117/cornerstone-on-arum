@@ -1,15 +1,15 @@
-﻿import FinancePartners from "./FinancePartners";
-import FloorPlans from "./FloorPlans";
+﻿import BetterBondSection from "./betterbond-section";
+import FloorPlansSection from "./floor-plans-section";
 import { UnitsCarousel } from "./units-carousel";
 
 export default function WiredSections() {
   return (
     <>
       {/* Financing partners */}
-      <FinancePartners />
+      <BetterBondSection />
 
       {/* Floor plans */}
-      <FloorPlans />
+      <FloorPlansSection />
 
       {/* All Units Gallery/Grid */}
       <UnitsCarousel />

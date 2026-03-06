@@ -136,7 +136,7 @@ export function UnitCard({ unit }: UnitCardProps) {
           </div>
           <div className="flex justify-between">
             <span className="text-gray-400">Size:</span>
-            <span className="text-white">{unit.size}mÂ²</span>
+            <span className="text-white">{unit.size}m²</span>
           </div>
         </div>
 
