@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "./ui/button"
 
 export function WhatsAppButton() {
   const phoneNumber = "27724503626" // South African number without + or spaces

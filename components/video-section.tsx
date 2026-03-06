@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronRight } from "@/components/icons"
-import { Button } from "@/components/ui/button"
+import { ChevronLeft, ChevronRight } from "./icons"
+import { Button } from "./ui/button"
 
 const areaImages = [
   {
@@ -219,9 +219,8 @@ export function VideoSection() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "w-8 !bg-black" : "w-2 bg-gray-300 hover:bg-gray-400"
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8 !bg-black" : "w-2 bg-gray-300 hover:bg-gray-400"
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

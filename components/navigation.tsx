@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Settings } from "@/components/icons"
+import { Button } from "./ui/button"
+import { Settings } from "./icons"
 
 export function Navigation() {
   const scrollToSection = (sectionId: string) => {
