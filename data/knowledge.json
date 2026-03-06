@@ -1,0 +1,50 @@
+﻿[
+  {
+    "id": "pricing-range",
+    "question": "What is the price range for units?",
+    "answer": "1-bedroom R1,500,000 to R1,600,000. 2-bedroom R2,100,000. 2-bedroom loft R2,600,000.",
+    "category": "Pricing"
+  },
+  {
+    "id": "availability",
+    "question": "Which units are sold or available?",
+    "answer": "Unit 301 is SOLD. 2-bedroom remaining example: Unit 306 at R2,200,000.",
+    "category": "Availability"
+  },
+  {
+    "id": "deposit",
+    "question": "What deposit is required?",
+    "answer": "R5,000 within 7 days of Offer to Purchase signature. Applies to cash and bond buyers.",
+    "category": "Finance"
+  },
+  {
+    "id": "bond-window",
+    "question": "How long is the bond approval window?",
+    "answer": "30 days from Offer to Purchase signature.",
+    "category": "Finance"
+  },
+  {
+    "id": "transfers",
+    "question": "When do transfers start and when is completion?",
+    "answer": "Transfers start approximately 60 days before completion. Target completion is 01 May 2026.",
+    "category": "Process"
+  },
+  {
+    "id": "viewings",
+    "question": "Are viewings available?",
+    "answer": "No. The development is under construction. We provide renders, floor plans and specifications.",
+    "category": "General"
+  },
+  {
+    "id": "size-policy",
+    "question": "Which size should be quoted?",
+    "answer": "Always quote Total m², which includes interior plus balcony if applicable.",
+    "category": "Policy"
+  },
+  {
+    "id": "location",
+    "question": "Where is Cornerstone on Arum located?",
+    "answer": "154 Arum Road, Table View, Cape Town. Approximately 2.3 km to the beach. Table View MyCiTi stop approximately 200 m.",
+    "category": "Location"
+  }
+]

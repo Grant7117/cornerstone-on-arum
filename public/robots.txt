@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.cornerstoneonarum.co.za
+
+# Sitemaps
+Sitemap: https://www.cornerstoneonarum.co.za/sitemap.xml

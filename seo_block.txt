@@ -1,0 +1,43 @@
+    <Head>
+      <title>Cornerstone on Arum | Boutique Apartments in Table View</title>
+      <meta name="description" content="Premium 1 ^& 2 bedroom apartments from R1.5m. Secure, modern living in Table View. Direct from developer." />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="canonical" href="https://www.cornerstoneonarum.co.za/" />
+ECHO is on.
+      <!-- Open Graph -->
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Cornerstone on Arum ^| Boutique Apartments in Table View" />
+      <meta property="og:description" content="Premium 1 ^& 2 bedroom apartments from R1.5m. Secure, modern living in Table View." />
+      <meta property="og:image" content="https://www.cornerstoneonarum.co.za/og-image.jpg" />
+      <meta property="og:url" content="https://www.cornerstoneonarum.co.za/" />
+ECHO is on.
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Cornerstone on Arum ^| Boutique Apartments in Table View" />
+      <meta name="twitter:description" content="Premium 1 ^& 2 bedroom apartments from R1.5m. Direct from developer." />
+      <meta name="twitter:image" content="https://www.cornerstoneonarum.co.za/og-image.jpg" />
+ECHO is on.
+      <!-- Robots -->
+      <meta name="robots" content="index, follow" />
+ECHO is on.
+      <!-- JSON-LD Structured Data -->
+      <script type="application/ld+json">{"
+        "@context": "https://schema.org",
+        "@type": "ApartmentComplex",
+        "name": "Cornerstone on Arum",
+        "url": "https://www.cornerstoneonarum.co.za",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "154 Arum Road, Table View",
+          "addressLocality": "Cape Town",
+          "addressRegion": "Western Cape",
+          "addressCountry": "South Africa"
+        },
+        "numberOfUnits": 22,
+        "petsAllowed": true,
+        "amenityFeature": [
+          {"@type": "LocationFeatureSpecification", "name": "Secure Parking", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Fibre Ready", "value": true}
+        ]
+      }</script>
+    </Head>

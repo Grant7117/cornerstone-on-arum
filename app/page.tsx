@@ -1,13 +1,143 @@
-import Hero from "./components/Hero";
+﻿import BetterBondSection from "@/components/betterbond-section";
+import FloorPlansSection from "@/components/floor-plans-section";
 
-export default function Home() {
+
+import WiredSections from "@/components/WiredSections";
+
+
+import { Navigation } from "@/components/navigation"
+
+
+import { HeroSection } from "@/components/hero-section"
+
+
+import { VideoSection } from "@/components/video-section"
+
+
+import { FeaturesSection } from "@/components/features-section"
+
+
+import { UnitsCarousel } from "@/components/units-carousel"
+
+
+import { PropertyFeaturesSection } from "@/components/property-features-section"
+
+
+
+
+import { ContactLocationSection } from "@/components/contact-location-section"
+
+
+// import { ChatWidget } from "@/components/chat-widget"
+
+
+import { WhatsAppButton } from "@/components/whatsapp-button"
+
+
+import { Footer } from "@/components/footer"
+
+
+
+
+
+export default function HomePage() {
+
+
   return (
-    <main className="min-h-screen">
-      <div className="mx-auto max-w-5xl py-10 px-6">
-        <h1 className="text-4xl md:text-5xl font-bold">Cornerstone on Arum</h1>
-        <p className="mt-4 text-lg text-gray-600">Landing page is up.</p>
+
+
+    <main className="min-h-screen bg-background relative">
+
+
+      <div className="fixed inset-0 z-0 pointer-events-none">
+
+
+        <div
+
+
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+
+
+          style={{
+
+
+            backgroundImage: "url(/images/cornerstone-hero.jpg)",
+
+
+            opacity: 0.15,
+
+
+          }}
+
+
+        />
+
+
       </div>
-      <Hero />
+
+
+
+
+
+      {/* Content layer - all sections maintain original styling */}
+
+
+      <div className="relative z-10">
+
+
+        <Navigation />
+
+
+        <HeroSection />
+
+
+        <VideoSection />
+
+
+        <FeaturesSection />     
+
+
+        <PropertyFeaturesSection />
+
+
+        <WiredSections />
+
+
+        <ContactLocationSection />
+
+
+        <WhatsAppButton />
+
+
+        {/* <ChatWidget /> */}
+
+
+        <Footer />
+
+
+      </div>
+
+
     </main>
-  );
+
+
+  )
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
