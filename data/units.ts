@@ -33,14 +33,9 @@ export const units: Unit[] = [
 
     // Third Floor / Loft
     { unitNo: "CS301", floor: "Third", bedrooms: 2, bathrooms: 1, size: 67, color: "#8b5cf6", status: "Sold", price: "R2,300,000" },
-    {
-        unitNo: "CS302", floor: "Third+Loft", bedrooms: 2, bathrooms: 2, size: 77, color: "#f59e0b", status: "Under Offer", price: "R2,725,000"
-    },
-    {
-        unitNo: "CS303", floor: "Third+Loft", bedrooms: 2, bathrooms: 2, size: 77, color: "#f59e0b", status: "Under Offer", price: "R2,725,000"
-    },
-    {
-        unitNo: "CS304", floor: "Third+Loft", bedrooms: 2, bathrooms: 2, size: 77, color: "#f59e0b", status: "Under Offer", price: "R2,725,000",
+    { unitNo: "CS302", floor: "Third+Loft", bedrooms: 2, bathrooms: 2, size: 77, color: "#f59e0b", status: "Under Offer", price: "R2,725,000" },
+    { unitNo: "CS303", floor: "Third+Loft", bedrooms: 2, bathrooms: 2, size: 77, color: "#f59e0b", status: "Under Offer", price: "R2,725,000" },
+    { unitNo: "CS304", floor: "Third+Loft", bedrooms: 2, bathrooms: 2, size: 77, color: "#f59e0b", status: "Under Offer", price: "R2,725,000",
         images: [
             "/images/units/304-1.png",
             "/images/units/304-2.png",
@@ -49,8 +44,7 @@ export const units: Unit[] = [
             "/images/units/304-5.png",
         ]
     },
-    {
-        unitNo: "CS305", floor: "Third+Loft", bedrooms: 2, bathrooms: 2, size: 77, color: "#f59e0b", status: "Sold", price: "R2,725,000",
+    { unitNo: "CS305", floor: "Third+Loft", bedrooms: 2, bathrooms: 2, size: 77, color: "#f59e0b", status: "Sold", price: "R2,725,000",
         images: [
             "/images/units/305-1.png",
             "/images/units/305-2.png",
