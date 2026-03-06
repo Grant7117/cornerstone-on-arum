@@ -234,7 +234,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                 <Send className="h-4 w-4" />
               </Button>
             </form>
-            <div className="text-xs text-muted-foreground mt-2 text-center">Powered by AI â€¢ Cornerstone on Arum</div>
+            <div className="text-xs text-muted-foreground mt-2 text-center">Powered by AI • Cornerstone on Arum</div>
           </div>
         </>
       )}

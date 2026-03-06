@@ -8,10 +8,13 @@ import { PropertyFeaturesSection } from "../components/property-features-section
 import WiredSections from "../components/WiredSections"
 import { ContactLocationSection } from "../components/contact-location-section"
 import { WhatsAppButton } from "../components/whatsapp-button"
-import ChatWidget from "../components/ChatWidget"
+import { ChatInterface } from "../components/chat-interface"
 import { Footer } from "../components/footer"
+import { useState } from "react"
 
 export default function HomePage() {
+  const [isChatOpen, setIsChatOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-background relative">
       <div className="fixed inset-0 z-0 pointer-events-none">
@@ -33,7 +36,7 @@ export default function HomePage() {
         <WiredSections />
         <ContactLocationSection />
         <WhatsAppButton />
-        <ChatWidget />
+        <ChatInterface isOpen={isChatOpen} onToggle={() => setIsChatOpen(!isChatOpen)} />
         <Footer />
       </div>
     </main>
