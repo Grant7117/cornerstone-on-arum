@@ -1,5 +1,5 @@
-import { Shield, Droplet, Zap, Flame, Home, Car } from "./icons"
-import { Card } from "./ui/card"
+import { Shield, Droplet, Zap, Flame, Home, Car } from "@/components/icons"
+import { Card } from "@/components/ui/card"
 
 const features = [
   {

@@ -21,26 +21,26 @@ let kbEmbeddings: number[][] | null = null;
 function instantAnswer(q: string): string | null {
   const s = q.toLowerCase().replace(/\s+/g, " ").trim();
 
-  const price = "Prices have recently been adjusted to reflect current market value. Unit [Unit No] is now listed at [Price]. Overall, 1-bedroom units are R1,700,000, and larger 2-bedroom/lofts are R2,300,000 to R2,725,000. Tap Enquire Now or message Grant on 072 450 3626.";
-  if (/(price|pricing|cost|how much|1 ?bed|one bedroom|2 ?bed|two bedroom)/.test(s)) return price;
+  const pricingDetails = "Our current pricing is: 1-bedroom units at R1,700,000; 2-bedroom units at R2,300,000; and 2-bedroom lofts at R2,725,000. All prices include transfer duty. Please contact Grant at 072 450 3626 to secure your preferred unit.";
+  if (/(price|pricing|cost|how much|1 ?bed|one bedroom|2 ?bed|two bedroom)/.test(s)) return pricingDetails;
 
   if (/(deposit|reservation)/.test(s))
-    return "The deposit is R5 000 within 7 days of Offer to Purchase signature. Applies to cash and bond buyers. Tap Enquire Now or message Grant on 072 450 3626.";
+    return "The reservation deposit is R5,000, payable within 7 days of signing the Offer to Purchase. This applies to both cash and bond-financed purchases. For banking details, please message Grant at 072 450 3626.";
+
+  if (/(72[ -]?hr|clause|suspensive|backup offer)/.test(s))
+    return "Several units have accepted offers that are currently suspensive. Under our 72-hour clause, the developer can accept a new, unconditional offer. This gives the original buyer 72 hours to meet the new terms or the unit becomes available to you immediately. Please message Grant at 072 450 3626 for the current list of clause-active units.";
 
   if (/(transfer|completion|handover|occupation)/.test(s))
-    return "Transfers start about 60 days before completion. Target completion is 01 May 2026. Tap Enquire Now or message Grant on 072 450 3626.";
+    return "Target completion is 01 May 2026. Transfers will be initiated approximately 60 days prior. For a detailed timeline, please message Grant at 072 450 3626.";
 
   if (/(view|showhouse|show house|visit)/.test(s))
-    return "Viewings are not available while under construction. We provide renders, floor plans and specifications. For details message Grant on 072 450 3626.";
+    return "As the site is actively under construction, physical viewings are restricted for safety. We offer high-fidelity 3D renders and detailed specifications to assist your decision. Please message Grant at 072 450 3626 for more information.";
 
   if (/(availability|available|stock|units? available|sold)/.test(s))
-    return "Most units are sold out, but we have a unique opportunity on a few specific units (e.g., 101, 102, 302). There is currently an accepted offer, but it is still suspensive. If you submit a clean offer now, there is a very strong chance of securing the property via the 72-hour clause. For the latest live stock, message Grant on 072 450 3626.";
+    return "The development is nearing sell-out. Currently, Units 101, 102, 103, 104, 106, 108, 302, 303, and 304 are available under the 72-hour clause logic. All other units are officially SOLD. Contact Grant at 072 450 3626 immediately to verify latest status.";
 
   if (/(bond|home loan|finance|betterbond)/.test(s))
-    return "BetterBond can assist with up to 100 percent finance. Use the digital application link above or message Grant on 072 450 3626.";
-
-  if (/(72-hour|72hr|clause|suspensive)/.test(s))
-    return "These units have accepted offers that are currently suspensive. Under the 72-hour clause, the developer can accept a new, unconditional/clean offer. This gives the original buyer 72 hours to meet the new terms or lose the unit. It's a high-demand opportunity!";
+    return "Cornerstone has partnered with BetterBond to provide up to 100% financing for qualified buyers. You can start your pre-approval via the link on our main page or message Grant at 072 450 3626.";
 
   return null;
 }
@@ -74,12 +74,11 @@ export async function POST(req: Request) {
 
     const context = ranked.slice(0, 6).map(s => `• ${s.k.question}\n  ${s.k.answer}`).join("\n");
     const system = [
-      "You are the Cornerstone on Arum sales assistant.",
-      "Posture: Confident, exclusive, and helpful (High-Demand Urgency).",
-      "Inventory Status: All units except the 72hr selection are officially SOLD.",
-      "Currency is South African Rand, ZAR.",
-      "Use a formal, concise style. Do not abbreviate.",
-      "If uncertain advise the user to contact Grant at 072 450 3626."
+      "You are the senior sales assistant for Cornerstone on Arum. Your tone is confident, exclusive, and highly helpful.",
+      "The development is almost entirely sold out, but a select few premium units are available under the 72-hour clause logic.",
+      "Explain the 72-hour clause as an opportunity for unconditional buyers to secure a unit currently under a suspensive offer.",
+      "Use South African Rand (R / ZAR) for all pricing. Be precise and professional.",
+      "If you cannot answer a specific detail, immediately direct the user to Grant at 072 450 3626 for an executive walkthrough."
     ].join("\n");
 
     const prompt = [

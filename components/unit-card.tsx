@@ -68,8 +68,9 @@ export function UnitCard({ unit }: UnitCardProps) {
   }
 
   return (
-    <div className="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-slate-700 max-w-[340px] mx-auto transition-transform hover:scale-[1.02]">
+    <div className="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-slate-700 max-w-[340px] mx-auto transition-all hover:shadow-2xl hover:border-slate-600">
       <div className="relative h-48 bg-gray-900">
+        {/* Color Indicator */}
         <div
           className="absolute top-3 left-3 w-5 h-5 rounded-full border-2 border-white z-10 shadow-md"
           style={{ backgroundColor: unit.color }}
@@ -80,7 +81,7 @@ export function UnitCard({ unit }: UnitCardProps) {
             <img
               src={sortedImages[currentImageIndex] || "/placeholder.svg"}
               alt={`Unit ${unit.unitNo} - Image ${currentImageIndex + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-opacity duration-300"
             />
 
             {sortedImages.length > 1 && (
@@ -88,7 +89,7 @@ export function UnitCard({ unit }: UnitCardProps) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-0 h-7 w-7 rounded-full"
+                  className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-0 h-8 w-8 rounded-full"
                   onClick={prevImage}
                 >
                   <ChevronLeft />
@@ -96,7 +97,7 @@ export function UnitCard({ unit }: UnitCardProps) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-0 h-7 w-7 rounded-full"
+                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/60 text-white p-0 h-8 w-8 rounded-full"
                   onClick={nextImage}
                 >
                   <ChevronRight />
@@ -115,21 +116,29 @@ export function UnitCard({ unit }: UnitCardProps) {
             )}
           </>
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs">Unit Interior Image</div>
+          <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-xs italic">
+            Interior renders coming soon
+          </div>
         )}
       </div>
 
       <div className="p-4">
-        <div className="flex justify-between items-start gap-2 mb-3">
+        <div className="flex justify-between items-start gap-2 mb-4">
           <div className="min-w-0">
-            <h3 className="text-lg font-bold text-white truncate">Unit {unit.unitNo.replace("CS", "")}</h3>
-            <p className="text-xs text-gray-400 font-medium truncate">{unit.floor} Floor</p>
+            <h3 className="text-xl font-black text-white truncate tracking-tight">
+              Unit {unit.unitNo.replace("CS", "")}
+            </h3>
+            <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">
+              {unit.floor} Floor
+            </p>
           </div>
-          <div className={`shrink-0 px-2 py-1 rounded-md text-[9px] font-black tracking-tighter uppercase text-white ${getStatusColor(unit.status)} shadow-inner flex flex-col items-center justify-center leading-none text-center min-w-[70px] h-[32px]`}>
+
+          {/* Compact multi-line Status Badge */}
+          <div className={`shrink-0 px-2 py-1 rounded-md text-[9px] font-black tracking-tighter uppercase text-white ${getStatusColor(unit.status)} shadow-lg flex flex-col items-center justify-center leading-none text-center min-w-[75px] h-[34px]`}>
             {unit.status.includes("-") ? (
               <>
-                <span>{unit.status.split("-")[0].trim()}</span>
-                <span className="text-[7px] mt-0.5 opacity-90">{unit.status.split("-")[1].trim()}</span>
+                <span className="mb-0.5">{unit.status.split("-")[0].trim()}</span>
+                <span className="text-[7px] opacity-80 font-bold whitespace-nowrap">{unit.status.split("-")[1].trim()}</span>
               </>
             ) : (
               <span>{unit.status}</span>
@@ -137,29 +146,28 @@ export function UnitCard({ unit }: UnitCardProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-1 pt-1 border-t border-slate-700/50">
-          <div className="flex flex-col">
-            <span className="text-[10px] text-gray-500 uppercase font-bold tracking-tight">Beds</span>
-            <span className="text-white font-semibold">{unit.bedrooms}</span>
+        <div className="grid grid-cols-3 gap-2 py-3 border-y border-slate-700/50">
+          <div className="text-center">
+            <span className="block text-[10px] text-gray-400 uppercase font-black tracking-widest mb-1">Beds</span>
+            <span className="text-lg font-black text-white leading-none">{unit.bedrooms}</span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-[10px] text-gray-400 uppercase font-bold tracking-tight">Baths</span>
-            <span className="text-white font-semibold">{unit.bathrooms}</span>
+          <div className="text-center border-x border-slate-700/50">
+            <span className="block text-[10px] text-gray-400 uppercase font-black tracking-widest mb-1">Baths</span>
+            <span className="text-lg font-black text-white leading-none">{unit.bathrooms}</span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-[10px] text-gray-400 uppercase font-bold tracking-tight">Size</span>
-            <span className="text-white font-semibold">{unit.size}m²</span>
+          <div className="text-center">
+            <span className="block text-[10px] text-gray-400 uppercase font-black tracking-widest mb-1">Size</span>
+            <span className="text-lg font-black text-white leading-none">{unit.size}m²</span>
           </div>
         </div>
 
         <div className="mt-4 flex items-center justify-between">
-          <p className="text-base font-black text-white tracking-tight">{unit.price}</p>
-          <Button variant="ghost" size="sm" className="h-7 text-[10px] uppercase font-bold text-blue-400 hover:text-blue-300 p-0">
-            Details
+          <p className="text-xl font-black text-white tracking-tighter">{unit.price}</p>
+          <Button variant="link" size="sm" className="h-auto p-0 text-[11px] font-black uppercase text-blue-400 hover:text-blue-300 tracking-widest">
+            Enquire Now
           </Button>
         </div>
       </div>
     </div>
   )
 }
-

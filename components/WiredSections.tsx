@@ -1,6 +1,6 @@
-﻿import FinancePartners from "./FinancePartners";
-import FloorPlans from "./FloorPlans";
-import { UnitsCarousel } from "./units-carousel";
+﻿import FinancePartners from "@/components/FinancePartners";
+import FloorPlans from "@/components/FloorPlans";
+import { UnitsCarousel } from "@/components/units-carousel";
 
 export default function WiredSections() {
   return (
