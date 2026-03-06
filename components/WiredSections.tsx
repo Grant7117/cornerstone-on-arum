@@ -1,5 +1,5 @@
 ﻿import BetterBondSection from "./betterbond-section";
-import FloorPlansSection from "./floor-plans-section";
+import FloorPlans from "./FloorPlans";
 import { UnitsCarousel } from "./units-carousel";
 
 export default function WiredSections() {
@@ -9,7 +9,7 @@ export default function WiredSections() {
       <BetterBondSection />
 
       {/* Floor plans */}
-      <FloorPlansSection />
+      <FloorPlans />
 
       {/* All Units Gallery/Grid */}
       <UnitsCarousel />
