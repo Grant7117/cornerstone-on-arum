@@ -4,10 +4,10 @@ import type React from "react"
 
 import { useChat } from "@ai-sdk/react"
 import { DefaultChatTransport } from "ai"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { Button } from "./ui/button"
+import { Card } from "./ui/card"
+import { Input } from "./ui/input"
+import { ScrollArea } from "./ui/scroll-area"
 import { Send, MessageCircle, X, Minimize2, Maximize2, Home, Calendar, Info, MapPin } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
@@ -72,9 +72,8 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
 
   return (
     <Card
-      className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
-        isMinimized ? "h-16 w-80" : "h-[700px] w-96"
-      } shadow-2xl border-0 bg-card animate-slide-up`}
+      className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${isMinimized ? "h-16 w-80" : "h-[700px] w-96"
+        } shadow-2xl border-0 bg-card animate-slide-up`}
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg">
@@ -176,9 +175,8 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   className={`flex ${message.role === "user" ? "justify-end" : "justify-start"} animate-fade-in`}
                 >
                   <div
-                    className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
-                      message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
-                    }`}
+                    className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
+                      }`}
                   >
                     {message.parts.map((part, index) => {
                       if (part.type === "text") {
