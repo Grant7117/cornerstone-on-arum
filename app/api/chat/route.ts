@@ -2,23 +2,16 @@
 import OpenAI from "openai";
 import knowledge from "../../../data/knowledge";
 
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
 const FALLBACK = "I could not reach the assistant right now. For immediate help please contact Grant at 072 450 3626.";
 const LOW_CONF = "I want to give you an accurate answer. Please contact Grant at 072 450 3626 for the latest details.";
-
-// Lazy initialization of OpenAI
-function getOpenAIClient() {
-  if (!process.env.OPENAI_API_KEY) {
-    throw new Error("OPENAI_API_KEY missing");
-  }
-  return new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-}
 
 // simple helpers
 function dot(a: number[], b: number[]) { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; }
 function norm(a: number[]) { return Math.sqrt(dot(a, a)); }
 function cosine(a: number[], b: number[]) { return dot(a, b) / (norm(a) * norm(b) + 1e-12); }
 async function embed(texts: string[]) {
-  const openai = getOpenAIClient();
   const r = await openai.embeddings.create({ model: "text-embedding-3-small", input: texts });
   return r.data.map(d => d.embedding as number[]);
 }
@@ -51,6 +44,8 @@ function instantAnswer(q: string): string | null {
 
 export async function POST(req: Request) {
   try {
+    if (!process.env.OPENAI_API_KEY) return NextResponse.json({ error: "OPENAI_API_KEY missing" }, { status: 500 });
+
     const body = await req.json().catch(() => ({}));
     const user = String(body.message || "").trim();
     if (!user) return NextResponse.json({ reply: "Please enter a question about pricing, availability, viewings or finance." });
@@ -92,7 +87,6 @@ export async function POST(req: Request) {
       "Answer in 4 to 7 concise sentences in ZAR. End with one call to action such as Enquire Now or message Grant on 072 450 3626."
     ].join("\n");
 
-    const openai = getOpenAIClient();
     const out = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       temperature: 0.3,
@@ -101,10 +95,7 @@ export async function POST(req: Request) {
 
     const reply = out.choices?.[0]?.message?.content?.trim() || LOW_CONF;
     return NextResponse.json({ reply });
-  } catch (err: any) {
-    if (err.message === "OPENAI_API_KEY missing") {
-      return NextResponse.json({ error: "OPENAI_API_KEY missing" }, { status: 500 });
-    }
+  } catch {
     return NextResponse.json({ reply: FALLBACK }, { status: 200 });
   }
 }
