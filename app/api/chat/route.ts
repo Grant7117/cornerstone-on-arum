@@ -21,26 +21,26 @@ let kbEmbeddings: number[][] | null = null;
 function instantAnswer(q: string): string | null {
   const s = q.toLowerCase().replace(/\s+/g, " ").trim();
 
-  const pricingDetails = "Our current pricing is: 1-bedroom units at R1,700,000; 2-bedroom units at R2,300,000; and 2-bedroom lofts at R2,725,000. All prices include transfer duty. Please contact Grant at 072 450 3626 to secure your preferred unit.";
+  const pricingDetails = "Even with recent adjustments, value remains exceptional. Our current prices are: 1-bedroom units at R1,700,000; 2-bedroom units at R2,300,000; and 2-bedroom lofts at R2,725,000. These units are moving fast, particularly with the 72-hour clause logic.";
   if (/(price|pricing|cost|how much|1 ?bed|one bedroom|2 ?bed|two bedroom)/.test(s)) return pricingDetails;
 
   if (/(deposit|reservation)/.test(s))
-    return "The reservation deposit is R5,000, payable within 7 days of signing the Offer to Purchase. This applies to both cash and bond-financed purchases. For banking details, please message Grant at 072 450 3626.";
+    return "The reservation deposit is R5,000, payable within 7 days of signing. This is critical to secure your position, especially when targeting units under the 72-hour clause.";
 
-  if (/(72[ -]?hr|clause|suspensive|backup offer)/.test(s))
-    return "Several units have accepted offers that are currently suspensive. Under our 72-hour clause, the developer can accept a new, unconditional offer. This gives the original buyer 72 hours to meet the new terms or the unit becomes available to you immediately. Please message Grant at 072 450 3626 for the current list of clause-active units.";
+  if (/(72[ -]?hr|clause|suspensive|backup offer|disrupt)/.test(s))
+    return "Technically, the building is sold out. However, several units are marked with a '72-hour clause'. This means there is an accepted offer that is still suspensive. If you are in a position to put down a clean, unconditional offer, you have a very real chance of bumping the current buyer and securing the unit immediately.";
 
   if (/(transfer|completion|handover|occupation)/.test(s))
-    return "Target completion is 01 May 2026. Transfers will be initiated approximately 60 days prior. For a detailed timeline, please message Grant at 072 450 3626.";
+    return "Target completion is 01 May 2026. For those securing units via the 72-hour clause, the timeline remains precise. Contact Grant at 072 450 3626 for a full status update.";
 
   if (/(view|showhouse|show house|visit)/.test(s))
-    return "As the site is actively under construction, physical viewings are restricted for safety. We offer high-fidelity 3D renders and detailed specifications to assist your decision. Please message Grant at 072 450 3626 for more information.";
+    return "Physical viewings are not possible on the active construction site. However, we provide high-fidelity renders and precise floor plans for all 72-hour clause units to facilitate immediate decision-making.";
 
   if (/(availability|available|stock|units? available|sold)/.test(s))
-    return "The development is nearing sell-out. Currently, Units 101, 102, 103, 104, 106, 108, 302, 303, and 304 are available under the 72-hour clause logic. All other units are officially SOLD. Contact Grant at 072 450 3626 immediately to verify latest status.";
+    return "Technically, the development is sold out. However, Units 101, 102, 103, 104, 106, 108, 302, 303, and 304 are currently under suspensive offers. This creates a rare '72-hour clause' opportunity for you to step in with a clean offer and secure one of these final units.";
 
   if (/(bond|home loan|finance|betterbond)/.test(s))
-    return "Cornerstone has partnered with BetterBond to provide up to 100% financing for qualified buyers. You can start your pre-approval via the link on our main page or message Grant at 072 450 3626.";
+    return "Cornerstone on Arum is partnered with BetterBond to ensure up to 100% financing for qualified buyers. This speed of finance is a strategic advantage when exercising the 72-hour clause.";
 
   return null;
 }

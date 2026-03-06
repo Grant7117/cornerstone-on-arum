@@ -45,7 +45,9 @@ export function UnitCard({ unit }: UnitCardProps) {
       case "Available":
         return "bg-green-500"
       case "Sold":
+      case "Sold (Red)":
         return "bg-red-500"
+      case "SOLD - 72hr clause":
       case "Offers Welcome - 72hr Clause":
         return "bg-orange-500"
       case "Prequalified":
@@ -135,13 +137,13 @@ export function UnitCard({ unit }: UnitCardProps) {
 
           {/* Compact multi-line Status Badge */}
           <div className={`shrink-0 px-2 py-1 rounded-md text-[9px] font-black tracking-tighter uppercase text-white ${getStatusColor(unit.status)} shadow-lg flex flex-col items-center justify-center leading-none text-center min-w-[75px] h-[34px]`}>
-            {unit.status.includes("-") ? (
+            {unit.status === "SOLD - 72hr clause" ? (
               <>
-                <span className="mb-0.5">{unit.status.split("-")[0].trim()}</span>
-                <span className="text-[7px] opacity-80 font-bold whitespace-nowrap">{unit.status.split("-")[1].trim()}</span>
+                <span className="mb-0.5">SOLD</span>
+                <span className="text-[7px] opacity-90 font-bold whitespace-nowrap">72hr clause</span>
               </>
             ) : (
-              <span>{unit.status}</span>
+              <span className="font-black">{unit.status}</span>
             )}
           </div>
         </div>
