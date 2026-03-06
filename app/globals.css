@@ -1,7 +1,13 @@
-﻿@tailwind base;
-@tailwind components;
-@tailwind utilities;
+﻿@import "tailwindcss";
 
 /* keep this file minimal for now */
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;height:100%;}
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
