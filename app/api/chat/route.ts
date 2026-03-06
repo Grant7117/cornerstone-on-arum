@@ -21,26 +21,23 @@ let kbEmbeddings: number[][] | null = null;
 function instantAnswer(q: string): string | null {
   const s = q.toLowerCase().replace(/\s+/g, " ").trim();
 
-  const pricingDetails = "Even with recent adjustments, value remains exceptional. Our current prices are: 1-bedroom units at R1,700,000; 2-bedroom units at R2,300,000; and 2-bedroom lofts at R2,725,000. These units are moving fast, particularly with the 72-hour clause logic.";
-  if (/(price|pricing|cost|how much|1 ?bed|one bedroom|2 ?bed|two bedroom)/.test(s)) return pricingDetails;
+  const price = "1 bedroom R1 500 000 to R1 600 000. 2 bedroom R2 100 000. 2 bedroom loft R2 600 000. Tap Enquire Now or message Grant on 072 450 3626.";
+  if (/(price|pricing|cost|how much|1 ?bed|one bedroom|2 ?bed|two bedroom)/.test(s)) return price;
 
   if (/(deposit|reservation)/.test(s))
-    return "The reservation deposit is R5,000, payable within 7 days of signing. This is critical to secure your position, especially when targeting units under the 72-hour clause.";
-
-  if (/(72[ -]?hr|clause|suspensive|backup offer|disrupt)/.test(s))
-    return "Technically, the building is sold out. However, several units are marked with a '72-hour clause'. This means there is an accepted offer that is still suspensive. If you are in a position to put down a clean, unconditional offer, you have a very real chance of bumping the current buyer and securing the unit immediately.";
+    return "The deposit is R5 000 within 7 days of Offer to Purchase signature. Applies to cash and bond buyers. Tap Enquire Now or message Grant on 072 450 3626.";
 
   if (/(transfer|completion|handover|occupation)/.test(s))
-    return "Target completion is 01 May 2026. For those securing units via the 72-hour clause, the timeline remains precise. Contact Grant at 072 450 3626 for a full status update.";
+    return "Transfers start about 60 days before completion. Target completion is 01 May 2026. Tap Enquire Now or message Grant on 072 450 3626.";
 
   if (/(view|showhouse|show house|visit)/.test(s))
-    return "Physical viewings are not possible on the active construction site. However, we provide high-fidelity renders and precise floor plans for all 72-hour clause units to facilitate immediate decision-making.";
+    return "Viewings are not available while under construction. We provide renders, floor plans and specifications. For details message Grant on 072 450 3626.";
 
   if (/(availability|available|stock|units? available|sold)/.test(s))
-    return "Technically, the development is sold out. However, Units 101, 102, 103, 104, 106, 108, 302, 303, and 304 are currently under suspensive offers. This creates a rare '72-hour clause' opportunity for you to step in with a clean offer and secure one of these final units.";
+    return "Unit 301 is SOLD. Example available 2 bedroom is Unit 306 at R2 200 000. For the latest live stock, message Grant on 072 450 3626.";
 
   if (/(bond|home loan|finance|betterbond)/.test(s))
-    return "Cornerstone on Arum is partnered with BetterBond to ensure up to 100% financing for qualified buyers. This speed of finance is a strategic advantage when exercising the 72-hour clause.";
+    return "BetterBond can assist with up to 100 percent finance. Use the digital application link above or message Grant on 072 450 3626.";
 
   return null;
 }
@@ -74,11 +71,10 @@ export async function POST(req: Request) {
 
     const context = ranked.slice(0, 6).map(s => `• ${s.k.question}\n  ${s.k.answer}`).join("\n");
     const system = [
-      "You are the senior sales assistant for Cornerstone on Arum. Your tone is confident, exclusive, and highly helpful.",
-      "The development is almost entirely sold out, but a select few premium units are available under the 72-hour clause logic.",
-      "Explain the 72-hour clause as an opportunity for unconditional buyers to secure a unit currently under a suspensive offer.",
-      "Use South African Rand (R / ZAR) for all pricing. Be precise and professional.",
-      "If you cannot answer a specific detail, immediately direct the user to Grant at 072 450 3626 for an executive walkthrough."
+      "You are the Cornerstone on Arum sales assistant.",
+      "Currency is South African Rand, ZAR.",
+      "Use a formal, concise style. Do not abbreviate.",
+      "If uncertain advise the user to contact Grant at 072 450 3626."
     ].join("\n");
 
     const prompt = [
