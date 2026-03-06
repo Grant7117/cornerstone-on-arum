@@ -34,6 +34,12 @@ const ChevronRight = () => (
 export function UnitCard({ unit }: UnitCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  // Move floorplan images to the end
+  const sortedImages = unit.images ? [
+    ...unit.images.filter(img => !img.toLowerCase().includes('floorplan')),
+    ...unit.images.filter(img => img.toLowerCase().includes('floorplan'))
+  ] : []
+
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Available":
@@ -50,39 +56,39 @@ export function UnitCard({ unit }: UnitCardProps) {
   }
 
   const nextImage = () => {
-    if (unit.images && (unit.images?.length ?? 1) > 1) {
-      setCurrentImageIndex((prev) => (prev + 1) % (unit.images?.length ?? 1))
+    if (sortedImages.length > 1) {
+      setCurrentImageIndex((prev) => (prev + 1) % sortedImages.length)
     }
   }
 
   const prevImage = () => {
-    if (unit.images && (unit.images?.length ?? 1) > 1) {
-      setCurrentImageIndex((prev) => (prev - 1 + (unit.images?.length ?? 1)) % (unit.images?.length ?? 1))
+    if (sortedImages.length > 1) {
+      setCurrentImageIndex((prev) => (prev - 1 + sortedImages.length) % sortedImages.length)
     }
   }
 
   return (
-    <div className="bg-slate-800 rounded-lg overflow-hidden shadow-lg">
-      <div className="relative h-48 bg-gray-700">
+    <div className="bg-slate-800 rounded-xl overflow-hidden shadow-lg border border-slate-700 max-w-[340px] mx-auto transition-transform hover:scale-[1.02]">
+      <div className="relative h-48 bg-gray-900">
         <div
-          className="absolute top-4 left-4 w-6 h-6 rounded-full border-2 border-white z-10"
+          className="absolute top-3 left-3 w-5 h-5 rounded-full border-2 border-white z-10 shadow-md"
           style={{ backgroundColor: unit.color }}
         ></div>
 
-        {unit.images && (unit.images?.length ?? 1) > 0 ? (
+        {sortedImages.length > 0 ? (
           <>
             <img
-              src={unit.images[currentImageIndex] || "/placeholder.svg"}
+              src={sortedImages[currentImageIndex] || "/placeholder.svg"}
               alt={`Unit ${unit.unitNo} - Image ${currentImageIndex + 1}`}
               className="w-full h-full object-cover"
             />
 
-            {(unit.images?.length ?? 1) > 1 && (
+            {sortedImages.length > 1 && (
               <>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1 h-8 w-8"
+                  className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-0 h-7 w-7 rounded-full"
                   onClick={prevImage}
                 >
                   <ChevronLeft />
@@ -90,17 +96,17 @@ export function UnitCard({ unit }: UnitCardProps) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1 h-8 w-8"
+                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-0 h-7 w-7 rounded-full"
                   onClick={nextImage}
                 >
                   <ChevronRight />
                 </Button>
 
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
-                  {(unit.images ?? []).map((_, index) => (
+                  {sortedImages.map((_, index) => (
                     <button
                       key={index}
-                      className={`w-2 h-2 rounded-full ${index === currentImageIndex ? "bg-white" : "bg-white/50"}`}
+                      className={`w-1.5 h-1.5 rounded-full transition-colors ${index === currentImageIndex ? "bg-white" : "bg-white/40"}`}
                       onClick={() => setCurrentImageIndex(index)}
                     />
                   ))}
@@ -109,39 +115,48 @@ export function UnitCard({ unit }: UnitCardProps) {
             )}
           </>
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400">Unit Interior Image</div>
+          <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-xs">Unit Interior Image</div>
         )}
       </div>
 
-      {/* Unit Details */}
       <div className="p-4">
-        <div className="flex justify-between items-start mb-4">
-          <div>
-            <h3 className="text-xl font-semibold text-white">Unit {unit.unitNo.replace("CS", "")}</h3>
-            <p className="text-gray-400">{unit.floor} Floor</p>
+        <div className="flex justify-between items-start gap-2 mb-3">
+          <div className="min-w-0">
+            <h3 className="text-lg font-bold text-white truncate">Unit {unit.unitNo.replace("CS", "")}</h3>
+            <p className="text-xs text-gray-400 font-medium truncate">{unit.floor} Floor</p>
           </div>
-          <span className={`px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-white ${getStatusColor(unit.status)} shadow-sm`}>
-            {unit.status}
-          </span>
-        </div>
-
-        <div className="space-y-2 text-sm">
-          <div className="flex justify-between">
-            <span className="text-gray-400">Bedrooms:</span>
-            <span className="text-white">{unit.bedrooms}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">Bathrooms:</span>
-            <span className="text-white">{unit.bathrooms}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-gray-400">Size:</span>
-            <span className="text-white">{unit.size}m²</span>
+          <div className={`shrink-0 px-2 py-1 rounded-md text-[9px] font-black tracking-tighter uppercase text-white ${getStatusColor(unit.status)} shadow-inner flex flex-col items-center justify-center leading-none text-center min-w-[70px] h-[32px]`}>
+            {unit.status.includes("-") ? (
+              <>
+                <span>{unit.status.split("-")[0].trim()}</span>
+                <span className="text-[7px] mt-0.5 opacity-90">{unit.status.split("-")[1].trim()}</span>
+              </>
+            ) : (
+              <span>{unit.status}</span>
+            )}
           </div>
         </div>
 
-        <div className="mt-4 pt-4 border-t border-gray-600">
-          <p className="text-lg font-semibold text-white">{unit.price}</p>
+        <div className="grid grid-cols-3 gap-1 pt-1 border-t border-slate-700/50">
+          <div className="flex flex-col">
+            <span className="text-[10px] text-gray-500 uppercase font-bold tracking-tight">Beds</span>
+            <span className="text-white font-semibold">{unit.bedrooms}</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-[10px] text-gray-400 uppercase font-bold tracking-tight">Baths</span>
+            <span className="text-white font-semibold">{unit.bathrooms}</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-[10px] text-gray-400 uppercase font-bold tracking-tight">Size</span>
+            <span className="text-white font-semibold">{unit.size}m²</span>
+          </div>
+        </div>
+
+        <div className="mt-4 flex items-center justify-between">
+          <p className="text-base font-black text-white tracking-tight">{unit.price}</p>
+          <Button variant="ghost" size="sm" className="h-7 text-[10px] uppercase font-bold text-blue-400 hover:text-blue-300 p-0">
+            Details
+          </Button>
         </div>
       </div>
     </div>

@@ -7,56 +7,62 @@ import { useState, useRef, useEffect } from "react";
 import { Button } from "./ui/button";
 
 export function UnitsCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const nextUnit = () => {
-    setCurrentIndex((prev) => (prev + 1) % units.length);
-  };
-
-  const prevUnit = () => {
-    setCurrentIndex((prev) => (prev - 1 + units.length) % units.length);
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
   };
 
   return (
-    <section id="properties" className="bg-white py-16 px-4">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="mb-8 text-center text-3xl font-bold text-gray-800">
+    <section id="properties" className="bg-slate-50 py-16 px-4">
+      <div className="mx-auto max-w-7xl relative">
+        <h2 className="mb-12 text-center text-4xl font-black text-slate-900 tracking-tight">
           Available Units
         </h2>
 
-        {/* Carousel for Mobile/Tablet, Grid for Desktop */}
-        <div className="relative group">
+        <div className="relative group px-4 md:px-12">
+          {/* Native scroll container with snap */}
           <div
-            className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto md:overflow-x-visible pb-8 scrollbar-hide snap-x snap-mandatory"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto pb-8 scrollbar-hide snap-x snap-mandatory"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', scrollBehavior: 'smooth' }}
           >
             {units.map((unit) => (
-              <div key={unit.unitNo} className="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center">
+              <div key={unit.unitNo} className="flex-none w-[280px] sm:w-[320px] md:w-[340px] snap-center">
                 <UnitCard unit={unit} />
               </div>
             ))}
           </div>
 
-          {/* Navigation for Mobile Carousel */}
-          <div className="flex md:hidden justify-center gap-4 mt-4">
-            <Button variant="outline" size="icon" onClick={() => {
-              const el = document.querySelector('.overflow-x-auto');
-              el?.scrollBy({ left: -300, behavior: 'smooth' });
-            }}>
-              <ChevronLeft className="h-4 w-4" />
+          {/* Navigation Buttons - Always visible but more prominent on hover */}
+          <div className="absolute top-1/2 -left-2 md:left-0 -translate-y-1/2 z-20">
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-10 w-10 rounded-full shadow-xl border border-slate-200 bg-white/90 hover:bg-white text-slate-900 transition-all hover:scale-110"
+              onClick={() => scroll('left')}
+            >
+              <ChevronLeft className="h-5 w-5" />
             </Button>
-            <Button variant="outline" size="icon" onClick={() => {
-              const el = document.querySelector('.overflow-x-auto');
-              el?.scrollBy({ left: 300, behavior: 'smooth' });
-            }}>
-              <ChevronRight className="h-4 w-4" />
+          </div>
+
+          <div className="absolute top-1/2 -right-2 md:right-0 -translate-y-1/2 z-20">
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-10 w-10 rounded-full shadow-xl border border-slate-200 bg-white/90 hover:bg-white text-slate-900 transition-all hover:scale-110"
+              onClick={() => scroll('right')}
+            >
+              <ChevronRight className="h-5 w-5" />
             </Button>
           </div>
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm italic">
+          <p className="text-slate-400 text-[11px] uppercase tracking-widest font-bold">
             * Prices and availability are subject to change without notice.
           </p>
         </div>
