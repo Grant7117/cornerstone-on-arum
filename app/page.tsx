@@ -1,40 +1,40 @@
-﻿import BetterBondSection from "@/components/betterbond-section";
-import FloorPlansSection from "@/components/floor-plans-section";
+﻿import BetterBondSection from "../components/betterbond-section";
+import FloorPlansSection from "../components/floor-plans-section";
 
 
-import WiredSections from "@/components/WiredSections";
+import WiredSections from "../components/WiredSections";
 
 
-import { Navigation } from "@/components/navigation"
+import { Navigation } from "../components/navigation"
 
 
-import { HeroSection } from "@/components/hero-section"
+import { HeroSection } from "../components/hero-section"
 
 
-import { VideoSection } from "@/components/video-section"
+import { VideoSection } from "../components/video-section"
 
 
-import { FeaturesSection } from "@/components/features-section"
+import { FeaturesSection } from "../components/features-section"
 
 
-import { UnitsCarousel } from "@/components/units-carousel"
+import { UnitsCarousel } from "../components/units-carousel"
 
 
-import { PropertyFeaturesSection } from "@/components/property-features-section"
+import { PropertyFeaturesSection } from "../components/property-features-section"
 
 
 
 
-import { ContactLocationSection } from "@/components/contact-location-section"
+import { ContactLocationSection } from "../components/contact-location-section"
 
 
-// import { ChatWidget } from "@/components/chat-widget"
+// import { ChatWidget } from "../components/chat-widget"
 
 
-import { WhatsAppButton } from "@/components/whatsapp-button"
+import { WhatsAppButton } from "../components/whatsapp-button"
 
 
-import { Footer } from "@/components/footer"
+import { Footer } from "../components/footer"
 
 
 
@@ -94,7 +94,7 @@ export default function HomePage() {
         <VideoSection />
 
 
-        <FeaturesSection />     
+        <FeaturesSection />
 
 
         <PropertyFeaturesSection />

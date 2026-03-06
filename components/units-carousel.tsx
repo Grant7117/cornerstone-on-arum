@@ -1,7 +1,7 @@
 ﻿"use client";
 
-import { UnitCard } from "@/components/unit-card";
-import { units } from "@/data/units";
+import { UnitCard } from "./unit-card";
+import { units } from "../data/units";
 
 export function UnitsCarousel() {
   return (
