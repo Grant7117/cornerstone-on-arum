@@ -21,7 +21,7 @@ let kbEmbeddings: number[][] | null = null;
 function instantAnswer(q: string): string | null {
   const s = q.toLowerCase().replace(/\s+/g, " ").trim();
 
-  const price = "Prices have recently been adjusted to reflect current market value. Most 1-bedroom units are R1,700,000, and 2-bedroom/lofts are R2,300,000 to R2,725,000. Tap Enquire Now or message Grant on 072 450 3626.";
+  const price = "Prices have recently been adjusted to reflect current market value. Unit [Unit No] is now listed at [Price]. Overall, 1-bedroom units are R1,700,000, and larger 2-bedroom/lofts are R2,300,000 to R2,725,000. Tap Enquire Now or message Grant on 072 450 3626.";
   if (/(price|pricing|cost|how much|1 ?bed|one bedroom|2 ?bed|two bedroom)/.test(s)) return price;
 
   if (/(deposit|reservation)/.test(s))
@@ -34,10 +34,13 @@ function instantAnswer(q: string): string | null {
     return "Viewings are not available while under construction. We provide renders, floor plans and specifications. For details message Grant on 072 450 3626.";
 
   if (/(availability|available|stock|units? available|sold)/.test(s))
-    return "Most units are officially SOLD, but we have a unique opportunity on a few specific selection of units (e.g. 101, 102, 302). There is currently an accepted offer, but it is still suspensive. If you submit a clean offer now, there is a very strong chance of securing the property via the 72-hour clause. For the latest live stock, message Grant on 072 450 3626.";
+    return "Most units are sold out, but we have a unique opportunity on a few specific units (e.g., 101, 102, 302). There is currently an accepted offer, but it is still suspensive. If you submit a clean offer now, there is a very strong chance of securing the property via the 72-hour clause. For the latest live stock, message Grant on 072 450 3626.";
 
   if (/(bond|home loan|finance|betterbond)/.test(s))
     return "BetterBond can assist with up to 100 percent finance. Use the digital application link above or message Grant on 072 450 3626.";
+
+  if (/(72-hour|72hr|clause|suspensive)/.test(s))
+    return "These units have accepted offers that are currently suspensive. Under the 72-hour clause, the developer can accept a new, unconditional/clean offer. This gives the original buyer 72 hours to meet the new terms or lose the unit. It's a high-demand opportunity!";
 
   return null;
 }
@@ -72,6 +75,8 @@ export async function POST(req: Request) {
     const context = ranked.slice(0, 6).map(s => `• ${s.k.question}\n  ${s.k.answer}`).join("\n");
     const system = [
       "You are the Cornerstone on Arum sales assistant.",
+      "Posture: Confident, exclusive, and helpful (High-Demand Urgency).",
+      "Inventory Status: All units except the 72hr selection are officially SOLD.",
       "Currency is South African Rand, ZAR.",
       "Use a formal, concise style. Do not abbreviate.",
       "If uncertain advise the user to contact Grant at 072 450 3626."

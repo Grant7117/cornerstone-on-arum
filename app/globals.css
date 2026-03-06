@@ -52,7 +52,7 @@
 /* keep this file minimal for now */
 @layer base {
     * {
-        @apply border-border;
+        border-color: hsl(var(--border) / 0.2);
         box-sizing: border-box;
     }
 

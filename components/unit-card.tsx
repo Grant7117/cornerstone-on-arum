@@ -117,10 +117,10 @@ export function UnitCard({ unit }: UnitCardProps) {
       <div className="p-4">
         <div className="flex justify-between items-start mb-4">
           <div>
-            <h3 className="text-xl font-semibold text-white">Unit {unit.unitNo}</h3>
+            <h3 className="text-xl font-semibold text-white">Unit {unit.unitNo.replace("CS", "")}</h3>
             <p className="text-gray-400">{unit.floor} Floor</p>
           </div>
-          <span className={`px-3 py-1 rounded-full text-xs font-medium text-white ${getStatusColor(unit.status)}`}>
+          <span className={`px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase text-white ${getStatusColor(unit.status)} shadow-sm`}>
             {unit.status}
           </span>
         </div>
