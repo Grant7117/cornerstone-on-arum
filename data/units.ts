@@ -5,9 +5,10 @@ export interface Unit {
     bathrooms: number;
     size: number; // Total size
     color: string;
-    status: "Available" | "Sold" | "Reserved";
+    status: "Available" | "Sold" | "Reserved" | "Clause";
     price: string;
     images?: string[];
+    floorPlan?: string;
 }
 
 export const unitsData: Record<string, Unit[]> = {
@@ -19,8 +20,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 47,
             color: "#7FD957",
-            status: "Available",
-            price: "R1,600,000",
+            status: "Clause",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-101-201-a.png",
@@ -41,8 +42,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 45,
             color: "#F4E96D",
-            status: "Available",
-            price: "R1,600,000",
+            status: "Clause",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-103-203-a.png",
@@ -65,8 +66,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 48,
             color: "#FF6B6B",
-            status: "Available",
-            price: "R1,600,000",
+            status: "Clause",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-104-204-a.png",
@@ -89,8 +90,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 48,
             color: "#FF6B6B",
-            status: "Available",
-            price: "R1,600,000",
+            status: "Sold",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-105-205-a.png",
@@ -113,8 +114,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 45,
             color: "#F4E96D",
-            status: "Available",
-            price: "R1,500,000",
+            status: "Clause",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-106-a.png",
@@ -137,8 +138,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 47,
             color: "#7FD957",
-            status: "Reserved",
-            price: "R1,600,000",
+            status: "Clause",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-108-a.png",
@@ -160,7 +161,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 47,
             color: "#7FD957",
             status: "Sold",
-            price: "R1,600,000",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-101-201-a.png",
@@ -182,7 +183,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 45,
             color: "#F4E96D",
             status: "Sold",
-            price: "R1,500,000",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-103-203-a.png",
@@ -206,7 +207,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 48,
             color: "#FF6B6B",
             status: "Sold",
-            price: "R1,600,000",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-104-204-a.png",
@@ -230,7 +231,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 48,
             color: "#FF6B6B",
             status: "Sold",
-            price: "R1,600,000",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs-105-205-a.png",
@@ -254,7 +255,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 45,
             color: "#F4E96D",
             status: "Sold",
-            price: "R1,500,000",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs106-cs206-bedroom-e.png",
@@ -273,7 +274,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 47,
             color: "#7FD957",
             status: "Sold",
-            price: "R1,600,000",
+            price: "R1,700,000",
             images:
                 [
                     "/images/units/cs108-cs208-bedroom-c.png",
@@ -292,8 +293,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 67,
             color: "#F4C89D",
-            status: "Available",
-            price: "R2,100,000",
+            status: "Clause",
+            price: "R2,300,000",
             images:
                 [
                     "/images/units/cs-102-202-b.png",
@@ -314,8 +315,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 67,
             color: "#6DC5E8",
-            status: "Available",
-            price: "R2,100,000",
+            status: "Sold",
+            price: "R2,300,000",
             images:
                 [
                     "/images/units/cs-107-a.png",
@@ -336,8 +337,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 68,
             color: "#F4C89D",
-            status: "Available",
-            price: "R2,100,000",
+            status: "Sold",
+            price: "R2,300,000",
             images:
                 [
                     "/images/units/cs-102-202-b.png",
@@ -359,7 +360,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 67,
             color: "#6DC5E8",
             status: "Sold",
-            price: "R2,100,000",
+            price: "R2,300,000",
             images:
                 [
                     "/images/units/cs107-cs207-bedroom-c.png",
@@ -377,7 +378,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 67,
             color: "#F4C89D",
             status: "Sold",
-            price: "R2,200,000",
+            price: "R2,600,000",
             images:
                 [
                     "/images/units/cs-301-a.png",
@@ -401,7 +402,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 67,
             color: "#6DC5E8",
             status: "Sold",
-            price: "R2,200,000",
+            price: "R2,600,000",
             images:
                 [
                     "/images/units/cs301-cs306-bedroom-d.png",
@@ -421,8 +422,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 2,
             size: 77,
             color: "#9B9FD8",
-            status: "Available",
-            price: "R2,600,000",
+            status: "Clause",
+            price: "R2,725,000",
             images:
                 [
                     "/images/units/cs-302-a.png",
@@ -440,8 +441,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 2,
             size: 77,
             color: "#F4B4C4",
-            status: "Reserved",
-            price: "R2,600,000",
+            status: "Clause",
+            price: "R2,725,000",
             images:
                 [
                     "/images/units/cs-303-a.png",
@@ -460,8 +461,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 2,
             size: 77,
             color: "#9B9FD8",
-            status: "Available",
-            price: "R2,600,000",
+            status: "Clause",
+            price: "R2,725,000",
             images:
                 [
                 ],
@@ -475,7 +476,7 @@ export const unitsData: Record<string, Unit[]> = {
             size: 77,
             color: "#F4B4C4",
             status: "Sold",
-            price: "R2,600,000",
+            price: "R2,725,000",
             images:
                 [
                     "/images/units/305-1.png",

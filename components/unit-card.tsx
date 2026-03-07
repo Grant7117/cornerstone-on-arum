@@ -35,17 +35,27 @@ const ChevronRight = () => (
 export function UnitCard({ unit }: UnitCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "Available":
-        return "bg-green-500"
-      case "Sold":
-        return "bg-red-500"
-      case "Prequalified":
-        return "bg-yellow-500"
-      default:
-        return "bg-gray-500"
+  const getStatusBadge = (status: string) => {
+    if (status === "Clause") {
+      return (
+        <span className="flex flex-col items-center justify-center px-3 py-1 rounded text-xs font-bold text-white leading-tight"
+          style={{ backgroundColor: "#E8720C", minWidth: "72px", textAlign: "center" }}>
+          <span>SOLD</span>
+          <span style={{ fontSize: "0.65rem", fontWeight: 600 }}>72hr clause</span>
+        </span>
+      )
     }
+    const colorMap: Record<string, string> = {
+      Available: "bg-green-500",
+      Sold: "bg-red-500",
+      Reserved: "bg-yellow-500",
+    }
+    return (
+      <span className={`px-3 py-1 rounded text-xs font-bold text-white ${colorMap[status] ?? "bg-gray-500"}`}
+        style={{ minWidth: "72px", textAlign: "center", display: "inline-block" }}>
+        {status === "Sold" ? "SOLD" : status}
+      </span>
+    )
   }
 
   const nextImage = () => {
@@ -123,9 +133,7 @@ export function UnitCard({ unit }: UnitCardProps) {
             <h3 className="text-xl font-semibold text-white">Unit {unit.unitNo}</h3>
             <p className="text-gray-400">{unit.floor} Floor</p>
           </div>
-          <span className={`px-3 py-1 rounded-full text-xs font-medium text-white ${getStatusColor(unit.status)}`}>
-            {unit.status}
-          </span>
+          {getStatusBadge(unit.status)}
         </div>
 
         <div className="space-y-2 text-sm">
