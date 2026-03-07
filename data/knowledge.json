@@ -140,8 +140,14 @@
     {
         "id": "contact",
         "question": "Who do I contact for sales or enquiries?",
-        "answer": "Grant Whitburn is the contact for all sales and general enquiries relating to Cornerstone on Arum. You can reach him directly on WhatsApp at 072 450 3626 or email sales@igneousproperty.co.za.",
+        "answer": "Grant Whitburn is the primary contact for all sales and for all other enquiries relating to Cornerstone on Arum. You can reach him directly on 072 450 3626 or email sales@igneousproperty.co.za.",
         "category": "Contact"
+    },
+    {
+        "id": "fallback",
+        "question": "What if you don't know the answer?",
+        "answer": "If I don't know the answer, please refer to Grant Whitburn at 072 450 3626 for further assistance.",
+        "category": "General"
     },
     {
         "id": "lift",

@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
 RULES:
 - Answer ONLY from the knowledge base provided below. Do not assume, invent, or add information not in the knowledge base.
 - Be concise and factual. Give direct answers. No filler phrases, no sales pressure, no unsolicited commentary.
-- If the answer is not in the knowledge base, say: "I don't have that information. Please contact Grant directly on WhatsApp at 072 450 3626."
+- If the answer is not in the knowledge base, say: "I don't have that information. Please contact Grant Whitburn on 072 450 3626."
 - Do not volunteer extra information beyond what was asked.
 
 KNOWLEDGE BASE:

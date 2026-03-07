@@ -24,7 +24,8 @@ export const knowledge: KBItem[] = [
   { id: "rentals", question: "Is short-term letting or Airbnb allowed?", answer: "Short-term letting is discouraged. The minimum lease period allowed is 6 consecutive months.", category: "Lifestyle" },
   { id: "parking", question: "What is the parking situation?", answer: "All units in the development have 1 x dedicated parking bay. Residents must park in their allocated bays only.", category: "Lifestyle" },
   { id: "conveyancers", question: "Who are the attorneys?", answer: "The conveyancing attorneys are STBB in Claremont.", category: "Finance" },
-  { id: "contact", question: "Who do I contact for sales or enquiries?", answer: "Grant Whitburn is the contact for all sales and general enquiries relating to Cornerstone on Arum. You can reach him directly on WhatsApp at 072 450 3626 or email sales@igneousproperty.co.za.", category: "Contact" },
+  { id: "contact", question: "Who do I contact for sales or enquiries?", answer: "Grant Whitburn is the primary contact for all sales and for all other enquiries relating to Cornerstone on Arum. You can reach him directly on 072 450 3626 or email sales@igneousproperty.co.za.", category: "Contact" },
+  { id: "fallback", question: "What if you don't know the answer?", answer: "If I don't know the answer, please refer to Grant Whitburn at 072 450 3626 for further assistance.", category: "General" },
   { id: "lift", question: "Is there a lift in the building?", answer: "No, explicitly there is no lift in the building.", category: "General" }
 ];
 
