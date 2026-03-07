@@ -356,7 +356,7 @@ export function FloorPlansSection() {
         <div className="relative">
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all"
+            className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all"
             aria-label="Scroll left"
           >
             <ChevronLeft className="w-6 h-6 text-gray-900" />
@@ -364,11 +364,11 @@ export function FloorPlansSection() {
 
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-12"
+            className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide scroll-smooth sm:px-12 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {filteredPlans.map((plan) => (
-              <Card key={plan.id} className="flex-shrink-0 w-80 overflow-hidden hover:shadow-lg transition-shadow">
+              <Card key={plan.id} className="flex-shrink-0 w-[85vw] sm:w-80 overflow-hidden hover:shadow-lg transition-shadow snap-start">
                 <div className="relative h-64 bg-muted flex items-center justify-center p-2">
                   <img
                     src={plan.imagePath || "/placeholder.svg"}
@@ -437,7 +437,7 @@ export function FloorPlansSection() {
 
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all"
+            className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all"
             aria-label="Scroll right"
           >
             <ChevronRight className="w-6 h-6 text-gray-900" />

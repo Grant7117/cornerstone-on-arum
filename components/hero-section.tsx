@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full h-[750px] md:h-[800px] lg:h-[850px] overflow-hidden">
+    <section className="relative w-full min-h-[560px] h-[70vh] md:h-[800px] lg:h-[850px] overflow-hidden">
       <Image
         src="/images/cornerstone-hero.jpg"
         alt="Cornerstone on Arum - Modern apartment building"
@@ -19,12 +19,12 @@ export function HeroSection() {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end justify-center pb-16 md:pb-20 lg:pb-24">
         <div className="text-center px-6 max-w-4xl">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white/90 mb-12 md:mb-16 drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white/90 mb-6 md:mb-16 drop-shadow-2xl">
             Modern Apartments in Table View
           </h1>
-          <p className="text-xl md:text-2xl text-white/95 mb-8 drop-shadow-lg">
-            Cornerstone on Arum combines modern design, premium finishes, and secure living in one of Cape Town's most
-            connected suburbs. 100% bond financing available through our trusted partners.
+          <p className="text-base sm:text-xl md:text-2xl text-white/95 mb-6 md:mb-8 drop-shadow-lg leading-relaxed">
+            Modern design, premium finishes, and secure living in Table View, Cape Town.
+            <span className="hidden sm:inline"> 100% bond financing available through our trusted partners.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
