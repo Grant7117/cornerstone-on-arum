@@ -138,9 +138,15 @@
         "category": "Finance"
     },
     {
+        "id": "developer",
+        "question": "Who is the developer of Cornerstone on Arum?",
+        "answer": "Cornerstone on Arum is developed by Igneous Property Development.",
+        "category": "General"
+    },
+    {
         "id": "contact",
         "question": "Who do I contact for sales or enquiries?",
-        "answer": "Grant Whitburn is the primary contact for all sales and for all other enquiries relating to Cornerstone on Arum. You can reach him directly on 072 450 3626 or email sales@igneousproperty.co.za.",
+        "answer": "Grant Whitburn from Igneous Property Development is responsible for all sales and for any questions about the development. You can reach him directly on 072 450 3626 or email sales@igneousproperty.co.za.",
         "category": "Contact"
     },
     {
