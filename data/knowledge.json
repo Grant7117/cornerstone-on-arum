@@ -1,0 +1,134 @@
+[
+    {
+        "id": "welcome",
+        "question": "What is Cornerstone on Arum?",
+        "answer": "A modern residential development at 154 Arum Road, Table View, Cape Town. Approximately 2.3 km to the beach and close to the MyCiTi Table View stop.",
+        "category": "General"
+    },
+    {
+        "id": "pricing-range",
+        "question": "What is the price range for units?",
+        "answer": "Prices have been adjusted to reflect current market demand. 1-bedroom units are priced at R1,700,000. 2-bedroom units are R2,300,000. 2-bedroom loft units (Third floor) are R2,725,000. 2-bedroom standard (Third floor) are R2,600,000. These prices reflect a high-demand development with limited remaining opportunity.",
+        "category": "Pricing"
+    },
+    {
+        "id": "availability",
+        "question": "Which units are sold or available?",
+        "answer": "Technically, the building is sold out. However, there are several units marked with a '72-hour clause'. Specifically: Units 101, 102, 103, 104, 106, 108 (First floor), and 302, 303, 304 (Third floor lofts). This means each of these units has an accepted offer that is still suspensive. If you are in a position to put down a clean, non-suspensive offer, you have a very real chance of bumping the current buyer and securing the unit. The original buyer then has 72 hours to match your offer or the unit goes to you.",
+        "category": "Availability"
+    },
+    {
+        "id": "72hr-clause",
+        "question": "What is a 72-hour clause?",
+        "answer": "A 72-hour clause means a unit has an accepted offer that is still suspensive (e.g., subject to bond approval or the sale of another property). If a new buyer presents a clean, non-suspensive offer, the original buyer is notified and has exactly 72 hours to either waive their conditions or the unit transfers to the new buyer. This is a genuine and legal opportunity to secure a unit in a sold-out development.",
+        "category": "Availability"
+    },
+    {
+        "id": "72hr-units",
+        "question": "Which specific units have a 72-hour clause?",
+        "answer": "The following units are currently under a 72-hour suspensive clause: 101 (R1,700,000), 102 (R2,300,000), 103 (R1,700,000), 104 (R1,700,000), 106 (R1,700,000), 108 (R1,700,000), 302 (R2,725,000), 303 (R2,725,000), 304 (R2,725,000). If you can present a clean offer on any of these, contact us immediately.",
+        "category": "Availability"
+    },
+    {
+        "id": "deposit",
+        "question": "What deposit is required?",
+        "answer": "R5,000 reservation deposit is payable within 7 days of Offer to Purchase signature. Applies to cash and bond buyers.",
+        "category": "Finance"
+    },
+    {
+        "id": "bond-window",
+        "question": "How long is the bond approval window?",
+        "answer": "30 days from Offer to Purchase signature.",
+        "category": "Finance"
+    },
+    {
+        "id": "transfers",
+        "question": "When do transfers start and when is completion?",
+        "answer": "Transfers commence approximately 60 days before completion. The development will be ready for occupation in May 2026. Transfer costs are payable by the Purchaser.",
+        "category": "Process"
+    },
+    {
+        "id": "viewings",
+        "question": "Are viewings available?",
+        "answer": "The site is currently under construction. Viewings are available by appointment with Grant Whitburn only.",
+        "category": "General"
+    },
+    {
+        "id": "size-policy",
+        "question": "Which size should be quoted?",
+        "answer": "Always quote Total m², which includes interior plus balcony if applicable.",
+        "category": "Policy"
+    },
+    {
+        "id": "finance-help",
+        "question": "Do you offer help with home loans?",
+        "answer": "Yes. Yolanda Kensley from BetterBond is our dedicated bond originator and can assist with up to 100% finance.",
+        "category": "Finance"
+    },
+    {
+        "id": "flooring",
+        "question": "What type of flooring is used?",
+        "answer": "Living areas and bedrooms feature premium timber-look vinyl flooring. Bathrooms and balconies use slip-resistant ceramic tiles.",
+        "category": "Finishes"
+    },
+    {
+        "id": "kitchen",
+        "question": "What are the kitchen finishes and appliances?",
+        "answer": "Kitchens include premium engineered stone countertops and contemporary joinery with soft-close hinges. Included appliances are from the Defy Black Range: Gas Hob, Slimline Undercounter Oven, and Extractor Hood. Secure 9kg gas bottle storage is provided.",
+        "category": "Finishes"
+    },
+    {
+        "id": "bathrooms",
+        "question": "What are the bathroom finishes?",
+        "answer": "Bathrooms feature the Lusso sanitaryware range, floating vanities with engineered stone tops, frameless or semi-frameless glass shower screens, and modern black or chrome mixers.",
+        "category": "Finishes"
+    },
+    {
+        "id": "tech-utilities",
+        "question": "What tech and utilities are provided?",
+        "answer": "Cornerstone on Arum is Fibre ready and features smart prepaid meters for electricity and water (Hot & Cold). A centralised heat pump system provides hot water with up to 40% energy savings. Battery backup power is provided for common areas, security, and access control.",
+        "category": "Tech"
+    },
+    {
+        "id": "security",
+        "question": "What security features does the building have?",
+        "answer": "24/7 off-site CCTV monitoring, biometric access control, and secure perimeter fencing. Note that there is no lift in the building.",
+        "category": "Security"
+    },
+    {
+        "id": "pets",
+        "question": "Are pets allowed?",
+        "answer": "Yes, small pets are allowed subject to Body Corporate approval.",
+        "category": "Lifestyle"
+    },
+    {
+        "id": "rentals",
+        "question": "Is short-term letting or Airbnb allowed?",
+        "answer": "Short-term letting is discouraged. The minimum lease period allowed is 6 consecutive months.",
+        "category": "Lifestyle"
+    },
+    {
+        "id": "parking",
+        "question": "What is the parking situation?",
+        "answer": "There is 1 allocated bay per unit. Residents must park in their allocated bays only.",
+        "category": "Lifestyle"
+    },
+    {
+        "id": "conveyancers",
+        "question": "Who are the attorneys?",
+        "answer": "The conveyancing attorneys are STBB in Claremont.",
+        "category": "Finance"
+    },
+    {
+        "id": "contact",
+        "question": "Who do I contact for sales or enquiries?",
+        "answer": "Grant Whitburn is the contact for all sales and general enquiries relating to Cornerstone on Arum. You can reach him directly on WhatsApp at 072 450 3626 or email sales@igneousproperty.co.za.",
+        "category": "Contact"
+    },
+    {
+        "id": "lift",
+        "question": "Is there a lift in the building?",
+        "answer": "No, explicitly there is no lift in the building.",
+        "category": "General"
+    }
+]
