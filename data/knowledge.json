@@ -2,7 +2,19 @@
     {
         "id": "welcome",
         "question": "What is Cornerstone on Arum?",
-        "answer": "A modern residential development at 154 Arum Road, Table View, Cape Town. Approximately 2.3 km to the beach and close to the MyCiTi Table View stop.",
+        "answer": "A modern residential development at 154 Arum Road, Table View, Cape Town. Developed by Igneous Property Development, it is approximately 2.3 km to the beach and close to the MyCiTi Table View stop.",
+        "category": "General"
+    },
+    {
+        "id": "design-strength",
+        "question": "What are the design and structural features?",
+        "answer": "Smart layouts maximise space and natural light, paired with premium finishes such as timber-look vinyl flooring, engineered stone countertops, and soft-close cabinetry. Built with a full reinforced concrete frame, every apartment delivers structural integrity, acoustic comfort, and reduced long-term maintenance.",
+        "category": "Finishes"
+    },
+    {
+        "id": "local-advantage",
+        "question": "What is the location and local advantage?",
+        "answer": "Positioned in Table View, Cornerstone on Arum is close to beaches, shopping centres, restaurants, top-tier schools, medical facilities, and the MyCiTi transport network. It combines a coastal lifestyle with everyday convenience, making it an ideal location for both living and investment.",
         "category": "General"
     },
     {
@@ -104,13 +116,13 @@
     {
         "id": "tech-utilities",
         "question": "What tech and utilities are provided?",
-        "answer": "Cornerstone on Arum is Fibre ready and features smart prepaid meters for electricity and water (Hot \u0026 Cold). A centralised heat pump system provides hot water with up to 40% energy savings. Battery backup power is provided for common areas, security, and access control.",
+        "answer": "Cornerstone on Arum is Fibre ready and features smart prepaid meters for electricity and water (Hot & Cold). A centralised heat pump system provides hot water with up to 40% energy savings. Battery backup power is provided for common areas, security, and access control.",
         "category": "Tech"
     },
     {
         "id": "security",
         "question": "What security features does the building have?",
-        "answer": "24/7 off-site CCTV monitoring, biometric access control, and secure perimeter fencing. Note that there is no lift in the building.",
+        "answer": "Safety and security are top priorities at Cornerstone on Arum, with biometric access control, 24/7 off-site CCTV monitoring linked to armed response, and secure perimeter fencing. These measures ensure peace of mind and a safe living environment for all residents. Note that there is no lift in the building.",
         "category": "Security"
     },
     {
