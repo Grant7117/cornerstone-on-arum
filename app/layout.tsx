@@ -1,10 +1,21 @@
-import Script from "next/script";
-import type { Metadata, Viewport } from 'next';
+﻿import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { GoogleAnalytics } from '@next/third-parties/google';
+
+import ClientOnly from './components/ClientOnly';
+import ChatLauncher from './components/ChatLauncher';
 
 export const metadata: Metadata = {
-  title: 'Cornerstone on Arum',
-  description: 'Residential apartments in Table View',
+  title: 'Cornerstone on Arum - Premium Property Development in Table View, Cape Town',
+  description: 'Luxury apartments at 154 Arum Road, Table View. Advanced security, sustainable living, and premium amenities. Contact Grant: 072 450 3626',
+  keywords: ['Table View apartments', 'Cornerstone on Arum', 'Property development Cape Town', 'Luxury apartments Table View', '154 Arum Road'],
+  openGraph: {
+    title: 'Cornerstone on Arum - Premium Property Development in Table View, Cape Town',
+    description: 'Luxury apartments at 154 Arum Road, Table View. Advanced security, sustainable living, and premium amenities. Contact Grant: 072 450 3626',
+    type: 'website',
+    locale: 'en_ZA',
+    url: 'https://www.cornerstoneonarum.co.za',
+  },
 };
 
 export const viewport: Viewport = {
@@ -12,38 +23,16 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         {children}
-        <Script id="cornerstone-widget-vars" strategy="beforeInteractive">
-  {`
-    window.CORNERSTONE_WIDGET_ORIGIN = "https://v0-intelligent-chatbot-for-property-nob127i5l.vercel.app";
-    window.CORNERSTONE_WIDGET_SIDE = "left";
-    window.CORNERSTONE_WIDGET_OFFSET_Y = 220;
-    window.CORNERSTONE_MIN_SCROLL_TO_SHOW = 32;
-    window.CORNERSTONE_WHATSAPP_HREF = "https://wa.me/27724503626";
-  `}
-</Script>
-<Script
-  id="cornerstone-widget-loader"
-  src="https://v0-intelligent-chatbot-for-property-nob127i5l.vercel.app/cornerstone-embed.js"
-  strategy="afterInteractive"
-/>
-  <script src="/cs-chat-widget.js?v=20251005200645" defer></script>
-</body>
+        <ClientOnly>
+          <ChatLauncher />
+        </ClientOnly>
+        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+      </body>
     </html>
   );
 }
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Settings } from "@/components/icons"
+
 
 export function Navigation() {
   const scrollToSection = (sectionId: string) => {
@@ -39,27 +39,22 @@ export function Navigation() {
           <button onClick={() => scrollToSection("contact")} className="hover:text-gray-300 transition-colors">
             Location
           </button>
-          <Link href="/documents" className="hover:text-gray-300 transition-colors">
+          <button onClick={() => scrollToSection("documents")} className="hover:text-gray-300 transition-colors">
             Documents
-          </Link>
-          <Link href="/admin/documents" className="hover:text-gray-300 transition-colors" title="Admin">
-            <Settings className="h-5 w-5" />
-          </Link>
+          </button>
           <Button
             onClick={() => scrollToSection("contact")}
-            className="bg-amber-600 hover:bg-amber-700 text-white border-0"
+            className="bg-blue-600 hover:bg-blue-700 text-white border-0"
           >
             Enquire Now
           </Button>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
-          <Link href="/admin/documents" className="text-white" title="Admin">
-            <Settings className="h-5 w-5" />
-          </Link>
+
           <button
             onClick={() => scrollToSection("contact")}
-            className="text-xs bg-amber-600 text-white px-3 py-2 rounded font-semibold hover:bg-amber-700"
+            className="text-xs bg-blue-600 text-white px-3 py-2 rounded font-semibold hover:bg-blue-700"
           >
             Enquire
           </button>

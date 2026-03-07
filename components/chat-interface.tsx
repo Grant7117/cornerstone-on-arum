@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import type React from "react"
 
@@ -37,14 +37,14 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (inputValue.trim() && String(status) !== "in_progress") {
+    if (inputValue.trim() && status !== "in_progress") {
       sendMessage({ text: inputValue })
       setInputValue("")
     }
   }
 
   const handleQuickAction = (message: string) => {
-    if (String(status) !== "in_progress") {
+    if (status !== "in_progress") {
       sendMessage({ text: message })
     }
   }
@@ -60,24 +60,37 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
 
   if (!isOpen) {
     return (
-      <Button
-        onClick={onToggle}
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-primary shadow-lg hover:shadow-xl transition-all duration-200 z-50"
-        size="icon"
-      >
-        <MessageCircle className="h-6 w-6" />
-      </Button>
+      <>
+        <div className="fixed bottom-24 right-6 z-40 hidden md:block animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="relative bg-white dark:bg-zinc-950 text-foreground py-3 px-4 rounded-2xl shadow-xl border border-border max-w-[220px]">
+            <p className="font-medium text-sm">
+              I am here to answer any questions.
+            </p>
+            {/* Triangle pointer */}
+            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white dark:bg-zinc-950 transform rotate-45 border-r border-b border-border"></div>
+          </div>
+        </div>
+
+        <Button
+          onClick={onToggle}
+          className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-primary shadow-lg hover:shadow-xl transition-all duration-200 z-50"
+          size="icon"
+        >
+          <MessageCircle className="h-6 w-6" />
+        </Button>
+      </>
     )
   }
 
   return (
     <Card
-      className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
-        isMinimized ? "h-16 w-80" : "h-[700px] w-96"
-      } shadow-2xl border-0 bg-card animate-slide-up`}
+      className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 transition-all duration-300 ${isMinimized
+        ? "h-16 w-[calc(100vw-2rem)] sm:w-80"
+        : "h-[85dvh] w-[calc(100vw-2rem)] sm:h-[700px] sm:w-96"
+        } shadow-2xl border-0 bg-card animate-slide-up flex flex-col`}
     >
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg">
+      <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg shrink-0">
         <div className="flex items-center gap-2">
           <MessageCircle className="h-5 w-5" />
           <div>
@@ -109,7 +122,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
         <>
           {/* Quick Actions */}
           {messages.length === 0 && (
-            <div className="p-4 border-b bg-muted/30">
+            <div className="p-4 border-b bg-muted/30 shrink-0">
               <p className="text-xs text-muted-foreground mb-3">Quick actions:</p>
               <div className="flex flex-wrap gap-2">
                 <Button
@@ -117,7 +130,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   size="sm"
                   className="h-8 text-xs bg-transparent"
                   onClick={() => handleQuickAction("Show me available 2-bedroom apartments")}
-                  disabled={String(status) === "in_progress"}
+                  disabled={status === "in_progress"}
                 >
                   <Home className="h-3 w-3 mr-1" />
                   2BR Units
@@ -127,7 +140,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   size="sm"
                   className="h-8 text-xs bg-transparent"
                   onClick={() => handleQuickAction("What amenities are available?")}
-                  disabled={String(status) === "in_progress"}
+                  disabled={status === "in_progress"}
                 >
                   <Info className="h-3 w-3 mr-1" />
                   Amenities
@@ -137,7 +150,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   size="sm"
                   className="h-8 text-xs bg-transparent"
                   onClick={() => handleQuickAction("Tell me about the neighborhood")}
-                  disabled={String(status) === "in_progress"}
+                  disabled={status === "in_progress"}
                 >
                   <MapPin className="h-3 w-3 mr-1" />
                   Location
@@ -147,7 +160,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   size="sm"
                   className="h-8 text-xs bg-transparent"
                   onClick={() => handleQuickAction("I'd like to schedule a viewing")}
-                  disabled={String(status) === "in_progress"}
+                  disabled={status === "in_progress"}
                 >
                   <Calendar className="h-3 w-3 mr-1" />
                   Schedule Tour
@@ -157,7 +170,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
           )}
 
           {/* Messages */}
-          <ScrollArea ref={scrollAreaRef} className="flex-1 p-4 h-[520px]">
+          <ScrollArea ref={scrollAreaRef} className="flex-1 p-4 overflow-y-auto">
             <div className="space-y-4">
               {messages.length === 0 && (
                 <div className="text-center text-muted-foreground py-8 animate-fade-in">
@@ -176,9 +189,8 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                   className={`flex ${message.role === "user" ? "justify-end" : "justify-start"} animate-fade-in`}
                 >
                   <div
-                    className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${
-                      message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
-                    }`}
+                    className={`max-w-[85%] rounded-lg px-3 py-2 text-sm ${message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
+                      }`}
                   >
                     {message.parts.map((part, index) => {
                       if (part.type === "text") {
@@ -194,7 +206,7 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                 </div>
               ))}
 
-              {String(status) === "in_progress" && (
+              {status === "in_progress" && (
                 <div className="flex justify-start">
                   <div className="bg-muted text-muted-foreground rounded-lg px-3 py-2 text-sm">
                     <div className="flex items-center gap-2">
@@ -224,26 +236,22 @@ export function ChatInterface({ isOpen, onToggle }: ChatInterfaceProps) {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Ask about properties, amenities, or schedule a viewing..."
-                disabled={String(status) === "in_progress"}
+                disabled={status === "in_progress"}
                 className="flex-1 text-sm"
               />
               <Button
                 type="submit"
                 size="icon"
-                disabled={String(status) === "in_progress" || !inputValue.trim()}
+                disabled={status === "in_progress" || !inputValue.trim()}
                 className="shrink-0"
               >
                 <Send className="h-4 w-4" />
               </Button>
             </form>
-            <div className="text-xs text-muted-foreground mt-2 text-center">Powered by AI â€¢ Cornerstone on Arum</div>
+            <div className="text-xs text-muted-foreground mt-2 text-center">Powered by AI • Cornerstone on Arum</div>
           </div>
         </>
       )}
     </Card>
   )
 }
-
-
-
-

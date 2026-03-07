@@ -1,6 +1,6 @@
 ﻿export type KBItem = { id: string; question: string; answer: string; category?: string };
 
-const knowledge: KBItem[] = [
+export const knowledge: KBItem[] = [
   { id: "welcome", question: "What is Cornerstone on Arum?", answer: "A modern residential development at 154 Arum Road, Table View, Cape Town. Approximately 2.3 km to the beach and close to the MyCiTi Table View stop.", category: "General" },
   { id: "pricing-range", question: "What is the price range for units?", answer: "The development is completely SOLD OUT.", category: "Pricing" },
   { id: "availability", question: "Which units are sold or available?", answer: "Cornerstone on Arum is completely SOLD OUT. No units are currently available.", category: "Availability" },

@@ -39,11 +39,11 @@ export function FeaturesSection() {
         "Smart layouts maximise space and natural light, paired with premium finishes such as timber-look vinyl flooring, engineered stone countertops, and soft-close cabinetry. Built with a full reinforced concrete frame, every apartment delivers structural integrity, acoustic comfort, and reduced long-term maintenance.",
     },
     {
-      title: "Sustainable Systems",
+      title: "Safety and Security",
       shortDescription:
-        "Cornerstone incorporates practical green features, including onsite water storage, central hot water boiler system.",
+        "Access control, CCTV off-site monitoring, linked to armed response.",
       fullDescription:
-        "Cornerstone incorporates practical green features, including onsite water storage, central hot water boiler system. These sustainable systems reduce environmental impact while providing reliable, efficient utilities for all residents.",
+        "Access control, CCTV off-site monitoring, linked to armed response. These security measures ensure peace of mind for all residents, creating a safe and secure living environment.",
     },
     {
       title: "Local Advantage",

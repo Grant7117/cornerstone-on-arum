@@ -2,18 +2,11 @@ import { Shield, Droplet, Zap, Flame, Home, Car } from "@/components/icons"
 import { Card } from "@/components/ui/card"
 
 const features = [
-  {
-    icon: Shield,
-    title: "Safety and Security",
-    description:
-      "Advanced access control, garage door automation. The security is further enhanced with backup power storage.",
-    color: "bg-blue-50",
-    iconColor: "text-blue-600",
-  },
+
   {
     icon: Droplet,
     title: "Sustainable Living",
-    description: "Onsite water storage, central hot water boiler system.",
+    description: "Central hot water boiler system. Saving up to 40% on electricity.",
     color: "bg-blue-50",
     iconColor: "text-blue-600",
   },

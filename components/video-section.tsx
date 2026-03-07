@@ -1,29 +1,31 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useCallback } from "react"
+import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 
 const areaImages = [
+
   {
-    id: 1,
-    title: "Sunset at the Rocks",
+    id: 11,
+    title: "Pristine Coastal Living",
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011421-aGbrFUipzTwcEL9Nn7akR1962oGyID.png",
-    description: "Dramatic coastal scenery with Table Mountain backdrop",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011743-liQr9e2YExr53nVUKMPOm76zxRP4pS.png",
+    description: "Crystal clear turquoise waters and white sandy beaches at your doorstep",
   },
   {
-    id: 2,
-    title: "Kite Beach",
+    id: 12,
+    title: "Endless Beach Horizons",
     image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kite%20Beach%20Table%20View-sXz7Iva378TCXWEh9pVPFtcFgd5Xxw.jpeg",
-    description: "World-renowned kite surfing destination with stunning Table Mountain views",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011435-quXlt9Et4xdBtNuBPcfEQ7Q2EBSAJj.png",
+    description: "Miles of pristine coastline with perfect waves and mountain views",
   },
   {
-    id: 3,
-    title: "Beach Lifestyle",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0197.JPG-ewxRwplWlWZ1JW0wwxInd74EzKq7c7.jpeg",
-    description: "Active beachfront living with pristine sandy beaches",
+    id: 14,
+    title: "Kite Surfing Action",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0051.JPG-eKEMfi4fzVRAGRvmfWDWf1SaxMjOME.jpeg",
+    description: "Experience the thrill of world-class water sports",
   },
   {
     id: 5,
@@ -40,12 +42,6 @@ const areaImages = [
     description: "Gourmet cuisine at Doodles Beachfront Restaurant",
   },
   {
-    id: 7,
-    title: "Bayside Mall",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Bayside%20Mall-OMkzyt87YzXNqzwCeHVo7ClRebgiFc.jpeg",
-    description: "Modern shopping center with ocean views and premium retailers",
-  },
-  {
     id: 8,
     title: "Table Bay Mall",
     image:
@@ -58,40 +54,6 @@ const areaImages = [
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Table%20View%20High%20School-bfaijzidMCPfXdh3c8u2SwS6Ox2ZQj.jpeg",
     description: "Excellent educational facilities with modern sports amenities",
-  },
-  {
-    id: 10,
-    title: "MyCiti Transport",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MyCiti%20Table%20View-kz5r198wmDXEsdtLJ9cKPZ5B23XK2x.jpg",
-    description: "Convenient public transport connecting you to Cape Town",
-  },
-  {
-    id: 11,
-    title: "Pristine Coastal Living",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011743-liQr9e2YExr53nVUKMPOm76zxRP4pS.png",
-    description: "Crystal clear turquoise waters and white sandy beaches at your doorstep",
-  },
-  {
-    id: 12,
-    title: "Endless Beach Horizons",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011435-quXlt9Et4xdBtNuBPcfEQ7Q2EBSAJj.png",
-    description: "Miles of pristine coastline with perfect waves and mountain views",
-  },
-  {
-    id: 13,
-    title: "Big Bay Viewpoint",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Big%20Bay%20Table%20Mountain%20South%20Africa-vKhzwSz5cnJhILBFESb0IjVivQSdBy.png",
-    description: "Iconic Table Mountain photo frame at Big Bay beach promenade",
-  },
-  {
-    id: 14,
-    title: "Kite Surfing Action",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0051.JPG-eKEMfi4fzVRAGRvmfWDWf1SaxMjOME.jpeg",
-    description: "Experience the thrill of world-class water sports",
   },
   {
     id: 15,
@@ -139,12 +101,20 @@ const areaImages = [
 export function VideoSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex === areaImages.length - 1 ? 0 : prevIndex + 1))
+  }, [])
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      goToNext()
+    }, 4000)
+
+    return () => clearInterval(timer)
+  }, [goToNext])
+
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? areaImages.length - 1 : prevIndex - 1))
-  }
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === areaImages.length - 1 ? 0 : prevIndex + 1))
   }
 
   const goToSlide = (index: number) => {
@@ -176,10 +146,12 @@ export function VideoSection() {
               {areaImages.map((item) => (
                 <div key={item.id} className="min-w-full">
                   <div className="relative aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] bg-gray-900 flex items-center justify-center overflow-hidden">
-                    <img
+                    <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
-                      className="w-full h-full object-cover object-center"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                     />
                     {/* Image Overlay with Title */}
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
@@ -219,9 +191,8 @@ export function VideoSection() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "w-8 !bg-black" : "w-2 bg-gray-300 hover:bg-gray-400"
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8 !bg-black" : "w-2 bg-gray-300 hover:bg-gray-400"
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}

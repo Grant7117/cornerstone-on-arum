@@ -1,4 +1,5 @@
 import { Youtube, Facebook } from "./icons"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -39,6 +40,8 @@ export function Footer() {
             <p>Developed by Igneous Property Development</p>
             <span className="hidden sm:inline">•</span>
             <p>Website by IntelDev – Development Intelligence & Advisory</p>
+            <span className="hidden sm:inline">•</span>
+            <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
           </div>
         </div>
       </footer>

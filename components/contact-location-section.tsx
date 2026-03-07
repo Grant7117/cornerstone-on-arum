@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from "@/components/icons"
+import { MapPin, Phone, Mail, Youtube } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -89,6 +89,24 @@ export function ContactLocationSection() {
                       className="text-gray-700 hover:text-blue-600 transition-colors underline"
                     >
                       sales@igneousproperty.co.za
+                    </Link>
+                  </div>
+                </div>
+
+                {/* YouTube Video */}
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#FF0000] p-3 rounded-xl flex-shrink-0">
+                    <Youtube className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-1 text-gray-900">Location Video</h4>
+                    <Link
+                      href="https://youtu.be/msW58dOk2Nw?si=2prBPwPH4_bXmGqI"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-[#FF0000] transition-colors underline"
+                    >
+                      Watch Property Location Video
                     </Link>
                   </div>
                 </div>

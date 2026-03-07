@@ -1,6 +1,7 @@
-﻿"use client"
+"use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 interface Unit {
@@ -40,8 +41,6 @@ export function UnitCard({ unit }: UnitCardProps) {
         return "bg-green-500"
       case "Sold":
         return "bg-red-500"
-      case "Pending":
-        return "bg-orange-500"
       case "Prequalified":
         return "bg-yellow-500"
       default:
@@ -50,14 +49,14 @@ export function UnitCard({ unit }: UnitCardProps) {
   }
 
   const nextImage = () => {
-    if (unit.images && (unit.images?.length ?? 1) > 1) {
-      setCurrentImageIndex((prev) => (prev + 1) % (unit.images?.length ?? 1))
+    if (unit.images && unit.images.length > 1) {
+      setCurrentImageIndex((prev) => (prev + 1) % unit.images!.length)
     }
   }
 
   const prevImage = () => {
-    if (unit.images && (unit.images?.length ?? 1) > 1) {
-      setCurrentImageIndex((prev) => (prev - 1 + (unit.images?.length ?? 1)) % (unit.images?.length ?? 1))
+    if (unit.images && unit.images.length > 1) {
+      setCurrentImageIndex((prev) => (prev - 1 + unit.images!.length) % unit.images!.length)
     }
   }
 
@@ -69,15 +68,19 @@ export function UnitCard({ unit }: UnitCardProps) {
           style={{ backgroundColor: unit.color }}
         ></div>
 
-        {unit.images && (unit.images?.length ?? 1) > 0 ? (
+        {unit.images && unit.images.length > 0 ? (
           <>
-            <img
-              src={unit.images[currentImageIndex] || "/placeholder.svg"}
-              alt={`Unit ${unit.unitNo} - Image ${currentImageIndex + 1}`}
-              className="w-full h-full object-cover"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={unit.images[currentImageIndex] || "/placeholder.svg"}
+                alt={`Unit ${unit.unitNo} - Image ${currentImageIndex + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
 
-            {(unit.images?.length ?? 1) > 1 && (
+            {unit.images.length > 1 && (
               <>
                 <Button
                   variant="ghost"
@@ -97,7 +100,7 @@ export function UnitCard({ unit }: UnitCardProps) {
                 </Button>
 
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
-                  {(unit.images ?? []).map((_, index) => (
+                  {unit.images.map((_, index) => (
                     <button
                       key={index}
                       className={`w-2 h-2 rounded-full ${index === currentImageIndex ? "bg-white" : "bg-white/50"}`}
@@ -136,7 +139,7 @@ export function UnitCard({ unit }: UnitCardProps) {
           </div>
           <div className="flex justify-between">
             <span className="text-gray-400">Size:</span>
-            <span className="text-white">{unit.size}mÂ²</span>
+            <span className="text-white">{unit.size}m²</span>
           </div>
         </div>
 
@@ -147,4 +150,3 @@ export function UnitCard({ unit }: UnitCardProps) {
     </div>
   )
 }
-

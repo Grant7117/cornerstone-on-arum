@@ -10,7 +10,7 @@ export function WhatsAppButton() {
     <Button
       onClick={() => window.open(whatsappUrl, "_blank")}
       style={{ backgroundColor: "#25D366" }}
-      className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 h-14 w-14 sm:h-16 sm:w-16 rounded-full hover:bg-[#20BA5A] shadow-2xl hover:shadow-[0_20px_50px_rgba(37,211,102,0.5)] transition-all duration-200 z-50 border-4 border-white"
+      className="fixed bottom-[24px] right-6 h-14 w-14 sm:h-16 sm:w-16 rounded-full hover:bg-[#20BA5A] shadow-2xl hover:shadow-[0_20px_50px_rgba(37,211,102,0.5)] transition-transform hover:scale-105 active:scale-95 z-50 border-4 border-white"
       size="icon"
       aria-label="Contact us on WhatsApp"
     >
