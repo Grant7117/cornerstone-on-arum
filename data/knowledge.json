@@ -30,6 +30,24 @@
         "category": "Availability"
     },
     {
+        "id": "unit-specs",
+        "question": "What are the floor levels and sizes of the units?",
+        "answer": "Units are located on the First, Second, and Third (Loft) floors. All units include 1 x dedicated parking bay. Here are the total areas (including balconies) for each unit:\n- First Floor: 101 (47m²), 102 (67m²), 103 (45m²), 104 (48m²), 105 (48m²), 106 (45m²), 107 (67m²), 108 (47m²).\n- Second Floor: 201 (47m²), 202 (68m²), 203 (45m²), 204 (48m²), 205 (48m²), 206 (45m²), 207 (67m²), 208 (47m²).\n- Third Floor: 301 (67m²), 302 (77m²), 303 (77m²), 304 (77m²), 305 (77m²), 306 (67m²).",
+        "category": "General"
+    },
+    {
+        "id": "1-bed-size",
+        "question": "What is the size of a 1 bed unit?",
+        "answer": "1-bedroom units at Cornerstone on Arum range from 45m² to 48m² in total area (including balcony).",
+        "category": "General"
+    },
+    {
+        "id": "2-bed-size",
+        "question": "What is the size of a 2 bed unit?",
+        "answer": "2-bedroom units range from 67m² to 68m² for standard units, and 77m² for loft units (total area including balcony).",
+        "category": "General"
+    },
+    {
         "id": "deposit",
         "question": "What deposit is required?",
         "answer": "R5,000 reservation deposit is payable within 7 days of Offer to Purchase signature. Applies to cash and bond buyers.",
@@ -86,7 +104,7 @@
     {
         "id": "tech-utilities",
         "question": "What tech and utilities are provided?",
-        "answer": "Cornerstone on Arum is Fibre ready and features smart prepaid meters for electricity and water (Hot & Cold). A centralised heat pump system provides hot water with up to 40% energy savings. Battery backup power is provided for common areas, security, and access control.",
+        "answer": "Cornerstone on Arum is Fibre ready and features smart prepaid meters for electricity and water (Hot \u0026 Cold). A centralised heat pump system provides hot water with up to 40% energy savings. Battery backup power is provided for common areas, security, and access control.",
         "category": "Tech"
     },
     {
@@ -110,7 +128,7 @@
     {
         "id": "parking",
         "question": "What is the parking situation?",
-        "answer": "There is 1 allocated bay per unit. Residents must park in their allocated bays only.",
+        "answer": "All units in the development have 1 x dedicated parking bay. Residents must park in their allocated bays only.",
         "category": "Lifestyle"
     },
     {
