@@ -163,7 +163,7 @@ function ChatPanel({ onRequestClose }: { onRequestClose: () => void }) {
         body: JSON.stringify({ messages: [{ role: 'user', content: t }] }),
       });
       const data = await res.json();
-      const reply = data?.reply ?? 'No response.';
+      const reply = data?.content ?? data?.reply ?? 'No response.';
       setItems(prev => [...prev, { role: 'assistant', text: reply }]);
     } catch {
       setItems(prev => [...prev, { role: 'assistant', text: 'Network error. Please try again.' }]);
