@@ -4,7 +4,11 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
-export function Navigation() {
+interface NavigationProps {
+  onEnquire: () => void
+}
+
+export function Navigation({ onEnquire }: NavigationProps) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
@@ -29,12 +33,12 @@ export function Navigation() {
   ]
 
   return (
-    <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-50">
+    <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-[100]">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex flex-col">
-          <div className="text-lg sm:text-xl font-bold leading-tight">CORNERSTONE</div>
-          <div className="text-xs sm:text-sm text-gray-300 leading-tight">ON ARUM</div>
+          <div className="text-lg sm:text-xl font-bold leading-tight uppercase tracking-wider">CORNERSTONE</div>
+          <div className="text-[10px] sm:text-xs text-blue-400 font-semibold tracking-[0.2em] leading-tight">ON ARUM</div>
         </div>
 
         {/* Desktop nav */}
@@ -43,14 +47,14 @@ export function Navigation() {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="hover:text-gray-300 transition-colors text-sm lg:text-base"
+              className="hover:text-blue-400 transition-colors text-sm lg:text-base font-medium"
             >
               {link.label}
             </button>
           ))}
           <Button
-            onClick={() => scrollToSection("contact")}
-            className="bg-blue-600 hover:bg-blue-700 text-white border-0"
+            onClick={onEnquire}
+            className="bg-blue-600 hover:bg-blue-700 text-white border-0 font-bold px-6"
           >
             Enquire Now
           </Button>
@@ -59,8 +63,8 @@ export function Navigation() {
         {/* Mobile right side */}
         <div className="md:hidden flex items-center gap-3">
           <button
-            onClick={() => scrollToSection("contact")}
-            className="text-xs bg-blue-600 text-white px-3 py-2 rounded font-semibold hover:bg-blue-700"
+            onClick={onEnquire}
+            className="text-[10px] bg-blue-600 text-white px-4 py-2.5 rounded shadow-lg font-bold hover:bg-blue-700 uppercase tracking-wide"
           >
             Enquire
           </button>
@@ -68,7 +72,7 @@ export function Navigation() {
           <button
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="flex flex-col justify-center items-center w-9 h-9 gap-1.5 rounded hover:bg-white/10 transition-colors"
+            className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-full hover:bg-white/10 transition-colors bg-white/5"
           >
             <span className={`block h-0.5 w-5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
             <span className={`block h-0.5 w-5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
@@ -79,13 +83,13 @@ export function Navigation() {
 
       {/* Mobile dropdown menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#1e293b] border-t border-white/10 shadow-xl z-50">
-          <div className="flex flex-col py-2">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#1e293b] border-t border-white/10 shadow-2xl z-50 animate-in slide-in-from-top duration-300">
+          <div className="flex flex-col py-2 px-4 shadow-inner">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-left px-6 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors border-b border-white/5 last:border-0"
+                className="text-left px-4 py-4 text-sm font-semibold hover:text-blue-400 transition-colors border-b border-white/5 last:border-0"
               >
                 {link.label}
               </button>
@@ -96,3 +100,4 @@ export function Navigation() {
     </nav>
   )
 }
+

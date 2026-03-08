@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { VideoSection } from "@/components/video-section"
@@ -10,8 +13,15 @@ import { BetterBondSection } from "@/components/betterbond-section"
 import { ContactLocationSection } from "@/components/contact-location-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Footer } from "@/components/footer"
+import { FloatingBanner } from "@/components/floating-banner"
+import { EnquiryModal } from "@/components/enquiry-modal"
 
 export default function HomePage() {
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false)
+
+  const openEnquiryModal = () => setIsEnquiryModalOpen(true)
+  const closeEnquiryModal = () => setIsEnquiryModalOpen(false)
+
   return (
     <main className="min-h-screen bg-background relative">
       <div className="fixed inset-0 z-0 pointer-events-none">
@@ -26,7 +36,8 @@ export default function HomePage() {
 
       {/* Content layer - all sections maintain original styling */}
       <div className="relative z-10">
-        <Navigation />
+        <Navigation onEnquire={openEnquiryModal} />
+        <FloatingBanner onSignUpClick={openEnquiryModal} />
         <HeroSection />
         <VideoSection />
         <FeaturesSection />
@@ -39,6 +50,9 @@ export default function HomePage() {
         <WhatsAppButton />
         <Footer />
       </div>
+
+      <EnquiryModal isOpen={isEnquiryModalOpen} onClose={closeEnquiryModal} />
     </main>
   )
 }
+
