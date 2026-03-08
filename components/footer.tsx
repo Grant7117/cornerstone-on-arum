@@ -39,7 +39,17 @@ export function Footer() {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-2 text-xs text-foreground/70">
             <p>Developed by Igneous Property Development</p>
             <span className="hidden sm:inline">•</span>
-            <p>Website by IntelDev – Development Intelligence & Advisory</p>
+            <p>
+              Website by:{" "}
+              <a
+                href="https://www.inteldev.co.za"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline font-medium"
+              >
+                Inteldev – Development Intelligence & Advisory
+              </a>
+            </p>
             <span className="hidden sm:inline">•</span>
             <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
           </div>
