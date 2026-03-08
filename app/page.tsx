@@ -28,7 +28,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/images/cornerstone-hero.jpg)",
+            backgroundImage: "url(/images/17-north-hero-image.jpeg)",
             opacity: 0.15,
           }}
         />

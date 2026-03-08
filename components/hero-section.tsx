@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section className="relative w-full min-h-[560px] h-[70vh] md:h-[800px] lg:h-[850px] overflow-hidden">
       <Image
-        src="/images/cornerstone-hero.jpg"
+        src="/images/17-north-hero-image.jpeg"
         alt="Cornerstone on Arum - Modern apartment building"
         fill
         className="object-cover object-[35%_center]"
