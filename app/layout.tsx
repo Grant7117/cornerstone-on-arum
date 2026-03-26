@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: 'Cornerstone on Arum - Premium Property Development in Table View, Cape Town',
   description: 'Luxury apartments at 154 Arum Road, Table View. Advanced security, sustainable living, and premium amenities. Contact Grant: 072 450 3626',
   keywords: ['Table View apartments', 'Cornerstone on Arum', 'Property development Cape Town', 'Luxury apartments Table View', '154 Arum Road'],
-  // --- DOMAIN VERIFICATION ADDED HERE ---
   verification: {
     facebook: 'sha8fjw0dkn178anvodxwr4f90gpgy',
   },
@@ -33,7 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* --- META TRACKING SCRIPT ADDED HERE --- */}
         <script dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -44,8 +42,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
+            
             fbq('init', '2421305398312777'); 
             fbq('track', 'PageView');
+
+            // GLOBAL LEAD TRACKER - Hook this to your forms/buttons
+            window.trackMetaLead = function(formName) {
+              if (typeof fbq === 'function') {
+                fbq('track', 'Lead', { 
+                  content_name: formName,
+                  status: 'submitted'
+                });
+                console.log('Meta Lead Captured: ' + formName);
+              }
+            };
           `
         }} />
         <noscript>
