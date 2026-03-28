@@ -204,7 +204,7 @@ export function VideoSection() {
                 const message = encodeURIComponent("I am interested in receiving VIP Availability Alerts for Cornerstone on Arum")
                 window.open(`https://wa.me/27724503626?text=${message}`, '_blank')
               }}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 md:py-6 md:px-12 text-lg rounded-md shadow-xl transition-all"
+              className="!bg-[#0066FF] !text-white hover:!bg-blue-700 font-bold py-4 px-8 md:py-6 md:px-12 text-lg rounded-md shadow-xl transition-all"
             >
               Sign up for VIP alerts
             </Button>
