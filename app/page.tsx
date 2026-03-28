@@ -41,7 +41,7 @@ export default function HomePage() {
         <HeroSection />
         <VideoSection />
         <FeaturesSection />
-        <UnitsCarousel />
+        <UnitsCarousel onEnquire={openEnquiryModal} />
         <FloorPlansSection />
         <PropertyFeaturesSection />
         <DocumentsSection />

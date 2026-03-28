@@ -24,7 +24,7 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
             <div className="bg-white/50 backdrop-blur-md border-2 border-blue-600 shadow-2xl rounded-2xl overflow-hidden relative p-5 md:p-8">
                 <button
                     onClick={() => setIsVisible(false)}
-                    className="absolute top-3 right-3 text-slate-400 hover:text-slate-600 transition-colors p-1"
+                    className="absolute top-3 right-3 text-black hover:text-gray-700 transition-colors p-1"
                     aria-label="Close banner"
                 >
                     <X className="w-5 h-5" />

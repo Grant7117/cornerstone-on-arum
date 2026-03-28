@@ -3,10 +3,15 @@
 import { useState, useRef } from "react"
 import { UnitCard } from "@/components/unit-card"
 import { ChevronLeft, ChevronRight } from "@/components/icons"
+import { Button } from "@/components/ui/button"
 
 import { unitsData } from "@/data/units"
 
-export function UnitsCarousel() {
+interface UnitsCarouselProps {
+  onEnquire: () => void
+}
+
+export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
   const [selectedType, setSelectedType] = useState<"1-bedroom" | "2-bedroom" | "2-bedroom-loft">("1-bedroom")
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const units = unitsData[selectedType]
@@ -155,6 +160,16 @@ export function UnitsCarousel() {
         >
           <ChevronRight className="w-6 h-6 text-gray-900" />
         </button>
+      </div>
+
+      {/* Further Information Request Button */}
+      <div className="flex justify-center mt-10 sm:mt-12">
+        <Button
+          onClick={onEnquire}
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 md:py-8 md:px-16 text-lg md:text-xl rounded-md shadow-xl transition-all whitespace-normal h-auto max-w-[90vw] text-center"
+        >
+          Request Further<br className="sm:hidden" /> Information
+        </Button>
       </div>
     </div>
   )

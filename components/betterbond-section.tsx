@@ -67,7 +67,7 @@ export function BetterBondSection() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#0066FF] hover:bg-[#0052CC] text-white text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all"
+                className="bg-[#00D9FF] hover:bg-[#05a6c3] text-[#003366] font-extrabold text-xl px-10 py-8 shadow-[0_0_20px_rgba(0,217,255,0.4)] hover:shadow-[0_0_30px_rgba(0,217,255,0.6)] transition-all transform hover:-translate-y-1"
               >
                 <Link
                   href="https://digiapp.betterbond.co.za/YolandaKensley/38613/129015"
