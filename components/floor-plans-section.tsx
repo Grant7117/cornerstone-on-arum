@@ -262,7 +262,11 @@ const floorPlans: FloorPlan[] = [
   },
 ]
 
-export function FloorPlansSection() {
+interface FloorPlansSectionProps {
+  onEnquire: () => void
+}
+
+export function FloorPlansSection({ onEnquire }: FloorPlansSectionProps) {
   const [expandedPlan, setExpandedPlan] = useState<string | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<"all" | "loft">("all")
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -442,6 +446,16 @@ export function FloorPlansSection() {
           >
             <ChevronRight className="w-6 h-6 text-gray-900" />
           </button>
+        </div>
+
+        {/* Further Information Request Button */}
+        <div className="flex justify-center mt-12 sm:mt-16">
+          <Button
+            onClick={onEnquire}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 md:py-8 md:px-16 text-lg md:text-xl rounded-md shadow-xl transition-all whitespace-normal h-auto max-w-[90vw] text-center"
+          >
+            Request Further<br className="sm:hidden" /> Information
+          </Button>
         </div>
       </div>
     </div>

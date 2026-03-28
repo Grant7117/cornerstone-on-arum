@@ -42,7 +42,7 @@ export default function HomePage() {
         <VideoSection />
         <FeaturesSection />
         <UnitsCarousel onEnquire={openEnquiryModal} />
-        <FloorPlansSection />
+        <FloorPlansSection onEnquire={openEnquiryModal} />
         <PropertyFeaturesSection />
         <DocumentsSection />
         <BetterBondSection />
