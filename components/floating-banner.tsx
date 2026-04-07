@@ -33,10 +33,10 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                 <div className="flex flex-col gap-4 text-center md:text-left pr-4">
                     <div className="space-y-1 mb-1">
                         <p className="text-red-600 text-xl md:text-2xl font-bold leading-tight">
-                            5 units have come back onto the market
+                            5 Units have come back onto the market- act now!
                         </p>
                         <p className="text-slate-800 text-lg md:text-xl font-semibold">
-                            R5000 deposit secures
+                            R5000 Deposit secures!
                         </p>
                     </div>
 
@@ -54,6 +54,21 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                             </button>{" "}
                             to Receive Immediate Availability Alerts
                         </p>
+                    </div>
+
+                    <div className="flex justify-center md:justify-start">
+                        <button
+                            onClick={() => {
+                                const element = document.getElementById("about")
+                                if (element) {
+                                    element.scrollIntoView({ behavior: "smooth", block: "start" })
+                                }
+                            }}
+                            className="text-xs text-blue-600 hover:text-blue-800 font-semibold uppercase tracking-wider flex items-center gap-1 transition-colors"
+                        >
+                            <span>Project Information</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                        </button>
                     </div>
                 </div>
             </div>
