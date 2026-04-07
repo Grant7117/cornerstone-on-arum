@@ -31,11 +31,14 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                 </button>
 
                 <div className="flex flex-col gap-4 text-center md:text-left pr-4">
-                    <p className="text-slate-800 text-base md:text-lg leading-relaxed font-medium">
-                        Cornerstone-on-Arum has officially sold out in record time, setting a new benchmark for the area.
-                        However, the inquiries keep coming. To manage the surge, the developer is now accepting {" "}
-                        <span className="font-bold text-blue-700 underline underline-offset-2">Back-Up Offers</span>.
-                    </p>
+                    <div className="space-y-1 mb-1">
+                        <p className="text-red-600 text-xl md:text-2xl font-bold leading-tight">
+                            5 units have come back onto the market
+                        </p>
+                        <p className="text-slate-800 text-lg md:text-xl font-semibold">
+                            R5000 deposit secures
+                        </p>
+                    </div>
 
                     <div className="bg-blue-50/80 p-3 md:p-4 rounded-xl border border-blue-100 mt-1 shadow-sm">
                         <p className="text-blue-900 font-bold text-sm md:text-base">
