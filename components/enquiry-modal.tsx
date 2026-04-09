@@ -50,54 +50,60 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     </DialogDescription>
                 </DialogHeader>
                 <form onSubmit={handleSubmit} className="space-y-4 py-4">
-                    <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
-                        <Input
-                            id="name"
-                            name="name"
-                            required
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="Your full name"
-                        />
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <Label htmlFor="name" className="text-sm font-semibold text-slate-700">Full Name</Label>
+                            <Input
+                                id="name"
+                                name="name"
+                                required
+                                value={formData.name}
+                                onChange={handleChange}
+                                placeholder="Enter your full name"
+                                className="h-12 text-base px-4 rounded-xl border-slate-200 focus:border-blue-500 focus:ring-blue-500"
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="contact" className="text-sm font-semibold text-slate-700">Contact Number</Label>
+                            <Input
+                                id="contact"
+                                name="contact"
+                                type="tel"
+                                required
+                                value={formData.contact}
+                                onChange={handleChange}
+                                placeholder="e.g. 072 450 3626"
+                                className="h-12 text-base px-4 rounded-xl border-slate-200 focus:border-blue-500 focus:ring-blue-500"
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="email" className="text-sm font-semibold text-slate-700">Email Address</Label>
+                            <Input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="your@email.com"
+                                className="h-12 text-base px-4 rounded-xl border-slate-200 focus:border-blue-500 focus:ring-blue-500"
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="vipBackup" className="text-sm font-semibold text-slate-700">Add to VIP-Backup list?</Label>
+                            <select
+                                id="vipBackup"
+                                name="vipBackup"
+                                value={formData.vipBackup}
+                                onChange={handleChange}
+                                className="flex h-12 w-full rounded-xl border border-slate-200 bg-background px-4 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+                            >
+                                <option value="yes">Yes, notify me of new availability</option>
+                                <option value="no">No, just this enquiry</option>
+                            </select>
+                        </div>
                     </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="contact">Contact Number</Label>
-                        <Input
-                            id="contact"
-                            name="contact"
-                            required
-                            value={formData.contact}
-                            onChange={handleChange}
-                            placeholder="e.g. 072 450 3626"
-                        />
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="email">Email Address</Label>
-                        <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="your@email.com"
-                        />
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="vipBackup">Do you want to be added to the VIP-Backup list?</Label>
-                        <select
-                            id="vipBackup"
-                            name="vipBackup"
-                            value={formData.vipBackup}
-                            onChange={handleChange}
-                            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        >
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-                    </div>
-                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-6 text-lg">
+                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-7 text-xl rounded-xl shadow-lg mt-6 active:scale-95 transition-all">
                         Send to WhatsApp
                     </Button>
                 </form>

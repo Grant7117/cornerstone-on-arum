@@ -21,38 +21,38 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
 
     return (
         <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[60] w-full max-w-4xl px-4 animate-in slide-in-from-top duration-500">
-            <div className="bg-white/50 backdrop-blur-md border-2 border-blue-600 shadow-2xl rounded-2xl overflow-hidden relative p-5 md:p-8">
+            <div className="bg-white/70 backdrop-blur-lg border-2 border-blue-600 shadow-2xl rounded-2xl overflow-hidden relative p-6 md:p-8">
                 <button
                     onClick={() => setIsVisible(false)}
-                    className="absolute top-3 right-3 text-black hover:text-gray-700 transition-colors p-1"
+                    className="absolute top-2 right-2 text-slate-900 hover:text-slate-700 transition-colors w-12 h-12 flex items-center justify-center rounded-full bg-white/50 border border-black/5 active:scale-90"
                     aria-label="Close banner"
                 >
-                    <X className="w-5 h-5" />
+                    <X className="w-6 h-6" />
                 </button>
 
-                <div className="flex flex-col gap-4 text-center md:text-left pr-4">
-                    <div className="space-y-1 mb-1">
-                        <p className="text-red-600 text-xl md:text-2xl font-bold leading-tight">
-                            5 Units have come back onto the market- act now!
+                <div className="flex flex-col gap-4 text-center md:text-left pr-6">
+                    <div className="space-y-2 mb-1">
+                        <p className="text-red-600 text-xl md:text-2xl font-black leading-tight">
+                            5 Units back on market!
                         </p>
-                        <p className="text-slate-800 text-lg md:text-xl font-semibold">
-                            R5000 Deposit secures!
+                        <p className="text-slate-900 text-lg md:text-xl font-bold">
+                            R5000 Deposit secures your unit!
                         </p>
                     </div>
 
-                    <div className="bg-blue-50/80 p-3 md:p-4 rounded-xl border border-blue-100 mt-1 shadow-sm">
-                        <p className="text-blue-900 font-bold text-sm md:text-base">
+                    <div className="bg-blue-600 p-4 rounded-xl shadow-lg mt-1">
+                        <p className="text-white font-bold text-sm md:text-base">
                             VIP Back-Up-List: sign up {" "}
                             <button
                                 onClick={(e) => {
                                     e.preventDefault();
                                     onSignUpClick();
                                 }}
-                                className="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1 transition-all"
+                                className="text-white hover:text-blue-100 underline decoration-2 underline-offset-4 cursor-pointer focus:outline-none font-black px-1 transition-all"
                             >
                                 here
                             </button>{" "}
-                            to Receive Immediate Availability Alerts
+                            to get immediate availability alerts
                         </p>
                     </div>
 
@@ -64,10 +64,10 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                                     element.scrollIntoView({ behavior: "smooth", block: "start" })
                                 }
                             }}
-                            className="text-xs text-blue-600 hover:text-blue-800 font-semibold uppercase tracking-wider flex items-center gap-1 transition-colors"
+                            className="bg-slate-100 hover:bg-slate-200 text-[#0066FF] px-4 py-3 rounded-lg text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all active:scale-95 shadow-sm"
                         >
                             <span>Project Information</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                         </button>
                     </div>
                 </div>

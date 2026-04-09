@@ -64,7 +64,7 @@ export function Navigation({ onEnquire }: NavigationProps) {
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={onEnquire}
-            className="text-[10px] bg-blue-600 text-white px-4 py-2.5 rounded shadow-lg font-bold hover:bg-blue-700 uppercase tracking-wide"
+            className="text-sm bg-blue-600 text-white px-5 py-3 rounded-lg shadow-lg font-bold hover:bg-blue-700 uppercase tracking-wide transition-all active:scale-95"
           >
             Enquire
           </button>
@@ -72,11 +72,11 @@ export function Navigation({ onEnquire }: NavigationProps) {
           <button
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-full hover:bg-white/10 transition-colors bg-white/5"
+            className="flex flex-col justify-center items-center w-12 h-12 gap-1.5 rounded-full hover:bg-white/10 transition-colors bg-white/5"
           >
-            <span className={`block h-0.5 w-5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-0.5 w-5 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 w-5 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </div>
       </div>

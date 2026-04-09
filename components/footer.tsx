@@ -36,22 +36,24 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-2 text-xs text-foreground/70">
-            <p>Developed by Igneous Property Development</p>
-            <span className="hidden sm:inline">•</span>
-            <p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-foreground/70">
+            <p className="text-center">Developed by Igneous Property Development</p>
+            <span className="hidden sm:inline opacity-30">•</span>
+            <p className="text-center">
               Website by:{" "}
               <a
                 href="https://www.inteldev.co.za"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline font-medium"
+                className="hover:underline font-bold text-foreground"
               >
-                Inteldev – Development Intelligence & Advisory
+                Inteldev
               </a>
             </p>
-            <span className="hidden sm:inline">•</span>
-            <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
+            <span className="hidden sm:inline opacity-30">•</span>
+            <Link href="/privacy-policy" className="hover:underline py-2 px-4 bg-foreground/5 rounded-full font-semibold">
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </footer>
