@@ -1,1 +1,222 @@
-﻿[{"Unit No": 101, "Bedroom": 1, "Bathroom": 1, "Floor": "First", "Total m²": 47, "Price": 1700000, "Status": "Available", "Occupation": "June 2026"},{"Unit No": 102, "Bedroom": 2, "Bathroom": 1, "Floor": "First", "Total m²": 67, "Price": 2300000, "Status": "Available", "Occupation": "June 2026"},{"Unit No": 103, "Bedroom": 1, "Bathroom": 1, "Floor": "First", "Total m²": 45, "Price": 1700000, "Status": "Available", "Occupation": "June 2026"},{"Unit No": 104, "Bedroom": 1, "Bathroom": 1, "Floor": "First", "Total m²": 48, "Price": 1700000, "Status": "Available", "Occupation": "June 2026"},{"Unit No": 105, "Bedroom": 1, "Bathroom": 1, "Floor": "First", "Total m²": 48, "Price": 1700000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 106, "Bedroom": 1, "Bathroom": 1, "Floor": "First", "Total m²": 45, "Price": 1700000, "Status": "Available", "Occupation": "June 2026"},{"Unit No": 107, "Bedroom": 2, "Bathroom": 1, "Floor": "First", "Total m²": 67, "Price": 2300000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 108, "Bedroom": 1, "Bathroom": 1, "Floor": "First", "Total m²": 47, "Price": 1700000, "Status": "Available", "Occupation": "June 2026"},{"Unit No": 201, "Bedroom": 1, "Bathroom": 1, "Floor": "Second", "Total m²": 47, "Price": 1700000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 202, "Bedroom": 2, "Bathroom": 1, "Floor": "Second", "Total m²": 67, "Price": 2300000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 203, "Bedroom": 1, "Bathroom": 1, "Floor": "Second", "Total m²": 45, "Price": 1700000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 204, "Bedroom": 1, "Bathroom": 1, "Floor": "Second", "Total m²": 48, "Price": 1700000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 205, "Bedroom": 1, "Bathroom": 1, "Floor": "Second", "Total m²": 48, "Price": 1700000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 206, "Bedroom": 1, "Bathroom": 1, "Floor": "Second", "Total m²": 45, "Price": 1700000, "Status": "Available", "Occupation": "June 2026"},{"Unit No": 207, "Bedroom": 2, "Bathroom": 1, "Floor": "Second", "Total m²": 67, "Price": 2300000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 208, "Bedroom": 1, "Bathroom": 1, "Floor": "Second", "Total m²": 47, "Price": 1700000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 301, "Bedroom": 2, "Bathroom": 2, "Floor": "Third", "Total m²": 92, "Price": 2725000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 302, "Bedroom": 2, "Bathroom": 2, "Floor": "Third", "Total m²": 88, "Price": 2725000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 303, "Bedroom": 2, "Bathroom": 2, "Floor": "Third", "Total m²": 88, "Price": 2725000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 304, "Bedroom": 2, "Bathroom": 2, "Floor": "Third", "Total m²": 92, "Price": 2725000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 305, "Bedroom": 2, "Bathroom": 1, "Floor": "Third", "Total m²": 67, "Price": 2300000, "Status": "SOLD", "Occupation": "June 2026"},{"Unit No": 306, "Bedroom": 2, "Bathroom": 1, "Floor": "Third", "Total m²": 67, "Price": 2300000, "Status": "Available", "Occupation": "June 2026"}]
+﻿[
+    {
+        "Unit No":  101,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "First",
+        "Total m²":  47,
+        "Price":  1700000,
+        "Status":  "Available",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  102,
+        "Bedroom":  2,
+        "Bathroom":  1,
+        "Floor":  "First",
+        "Total m²":  67,
+        "Price":  2300000,
+        "Status":  "Available",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  103,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "First",
+        "Total m²":  45,
+        "Price":  1700000,
+        "Status":  "Available",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  104,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "First",
+        "Total m²":  48,
+        "Price":  1700000,
+        "Status":  "Available",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  105,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "First",
+        "Total m²":  48,
+        "Price":  1700000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  106,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "First",
+        "Total m²":  45,
+        "Price":  1700000,
+        "Status":  "Available",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  107,
+        "Bedroom":  2,
+        "Bathroom":  1,
+        "Floor":  "First",
+        "Total m²":  67,
+        "Price":  2300000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  108,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "First",
+        "Total m²":  47,
+        "Price":  1700000,
+        "Status":  "Available",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  201,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "Second",
+        "Total m²":  47,
+        "Price":  1700000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  202,
+        "Bedroom":  2,
+        "Bathroom":  1,
+        "Floor":  "Second",
+        "Total m²":  67,
+        "Price":  2300000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  203,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "Second",
+        "Total m²":  45,
+        "Price":  1700000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  204,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "Second",
+        "Total m²":  48,
+        "Price":  1700000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  205,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "Second",
+        "Total m²":  48,
+        "Price":  1700000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  206,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "Second",
+        "Total m²":  45,
+        "Price":  1700000,
+        "Status":  "Available",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  207,
+        "Bedroom":  2,
+        "Bathroom":  1,
+        "Floor":  "Second",
+        "Total m²":  67,
+        "Price":  2300000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  208,
+        "Bedroom":  1,
+        "Bathroom":  1,
+        "Floor":  "Second",
+        "Total m²":  47,
+        "Price":  1700000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  301,
+        "Bedroom":  2,
+        "Bathroom":  2,
+        "Floor":  "Third",
+        "Total m²":  92,
+        "Price":  2725000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  302,
+        "Bedroom":  2,
+        "Bathroom":  2,
+        "Floor":  "Third",
+        "Total m²":  88,
+        "Price":  2725000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  303,
+        "Bedroom":  2,
+        "Bathroom":  2,
+        "Floor":  "Third",
+        "Total m²":  88,
+        "Price":  2725000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  304,
+        "Bedroom":  2,
+        "Bathroom":  2,
+        "Floor":  "Third",
+        "Total m²":  92,
+        "Price":  2725000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  305,
+        "Bedroom":  2,
+        "Bathroom":  1,
+        "Floor":  "Third",
+        "Total m²":  67,
+        "Price":  2300000,
+        "Status":  "SOLD",
+        "Occupation":  "June 2026"
+    },
+    {
+        "Unit No":  306,
+        "Bedroom":  2,
+        "Bathroom":  1,
+        "Floor":  "Third",
+        "Total m²":  67,
+        "Price":  2300000,
+        "Status":  "Available",
+        "Occupation":  "June 2026"
+    }
+]
