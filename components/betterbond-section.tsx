@@ -4,32 +4,32 @@ import Link from "next/link"
 
 export function BetterBondSection() {
   return (
-    <section id="financing" className="py-20 px-6 bg-white overflow-hidden">
+    <section id="financing" className="py-12 md:py-20 px-4 md:px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header and Logo */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
-          <h2 className="text-4xl md:text-6xl font-black text-[#001f3f] leading-tight">
-            Frictionless Financing <br />& Approvals
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-16 gap-4 md:gap-6">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-[#001f3f] leading-tight">
+            Frictionless Financing <br className="hidden sm:block" />& Approvals
           </h2>
-          <div className="relative w-48 md:w-64 h-24">
+          <div className="relative w-40 sm:w-48 md:w-64 h-20 sm:h-24">
             <Image
               src="/images/betterbond-logo.png"
               alt="BetterBond"
               fill
-              className="object-contain object-right"
+              className="object-contain object-left md:object-right"
             />
           </div>
         </div>
 
         {/* 3 Column Grid */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">
           
           {/* Column 1: The Promise */}
-          <div className="lg:col-span-3 space-y-6">
-            <h3 className="text-2xl font-black text-[#001f3f] border-b-4 border-[#001f3f] pb-2 inline-block">
-              The BetterBond <br />Promise:
+          <div className="lg:col-span-3 space-y-4 md:space-y-6">
+            <h3 className="text-xl md:text-2xl font-black text-[#001f3f] border-b-4 border-[#001f3f] pb-2 inline-block">
+              The BetterBond <br className="hidden md:block" />Promise:
             </h3>
-            <p className="text-lg text-[#001f3f] font-medium leading-relaxed">
+            <p className="text-base md:text-lg text-[#001f3f] font-medium leading-relaxed">
               We submit your home loan application to multiple leading banks—including your own—forcing them to compete for your business and secure the lowest possible rate.
             </p>
           </div>
