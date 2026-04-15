@@ -67,13 +67,29 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
       </div>
 
       {/* Right Minimalist Spec Column */}
-      <div className="w-full md:w-[38%] flex flex-col justify-center p-4 sm:p-5 lg:p-6 bg-white overflow-hidden">
-        <div className="mb-3 text-center w-full -mt-5">
-          <h3 className="text-2xl sm:text-3xl font-bold text-[#00E676] mb-0.5 leading-none tracking-tight">Available<br/>Now!</h3>
-          <p className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight leading-tight">{unit.price}</p>
+      <div className="w-full md:w-[38%] flex flex-col p-5 lg:p-6 bg-white">
+        
+        {/* Dynamic Mathematical Spacing for Header */}
+        <div className="flex-grow flex flex-col items-center text-center">
+          {/* Gap 1 (50% of X) */}
+          <div className="flex-1 min-h-[8px]"></div>
+          
+          <div className="w-full">
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#00E676] leading-[1.1] tracking-tight">
+              Available<br/>Now!
+            </h3>
+          </div>
+          
+          {/* Gap 2 (50% of X) */}
+          <div className="flex-1 min-h-[8px]"></div>
+          
+          <p className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight leading-none mb-4">
+            {unit.price}
+          </p>
         </div>
 
-        <div className="space-y-1.5 w-full max-w-[220px] mx-auto">
+        {/* Static Specs Block fixed at bottom relative to available space */}
+        <div className="space-y-1.5 w-full max-w-[220px] mx-auto mt-auto pb-1">
           <div className="flex justify-between items-center">
             <span className="text-[11px] text-gray-500 uppercase tracking-widest">Bedrooms</span>
             <span className="text-sm font-medium text-gray-900">{unit.bedrooms}</span>
