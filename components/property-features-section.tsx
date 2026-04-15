@@ -2,17 +2,24 @@ import Image from "next/image"
 
 export function PropertyFeaturesSection() {
   return (
-    <div id="features" className="w-full bg-background flex flex-col items-center">
+    <div id="features" className="w-full bg-[#EBE9E2] flex flex-col items-center">
       {/* Master Row Placeholder (1920x1080 Aspect Ratio Footprint) */}
-      <div className="w-full max-w-[1920px] aspect-[16/9] flex flex-col items-center justify-center relative bg-[#EBE9E2]">
-        
-        {/* Restored Heading (floating above) */}
-        <div className="absolute top-[8%] text-center w-full z-10 px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-800">Built for Modern Living</h2>
+      <div 
+        className="w-full max-w-[1920px] flex flex-col items-center justify-between"
+        style={{ aspectRatio: "1920 / 1080" }}
+      >
+        {/* Top 10% Margin Space - Holds the Heading */}
+        <div className="flex-1 w-full flex flex-col justify-end items-center pb-4 md:pb-8 lg:pb-10 px-4">
+          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-slate-800 leading-none">
+            Built for Modern Living
+          </h2>
         </div>
 
-        {/* Centered Image Container (1536x864 Footprint exactly at center) */}
-        <div className="relative w-full max-w-[1536px] aspect-[16/9] overflow-hidden mt-8">
+        {/* Centered Image Container (Exactly 80% of Master = 1536x864 Footprint) */}
+        <div 
+          className="relative w-[80%] max-w-[1536px] flex-shrink-0"
+          style={{ aspectRatio: "1536 / 864" }}
+        >
           <Image
             src="/images/Built for modern living.png"
             alt="Built for modern living features"
@@ -22,6 +29,8 @@ export function PropertyFeaturesSection() {
           />
         </div>
 
+        {/* Bottom 10% Margin Space */}
+        <div className="flex-1 w-full" />
       </div>
     </div>
   )
