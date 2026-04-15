@@ -5,6 +5,7 @@ export function PartnersBanner() {
     <StandardBanner
       src="/images/partners.png"
       alt="Our Trusted Partners"
+      maxWidth="max-w-[900px]"
     />
   )
 }
