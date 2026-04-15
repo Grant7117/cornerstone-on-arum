@@ -61,46 +61,46 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
         </div>
 
         {/* Unit Badge */}
-        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm border border-gray-100">
-          <span className="text-sm font-black text-gray-900">UNIT {unit.unitNo}</span>
+        <div className="absolute top-4 left-4 bg-white px-5 py-2 rounded-full shadow-sm">
+          <span className="text-sm font-black text-gray-900 uppercase">UNIT {unit.unitNo}</span>
         </div>
       </div>
 
       {/* Right 1/3: Minimalist Spec Column */}
-      <div className="w-full md:w-[33.4%] flex flex-col justify-between p-6 sm:p-8 bg-white border-t md:border-t-0 md:border-l border-gray-100">
-        <div className="space-y-6">
-          <div className="space-y-1">
-            <p className="text-2xl font-black text-gray-900 tracking-tight">{unit.price}</p>
-            <p className="text-xs font-bold text-blue-600 tracking-widest uppercase">Available Now</p>
+      <div className="w-full md:w-[33.4%] flex flex-col p-6 sm:p-8 sm:px-10 bg-white">
+        <div className="flex-grow flex flex-col justify-center">
+          <div className="text-center md:text-left mb-8">
+            <h3 className="text-3xl font-black text-[#00C853] mb-2 leading-none">Available<br/>Now!</h3>
+            <p className="text-3xl font-black text-gray-900 tracking-tight">{unit.price}</p>
           </div>
 
-          <div className="space-y-4">
-            <div className="flex justify-between items-end border-b border-gray-50 pb-2">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Bedrooms</span>
+          <div className="space-y-4 w-full max-w-[200px] mx-auto md:mx-0">
+            <div className="flex justify-between items-center">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Bedrooms</span>
               <span className="text-sm font-black text-gray-900">{unit.bedrooms}</span>
             </div>
-            <div className="flex justify-between items-end border-b border-gray-50 pb-2">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Bathrooms</span>
+            <div className="flex justify-between items-center">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Bathrooms</span>
               <span className="text-sm font-black text-gray-900">{unit.bathrooms}</span>
             </div>
-            <div className="flex justify-between items-end border-b border-gray-50 pb-2">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Interior</span>
-              <span className="text-sm font-black text-gray-900">{breakdown.int}m²</span>
+            <div className="flex justify-between items-center">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Interior</span>
+              <span className="text-sm font-black text-gray-900">{breakdown.int}</span>
             </div>
-            <div className="flex justify-between items-end border-b border-gray-50 pb-2">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Balcony</span>
-              <span className="text-sm font-black text-gray-900">+{breakdown.bal}m²</span>
+            <div className="flex justify-between items-center">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Balcony</span>
+              <span className="text-sm font-black text-gray-900">{breakdown.bal}</span>
             </div>
-            <div className="flex justify-between items-end pt-2">
-              <span className="text-xs font-black text-gray-900 uppercase">Total Area</span>
-              <span className="text-lg font-black text-gray-900">{unit.size}m²</span>
+            <div className="flex justify-between items-center pt-2">
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Total Size</span>
+              <span className="text-sm font-black text-gray-900">{unit.size}</span>
             </div>
           </div>
         </div>
 
         <Button 
           onClick={onEnquire}
-          className="w-full bg-gray-900 hover:bg-blue-600 text-white font-bold rounded-xl py-6 transition-all shadow-lg transform active:scale-[0.98] h-auto"
+          className="w-full mt-8 bg-gray-900 hover:bg-blue-600 text-white font-bold rounded-xl py-6 transition-all shadow-lg transform active:scale-[0.98] h-auto"
         >
           Secure Unit
         </Button>
