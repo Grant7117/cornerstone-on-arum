@@ -6,13 +6,18 @@ import { Button } from "@/components/ui/button"
 
 interface NavigationProps {
   onEnquire: () => void
+  onOpenFloorPlans: () => void
 }
 
-export function Navigation({ onEnquire }: NavigationProps) {
+export function Navigation({ onEnquire, onOpenFloorPlans }: NavigationProps) {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const scrollToSection = (sectionId: string) => {
+  const handleNavClick = (sectionId: string) => {
     setMenuOpen(false)
+    if (sectionId === "floor-plans") {
+      onOpenFloorPlans()
+      return
+    }
     // Small delay so menu closes before scroll
     setTimeout(() => {
       const element = document.getElementById(sectionId)
@@ -46,7 +51,7 @@ export function Navigation({ onEnquire }: NavigationProps) {
           {navLinks.map((link) => (
             <button
               key={link.id}
-              onClick={() => scrollToSection(link.id)}
+              onClick={() => handleNavClick(link.id)}
               className="hover:text-blue-400 transition-colors text-sm lg:text-base font-medium"
             >
               {link.label}
@@ -88,7 +93,7 @@ export function Navigation({ onEnquire }: NavigationProps) {
             {navLinks.map((link) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => handleNavClick(link.id)}
                 className="text-left px-4 py-5 text-base font-bold hover:text-blue-400 transition-colors border-b border-white/5 last:border-0"
               >
                 {link.label}
