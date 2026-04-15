@@ -2,18 +2,26 @@ import Image from "next/image"
 
 export function PropertyFeaturesSection() {
   return (
-    <div id="features" className="py-16 bg-[#EBE9E2]">
-      <div className="max-w-7xl mx-auto px-4 md:px-0">
-        <div className="relative w-full overflow-hidden rounded-2xl shadow-xl">
+    <div id="features" className="py-16 bg-background flex flex-col items-center">
+      {/* Master Row Placeholder (1920x1080 Aspect Ratio Footprint) */}
+      <div className="w-full max-w-[1920px] aspect-video flex flex-col items-center justify-center relative">
+        
+        {/* Restored Heading */}
+        <div className="absolute top-[8%] text-center w-full z-10 px-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">Built for Modern Living</h2>
+        </div>
+
+        {/* Centered Image Container (1536x864 Footprint) */}
+        <div className="relative w-full max-w-[1536px] aspect-video overflow-hidden">
           <Image
             src="/images/Built for modern living.png"
             alt="Built for modern living features"
-            width={1920}
-            height={1080}
-            className="w-full h-auto object-contain"
-            sizes="(max-width: 768px) 100vw, 1920px"
+            fill
+            className="object-contain"
+            sizes="(max-width: 1536px) 100vw, 1536px"
           />
         </div>
+
       </div>
     </div>
   )
