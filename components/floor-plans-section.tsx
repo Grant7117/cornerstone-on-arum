@@ -449,12 +449,12 @@ export function FloorPlansSection({ onEnquire }: FloorPlansSectionProps) {
         </div>
 
         {/* Further Information Request Button */}
-        <div className="flex justify-center mt-12 sm:mt-16">
+        <div className="flex justify-center mt-12 sm:mt-16 px-4">
           <Button
             onClick={onEnquire}
-            className="!bg-[#0066FF] !text-white hover:!bg-blue-700 font-bold py-4 px-8 md:py-8 md:px-16 text-lg md:text-xl rounded-md shadow-xl transition-all whitespace-normal h-auto max-w-[90vw] text-center"
+            className="w-full sm:w-auto !bg-[#0066FF] !text-white hover:!bg-blue-700 font-bold py-6 px-12 text-lg md:text-xl rounded-xl shadow-xl transition-all transform active:scale-[0.98] h-auto text-center"
           >
-            Request Further<br className="sm:hidden" /> Information
+            Request Further Information
           </Button>
         </div>
       </div>

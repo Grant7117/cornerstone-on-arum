@@ -31,7 +31,7 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6 shadow-2xl hover:shadow-blue-500/50 transition-all"
+              className="!bg-[#0066FF] hover:!bg-blue-700 text-white font-bold text-lg md:text-xl px-12 py-6 rounded-xl shadow-2xl hover:shadow-blue-500/50 transition-all transform active:scale-[0.98] h-auto"
             >
               <button
                 onClick={() => {
@@ -49,7 +49,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="bg-white/95 hover:bg-white text-slate-900 border-0 text-lg px-8 py-6 shadow-2xl"
+              className="bg-white/95 hover:bg-white text-slate-900 border-0 font-bold text-lg md:text-xl px-12 py-6 rounded-xl shadow-2xl transition-all transform active:scale-[0.98] h-auto"
             >
               <Link
                 href="https://digiapp.betterbond.co.za/YolandaKensley/38613/129015"
