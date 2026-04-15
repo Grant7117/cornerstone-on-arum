@@ -1,0 +1,100 @@
+:root {
+    --color-charcoal: #2b292a;
+    --color-warm-beige: #a89b8c;
+    --color-cool-grey: #cfd2d7;
+    --color-ocean-blue: #335e9c;
+    --color-taupe: #6d645b;
+    --bg-primary: #ffffff;
+    --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    color: var(--color-charcoal);
+    line-height: 1.6;
+    background-color: var(--bg-primary);
+}
+
+.btn-premium-primary {
+    background-color: var(--color-charcoal);
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid var(--color-charcoal);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-premium-primary:hover {
+    background-color: var(--color-ocean-blue);
+    border-color: var(--color-ocean-blue);
+}
+
+.btn-premium-secondary {
+    background-color: transparent;
+    color: var(--color-charcoal);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid var(--color-charcoal);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-premium-secondary:hover {
+    background-color: var(--color-cool-grey);
+    border-color: var(--color-cool-grey);
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    padding: 64px 5%;
+    background-color: var(--bg-primary);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.premium-card {
+    background-color: var(--color-charcoal);
+    border: 1px solid var(--color-taupe);
+    border-radius: 8px;
+    padding: 40px 32px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.premium-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(43, 41, 42, 0.15);
+    border-color: var(--color-warm-beige);
+}
+
+.premium-card h3 {
+    color: var(--color-warm-beige);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--color-taupe);
+    padding-bottom: 12px;
+}
+
+.premium-card p {
+    color: var(--color-cool-grey);
+    font-size: 15px;
+}
+
+section { padding: 80px 10%; }
+.hero-section { text-align: center; background-color: var(--color-cool-grey); padding: 100px 10%; }
+.hero-buttons { margin-top: 30px; display: flex; gap: 20px; justify-content: center; }
