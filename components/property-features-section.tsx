@@ -43,24 +43,25 @@ const features = [
 
 export function PropertyFeaturesSection() {
   return (
-    <div id="features" className="py-16 px-4 bg-background">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Built for Modern Living</h2>
+    <div id="property-features" className="py-24 px-4 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">Built for Modern Living</h2>
+          <div className="mt-4 h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-shadow bg-white">
-              <div className="flex gap-4">
+            <Card key={index} className="p-8 hover:shadow-2xl transition-all hover:-translate-y-2 bg-white/80 backdrop-blur-xl border-white/20 rounded-[2rem] shadow-xl">
+              <div className="flex flex-col items-center text-center gap-6">
                 <div
-                  className={`w-16 h-16 rounded-full ${feature.color} flex items-center justify-center flex-shrink-0`}
+                  className={`w-20 h-20 rounded-2xl ${feature.color} flex items-center justify-center flex-shrink-0 shadow-inner`}
                 >
-                  <feature.icon className={`w-8 h-8 ${feature.iconColor}`} />
+                  <feature.icon className={`w-10 h-10 ${feature.iconColor}`} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 text-slate-900">{feature.title}</h3>
+                  <p className="text-base text-slate-600 leading-relaxed font-medium">{feature.description}</p>
                 </div>
               </div>
             </Card>
@@ -68,5 +69,6 @@ export function PropertyFeaturesSection() {
         </div>
       </div>
     </div>
+
   )
 }

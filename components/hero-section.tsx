@@ -17,21 +17,21 @@ export function HeroSection() {
       />
 
 
-      <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-white/20 to-transparent flex items-end justify-center pb-10 md:pb-20 lg:pb-24">
-        <div className="text-center px-6 max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 md:mb-16">
-            Modern Apartments in Table View
+      <div className="absolute inset-0 flex items-center justify-center pt-20">
+        <div className="text-center px-6 max-w-4xl bg-white/10 backdrop-blur-md p-10 md:p-16 rounded-[2.5rem] border border-white/20 shadow-2xl mx-4">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 mb-6 md:mb-10 tracking-tight leading-[0.9]">
+            Modern Apartments <br className="hidden md:block" /> in Table View
           </h1>
-          <p className="text-base sm:text-xl md:text-2xl text-slate-800 mb-6 md:mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-800 mb-10 md:mb-12 leading-relaxed font-medium">
             Modern design, premium finishes, and secure living in Table View, Cape Town.
             <span className="hidden sm:inline"> 100% bond financing available through our trusted partners.</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               asChild
               size="lg"
-              className="!bg-[#0066FF] hover:!bg-blue-700 text-white font-bold text-lg md:text-xl px-12 py-6 rounded-xl shadow-2xl hover:shadow-blue-500/50 transition-all transform active:scale-[0.98] h-auto"
+              className="!bg-black hover:!bg-slate-900 text-white font-bold text-xl px-14 py-8 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-all transform hover:-translate-y-1 active:scale-[0.98] h-auto border-0"
             >
               <button
                 onClick={() => {
@@ -49,7 +49,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="bg-white/95 hover:bg-white text-slate-900 border-0 font-bold text-lg md:text-xl px-12 py-6 rounded-xl shadow-2xl transition-all transform active:scale-[0.98] h-auto"
+              className="bg-transparent hover:bg-black/5 text-slate-900 border-2 border-slate-900 font-bold text-xl px-14 py-8 rounded-2xl transition-all transform hover:-translate-y-1 active:scale-[0.98] h-auto"
             >
               <Link
                 href="https://digiapp.betterbond.co.za/YolandaKensley/38613/129015"
@@ -62,6 +62,7 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+
     </section>
   )
 }

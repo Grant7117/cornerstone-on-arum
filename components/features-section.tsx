@@ -9,61 +9,30 @@ interface FeatureCardProps {
   fullDescription: string
 }
 
-function FeatureCard({ title, shortDescription, fullDescription }: FeatureCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false)
-
+function FeatureCard({ title }: { title: string }) {
   return (
-    <div className="bg-card rounded-lg p-4 shadow-sm border border-border flex flex-col h-full">
-      <h3 className="text-xl font-bold mb-2 text-foreground">{title}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-3 flex-grow">
-        {isExpanded ? fullDescription : shortDescription}
-      </p>
-      <Button
-        variant="link"
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="p-0 h-auto font-semibold underline text-sm self-start !text-black hover:!text-gray-700"
-      >
-        {isExpanded ? "Read Less" : "Read More"}
-      </Button>
+    <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20 flex flex-col h-64 justify-center text-center transition-all hover:shadow-2xl hover:scale-[1.02]">
+      <h3 className="text-2xl font-bold text-slate-900">{title}</h3>
+      <div className="mt-4 h-1 w-12 bg-blue-600 mx-auto rounded-full" />
     </div>
   )
 }
 
 export function FeaturesSection() {
   const features = [
-    {
-      title: "Design & Strength",
-      shortDescription:
-        "Smart layouts maximise space and natural light, paired with premium finishes such as timber-look vinyl flooring, engineered stone countertops, and soft-close cabinetry.",
-      fullDescription:
-        "Smart layouts maximise space and natural light, paired with premium finishes such as timber-look vinyl flooring, engineered stone countertops, and soft-close cabinetry. Built with a full reinforced concrete frame, every apartment delivers structural integrity, acoustic comfort, and reduced long-term maintenance.",
-    },
-    {
-      title: "Safety and Security",
-      shortDescription:
-        "Access control, CCTV off-site monitoring, linked to armed response.",
-      fullDescription:
-        "Access control, CCTV off-site monitoring, linked to armed response. These security measures ensure peace of mind for all residents, creating a safe and secure living environment.",
-    },
-    {
-      title: "Local Advantage",
-      shortDescription:
-        "Positioned in Table View, Cornerstone on Arum is close to beaches, shopping centres, restaurants, top-tier schools, medical facilities, and the MyCiTi transport network.",
-      fullDescription:
-        "Positioned in Table View, Cornerstone on Arum is close to beaches, shopping centres, restaurants, top-tier schools, medical facilities, and the MyCiTi transport network. It combines a coastal lifestyle with everyday convenience, making it an ideal location for both living and investment.",
-    },
+    { title: "Design & Strength" },
+    { title: "Safety and Security" },
+    { title: "Local Advantage" },
   ]
 
   return (
-    <section className="py-6 sm:py-8 px-4 bg-background">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+    <section id="features" className="py-16 sm:py-24 px-4 relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
           {features.map((feature) => (
             <FeatureCard
               key={feature.title}
               title={feature.title}
-              shortDescription={feature.shortDescription}
-              fullDescription={feature.fullDescription}
             />
           ))}
         </div>
@@ -71,3 +40,4 @@ export function FeaturesSection() {
     </section>
   )
 }
+

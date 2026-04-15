@@ -175,14 +175,15 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
       </div>
 
       {/* Further Information Request Button */}
-      <div className="flex justify-center mt-8 sm:mt-12 px-4">
+      <div className="flex justify-center mt-12 sm:mt-20 px-4">
         <Button
           onClick={onEnquire}
-          className="w-full sm:w-auto !bg-[#0066FF] !text-white hover:!bg-blue-700 font-bold py-6 px-12 text-lg md:text-xl rounded-xl shadow-xl transition-all transform active:scale-[0.98] h-auto text-center"
+          className="w-full sm:w-auto !bg-black hover:!bg-slate-900 !text-white font-black py-8 px-16 text-xl md:text-2xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all transform hover:-translate-y-1 active:scale-[0.98] h-auto text-center border-0"
         >
           Request Further Information
         </Button>
       </div>
+
     </div>
   )
 }

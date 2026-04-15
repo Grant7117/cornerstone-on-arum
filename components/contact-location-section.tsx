@@ -68,13 +68,9 @@ export function ContactLocationSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-1 text-gray-900">WhatsApp Business</h4>
-                    <p className="text-gray-700 mb-3">072 450 3626</p>
-                    <Button asChild className="!bg-[#25D366] hover:!bg-[#20BA5A] text-white">
-                      <Link href="https://wa.me/27724503626" target="_blank" rel="noopener noreferrer">
-                        Message on WhatsApp
-                      </Link>
-                    </Button>
+                    <p className="text-gray-700">072 450 3626</p>
                   </div>
+
                 </div>
 
                 {/* Email */}
