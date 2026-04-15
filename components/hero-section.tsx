@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full min-h-[560px] h-[70vh] md:h-[800px] lg:h-[850px] overflow-hidden">
+    <section className="relative w-full h-[500px] sm:h-[600px] md:h-[800px] lg:h-[850px] overflow-hidden">
       <Image
         src="/images/arum-hero-image.png"
         alt="Cornerstone on Arum - Modern apartment building"
@@ -17,7 +17,7 @@ export function HeroSection() {
       />
 
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent flex items-end justify-center pb-16 md:pb-20 lg:pb-24">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent flex items-end justify-center pb-10 md:pb-20 lg:pb-24">
         <div className="text-center px-6 max-w-4xl">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white/90 mb-6 md:mb-16 drop-shadow-2xl">
             Modern Apartments in Table View
