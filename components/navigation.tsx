@@ -6,18 +6,13 @@ import { Button } from "@/components/ui/button"
 
 interface NavigationProps {
   onEnquire: () => void
-  onOpenFloorPlans: () => void
 }
 
-export function Navigation({ onEnquire, onOpenFloorPlans }: NavigationProps) {
+export function Navigation({ onEnquire }: NavigationProps) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleNavClick = (sectionId: string) => {
     setMenuOpen(false)
-    if (sectionId === "floor-plans") {
-      onOpenFloorPlans()
-      return
-    }
     // Small delay so menu closes before scroll
     setTimeout(() => {
       const element = document.getElementById(sectionId)
@@ -30,7 +25,6 @@ export function Navigation({ onEnquire, onOpenFloorPlans }: NavigationProps) {
   const navLinks = [
     { label: "About", id: "about" },
     { label: "Apartments", id: "properties" },
-    { label: "Floor Plans", id: "floor-plans" },
     { label: "Features", id: "features" },
     { label: "Financing", id: "financing" },
     { label: "Location", id: "contact" },

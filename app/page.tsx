@@ -12,19 +12,15 @@ import { DepositBanner } from "@/components/deposit-banner"
 import { PartnersBanner } from "@/components/partners-banner"
 import { ContactLocationSection } from "@/components/contact-location-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+
 import { Footer } from "@/components/footer"
 import { EnquiryModal } from "@/components/enquiry-modal"
-import { FloorPlansModal } from "@/components/floor-plans-modal"
 
 export default function HomePage() {
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false)
-  const [isFloorPlansModalOpen, setIsFloorPlansModalOpen] = useState(false)
 
   const openEnquiryModal = () => setIsEnquiryModalOpen(true)
   const closeEnquiryModal = () => setIsEnquiryModalOpen(false)
-
-  const openFloorPlansModal = () => setIsFloorPlansModalOpen(true)
-  const closeFloorPlansModal = () => setIsFloorPlansModalOpen(false)
 
   return (
     <main className="min-h-screen bg-background relative">
@@ -41,7 +37,7 @@ export default function HomePage() {
 
       {/* Content layer - all sections maintain original styling */}
       <div className="relative z-10">
-        <Navigation onEnquire={openEnquiryModal} onOpenFloorPlans={openFloorPlansModal} />
+        <Navigation onEnquire={openEnquiryModal} />
         <HeroSection />
         <VideoSection />
         <PricingBanner />
@@ -56,7 +52,6 @@ export default function HomePage() {
       </div>
 
       <EnquiryModal isOpen={isEnquiryModalOpen} onClose={closeEnquiryModal} />
-      <FloorPlansModal isOpen={isFloorPlansModalOpen} onClose={closeFloorPlansModal} />
     </main>
   )
 }
