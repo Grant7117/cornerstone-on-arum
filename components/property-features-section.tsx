@@ -10,7 +10,7 @@ export function PropertyFeaturesSection() {
       >
         {/* Top 10% Margin Space - Holds the Heading */}
         <div className="flex-1 w-full flex flex-col justify-end items-center pb-4 md:pb-8 lg:pb-10 px-4">
-          <h2 className="text-3xl md:text-5xl lg:text-[56px] font-bold text-slate-800 leading-none">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 leading-none">
             Built for Modern Living
           </h2>
         </div>

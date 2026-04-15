@@ -136,8 +136,8 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
   return (
     <div id="properties" className="w-full bg-gray-50/30 py-12 sm:py-20">
       <div className="container mx-auto max-w-6xl px-4">
-        <h2 className="text-4xl sm:text-5xl font-black text-center mb-16 text-gray-900 tracking-tight">
-          Available Selection
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 uppercase">
+          6 WEEKS TO GO - 6 UNITS LEFT
         </h2>
 
         <div className="flex flex-col gap-12 sm:gap-16">
