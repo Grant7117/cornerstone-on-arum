@@ -71,8 +71,8 @@ export function UnitCard({ unit }: UnitCardProps) {
   }
 
   return (
-    <div className="bg-slate-800 rounded-2xl overflow-hidden shadow-2xl border border-white/5 h-full flex flex-col">
-      <div className="relative h-60 bg-gray-700">
+    <div className="bg-[#2b292a] rounded-2xl overflow-hidden shadow-2xl border border-[#6d645b]/30 h-full flex flex-col transition-all hover:scale-[1.01] hover:border-[#a89b8c]/50">
+      <div className="relative h-64 bg-slate-900">
         <div
           className="absolute top-4 left-4 w-7 h-7 rounded-full border-2 border-white z-10 shadow-lg"
           style={{ backgroundColor: unit.color }}
@@ -85,7 +85,7 @@ export function UnitCard({ unit }: UnitCardProps) {
                 src={unit.images[currentImageIndex] || "/placeholder.svg"}
                 alt={`Unit ${unit.unitNo} - Image ${currentImageIndex + 1}`}
                 fill
-                className="object-cover"
+                className="object-cover opacity-90 hover:opacity-100 transition-opacity"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority={unit.unitNo === "101"}
               />
@@ -124,42 +124,43 @@ export function UnitCard({ unit }: UnitCardProps) {
             )}
           </>
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400">Unit Interior Image</div>
+          <div className="absolute inset-0 flex items-center justify-center text-gray-500">Unit Interior Image</div>
         )}
       </div>
 
       {/* Unit Details */}
-      <div className="p-6 flex-grow flex flex-col justify-between">
+      <div className="p-8 flex-grow flex flex-col justify-between">
         <div>
-          <div className="flex justify-between items-start mb-4">
+          <div className="flex justify-between items-start mb-6">
             <div>
-              <h3 className="text-2xl font-bold text-white tracking-tight">Unit {unit.unitNo}</h3>
-              <p className="text-gray-400 font-medium">{unit.floor} Floor</p>
+              <h3 className="text-3xl font-black text-white tracking-tighter uppercase">Unit {unit.unitNo}</h3>
+              <p className="text-[#a89b8c] font-bold text-sm tracking-widest uppercase">{unit.floor} Floor</p>
             </div>
             {getStatusBadge(unit.status)}
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-3 gap-6 mb-8 py-4 border-y border-[#6d645b]/20">
             <div className="flex flex-col">
-              <span className="text-gray-400 text-xs uppercase tracking-wider font-semibold mb-1">Beds</span>
-              <span className="text-white text-lg font-bold">{unit.bedrooms}</span>
+              <span className="text-[#cfd2d7]/60 text-[10px] uppercase tracking-[0.2em] font-black mb-2">Beds</span>
+              <span className="text-white text-xl font-black">{unit.bedrooms}</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-gray-400 text-xs uppercase tracking-wider font-semibold mb-1">Baths</span>
-              <span className="text-white text-lg font-bold">{unit.bathrooms}</span>
+              <span className="text-[#cfd2d7]/60 text-[10px] uppercase tracking-[0.2em] font-black mb-2">Baths</span>
+              <span className="text-white text-xl font-black">{unit.bathrooms}</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-gray-400 text-xs uppercase tracking-wider font-semibold mb-1">Size</span>
-              <span className="text-white text-lg font-bold">{unit.size}m²</span>
+              <span className="text-[#cfd2d7]/60 text-[10px] uppercase tracking-[0.2em] font-black mb-2">Size</span>
+              <span className="text-white text-xl font-black">{unit.size}m²</span>
             </div>
           </div>
         </div>
 
-        <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-          <p className="text-2xl font-black text-white tracking-tight">{unit.price}</p>
-          <div className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">Incl. VAT</div>
+        <div className="pt-2 flex items-center justify-between">
+          <p className="text-3xl font-black text-[#a89b8c] tracking-tighter">{unit.price}</p>
+          <div className="text-[10px] text-[#cfd2d7]/40 font-black uppercase tracking-[0.3em]">Incl. VAT</div>
         </div>
       </div>
     </div>
+
   )
 }
