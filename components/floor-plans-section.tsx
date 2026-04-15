@@ -3,6 +3,7 @@
 import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import Image from "next/image"
 import { Download, ChevronDown, ChevronUp, ImageIcon, ChevronLeft, ChevronRight } from "@/components/icons"
 
 interface FloorPlan {
@@ -317,9 +318,11 @@ export function FloorPlansSection({ onEnquire }: FloorPlansSectionProps) {
         </div>
 
         <div className="mb-8 max-w-6xl mx-auto">
-          <img
+          <Image
             src="/images/cornerstone-color-coded-floor-plans.jpg"
             alt="Cornerstone on Arum Color-Coded Floor Plans showing 1st & 2nd Floor, 3rd Floor, Lofts, and Front Elevations"
+            width={1200}
+            height={800}
             className="w-full h-auto rounded-lg shadow-lg"
           />
         </div>
@@ -374,10 +377,12 @@ export function FloorPlansSection({ onEnquire }: FloorPlansSectionProps) {
             {filteredPlans.map((plan) => (
               <Card key={plan.id} className="flex-shrink-0 w-[85vw] sm:w-80 overflow-hidden hover:shadow-lg transition-shadow snap-start">
                 <div className="relative h-64 bg-muted flex items-center justify-center p-2">
-                  <img
+                  <Image
                     src={plan.imagePath || "/placeholder.svg"}
                     alt={plan.name}
-                    className="max-w-full max-h-full object-contain"
+                    fill
+                    className="max-w-full max-h-full object-contain p-2"
+                    sizes="(max-width: 768px) 85vw, 320px"
                   />
                 </div>
 
@@ -403,13 +408,13 @@ export function FloorPlansSection({ onEnquire }: FloorPlansSectionProps) {
                   <div className="mb-3">
                     <button
                       onClick={() => setExpandedPlan(expandedPlan === plan.id ? null : plan.id)}
-                      className="flex items-center justify-between w-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      className="flex items-center justify-between w-full text-sm text-muted-foreground hover:text-foreground transition-colors py-3 -my-3"
                     >
-                      <span>Details</span>
+                      <span className="font-medium">Specific Unit Details</span>
                       {expandedPlan === plan.id ? (
-                        <ChevronUp className="h-4 w-4" />
+                        <ChevronUp className="h-5 w-5" />
                       ) : (
-                        <ChevronDown className="h-4 w-4" />
+                        <ChevronDown className="h-5 w-5" />
                       )}
                     </button>
                     {expandedPlan === plan.id && (

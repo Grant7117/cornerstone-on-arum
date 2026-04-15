@@ -89,7 +89,7 @@ export function Navigation({ onEnquire }: NavigationProps) {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-left px-4 py-4 text-sm font-semibold hover:text-blue-400 transition-colors border-b border-white/5 last:border-0"
+                className="text-left px-4 py-5 text-base font-bold hover:text-blue-400 transition-colors border-b border-white/5 last:border-0"
               >
                 {link.label}
               </button>

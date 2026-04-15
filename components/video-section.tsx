@@ -154,9 +154,9 @@ export function VideoSection() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                     />
                     {/* Image Overlay with Title */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-4 sm:p-6">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
                       <h3 className="text-white text-xl sm:text-2xl font-bold mb-1">{item.title}</h3>
-                      <p className="text-white/90 text-xs sm:text-sm">{item.description}</p>
+                      <p className="text-white/90 text-sm sm:text-base leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -168,33 +168,35 @@ export function VideoSection() {
               variant="ghost"
               size="icon"
               onClick={goToPrevious}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 rounded-full shadow-lg md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 h-10 w-10 md:h-12 md:w-12"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 rounded-full shadow-lg md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 h-11 w-11 md:h-12 md:w-12"
               aria-label="Previous image"
             >
-              <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+              <ChevronLeft className="h-6 w-6" />
             </Button>
 
             <Button
               variant="ghost"
               size="icon"
               onClick={goToNext}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 rounded-full shadow-lg md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 h-10 w-10 md:h-12 md:w-12"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 rounded-full shadow-lg md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 h-11 w-11 md:h-12 md:w-12"
               aria-label="Next image"
             >
-              <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+              <ChevronRight className="h-6 w-6" />
             </Button>
           </div>
 
           {/* Dot Indicators */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-4 mt-6">
             {areaImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8 !bg-black" : "w-2 bg-gray-300 hover:bg-gray-400"
-                  }`}
+                className="group p-2 -m-2"
                 aria-label={`Go to slide ${index + 1}`}
-              />
+              >
+                <div className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8 !bg-black" : "w-2 bg-gray-300 group-hover:bg-gray-400"
+                  }`} />
+              </button>
             ))}
           </div>
 

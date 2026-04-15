@@ -20,19 +20,19 @@ export function Footer() {
               href="https://www.youtube.com/@CornerstoneonArum"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#FF0000] hover:text-[#CC0000] transition-colors"
+              className="text-[#FF0000] hover:text-[#CC0000] transition-colors p-1"
               aria-label="Visit our YouTube channel"
             >
-              <Youtube className="w-9 h-9" />
+              <Youtube className="w-11 h-11" />
             </a>
             <a
               href="https://www.facebook.com/share/17GEshr39y/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1877F2] hover:text-[#0C63D4] transition-colors"
+              className="text-[#1877F2] hover:text-[#0C63D4] transition-colors p-1"
               aria-label="Visit our Facebook page"
             >
-              <Facebook className="w-9 h-9" />
+              <Facebook className="w-11 h-11" />
             </a>
           </div>
 
