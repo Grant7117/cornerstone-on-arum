@@ -39,9 +39,9 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
   }
 
   return (
-    <div className="group relative w-full bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex flex-col md:flex-row transition-all hover:shadow-2xl md:aspect-[16/9]">
-      {/* Left 2/3: Image Carousel */}
-      <div className="relative w-full md:w-[66.6%] aspect-video md:aspect-auto h-auto md:h-full bg-gray-50 overflow-hidden">
+    <div className="group relative w-full bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 flex flex-col md:flex-row transition-all duration-300">
+      {/* Left Image Carousel */}
+      <div className="relative w-full md:w-[62%] aspect-video md:aspect-auto md:h-64 bg-gray-50 overflow-hidden">
         <Image
           src={images[currentImage]}
           alt={`Unit ${unit.unitNo} Interior`}
@@ -51,59 +51,47 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
         />
         
         {/* Navigation Arrows */}
-        <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 md:group-hover:opacity-100 transition-opacity">
-          <button onClick={prevImage} className="bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
-            <ChevronLeft className="w-5 h-5 text-gray-900" />
+        <div className="absolute inset-0 flex items-center justify-between px-3 opacity-0 md:group-hover:opacity-100 transition-opacity">
+          <button onClick={prevImage} className="bg-white/90 p-1.5 rounded-full shadow hover:bg-white transition-colors">
+            <ChevronLeft className="w-4 h-4 text-gray-900" />
           </button>
-          <button onClick={nextImage} className="bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
-            <ChevronRight className="w-5 h-5 text-gray-900" />
+          <button onClick={nextImage} className="bg-white/90 p-1.5 rounded-full shadow hover:bg-white transition-colors">
+            <ChevronRight className="w-4 h-4 text-gray-900" />
           </button>
         </div>
 
         {/* Unit Badge */}
-        <div className="absolute top-4 left-4 bg-white px-5 py-2 rounded-full shadow-sm">
-          <span className="text-sm font-black text-gray-900 uppercase">UNIT {unit.unitNo}</span>
+        <div className="absolute top-3 left-3 bg-white px-4 py-1.5 rounded-full shadow-sm">
+          <span className="text-[11px] font-black text-gray-900 uppercase">UNIT {unit.unitNo}</span>
         </div>
       </div>
 
-      {/* Right 1/3: Minimalist Spec Column */}
-      <div className="w-full md:w-[33.4%] flex flex-col p-6 sm:p-8 sm:px-10 bg-white">
-        <div className="flex-grow flex flex-col justify-center">
-          <div className="text-center md:text-left mb-8">
-            <h3 className="text-3xl font-black text-[#00C853] mb-2 leading-none">Available<br/>Now!</h3>
-            <p className="text-3xl font-black text-gray-900 tracking-tight">{unit.price}</p>
-          </div>
-
-          <div className="space-y-4 w-full max-w-[200px] mx-auto md:mx-0">
-            <div className="flex justify-between items-center">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Bedrooms</span>
-              <span className="text-sm font-black text-gray-900">{unit.bedrooms}</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Bathrooms</span>
-              <span className="text-sm font-black text-gray-900">{unit.bathrooms}</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Interior</span>
-              <span className="text-sm font-black text-gray-900">{breakdown.int}m²</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Balcony</span>
-              <span className="text-sm font-black text-gray-900">{breakdown.bal}m²</span>
-            </div>
-            <div className="flex justify-between items-center pt-2">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Total Size</span>
-              <span className="text-sm font-black text-gray-900">{unit.size}m²</span>
-            </div>
-          </div>
+      {/* Right Minimalist Spec Column */}
+      <div className="w-full md:w-[38%] flex flex-col justify-center p-4 sm:p-5 bg-white">
+        <div className="mb-4">
+          <h3 className="text-[22px] sm:text-2xl font-black text-[#00E676] mb-1 leading-tight tracking-tight">Available<br/>Now!</h3>
+          <p className="text-xl sm:text-[22px] font-black text-gray-900 tracking-tight">{unit.price}</p>
         </div>
 
-        <Button 
-          onClick={onEnquire}
-          className="w-full mt-8 bg-gray-900 hover:bg-blue-600 text-white font-bold rounded-xl py-6 transition-all shadow-lg transform active:scale-[0.98] h-auto"
-        >
-          Secure Unit
-        </Button>
+        <div className="space-y-2.5 w-full">
+          <div className="flex justify-between items-center">
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Bedrooms</span>
+            <span className="text-xs font-black text-gray-900">{unit.bedrooms}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Bathrooms</span>
+            <span className="text-xs font-black text-gray-900">{unit.bathrooms}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Interior</span>
+            <span className="text-xs font-black text-gray-900">{breakdown.int}m²</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Balcony</span>
+            <span className="text-xs font-black text-gray-900">{breakdown.bal}m²</span>
+          </div>
+          {/* Omitted "Total Size" to perfectly match the sleek minimalism shown in the screenshot */}
+        </div>
       </div>
     </div>
   )
