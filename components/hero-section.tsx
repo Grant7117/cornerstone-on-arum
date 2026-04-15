@@ -17,12 +17,12 @@ export function HeroSection() {
       />
 
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent flex items-end justify-center pb-10 md:pb-20 lg:pb-24">
+      <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-white/20 to-transparent flex items-end justify-center pb-10 md:pb-20 lg:pb-24">
         <div className="text-center px-6 max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white/90 mb-6 md:mb-16 drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 md:mb-16">
             Modern Apartments in Table View
           </h1>
-          <p className="text-base sm:text-xl md:text-2xl text-white/95 mb-6 md:mb-8 drop-shadow-lg leading-relaxed">
+          <p className="text-base sm:text-xl md:text-2xl text-slate-800 mb-6 md:mb-8 leading-relaxed">
             Modern design, premium finishes, and secure living in Table View, Cape Town.
             <span className="hidden sm:inline"> 100% bond financing available through our trusted partners.</span>
           </p>
