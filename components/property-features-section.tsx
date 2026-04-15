@@ -3,11 +3,10 @@ import Image from "next/image"
 export function PropertyFeaturesSection() {
   return (
     <div id="features" className="py-16 bg-background flex flex-col items-center">
-      {/* Master Row Placeholder (1920x1080 Aspect Ratio Footprint) */}
-      <div className="w-full max-w-[1920px] aspect-video flex flex-col items-center justify-center relative">
+      <div className="w-full max-w-[1920px] flex flex-col items-center justify-center">
         
         {/* Restored Heading */}
-        <div className="absolute top-[8%] text-center w-full z-10 px-4">
+        <div className="text-center w-full z-10 px-4 mb-8">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">Built for Modern Living</h2>
         </div>
 
