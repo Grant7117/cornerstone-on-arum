@@ -27,11 +27,11 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/images/arum-hero-main.png)",
-            opacity: 0.15,
+            backgroundImage: "url(/images/arum-hero-image.png)",
+            opacity: 0.4,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
       </div>
 
       {/* Content layer - all sections maintain original styling */}

@@ -126,10 +126,6 @@ const config: Config = {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(100%)" },
         },
-        "subtle-zoom": {
-          "0%": { transform: "scale(1.05)" },
-          "100%": { transform: "scale(1.15)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -146,7 +142,6 @@ const config: Config = {
         "slide-out-to-bottom": "slide-out-to-bottom 0.2s ease-out",
         "slide-out-to-left": "slide-out-to-left 0.2s ease-out",
         "slide-out-to-right": "slide-out-to-right 0.2s ease-out",
-        "subtle-zoom": "subtle-zoom 20s ease-in-out infinite alternate",
       },
     },
   },
