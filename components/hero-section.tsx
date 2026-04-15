@@ -6,12 +6,12 @@ import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative w-full aspect-video md:aspect-[21/9] lg:aspect-[2.4/1] overflow-hidden bg-[#1a1c23]">
+    <section className="relative w-full aspect-video overflow-hidden bg-[#1a1c23]">
       <Image
         src="/images/Cornerstone-on-arum-hero-image.png"
         alt="Cornerstone on Arum"
         fill
-        className="object-contain object-left"
+        className="object-contain"
         priority
         sizes="100vw"
       />
