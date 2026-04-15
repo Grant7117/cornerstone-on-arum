@@ -11,7 +11,8 @@ interface FeatureCardProps {
 
 function FeatureCard({ title }: { title: string }) {
   return (
-    <div className="bg-white/90 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20 flex flex-col h-64 justify-center text-center transition-all hover:shadow-2xl hover:scale-[1.02]">
+    <div className="bg-white rounded-2xl p-8 shadow-xl border border-slate-100 flex flex-col h-64 justify-center text-center transition-all hover:shadow-2xl hover:scale-[1.02]">
+
       <h3 className="text-2xl font-bold text-slate-900">{title}</h3>
       <div className="mt-4 h-1 w-12 bg-blue-600 mx-auto rounded-full" />
     </div>

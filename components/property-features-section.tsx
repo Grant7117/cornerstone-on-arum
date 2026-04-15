@@ -52,7 +52,8 @@ export function PropertyFeaturesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="p-8 hover:shadow-2xl transition-all hover:-translate-y-2 bg-white/80 backdrop-blur-xl border-white/20 rounded-[2rem] shadow-xl">
+            <Card key={index} className="p-8 hover:shadow-2xl transition-all hover:-translate-y-2 bg-white border-slate-100 rounded-[2rem] shadow-xl">
+
               <div className="flex flex-col items-center text-center gap-6">
                 <div
                   className={`w-20 h-20 rounded-2xl ${feature.color} flex items-center justify-center flex-shrink-0 shadow-inner`}
