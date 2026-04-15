@@ -2,9 +2,9 @@ import Image from "next/image"
 
 export function PartnersBanner() {
   return (
-    <section className="w-full bg-white py-8">
+    <section className="w-full bg-white py-12">
       <div className="container mx-auto max-w-7xl px-4">
-        <div className="relative w-full aspect-[2/1] md:aspect-[3/1] lg:aspect-[4/1] rounded-2xl overflow-hidden shadow-sm">
+        <div className="relative w-full aspect-[2/1] md:aspect-[3/1] lg:aspect-[4/1] rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
           <Image
             src="/images/partners.png"
             alt="Our Trusted Partners"
