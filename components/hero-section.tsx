@@ -28,38 +28,10 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button
-              asChild
-              size="lg"
-              className="!bg-black hover:!bg-slate-900 text-white font-bold text-xl px-14 py-8 rounded-2xl shadow-2xl transition-all transform hover:-translate-y-1 active:scale-[0.98] h-auto border-0"
-            >
-              <button
-                onClick={() => {
-                  const element = document.getElementById("properties")
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth", block: "start" })
-                  }
-                }}
-              >
-                View Apartments
-              </button>
-            </Button>
-
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-white/80 hover:bg-white text-slate-900 border-2 border-slate-900 font-bold text-xl px-14 py-8 rounded-2xl shadow-xl transition-all transform hover:-translate-y-1 active:scale-[0.98] h-auto"
-            >
-              <Link
-                href="https://digiapp.betterbond.co.za/YolandaKensley/38613/129015"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Get Pre-Approved
-              </Link>
-            </Button>
+            <a href="#available-units" className="btn-premium-primary">Claim One of the Final Five</a>
+            <a href="#financing" className="btn-premium-secondary">Unlock 100 Percent Financing</a>
           </div>
+
         </div>
       </div>
 

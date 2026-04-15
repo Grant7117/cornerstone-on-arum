@@ -19,3 +19,57 @@
     font-size: 16px !important;
   }
 }
+
+:root {
+    /* Cornerstone on Arum Primary Brand Colours */
+    --color-charcoal: #2b292a; 
+    --color-warm-beige: #a89b8c; 
+    --color-cool-grey: #cfd2d7; 
+    --color-ocean-blue: #335e9c; 
+    --color-taupe: #6d645b; 
+}
+
+/* Primary Solid Button */
+.btn-premium-primary {
+    background-color: var(--color-charcoal);
+    color: #ffffff;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid var(--color-charcoal);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-premium-primary:hover {
+    background-color: var(--color-ocean-blue);
+    border-color: var(--color-ocean-blue);
+}
+
+/* Secondary Outline Button */
+.btn-premium-secondary {
+    background-color: transparent;
+    color: var(--color-charcoal);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid var(--color-charcoal);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-premium-secondary:hover {
+    background-color: var(--color-cool-grey); 
+    border-color: var(--color-cool-grey); 
+}
+

@@ -49,7 +49,8 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
   }
 
   return (
-    <div id="properties" className="flex flex-col py-6 sm:py-8 overflow-hidden">
+    <div id="available-units" className="flex flex-col py-6 sm:py-8 overflow-hidden">
+
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 sm:mb-8 text-gray-900 px-4">
         Available Apartments
       </h2>

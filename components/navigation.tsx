@@ -30,8 +30,9 @@ export function Navigation({ onEnquire, onShowFloorPlans }: NavigationProps) {
 
   const navLinks = [
     { label: "About", id: "about" },
-    { label: "Apartments", id: "properties" },
+    { label: "Apartments", id: "available-units" },
     { label: "Floor Plans", id: "floor-plans" },
+
     { label: "Features", id: "features" },
     { label: "Financing", id: "financing" },
     { label: "Location", id: "contact" },
