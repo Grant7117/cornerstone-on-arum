@@ -39,9 +39,9 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
   }
 
   return (
-    <div className="group relative w-full bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 flex flex-col md:flex-row transition-all duration-300">
+    <div className="group relative w-full bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 flex flex-col md:flex-row transition-all duration-300 font-sans" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
       {/* Left Image Carousel */}
-      <div className="relative w-full md:w-[62%] aspect-video md:aspect-auto md:h-64 bg-gray-50 overflow-hidden">
+      <div className="relative w-full md:w-[62%] aspect-video md:aspect-auto md:min-h-[300px] bg-gray-50 overflow-hidden">
         <Image
           src={images[currentImage]}
           alt={`Unit ${unit.unitNo} Interior`}
@@ -62,35 +62,34 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
 
         {/* Unit Badge */}
         <div className="absolute top-3 left-3 bg-white px-4 py-1.5 rounded-full shadow-sm">
-          <span className="text-[11px] font-black text-gray-900 uppercase">UNIT {unit.unitNo}</span>
+          <span className="text-[11px] font-bold text-gray-900 uppercase">UNIT {unit.unitNo}</span>
         </div>
       </div>
 
       {/* Right Minimalist Spec Column */}
-      <div className="w-full md:w-[38%] flex flex-col justify-center p-4 sm:p-5 bg-white">
-        <div className="mb-4">
-          <h3 className="text-[22px] sm:text-2xl font-black text-[#00E676] mb-1 leading-tight tracking-tight">Available<br/>Now!</h3>
-          <p className="text-xl sm:text-[22px] font-black text-gray-900 tracking-tight">{unit.price}</p>
+      <div className="w-full md:w-[38%] flex flex-col justify-center p-5 sm:p-6 lg:p-8 bg-white overflow-y-auto">
+        <div className="mb-6 text-center w-full">
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#00E676] mb-1 leading-tight tracking-tight">Available<br/>Now!</h3>
+          <p className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">{unit.price}</p>
         </div>
 
-        <div className="space-y-2.5 w-full">
+        <div className="space-y-3 w-full max-w-[220px] mx-auto">
           <div className="flex justify-between items-center">
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Bedrooms</span>
-            <span className="text-xs font-black text-gray-900">{unit.bedrooms}</span>
+            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Bedrooms</span>
+            <span className="text-sm font-medium text-gray-900">{unit.bedrooms}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Bathrooms</span>
-            <span className="text-xs font-black text-gray-900">{unit.bathrooms}</span>
+            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Bathrooms</span>
+            <span className="text-sm font-medium text-gray-900">{unit.bathrooms}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Interior</span>
-            <span className="text-xs font-black text-gray-900">{breakdown.int}m²</span>
+            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Interior</span>
+            <span className="text-sm font-medium text-gray-900">{breakdown.int}m²</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Balcony</span>
-            <span className="text-xs font-black text-gray-900">{breakdown.bal}m²</span>
+            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Balcony</span>
+            <span className="text-sm font-medium text-gray-900">{breakdown.bal}m²</span>
           </div>
-          {/* Omitted "Total Size" to perfectly match the sleek minimalism shown in the screenshot */}
         </div>
       </div>
     </div>
