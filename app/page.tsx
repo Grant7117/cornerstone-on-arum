@@ -13,7 +13,6 @@ import { BetterBondSection } from "@/components/betterbond-section"
 import { ContactLocationSection } from "@/components/contact-location-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Footer } from "@/components/footer"
-import { FloatingBanner } from "@/components/floating-banner"
 import { EnquiryModal } from "@/components/enquiry-modal"
 
 export default function HomePage() {
@@ -28,7 +27,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url(/images/cornerstone-hero.jpg)",
+            backgroundImage: "url(/images/arum-hero-image.png)",
             opacity: 0.15,
           }}
         />
@@ -37,7 +36,6 @@ export default function HomePage() {
       {/* Content layer - all sections maintain original styling */}
       <div className="relative z-10">
         <Navigation onEnquire={openEnquiryModal} />
-        <FloatingBanner onSignUpClick={openEnquiryModal} />
         <HeroSection />
         <VideoSection />
         <FeaturesSection />
