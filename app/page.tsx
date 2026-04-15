@@ -11,6 +11,7 @@ import { FloorPlansSection } from "@/components/floor-plans-section"
 import { PropertyFeaturesSection } from "@/components/property-features-section"
 import { DocumentsSection } from "@/components/documents-section"
 import { BetterBondSection } from "@/components/betterbond-section"
+import { DepositBanner } from "@/components/deposit-banner"
 import { PartnersBanner } from "@/components/partners-banner"
 import { ContactLocationSection } from "@/components/contact-location-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -47,6 +48,7 @@ export default function HomePage() {
         <FloorPlansSection onEnquire={openEnquiryModal} />
         <PropertyFeaturesSection />
         <DocumentsSection />
+        <DepositBanner />
         <BetterBondSection />
         <PartnersBanner />
         <ContactLocationSection />
