@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { VideoSection } from "@/components/video-section"
+import { PricingBanner } from "@/components/pricing-banner"
 import { FeaturesSection } from "@/components/features-section"
 import { UnitsCarousel } from "@/components/units-carousel"
 import { FloorPlansSection } from "@/components/floor-plans-section"
@@ -39,6 +40,7 @@ export default function HomePage() {
         <Navigation onEnquire={openEnquiryModal} />
         <HeroSection />
         <VideoSection />
+        <PricingBanner />
         <FeaturesSection />
         <UnitsCarousel onEnquire={openEnquiryModal} />
         <FloorPlansSection onEnquire={openEnquiryModal} />
