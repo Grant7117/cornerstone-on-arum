@@ -154,7 +154,7 @@ export function VideoSection() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                     />
                     {/* Image Overlay with Title */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-4 sm:p-6">
                       <h3 className="text-white text-xl sm:text-2xl font-bold mb-1">{item.title}</h3>
                       <p className="text-white/90 text-xs sm:text-sm">{item.description}</p>
                     </div>
