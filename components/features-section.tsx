@@ -9,49 +9,65 @@ interface FeatureCardProps {
   fullDescription: string
 }
 
+function FeatureCard({ title, shortDescription, fullDescription }: FeatureCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  return (
+    <div className="bg-card rounded-lg p-4 shadow-sm border border-border flex flex-col h-full">
+      <h3 className="text-xl font-bold mb-2 text-foreground">{title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed mb-3 flex-grow">
+        {isExpanded ? fullDescription : shortDescription}
+      </p>
+      <Button
+        variant="link"
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="p-0 h-auto font-semibold underline text-sm self-start !text-black hover:!text-gray-700"
+      >
+        {isExpanded ? "Read Less" : "Read More"}
+      </Button>
+    </div>
+  )
+}
+
 export function FeaturesSection() {
-  const pillars = [
+  const features = [
     {
-      title: "Savings on New Developments",
-      description: "There are no transfer duties, making your investment more cost-effective."
+      title: "Design & Strength",
+      shortDescription:
+        "Smart layouts maximise space and natural light, paired with premium finishes such as timber-look vinyl flooring, engineered stone countertops, and soft-close cabinetry.",
+      fullDescription:
+        "Smart layouts maximise space and natural light, paired with premium finishes such as timber-look vinyl flooring, engineered stone countertops, and soft-close cabinetry. Built with a full reinforced concrete frame, every apartment delivers structural integrity, acoustic comfort, and reduced long-term maintenance.",
     },
     {
-      title: "State-of-the-Art Security",
-      description: "Our AI-integrated security systems are linked to an off-site control centre for your peace of mind."
+      title: "Safety and Security",
+      shortDescription:
+        "Access control, CCTV off-site monitoring, linked to armed response.",
+      fullDescription:
+        "Access control, CCTV off-site monitoring, linked to armed response. These security measures ensure peace of mind for all residents, creating a safe and secure living environment.",
     },
     {
-      title: "High-Speed Internet",
-      description: "Enjoy lightning-fast fibre internet installed in your new home, perfect for working from home or streaming the latest entertainment."
+      title: "Local Advantage",
+      shortDescription:
+        "Positioned in Table View, Cornerstone on Arum is close to beaches, shopping centres, restaurants, top-tier schools, medical facilities, and the MyCiTi transport network.",
+      fullDescription:
+        "Positioned in Table View, Cornerstone on Arum is close to beaches, shopping centres, restaurants, top-tier schools, medical facilities, and the MyCiTi transport network. It combines a coastal lifestyle with everyday convenience, making it an ideal location for both living and investment.",
     },
-    {
-      title: "Long-Term Community Focus",
-      description: "Airbnb and short-term rentals are not permitted. This decision reflects a deliberate strategy to create a superior residential experience, shielding investors from a volatile and increasingly regulated market while fostering a secure, stable, and desirable community. At Cornerstone on Arum, we are committed to ensuring that this is not just a building, but a place residents are proud to call home."
-    },
-    {
-      title: "No Surprise Utilities",
-      description: "With prepaid water and electricity meters, you can top up as you go without any shocking surprises."
-    },
-    {
-      title: "Secure Off-Street Parking",
-      description: "Rest easy knowing your car is as safe as houses at Cornerstone."
-    }
   ]
 
   return (
-    <section id="features" className="py-20 sm:py-32 px-4 relative overflow-hidden">
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="features-container">
-          {pillars.map((pillar, index) => (
-            <div key={index} className="premium-card">
-              <h3>{pillar.title}</h3>
-              <p>{pillar.description}</p>
-            </div>
+    <section className="py-6 sm:py-8 px-4 bg-background">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          {features.map((feature) => (
+            <FeatureCard
+              key={feature.title}
+              title={feature.title}
+              shortDescription={feature.shortDescription}
+              fullDescription={feature.fullDescription}
+            />
           ))}
         </div>
       </div>
     </section>
   )
 }
-
-
-

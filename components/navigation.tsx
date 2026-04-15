@@ -6,18 +6,12 @@ import { Button } from "@/components/ui/button"
 
 interface NavigationProps {
   onEnquire: () => void
-  onShowFloorPlans: () => void
 }
 
-export function Navigation({ onEnquire, onShowFloorPlans }: NavigationProps) {
+export function Navigation({ onEnquire }: NavigationProps) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
-    if (sectionId === "floor-plans") {
-      onShowFloorPlans()
-      setMenuOpen(false)
-      return
-    }
     setMenuOpen(false)
     // Small delay so menu closes before scroll
     setTimeout(() => {
@@ -30,15 +24,13 @@ export function Navigation({ onEnquire, onShowFloorPlans }: NavigationProps) {
 
   const navLinks = [
     { label: "About", id: "about" },
-    { label: "Apartments", id: "available-units" },
+    { label: "Apartments", id: "properties" },
     { label: "Floor Plans", id: "floor-plans" },
-
     { label: "Features", id: "features" },
     { label: "Financing", id: "financing" },
     { label: "Location", id: "contact" },
     { label: "Documents", id: "documents" },
   ]
-
 
   return (
     <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-[100]">
