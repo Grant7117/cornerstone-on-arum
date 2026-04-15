@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --color-charcoal: #2b292a;
     --color-warm-beige: #a89b8c;
     --color-cool-grey: #f4f5f7;
@@ -6,103 +6,12 @@
     --color-taupe: #6d645b;
     --white: #ffffff;
 }
-
-body {
-    margin: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: var(--color-charcoal);
-    background-color: var(--white);
-    line-height: 1.6;
-}
-
-/* Hero Section Fix: Full Screen & High Legibility */
-.hero-section {
-    position: relative;
-    height: 80vh;
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-}
-
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 40px;
-    border-radius: 12px;
-    backdrop-filter: blur(5px); /* Glass effect for premium feel */
-    max-width: 900px;
-}
-
-.hero-overlay h1 { font-size: 3.5rem; margin-bottom: 10px; font-weight: 800; }
-.hero-overlay p { font-size: 1.2rem; margin-bottom: 30px; }
-
-/* Button Standards */
-.btn-group { display: flex; gap: 20px; justify-content: center; }
-
-.btn-premium {
-    padding: 18px 36px;
-    border-radius: 4px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-solid { background: var(--color-charcoal); color: var(--white); border: 2px solid var(--color-charcoal); }
-.btn-solid:hover { background: var(--color-ocean-blue); border-color: var(--color-ocean-blue); }
-
-.btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
-.btn-outline:hover { background: var(--white); color: var(--color-charcoal); }
-
-/* Unit Grid: Removing the "Klunk" */
-.unit-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 60px 5%;
-    background: var(--color-cool-grey);
-}
-
-.unit-card {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-
-.unit-card:hover { transform: translateY(-10px); }
-
-.unit-image { height: 200px; background: #ddd; width: 100%; object-fit: cover; }
-
-.unit-info { padding: 25px; text-align: left; }
-.unit-info h3 { margin: 0; font-size: 1.4rem; color: var(--color-charcoal); }
-.unit-price { font-size: 1.2rem; font-weight: 800; color: var(--color-taupe); margin: 10px 0; }
-
-.unit-specs {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-    font-size: 0.9rem;
-    color: var(--color-taupe);
-}
-
-/* Feature Cards Overhaul */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 80px 10%;
-}
-
-.feature-box {
-    padding: 40px;
-    border-left: 4px solid var(--color-warm-beige);
-    background: var(--white);
-}
-
-.feature-box h4 { margin-top: 0; color: var(--color-charcoal); font-size: 1.2rem; }
+body { margin: 0; font-family: sans-serif; color: var(--color-charcoal); background: var(--white); }
+.hero-section { position: relative; height: 70vh; background: #2b292a; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 40px; }
+.hero-overlay { max-width: 800px; z-index: 2; }
+.btn-premium { padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; margin: 10px; border: 2px solid var(--white); color: var(--white); }
+.btn-solid { background: var(--white); color: var(--color-charcoal); }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 60px 10%; }
+.feature-box { padding: 30px; border-left: 4px solid var(--color-warm-beige); background: var(--color-cool-grey); }
+.unit-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 10%; }
+.unit-card { background: #fff; border: 1px solid #eee; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
