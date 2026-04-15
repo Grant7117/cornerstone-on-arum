@@ -85,15 +85,15 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Interior</span>
-              <span className="text-sm font-black text-gray-900">{breakdown.int}</span>
+              <span className="text-sm font-black text-gray-900">{breakdown.int}m²</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Balcony</span>
-              <span className="text-sm font-black text-gray-900">{breakdown.bal}</span>
+              <span className="text-sm font-black text-gray-900">{breakdown.bal}m²</span>
             </div>
             <div className="flex justify-between items-center pt-2">
               <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Total Size</span>
-              <span className="text-sm font-black text-gray-900">{unit.size}</span>
+              <span className="text-sm font-black text-gray-900">{unit.size}m²</span>
             </div>
           </div>
         </div>
