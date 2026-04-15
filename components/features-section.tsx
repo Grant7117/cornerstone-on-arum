@@ -38,13 +38,13 @@ export function FeaturesSection() {
   ]
 
   return (
-    <section id="features" className="py-20 sm:py-32 px-4 relative overflow-hidden bg-white/50">
+    <section id="features" className="py-20 sm:py-32 px-4 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="features-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="features-container">
           {pillars.map((pillar, index) => (
-            <div key={index} className="feature-card glassmorphism-panel flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl font-bold mb-4">{pillar.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{pillar.description}</p>
+            <div key={index} className="premium-card">
+              <h3>{pillar.title}</h3>
+              <p>{pillar.description}</p>
             </div>
           ))}
         </div>
@@ -52,5 +52,6 @@ export function FeaturesSection() {
     </section>
   )
 }
+
 
 

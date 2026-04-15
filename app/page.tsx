@@ -8,8 +8,8 @@ import { FeaturesSection } from "@/components/features-section"
 import { UnitsCarousel } from "@/components/units-carousel"
 import { FloorPlansSection } from "@/components/floor-plans-section"
 import { FloorPlansModal } from "@/components/floor-plans-modal"
-import { PropertyFeaturesSection } from "@/components/property-features-section"
 import { DocumentsSection } from "@/components/documents-section"
+
 import { BetterBondSection } from "@/components/betterbond-section"
 import { ContactLocationSection } from "@/components/contact-location-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -47,8 +47,8 @@ export default function HomePage() {
         <FeaturesSection />
         <UnitsCarousel onEnquire={openEnquiryModal} />
         {/* FloorPlansSection removed from main flow */}
-        <PropertyFeaturesSection />
         <DocumentsSection />
+
         <BetterBondSection />
         <ContactLocationSection />
         <WhatsAppButton />
