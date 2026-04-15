@@ -68,7 +68,7 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
 
       {/* Right Minimalist Spec Column */}
       <div className="w-full md:w-[38%] flex flex-col justify-center p-4 sm:p-5 lg:p-6 bg-white overflow-hidden">
-        <div className="mb-3 text-center w-full">
+        <div className="mb-3 text-center w-full -mt-5">
           <h3 className="text-2xl sm:text-3xl font-bold text-[#00E676] mb-0.5 leading-none tracking-tight">Available<br/>Now!</h3>
           <p className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight leading-tight">{unit.price}</p>
         </div>
