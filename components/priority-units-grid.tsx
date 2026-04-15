@@ -15,6 +15,19 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
   const [currentImage, setCurrentImage] = useState(0)
   const images = unit.images || ["/images/Cornerstone-on-arum-hero-image.png"]
 
+  // Specific m2 breakdown map based on the user's table
+  const m2Map: Record<string, { int: string; bal: string }> = {
+    "102": { int: "59", bal: "8" },
+    "103": { int: "39", bal: "6" },
+    "104": { int: "44", bal: "4" },
+    "106": { int: "39", bal: "6" },
+    "302": { int: "72", bal: "5" },
+    "303": { int: "71", bal: "6" },
+    "304": { int: "71", bal: "6" },
+  }
+
+  const breakdown = m2Map[unit.unitNo] || { int: unit.size.toString(), bal: "0" }
+
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation()
     setCurrentImage((prev) => (prev + 1) % images.length)
@@ -26,9 +39,9 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
   }
 
   return (
-    <div className="group relative w-full aspect-[16/9] bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex flex-col transition-all hover:shadow-2xl">
-      {/* Top 2/3: Image Carousel */}
-      <div className="relative h-[66.6%] w-full bg-gray-50 overflow-hidden">
+    <div className="group relative w-full bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex flex-col md:flex-row transition-all hover:shadow-2xl md:aspect-[16/9]">
+      {/* Left 2/3: Image Carousel */}
+      <div className="relative w-full md:w-[66.6%] aspect-video md:aspect-auto h-auto md:h-full bg-gray-50 overflow-hidden">
         <Image
           src={images[currentImage]}
           alt={`Unit ${unit.unitNo} Interior`}
@@ -38,39 +51,58 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
         />
         
         {/* Navigation Arrows */}
-        <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <button onClick={prevImage} className="bg-white/90 p-2 rounded-full shadow-lg hover:bg-white">
+        <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 md:group-hover:opacity-100 transition-opacity">
+          <button onClick={prevImage} className="bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
             <ChevronLeft className="w-5 h-5 text-gray-900" />
           </button>
-          <button onClick={nextImage} className="bg-white/90 p-2 rounded-full shadow-lg hover:bg-white">
+          <button onClick={nextImage} className="bg-white/90 p-2 rounded-full shadow-lg hover:bg-white transition-colors">
             <ChevronRight className="w-5 h-5 text-gray-900" />
           </button>
         </div>
 
         {/* Unit Badge */}
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm">
-          <span className="text-sm font-bold text-gray-900">Unit {unit.unitNo}</span>
+        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm border border-gray-100">
+          <span className="text-sm font-black text-gray-900">UNIT {unit.unitNo}</span>
         </div>
       </div>
 
-      {/* Bottom 1/3: Minimalist Info */}
-      <div className="h-[33.4%] w-full flex items-center justify-between px-6 py-4 bg-white">
-        <div className="flex flex-col">
-          <div className="flex items-center gap-4 text-gray-600 mb-1">
-            <span className="text-sm font-medium">{unit.bedrooms} Bed</span>
-            <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-            <span className="text-sm font-medium">{unit.bathrooms} Bath</span>
-            <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-            <span className="text-sm font-medium">{unit.size}m²</span>
+      {/* Right 1/3: Minimalist Spec Column */}
+      <div className="w-full md:w-[33.4%] flex flex-col justify-between p-6 sm:p-8 bg-white border-t md:border-t-0 md:border-l border-gray-100">
+        <div className="space-y-6">
+          <div className="space-y-1">
+            <p className="text-2xl font-black text-gray-900 tracking-tight">{unit.price}</p>
+            <p className="text-xs font-bold text-blue-600 tracking-widest uppercase">Available Now</p>
           </div>
-          <p className="text-xl font-black text-gray-900">{unit.price}</p>
+
+          <div className="space-y-4">
+            <div className="flex justify-between items-end border-b border-gray-50 pb-2">
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Bedrooms</span>
+              <span className="text-sm font-black text-gray-900">{unit.bedrooms}</span>
+            </div>
+            <div className="flex justify-between items-end border-b border-gray-50 pb-2">
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Bathrooms</span>
+              <span className="text-sm font-black text-gray-900">{unit.bathrooms}</span>
+            </div>
+            <div className="flex justify-between items-end border-b border-gray-50 pb-2">
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Interior</span>
+              <span className="text-sm font-black text-gray-900">{breakdown.int}m²</span>
+            </div>
+            <div className="flex justify-between items-end border-b border-gray-50 pb-2">
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-tighter">Balcony</span>
+              <span className="text-sm font-black text-gray-900">+{breakdown.bal}m²</span>
+            </div>
+            <div className="flex justify-between items-end pt-2">
+              <span className="text-xs font-black text-gray-900 uppercase">Total Area</span>
+              <span className="text-lg font-black text-gray-900">{unit.size}m²</span>
+            </div>
+          </div>
         </div>
 
         <Button 
           onClick={onEnquire}
-          className="bg-gray-900 hover:bg-blue-600 text-white font-bold rounded-xl px-6 transition-colors shadow-sm"
+          className="w-full bg-gray-900 hover:bg-blue-600 text-white font-bold rounded-xl py-6 transition-all shadow-lg transform active:scale-[0.98] h-auto"
         >
-          Enquire
+          Secure Unit
         </Button>
       </div>
     </div>
