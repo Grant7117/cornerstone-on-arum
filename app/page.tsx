@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { VideoSection } from "@/components/video-section"
 import { PricingBanner } from "@/components/pricing-banner"
-import { UnitsCarousel } from "@/components/units-carousel"
+import { PriorityUnitsGrid } from "@/components/priority-units-grid"
 import { FloorPlansSection } from "@/components/floor-plans-section"
 import { PropertyFeaturesSection } from "@/components/property-features-section"
 import { BetterBondSection } from "@/components/betterbond-section"
@@ -41,7 +41,7 @@ export default function HomePage() {
         <HeroSection />
         <VideoSection />
         <PricingBanner />
-        <UnitsCarousel onEnquire={openEnquiryModal} />
+        <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         <FloorPlansSection onEnquire={openEnquiryModal} />
         <PropertyFeaturesSection />
         <DepositBanner />
