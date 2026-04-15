@@ -67,13 +67,13 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
       </div>
 
       {/* Right Minimalist Spec Column */}
-      <div className="w-full md:w-[38%] flex flex-col justify-center p-5 sm:p-6 lg:p-8 bg-white overflow-y-auto">
-        <div className="mb-6 text-center w-full">
-          <h3 className="text-2xl sm:text-3xl font-bold text-[#00E676] mb-1 leading-tight tracking-tight">Available<br/>Now!</h3>
-          <p className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">{unit.price}</p>
+      <div className="w-full md:w-[38%] flex flex-col justify-center p-4 sm:p-5 lg:p-6 bg-white overflow-hidden">
+        <div className="mb-3 text-center w-full">
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#00E676] mb-0.5 leading-none tracking-tight">Available<br/>Now!</h3>
+          <p className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight leading-tight">{unit.price}</p>
         </div>
 
-        <div className="space-y-3 w-full max-w-[220px] mx-auto">
+        <div className="space-y-1.5 w-full max-w-[220px] mx-auto">
           <div className="flex justify-between items-center">
             <span className="text-[11px] text-gray-500 uppercase tracking-widest">Bedrooms</span>
             <span className="text-sm font-medium text-gray-900">{unit.bedrooms}</span>
@@ -89,6 +89,10 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
           <div className="flex justify-between items-center">
             <span className="text-[11px] text-gray-500 uppercase tracking-widest">Balcony</span>
             <span className="text-sm font-medium text-gray-900">{breakdown.bal}m²</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Total Size</span>
+            <span className="text-sm font-medium text-gray-900">{unit.size}m²</span>
           </div>
         </div>
       </div>
