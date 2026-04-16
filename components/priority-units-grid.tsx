@@ -50,13 +50,13 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
           priority={parseInt(unit.unitNo) < 200}
         />
         
-        {/* Navigation Arrows */}
-        <div className="absolute inset-0 flex items-center justify-between px-3 opacity-0 md:group-hover:opacity-100 transition-opacity">
-          <button onClick={prevImage} className="bg-white/90 p-1.5 rounded-full shadow hover:bg-white transition-colors">
-            <ChevronLeft className="w-4 h-4 text-gray-900" />
+        {/* Navigation Arrows - always visible on mobile, hover-reveal on desktop */}
+        <div className="absolute inset-0 flex items-center justify-between px-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+          <button onClick={prevImage} className="bg-white/90 p-2 rounded-full shadow hover:bg-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+            <ChevronLeft className="w-5 h-5 text-gray-900" />
           </button>
-          <button onClick={nextImage} className="bg-white/90 p-1.5 rounded-full shadow hover:bg-white transition-colors">
-            <ChevronRight className="w-4 h-4 text-gray-900" />
+          <button onClick={nextImage} className="bg-white/90 p-2 rounded-full shadow hover:bg-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+            <ChevronRight className="w-5 h-5 text-gray-900" />
           </button>
         </div>
 

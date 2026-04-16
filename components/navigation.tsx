@@ -46,7 +46,7 @@ export function Navigation({ onEnquire }: NavigationProps) {
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className="hover:text-blue-400 transition-colors text-sm lg:text-base font-medium"
+              className="min-h-[44px] flex items-center hover:text-blue-400 transition-colors text-sm lg:text-base font-medium"
             >
               {link.label}
             </button>

@@ -6,9 +6,9 @@ export function ContactLocationSection() {
   return (
     <section id="contact" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Find Us at 154 Arum Road, Table View</h2>
-          <p className="text-xl text-gray-600">Visit us in the heart of Table View</p>
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-900">Find Us at 154 Arum Road, Table View</h2>
+          <p className="text-base sm:text-lg text-gray-600">Visit us in the heart of Table View</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 items-start">

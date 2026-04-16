@@ -21,7 +21,7 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
 
     return (
         <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[60] w-full max-w-4xl px-4 animate-in slide-in-from-top duration-500">
-            <div className="bg-white/70 backdrop-blur-lg border-2 border-blue-600 shadow-2xl rounded-2xl overflow-hidden relative p-6 md:p-8">
+            <div className="bg-white/70 backdrop-blur-lg border-2 border-blue-600 shadow-2xl rounded-2xl overflow-hidden relative p-5 md:p-8 max-h-[40vh] md:max-h-none overflow-y-auto">
                 <button
                     onClick={() => setIsVisible(false)}
                     className="absolute top-2 right-2 text-slate-900 hover:text-slate-700 transition-colors w-12 h-12 flex items-center justify-center rounded-full bg-white/50 border border-black/5 active:scale-90"
