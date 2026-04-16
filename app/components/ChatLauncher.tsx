@@ -109,7 +109,7 @@ export default function ChatLauncher() {
             aria-label="Dismiss"
             className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-white text-[#0b1f3a] text-xs font-bold shadow flex items-center justify-center hover:scale-110 transition-transform"
           >
-            ×
+            Ã—
           </button>
           <span className="absolute -bottom-2 right-7 border-t-8 border-t-[#0b1f3a] border-x-8 border-x-transparent" />
         </div>
