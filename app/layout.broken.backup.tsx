@@ -1,4 +1,4 @@
-﻿// add this near the top with your other imports
+// add this near the top with your other imports
 import ChatWidget from "./components/ChatWidget";
 import ChatLauncher from './components/ChatLauncher';
 
