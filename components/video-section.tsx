@@ -128,12 +128,77 @@ export function VideoSection() {
           Designed For Living, Crafted For Life
         </h2>
 
-        <p className="text-center text-gray-700 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 md:mb-12 max-w-5xl mx-auto px-2">
-          Cornerstone on Arum sets a benchmark for residential living in Table View. The development offers premium
-          apartments within a secure and well-managed community, designed to deliver long-term value through superior
-          standards of design, sustainability, and comfort. Featuring 22 thoughtfully designed one- and two-bedroom
-          units, the project presents an exceptional investment opportunity.
-        </p>
+        <div className="max-w-5xl mx-auto mb-16 sm:mb-20">
+          <p className="text-center text-gray-700 text-base sm:text-lg leading-relaxed mb-12 sm:mb-16">
+            Cornerstone on Arum sets a benchmark for residential living in Table View. The development offers premium
+            apartments within a secure and well-managed community, designed to deliver long-term value through superior
+            standards of design, sustainability, and comfort. Featuring 22 thoughtfully designed one- and two-bedroom
+            units, the project presents an exceptional investment opportunity.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-12 sm:gap-16 px-2">
+            {/* Left Column: Foundation & Security */}
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">A Foundation You Can Trust</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Our development features a proprietary full concrete frame. A superior construction method that ensures unmatched structural integrity. For you, this means more than just safety; it means a quieter home with significantly reduced noise transfer and a structure that resists the typical cracks of standard builds. It is an investment in absolute stability and lasting comfort.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">Peace of Mind</h3>
+                
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-2">No Airbnb or Short-Term Rental Policy</h4>
+                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                      At Cornerstone on Arum, we are implementing a policy that mandates a minimum rental period of six months. Our strategy is to build a superior residential product. We are shielding investors from a volatile market while creating a secure, stable, and desirable community. This commitment to long-term living is the foundation that will make Cornerstone on Arum a landmark success.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-2">State-of-the-Art, AI-Integrated CCTV</h4>
+                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                      Absolute peace of mind is engineered directly into our infrastructure. Your home is protected by an invisible, proactive security shield featuring 24/7 CCTV off-site monitoring directly linked to an armed response team. Coupled with strict access control and dedicated, secure off-street parking for every unit, we guarantee a seamless, undisturbed living experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Financials */}
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">Financial Intelligence</h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-2">Zero Transfer Duty</h4>
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    Apartments at Cornerstone on Arum are VAT inclusive, and no transfer duties are payable, saving up to R80,000 in costs.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-2">BetterBond: 100 Percent Financing Available</h4>
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    Increase your capital efficiency and experience a frictionless acquisition process. There are absolutely zero transfer duties to pay. Through our exclusive partnership with BetterBond, your home loan application is submitted to multiple leading banks at no cost to you. Benefit from rapid 48-hour pre-approvals and up to 100 percent bond financing with no deposit required for qualifying buyers, ensuring your liquidity remains intact.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-gray-900 mb-2">Superior Returns</h4>
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                    Sectional title developments are the clear winner for the Blaauwberg Road Corridor in Table View because they align perfectly with the surging market demand for smaller, more efficient living spaces, which saw a 27% value growth in flats and townhouses over the past year. Table View rental demand remains intensely high and is projected to provide returns of 8% to 10%+.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base mt-3">
+                    You are risking far less capital to achieve a functionally superior percentage return, all while maintaining the exact same world-class Cape Town tenant profile.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="relative group">
           {/* Carousel Container */}
