@@ -51,7 +51,7 @@ export function Navigation() {
               fontWeight: "600", 
               fontSize: "14px", 
               border: "none", 
-              padding: "10px 20px", 
+              width: "150px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", 
               borderRadius: "12px",
               cursor: "pointer"
             }}
