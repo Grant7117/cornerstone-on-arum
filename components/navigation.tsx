@@ -38,7 +38,6 @@ export function Navigation({ onEnquire }: NavigationProps) {
           <div className="text-[10px] sm:text-xs text-blue-400 font-semibold tracking-[0.2em] leading-tight">ON ARUM</div>
         </div>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navLinks.map((link) => (
             <button
@@ -57,7 +56,6 @@ export function Navigation({ onEnquire }: NavigationProps) {
           </Button>
         </div>
 
-        {/* Mobile nav */}
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={onEnquire}
@@ -67,7 +65,6 @@ export function Navigation({ onEnquire }: NavigationProps) {
           </button>
           <button
             onClick={() => setMenuOpen((v) => !v)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
             className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-lg hover:bg-white/10 transition-colors bg-white/5"
           >
             <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
