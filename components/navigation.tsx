@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import Link from "next/link"
@@ -33,13 +33,11 @@ export function Navigation({ onEnquire }: NavigationProps) {
   return (
     <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-[100]">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
         <div className="flex flex-col">
           <div className="text-lg sm:text-xl font-bold leading-tight uppercase tracking-wider">CORNERSTONE</div>
           <div className="text-[10px] sm:text-xs text-blue-400 font-semibold tracking-[0.2em] leading-tight">ON ARUM</div>
         </div>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navLinks.map((link) => (
             <button
@@ -50,7 +48,6 @@ export function Navigation({ onEnquire }: NavigationProps) {
               {link.label}
             </button>
           ))}
-          {/* UPDATED: Solid Blue VIP Button for Desktop */}
           <Button
             onClick={onEnquire}
             className="bg-[#0066FF] hover:bg-[#0052cc] text-white border-0 font-bold px-6 py-2 rounded-lg transition-all shadow-md active:scale-95"
@@ -59,7 +56,6 @@ export function Navigation({ onEnquire }: NavigationProps) {
           </Button>
         </div>
 
-        {/* Mobile nav (using onEnquire prop) */}
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={onEnquire}
@@ -67,20 +63,17 @@ export function Navigation({ onEnquire }: NavigationProps) {
           >
             Enquire
           </button>
-          {/* Hamburger */}
           <button
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMenuOpen(!menuOpen)}
             className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-lg hover:bg-white/10 transition-colors bg-white/5"
           >
-            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
-            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
-            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
+            <span className="block h-0.5 w-6 bg-white"></span>
+            <span className="block h-0.5 w-6 bg-white"></span>
+            <span className="block h-0.5 w-6 bg-white"></span>
           </button>
         </div>
       </div>
 
-      {/* Mobile dropdown */}
       {menuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-[#1e293b] border-t border-white/10 shadow-2xl z-50">
           <div className="flex flex-col py-2 px-4">
