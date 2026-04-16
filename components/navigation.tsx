@@ -13,7 +13,6 @@ export function Navigation({ onEnquire }: NavigationProps) {
 
   const handleNavClick = (sectionId: string) => {
     setMenuOpen(false)
-    // Small delay so menu closes before scroll
     setTimeout(() => {
       const element = document.getElementById(sectionId)
       if (element) {
@@ -34,7 +33,6 @@ export function Navigation({ onEnquire }: NavigationProps) {
   return (
     <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-[100]">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
         <div className="flex flex-col">
           <div className="text-lg sm:text-xl font-bold leading-tight uppercase tracking-wider">CORNERSTONE</div>
           <div className="text-[10px] sm:text-xs text-blue-400 font-semibold tracking-[0.2em] leading-tight">ON ARUM</div>
@@ -53,37 +51,35 @@ export function Navigation({ onEnquire }: NavigationProps) {
           ))}
           <Button
             onClick={onEnquire}
-            className="bg-blue-600 hover:bg-blue-700 text-white border-0 font-bold px-6"
+            className="bg-[#0066FF] hover:bg-[#0052cc] text-white border-0 font-bold px-6 py-2 rounded-lg transition-all shadow-md active:scale-95"
           >
             Enquire Now
           </Button>
         </div>
 
-        {/* Mobile right side */}
+        {/* Mobile nav */}
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={onEnquire}
-            className="text-sm bg-blue-600 text-white px-5 py-3 rounded-lg shadow-lg font-bold hover:bg-blue-700 uppercase tracking-wide transition-all active:scale-95"
+            className="text-sm bg-[#0066FF] text-white px-5 py-2.5 rounded-lg shadow-lg font-bold hover:bg-[#0052cc] uppercase tracking-wide transition-all active:scale-95"
           >
             Enquire
           </button>
-          {/* Hamburger */}
           <button
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="flex flex-col justify-center items-center w-12 h-12 gap-1.5 rounded-full hover:bg-white/10 transition-colors bg-white/5"
+            className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-lg hover:bg-white/10 transition-colors bg-white/5"
           >
-            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
+            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
+            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
           </button>
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#1e293b] border-t border-white/10 shadow-2xl z-50 animate-in slide-in-from-top duration-300">
-          <div className="flex flex-col py-2 px-4 shadow-inner">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#1e293b] border-t border-white/10 shadow-2xl z-50">
+          <div className="flex flex-col py-2 px-4">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -99,4 +95,3 @@ export function Navigation({ onEnquire }: NavigationProps) {
     </nav>
   )
 }
-
