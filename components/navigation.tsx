@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import Link from "next/link"
@@ -64,12 +64,12 @@ export function Navigation({ onEnquire }: NavigationProps) {
             Enquire
           </button>
           <button
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={() => setMenuOpen(!menuOpen)}
             className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-lg hover:bg-white/10 transition-colors bg-white/5"
           >
-            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
-            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
-            <span className={lock h-0.5 w-6 bg-white transition-all duration-300 \} />
+            <span className="block h-0.5 w-6 bg-white transition-all duration-300"></span>
+            <span className="block h-0.5 w-6 bg-white transition-all duration-300"></span>
+            <span className="block h-0.5 w-6 bg-white transition-all duration-300"></span>
           </button>
         </div>
       </div>
