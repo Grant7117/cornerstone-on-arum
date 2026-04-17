@@ -83,7 +83,7 @@ export function VideoSection() {
             {/* Architectural Frame Decoration */}
             <div className="absolute inset-0 border border-muted-bronze/20 translate-x-6 translate-y-6 z-0" />
             
-            <div className="relative z-10 w-full h-full overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)]">
+            <div className="relative z-10 w-full h-full glass-panel overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)]">
               <Image
                 src={areaImages[currentIndex].image}
                 alt={areaImages[currentIndex].title}
@@ -100,6 +100,15 @@ export function VideoSection() {
                 <div className="flex items-center gap-4">
                   <div className="h-[1px] w-8 bg-muted-bronze" />
                   <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-bronze font-bold">Explore Table View</p>
+                </div>
+              </div>
+
+              {/* Decorative "Play" button following carousel structural guidance */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="bg-sand-drift/20 backdrop-blur-sm p-6 rounded-full border border-sand-drift/30 text-sand-drift">
+                  <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </div>
               </div>
             </div>

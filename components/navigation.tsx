@@ -1,7 +1,11 @@
 "use client"
 import { useState } from "react"
 
-export function Navigation() {
+interface NavigationProps {
+  onEnquire?: () => void
+}
+
+export function Navigation({ onEnquire }: NavigationProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const formUrl = "https://www.privyr.com/form/zw8VR1xt#cornerstone-on-arum-contact-form"
 
@@ -22,65 +26,66 @@ export function Navigation() {
     { label: "Documents", id: "documents" },
   ]
 
+  const handleEnquire = () => {
+    if (onEnquire) {
+      onEnquire()
+    } else {
+      window.open(formUrl, "_blank")
+    }
+  }
+
   return (
-    <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-[100]">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex flex-col">
-          <div className="text-lg sm:text-xl font-bold leading-tight uppercase tracking-wider">CORNERSTONE</div>
-          <div className="text-[10px] sm:text-xs text-blue-400 font-semibold tracking-[0.2em] leading-tight">ON ARUM</div>
+    <nav className="fixed top-0 z-50 w-full bg-sand-drift/70 backdrop-blur-xl border-b border-deep-obsidian/5">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div
+          className="font-serif text-xl tracking-tighter uppercase cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          Cornerstone-on-Arum
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <div className="hidden md:flex space-x-8 font-sans text-xs uppercase tracking-widest text-deep-obsidian/60">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className="hover:text-blue-400 transition-colors text-sm font-medium"
+              className="hover:text-muted-bronze transition-colors"
             >
               {link.label}
             </button>
           ))}
-          
-          {/* THE DUPLICATE BUTTON - EXACT MATCH TO BOTTOM RIGHT */}
-          <button
-            onClick={() => window.open(formUrl, "_blank")}
-            style={{ 
-              backgroundColor: "#0066FF", 
-              color: "#ffffff", 
-              fontWeight: "600", 
-              fontSize: "14px", 
-              border: "none", 
-              width: "150px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", 
-              borderRadius: "12px",
-              cursor: "pointer"
-            }}
-            className="shadow-md hover:scale-105 transition-all active:scale-95"
-          >
-            Enquire Now
-          </button>
         </div>
 
-        {/* Mobile View */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <button
-            onClick={() => window.open(formUrl, "_blank")}
-            style={{ backgroundColor: "#0066FF", color: "#ffffff", fontWeight: "700", padding: "8px 16px", borderRadius: "10px", fontSize: "12px", border: "none" }}
+            onClick={handleEnquire}
+            className="bg-deep-obsidian text-sand-drift px-6 py-2 text-xs uppercase tracking-widest hover:bg-muted-bronze transition-colors"
           >
             Enquire
           </button>
-          <button onClick={() => setMenuOpen(!menuOpen)} className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-white/5 rounded-lg">
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="block h-0.5 w-6 bg-white"></span>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-deep-obsidian/5 rounded-lg"
+          >
+            <span className={`block h-0.5 w-6 bg-deep-obsidian transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-deep-obsidian transition-all ${menuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-deep-obsidian transition-all ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#1e293b] border-t border-white/10 p-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-sand-drift border-t border-deep-obsidian/10 p-4 shadow-xl">
           {navLinks.map((link) => (
-            <button key={link.id} onClick={() => handleNavClick(link.id)} className="block w-full text-left py-4 font-bold border-b border-white/5">
+            <button
+              key={link.id}
+              onClick={() => handleNavClick(link.id)}
+              className="block w-full text-left py-4 font-sans text-xs uppercase tracking-widest text-deep-obsidian/60 border-b border-deep-obsidian/5"
+            >
               {link.label}
             </button>
           ))}

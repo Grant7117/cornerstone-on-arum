@@ -4,25 +4,7 @@ export function WhatsAppButton() {
   return (
     <button
       onClick={() => window.open(formUrl, "_blank")}
-      style={{ 
-        backgroundColor: "#0066FF", 
-        color: "#ffffff", 
-        fontWeight: "600", 
-        fontSize: "14px", 
-        border: "none", 
-        width: "150px", 
-        height: "44px", 
-        borderRadius: "12px",
-        cursor: "pointer",
-        position: "fixed",
-        bottom: "30px",
-        right: "24px",
-        zIndex: "9998",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-      }}
-      className="shadow-lg hover:scale-105 transition-all active:scale-95"
+      className="fixed bottom-[30px] right-[24px] z-[9998] flex items-center justify-center w-[150px] h-[44px] bg-deep-obsidian text-sand-drift font-sans text-[10px] font-bold uppercase tracking-widest rounded-none shadow-2xl hover:bg-muted-bronze transition-all hover:scale-105 active:scale-95"
     >
       Enquire Now
     </button>

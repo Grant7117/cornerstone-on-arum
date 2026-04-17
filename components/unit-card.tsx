@@ -60,9 +60,8 @@ export function UnitCard({ unit }: UnitCardProps) {
   }
 
   return (
-    <div className="group relative overflow-hidden rounded-sm border border-white/10 bg-deep-obsidian/40 backdrop-blur-md transition-all duration-500 hover:border-muted-bronze/50 h-full flex flex-col">
-      {/* Image Section */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-slate-900">
+    <div className="group relative overflow-hidden bg-deep-obsidian/40 backdrop-blur-md border border-white/10 transition-all duration-500 hover:border-muted-bronze/50">
+      <div className="aspect-[4/5] overflow-hidden relative">
         <div 
           className="absolute top-4 left-4 w-4 h-4 rounded-full z-20" 
           style={{ backgroundColor: unit.color, boxShadow: `0 0 15px ${unit.color}` }}
@@ -74,10 +73,10 @@ export function UnitCard({ unit }: UnitCardProps) {
               src={unit.images[currentImageIndex] || "/placeholder.svg"}
               alt={`Unit ${unit.unitNo}`}
               fill
-              className="object-cover transition-transform duration-1000 group-hover:scale-105"
-              sizes="320px"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="400px"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-transparent opacity-60" />
             
             {unit.images.length > 1 && (
               <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -87,7 +86,7 @@ export function UnitCard({ unit }: UnitCardProps) {
             )}
           </>
         ) : (
-          <div className="flex items-center justify-center h-full text-warm-stone/20 font-serif italic text-sm">Render Pending</div>
+          <div className="flex items-center justify-center h-full bg-slate-900 text-warm-stone/20 font-serif italic text-sm">Render Pending</div>
         )}
 
         <div className="absolute top-4 right-4 z-20">
@@ -95,23 +94,15 @@ export function UnitCard({ unit }: UnitCardProps) {
         </div>
       </div>
 
-      {/* Content Section */}
-      <div className="absolute bottom-0 w-full p-6 text-warm-stone pointer-events-none">
-        <span className="font-serif text-5xl font-light tracking-tighter text-warm-stone/90 block mb-1">
-          {unit.unitNo}
-        </span>
-
-        <div className="flex items-end justify-between border-t border-white/10 pt-4">
+      <div className="absolute bottom-0 w-full p-6 text-white">
+        <span className="font-serif text-5xl font-light tracking-tighter text-warm-stone/90">{unit.unitNo}</span>
+        <div className="mt-2 flex items-end justify-between border-t border-white/10 pt-4">
           <div>
-            <h3 className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-muted-bronze">
-              {unit.floor} Floor
-            </h3>
-            <p className="font-sans text-xs text-warm-stone/60 mt-1">
-              {unit.bedrooms} Bed • {unit.bathrooms} Bath • {unit.size}m²
-            </p>
+            <h3 className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-muted-bronze">{unit.floor} Floor</h3>
+            <p className="font-sans text-xs text-warm-stone/60">{unit.bedrooms} Bed • {unit.size}m²</p>
           </div>
           <div className="text-right">
-            <p className="font-sans text-[10px] uppercase tracking-widest text-warm-stone/40">Investment</p>
+            <p className="font-sans text-[8px] uppercase tracking-widest text-warm-stone/40">Starting From</p>
             <p className="font-serif text-lg text-warm-stone">{unit.price}</p>
           </div>
         </div>

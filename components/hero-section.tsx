@@ -1,24 +1,52 @@
 "use client"
 
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 export function HeroSection() {
+  const handleScrollToProperties = () => {
+    const element = document.getElementById('properties')
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleScrollToAbout = () => {
+    const element = document.getElementById('about')
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <section className="relative w-full aspect-video overflow-hidden bg-[#1a1c23]">
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+      {/* Master Hero Image Foundation */}
       <Image
         src="/images/Cornerstone-on-arum-hero-image.png"
-        alt="Cornerstone on Arum"
+        alt="Cornerstone Architecture"
         fill
-        className="object-contain"
+        className="absolute inset-0 w-full h-full object-cover scale-105"
         priority
         sizes="100vw"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-white/20 to-transparent flex items-end justify-center pb-10 md:pb-20 lg:pb-24">
-        <div className="text-center px-6 max-w-4xl">
-          {/* Buttons removed securely as per instruction */}
+      <div className="absolute inset-0 bg-gradient-to-b from-deep-obsidian/20 via-transparent to-deep-obsidian/40"></div>
+
+      <div className="relative z-10 text-center px-6">
+        <h1 className="font-serif text-6xl md:text-8xl text-sand-drift tracking-tighter leading-none mb-6">
+          Elevating <br /> Urban Living
+        </h1>
+        <p className="font-sans text-sand-drift/80 max-w-xl mx-auto text-sm uppercase tracking-[0.3em] mb-12">
+          Architectural permanence & intentional space management
+        </p>
+        <div className="flex flex-col md:flex-row gap-4 justify-center">
+          <button
+            onClick={handleScrollToProperties}
+            className="bg-sand-drift text-deep-obsidian px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-muted-bronze transition-colors"
+          >
+            View Portfolio
+          </button>
+          <button
+            onClick={handleScrollToAbout}
+            className="border border-sand-drift text-sand-drift px-10 py-4 text-xs uppercase tracking-widest backdrop-blur-sm hover:bg-sand-drift/10 transition-colors"
+          >
+            Our Vision
+          </button>
         </div>
       </div>
     </section>
