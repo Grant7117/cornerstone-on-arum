@@ -1,20 +1,29 @@
 import type { Metadata, Viewport } from 'next';
+import { Playfair_Display, Inter } from 'next/font/google';
 import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
-
 import ClientOnly from './components/ClientOnly';
 import ChatLauncher from './components/ChatLauncher';
 
+const playfair = Playfair_Display({ 
+  subsets: ['latin'], 
+  variable: '--font-serif',
+  display: 'swap' 
+});
+
+const inter = Inter({ 
+  subsets: ['latin'], 
+  variable: '--font-sans',
+  display: 'swap' 
+});
+
 export const metadata: Metadata = {
-  title: 'Cornerstone on Arum - Premium Property Development in Table View, Cape Town',
-  description: 'Luxury apartments at 154 Arum Road, Table View. Advanced security, sustainable living, and premium amenities. Contact Grant: 072 450 3626',
-  keywords: ['Table View apartments', 'Cornerstone on Arum', 'Property development Cape Town', 'Luxury apartments Table View', '154 Arum Road'],
-  verification: {
-    facebook: 'sha8fjw0dkn178anvodxwr4f90gpgy',
-  },
+  title: 'Cornerstone on Arum - Premium Property Development',
+  description: 'Luxury apartments at 154 Arum Road, Table View. Advanced security and sustainable living.',
+  keywords: ['Table View apartments', 'Cornerstone on Arum', 'Property development Cape Town'],
   openGraph: {
-    title: 'Cornerstone on Arum - Premium Property Development in Table View, Cape Town',
-    description: 'Luxury apartments at 154 Arum Road, Table View. Advanced security, sustainable living, and premium amenities. Contact Grant: 072 450 3626',
+    title: 'Cornerstone on Arum - Premium Property Development',
+    description: 'Luxury apartments at 154 Arum Road, Table View.',
     type: 'website',
     locale: 'en_ZA',
     url: 'https://www.cornerstoneonarum.co.za',
@@ -30,7 +39,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -42,28 +51,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            
             fbq('init', '2421305398312777'); 
             fbq('track', 'PageView');
-
-            // GLOBAL LEAD TRACKER - Hook this to your forms/buttons
-            window.trackMetaLead = function(formName) {
-              if (typeof fbq === 'function') {
-                fbq('track', 'Lead', { 
-                  content_name: formName,
-                  status: 'submitted'
-                });
-                console.log('Meta Lead Captured: ' + formName);
-              }
-            };
           `
         }} />
-        <noscript>
-          <img height="1" width="1" style={{ display: 'none' }} 
-               src="https://www.facebook.com/tr?id=2421305398312777&ev=PageView&noscript=1" />
-        </noscript>
       </head>
-      <body className="antialiased" suppressHydrationWarning>
+      <body className="antialiased font-sans bg-deep-obsidian text-warm-stone" suppressHydrationWarning>
         {children}
         <ClientOnly>
           <ChatLauncher />

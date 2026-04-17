@@ -4,7 +4,6 @@ import { useState, useRef } from "react"
 import { UnitCard } from "@/components/unit-card"
 import { ChevronLeft, ChevronRight } from "@/components/icons"
 import { Button } from "@/components/ui/button"
-
 import { unitsData } from "@/data/units"
 
 interface UnitsCarouselProps {
@@ -49,138 +48,73 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
   }
 
   return (
-    <div id="properties" className="flex flex-col py-6 sm:py-8 overflow-hidden">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 sm:mb-8 text-gray-900 px-4">
+    <div id="properties" className="flex flex-col py-24 overflow-hidden bg-deep-obsidian">
+      <h2 className="font-serif text-4xl md:text-6xl text-center mb-16 text-warm-stone px-4 tracking-tighter">
         Available Apartments
       </h2>
 
-      <div className="bg-white rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 mx-4 sm:mx-auto shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-4 sm:gap-8">
-          {/* 1 Bedroom */}
-          <button
-            onClick={() => setSelectedType("1-bedroom")}
-            className={`flex items-center gap-4 p-4 rounded-xl transition-all w-full sm:w-auto ${selectedType === "1-bedroom" ? "bg-gray-100 ring-2 ring-gray-900 shadow-inner" : "hover:bg-gray-50 bg-gray-50/50"
+      {/* Architectural Tab Navigation */}
+      <div className="max-w-5xl mx-auto w-full px-4 mb-16">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 border-b border-white/10 pb-10">
+          {[
+            { id: "1-bedroom", label: "1 Bedroom", size: "45-48m²" },
+            { id: "2-bedroom", label: "2 Bedroom", size: "67m²" },
+            { id: "2-bedroom-loft", label: "2 Bedroom Loft", size: "77m²" }
+          ].map((type) => (
+            <button
+              key={type.id}
+              onClick={() => setSelectedType(type.id as any)}
+              className={`group flex flex-col items-center sm:items-start transition-all relative pb-4 ${
+                selectedType === type.id ? "text-warm-stone" : "text-warm-stone/30 hover:text-warm-stone/60"
               }`}
-          >
-            <div className="text-left">
-              <h3 className="text-lg font-bold text-gray-900">1 Bedroom</h3>
-              <p className="text-sm text-gray-600">45-48m²</p>
-            </div>
-            <div className="flex gap-2 items-center ml-auto sm:ml-0">
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-gray-300" style={{ backgroundColor: "#7FD957" }}></div>
-                <span className="text-[10px] mt-1 font-bold">47m²</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-gray-300" style={{ backgroundColor: "#F4E96D" }}></div>
-                <span className="text-[10px] mt-1 font-bold">45m²</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-gray-300" style={{ backgroundColor: "#FF6B6B" }}></div>
-                <span className="text-[10px] mt-1 font-bold">48m²</span>
-              </div>
-            </div>
-          </button>
-
-          {/* 2 Bedroom */}
-          <button
-            onClick={() => setSelectedType("2-bedroom")}
-            className={`flex items-center gap-4 p-4 rounded-xl transition-all w-full sm:w-auto ${selectedType === "2-bedroom" ? "bg-gray-100 ring-2 ring-gray-900 shadow-inner" : "hover:bg-gray-50 bg-gray-50/50"
-              }`}
-          >
-            <div className="text-left">
-              <h3 className="text-lg font-bold text-gray-900">2 Bedroom</h3>
-              <p className="text-sm text-gray-600">67m²</p>
-            </div>
-            <div className="flex gap-2 items-center ml-auto sm:ml-0">
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-gray-300" style={{ backgroundColor: "#F4C89D" }}></div>
-                <span className="text-[10px] mt-1 font-bold">67m²</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-gray-300" style={{ backgroundColor: "#6DC5E8" }}></div>
-                <span className="text-[10px] mt-1 font-bold">67m²</span>
-              </div>
-            </div>
-          </button>
-
-          {/* 2 Bedroom Loft */}
-          <button
-            onClick={() => setSelectedType("2-bedroom-loft")}
-            className={`flex items-center gap-4 p-4 rounded-xl transition-all w-full sm:w-auto ${selectedType === "2-bedroom-loft" ? "bg-gray-100 ring-2 ring-gray-900 shadow-inner" : "hover:bg-gray-50 bg-gray-50/50"
-              }`}
-          >
-            <div className="text-left">
-              <h3 className="text-lg font-bold text-gray-900">2 Bedroom Loft</h3>
-              <p className="text-sm text-gray-600">77m²</p>
-            </div>
-            <div className="flex gap-2 items-center ml-auto sm:ml-0">
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-gray-300" style={{ backgroundColor: "#9B9FD8" }}></div>
-                <span className="text-[10px] mt-1 font-bold">77m²</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-5 h-5 rounded-full border border-gray-300" style={{ backgroundColor: "#F4B4C4" }}></div>
-                <span className="text-[10px] mt-1 font-bold">77m²</span>
-              </div>
-            </div>
-          </button>
+            >
+              <span className="font-serif text-2xl md:text-3xl tracking-tight">{type.label}</span>
+              <span className="font-sans text-[10px] uppercase tracking-[0.3em] mt-2 text-muted-bronze font-bold">
+                {type.size}
+              </span>
+              {selectedType === type.id && (
+                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-muted-bronze shadow-[0_0_15px_rgba(156,132,108,0.6)]" />
+              )}
+            </button>
+          ))}
         </div>
       </div>
 
-      <div className="relative px-4">
-        {/* Left Navigation Button */}
+      <div className="relative px-4 lg:px-20">
         <button
           onClick={() => scroll("left")}
-          className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-4 transition-all"
-          aria-label="Scroll left"
+          className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 z-20 bg-deep-obsidian/40 backdrop-blur-xl border border-white/10 text-warm-stone hover:bg-muted-bronze/20 shadow-2xl rounded-full p-6 transition-all"
         >
-          <ChevronLeft className="w-6 h-6 text-gray-900" />
+          <ChevronLeft className="w-6 h-6" />
         </button>
 
-        {/* Scrollable Container */}
         <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
-          className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide scroll-smooth sm:px-12 snap-x snap-mandatory pb-4"
+          className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-12"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {units?.map((unit, index) => (
-            <div key={`${unit.unitNo}-${index}`} className="flex-shrink-0 w-[85vw] sm:w-80 snap-center">
+            <div key={`${unit.unitNo}-${index}`} className="flex-shrink-0 w-[85vw] sm:w-[380px] snap-center">
               <UnitCard unit={unit} />
             </div>
           ))}
         </div>
 
-        {/* Right Navigation Button */}
         <button
           onClick={() => scroll("right")}
-          className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-4 transition-all"
-          aria-label="Scroll right"
+          className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 z-20 bg-deep-obsidian/40 backdrop-blur-xl border border-white/10 text-warm-stone hover:bg-muted-bronze/20 shadow-2xl rounded-full p-6 transition-all"
         >
-          <ChevronRight className="w-6 h-6 text-gray-900" />
+          <ChevronRight className="w-6 h-6" />
         </button>
-
-        {/* Mobile Pagination Dots */}
-        <div className="flex sm:hidden justify-center gap-2 mt-4">
-          {units?.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToIndex(index)}
-              className={`h-2 transition-all rounded-full ${activeDot === index ? "w-8 bg-blue-600" : "w-2 bg-gray-300"}`}
-              aria-label={`Go to unit ${index + 1}`}
-            />
-          ))}
-        </div>
       </div>
 
-      {/* Further Information Request Button */}
-      <div className="flex justify-center mt-8 sm:mt-12 px-4">
+      <div className="flex justify-center mt-12 px-4">
         <Button
           onClick={onEnquire}
-          className="w-full sm:w-auto !bg-[#0066FF] !text-white hover:!bg-blue-700 font-bold py-6 px-12 text-lg md:text-xl rounded-xl shadow-xl transition-all transform active:scale-[0.98] h-auto text-center"
+          className="w-full sm:w-auto bg-transparent border border-muted-bronze/50 text-muted-bronze hover:bg-muted-bronze hover:text-deep-obsidian font-sans uppercase tracking-[0.3em] py-10 px-20 text-[10px] font-bold transition-all duration-700 rounded-none h-auto"
         >
-          Request Further Information
+          Request Private Portfolio
         </Button>
       </div>
     </div>

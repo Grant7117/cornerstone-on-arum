@@ -6,19 +6,16 @@ import { ChevronLeft, ChevronRight } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 
 const areaImages = [
-
   {
     id: 11,
     title: "Pristine Coastal Living",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011743-liQr9e2YExr53nVUKMPOm76zxRP4pS.png",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011743-liQr9e2YExr53nVUKMPOm76zxRP4pS.png",
     description: "Crystal clear turquoise waters and white sandy beaches at your doorstep",
   },
   {
     id: 12,
     title: "Endless Beach Horizons",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011435-quXlt9Et4xdBtNuBPcfEQ7Q2EBSAJj.png",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-21%20011435-quXlt9Et4xdBtNuBPcfEQ7Q2EBSAJj.png",
     description: "Miles of pristine coastline with perfect waves and mountain views",
   },
   {
@@ -30,72 +27,15 @@ const areaImages = [
   {
     id: 5,
     title: "Beachfront Dining",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Doodles%20Beachfront-BCLgNta0a0wpg4p0CC9cgcUHf9oo6g.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Doodles%20Beachfront-BCLgNta0a0wpg4p0CC9cgcUHf9oo6g.jpg",
     description: "Sunset dining with panoramic ocean and mountain views",
-  },
-  {
-    id: 6,
-    title: "Fine Dining",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Dining%20at%20Doodles%20Beachfront-R7GaoNFUf1R3oO80cYRWYrL9UWK0gz.jpg",
-    description: "Gourmet cuisine at Doodles Beachfront Restaurant",
-  },
-  {
-    id: 8,
-    title: "Table Bay Mall",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Table%20Bay%20Mall-64msZpqcjr5WZKUQtJqqd56qnM1mvK.jpeg",
-    description: "Contemporary shopping destination with diverse retail options",
-  },
-  {
-    id: 9,
-    title: "Table View High School",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Table%20View%20High%20School-bfaijzidMCPfXdh3c8u2SwS6Ox2ZQj.jpeg",
-    description: "Excellent educational facilities with modern sports amenities",
   },
   {
     id: 15,
     title: "Atlantic Beach Golf Estate",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Atlantic%20Beach%20Golf%20Estate-VFeRoQgys1T9yjTAFtSgN2K14P93Xr.png",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Atlantic%20Beach%20Golf%20Estate-VFeRoQgys1T9yjTAFtSgN2K14P93Xr.png",
     description: "Championship golf course with spectacular ocean and mountain views",
-  },
-  {
-    id: 16,
-    title: "Atlantic Padel & Tennis",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Atlantic%20Padel-9yXftPQPseMeccJMxMUd5I6LNq973b.png",
-    description: "Modern padel and tennis facilities for active lifestyles",
-  },
-  {
-    id: 17,
-    title: "The Blue Peter Hotel",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/The%20Blue%20Peter%20Hotel-Z4ys9TeVUZWylij4Wsrk1GmYWF6nDD.png",
-    description: "Iconic beachfront dining and sunset experiences",
-  },
-  {
-    id: 18,
-    title: "Table View Soccer Club",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Table%20View%20Soccer%20Club-10YNIzxkpgNqc512QR4gSdMEBLj8Uo.png",
-    description: "Community sports facilities with mountain backdrop",
-  },
-  {
-    id: 19,
-    title: "Virgin Active Fitness",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Virgin%20Active-3gXpLRqPa1IT8PM4Ek3BIz3pZkeTXU.png",
-    description: "State-of-the-art gym and wellness facilities",
-  },
-  {
-    id: 20,
-    title: "Netcare Blaauwberg Hospital",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Netcare%20Blaauwberg%20Hospital-tbk5dFp3qh8MrVfr9xoLOc8uKQLYkW.png",
-    description: "Modern healthcare facility with 24hr emergency services",
-  },
+  }
 ]
 
 export function VideoSection() {
@@ -106,111 +46,67 @@ export function VideoSection() {
   }, [])
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      goToNext()
-    }, 4000)
-
+    const timer = setInterval(() => { goToNext() }, 6000)
     return () => clearInterval(timer)
   }, [goToNext])
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? areaImages.length - 1 : prevIndex - 1))
-  }
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
-
   return (
-    <section id="about" className="py-8 sm:py-12 md:py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6 sm:mb-8 md:mb-12">
-          Designed For Living, Crafted For Life
-        </h2>
-
-        <p className="text-center text-gray-700 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 md:mb-12 max-w-5xl mx-auto px-2">
-          Cornerstone on Arum sets a benchmark for residential living in Table View. The development offers premium
-          apartments within a secure and well-managed community, designed to deliver long-term value through superior
-          standards of design, sustainability, and comfort. Featuring 22 thoughtfully designed one- and two-bedroom
-          units, the project presents an exceptional investment opportunity.
-        </p>
-
-        <div className="relative group">
-          {/* Carousel Container */}
-          <div className="relative overflow-hidden rounded-lg shadow-xl">
-            {/* Images */}
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {areaImages.map((item) => (
-                <div key={item.id} className="min-w-full">
-                  <div className="relative aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] bg-gray-900 flex items-center justify-center overflow-hidden">
-                    <Image
-                      src={item.image || "/placeholder.svg"}
-                      alt={item.title}
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                    />
-                    {/* Image Overlay with Title */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-                      <h3 className="text-white text-xl sm:text-2xl font-bold mb-1">{item.title}</h3>
-                      <p className="text-white/90 text-sm sm:text-base leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+    <section id="about" className="py-32 bg-deep-obsidian overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          
+          <div className="space-y-10 order-2 lg:order-1">
+            <div className="space-y-4">
+              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">The Location</span>
+              <h2 className="font-serif text-5xl md:text-7xl text-warm-stone leading-[0.9] tracking-tighter">
+                Designed For Living, <br/> 
+                <span className="italic text-muted-bronze font-light">Crafted For Life</span>
+              </h2>
             </div>
+            
+            <p className="text-warm-stone/50 text-xl leading-relaxed font-sans max-w-lg font-light">
+              Cornerstone on Arum sets a benchmark for residential living in Table View. 
+              The development offers premium apartments within a secure community, 
+              designed to deliver long-term value through superior design and sustainability.
+            </p>
 
-            {/* Navigation Buttons */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={goToPrevious}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 rounded-full shadow-lg md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 h-11 w-11 md:h-12 md:w-12"
-              aria-label="Previous image"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={goToNext}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 rounded-full shadow-lg md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 h-11 w-11 md:h-12 md:w-12"
-              aria-label="Next image"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
-          </div>
-
-          {/* Dot Indicators */}
-          <div className="flex justify-center gap-4 mt-6">
-            {areaImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className="group p-2 -m-2"
-                aria-label={`Go to slide ${index + 1}`}
-              >
-                <div className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "w-8 !bg-black" : "w-2 bg-gray-300 group-hover:bg-gray-400"
-                  }`} />
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-8 flex justify-center">
             <Button
               onClick={() => {
-                const message = encodeURIComponent("I am interested in receiving VIP Availability Alerts for Cornerstone on Arum")
+                const message = encodeURIComponent("I am interested in VIP Alerts for Cornerstone on Arum")
                 window.open(`https://wa.me/27724503626?text=${message}`, '_blank')
               }}
-              className="w-full sm:w-auto !bg-[#0066FF] !text-white hover:!bg-blue-700 font-bold py-6 px-12 text-lg md:text-xl rounded-xl shadow-xl transition-all transform active:scale-[0.98] h-auto text-center"
+              className="bg-muted-bronze text-deep-obsidian hover:bg-warm-stone transition-all duration-500 rounded-none px-16 py-10 font-sans uppercase tracking-[0.3em] text-[10px] font-bold h-auto shadow-2xl"
             >
               Sign up for VIP alerts
             </Button>
           </div>
+
+          <div className="relative aspect-square sm:aspect-video lg:aspect-square group order-1 lg:order-2">
+            {/* Architectural Frame Decoration */}
+            <div className="absolute inset-0 border border-muted-bronze/20 translate-x-6 translate-y-6 z-0" />
+            
+            <div className="relative z-10 w-full h-full overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)]">
+              <Image
+                src={areaImages[currentIndex].image}
+                alt={areaImages[currentIndex].title}
+                fill
+                className="object-cover transition-all duration-[2000ms] ease-out scale-110 group-hover:scale-100"
+              />
+              
+              {/* Cinematic Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-deep-obsidian/10 mix-blend-overlay" />
+              
+              <div className="absolute bottom-10 left-10 text-white space-y-2">
+                <p className="font-serif text-3xl tracking-tight">{areaImages[currentIndex].title}</p>
+                <div className="flex items-center gap-4">
+                  <div className="h-[1px] w-8 bg-muted-bronze" />
+                  <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-bronze font-bold">Explore Table View</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

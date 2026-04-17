@@ -1,150 +1,67 @@
 import type { Config } from "tailwindcss"
 
-// all in fixtures is set to tailwind v3 as interims solutions
-
 const config: Config = {
+  // 1. Ensure dark mode is handled via class
   darkMode: ["class"],
+  // 2. Define exactly where Tailwind should look for classes
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      // 3. Your Custom Architectural Color Palette
       colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
+        'deep-obsidian': '#121212', // Deep base for sections
+        'warm-stone': '#E8E4E1',    // Sophisticated light text/backgrounds
+        'muted-bronze': '#9C846C',  // Premium accent color for CTAs and details
+        'sand-drift': '#F5F2EF',    // High-key highlight
+        'slate-shadow': '#2A2A2A',  // Depth for cards
+        
+        // Overwriting default variable mappings for consistency
+        background: "#121212",
+        foreground: "#E8E4E1",
+        border: "rgba(255, 255, 255, 0.1)",
+        input: "rgba(255, 255, 255, 0.05)",
+        ring: "#9C846C",
+        
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#9C846C",
+          foreground: "#121212",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#2A2A2A",
+          foreground: "#E8E4E1",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#E8E4E1",
+          foreground: "#121212",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        card: {
+          DEFAULT: "rgba(18, 18, 18, 0.6)",
+          foreground: "#E8E4E1",
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      // 4. Premium Font Pairing
+      fontFamily: {
+        serif: ['var(--font-serif)', 'serif'], // Used for Headings/Unit Numbers
+        sans: ['var(--font-sans)', 'sans-serif'], // Used for Body/Technical data
       },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "fade-in": {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        "fade-out": {
-          from: { opacity: "1" },
-          to: { opacity: "0" },
-        },
-        "zoom-in": {
-          from: { transform: "scale(0.95)" },
-          to: { transform: "scale(1)" },
-        },
-        "zoom-out": {
-          from: { transform: "scale(1)" },
-          to: { transform: "scale(0.95)" },
-        },
-        "slide-in-from-top": {
-          from: { transform: "translateY(-100%)" },
-          to: { transform: "translateY(0)" },
-        },
-        "slide-in-from-bottom": {
-          from: { transform: "translateY(100%)" },
-          to: { transform: "translateY(0)" },
-        },
-        "slide-in-from-left": {
-          from: { transform: "translateX(-100%)" },
-          to: { transform: "translateX(0)" },
-        },
-        "slide-in-from-right": {
-          from: { transform: "translateX(100%)" },
-          to: { transform: "translateX(0)" },
-        },
-        "slide-out-to-top": {
-          from: { transform: "translateY(0)" },
-          to: { transform: "translateY(-100%)" },
-        },
-        "slide-out-to-bottom": {
-          from: { transform: "translateY(0)" },
-          to: { transform: "translateY(100%)" },
-        },
-        "slide-out-to-left": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-100%)" },
-        },
-        "slide-out-to-right": {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(100%)" },
-        },
+      // 5. Custom Effects
+      backgroundImage: {
+        'brushed-metal': 'linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.05), rgba(255,255,255,0.1))',
+        'glass-gradient': 'linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.2s ease-out",
-        "fade-out": "fade-out 0.2s ease-out",
-        "zoom-in": "zoom-in 0.2s ease-out",
-        "zoom-out": "zoom-out 0.2s ease-out",
-        "slide-in-from-top": "slide-in-from-top 0.2s ease-out",
-        "slide-in-from-bottom": "slide-in-from-bottom 0.2s ease-out",
-        "slide-in-from-left": "slide-in-from-left 0.2s ease-out",
-        "slide-in-from-right": "slide-in-from-right 0.2s ease-out",
-        "slide-out-to-top": "slide-out-to-top 0.2s ease-out",
-        "slide-out-to-bottom": "slide-out-to-bottom 0.2s ease-out",
-        "slide-out-to-left": "slide-out-to-left 0.2s ease-out",
-        "slide-out-to-right": "slide-out-to-right 0.2s ease-out",
+      boxShadow: {
+        'glow': '0 0 15px rgba(156, 132, 108, 0.3)', // Bronze glow
       },
     },
   },
-  plugins: [],
+  // 6. Ensure standard Tailwind animations are available
+  plugins: [require("tailwindcss-animate")],
 }
+
 export default config
