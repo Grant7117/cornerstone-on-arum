@@ -5,7 +5,7 @@ import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { VideoSection } from "@/components/video-section"
 import { PricingBanner } from "@/components/pricing-banner"
-import { PriorityUnitsGrid } from "@/components/priority-units-grid"
+import { UnitsCarousel } from "@/components/units-carousel"
 import { PropertyFeaturesSection } from "@/components/property-features-section"
 import { BetterBondSection } from "@/components/betterbond-section"
 import { DepositBanner } from "@/components/deposit-banner"
@@ -24,25 +24,24 @@ export default function HomePage() {
   const closeEnquiryModal = () => setIsEnquiryModalOpen(false)
 
   return (
-    <main className="min-h-screen bg-background relative">
+    <main className="min-h-screen bg-sand-drift relative">
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url(/images/arum-hero-image.png)",
-            opacity: 0.4,
+            opacity: 0.1,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
       </div>
 
-      {/* Content layer - all sections maintain original styling */}
+      {/* Content layer */}
       <div className="relative z-10">
         <Navigation onEnquire={openEnquiryModal} />
         <HeroSection />
         <VideoSection />
         <PricingBanner />
-        <PriorityUnitsGrid onEnquire={openEnquiryModal} />
+        <UnitsCarousel onEnquire={openEnquiryModal} />
         <PropertyFeaturesSection />
         <CopywritingSection />
         <DepositBanner />
@@ -57,5 +56,3 @@ export default function HomePage() {
     </main>
   )
 }
-
-

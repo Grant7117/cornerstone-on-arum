@@ -10,7 +10,7 @@ interface StandardBannerProps {
 
 export function StandardBanner({ src, alt, id, priority = false }: StandardBannerProps) {
   return (
-    <section id={id} className="w-full bg-[#EBE9E2] flex flex-col items-center">
+    <section id={id} className="w-full bg-sand-drift flex flex-col items-center py-20 md:py-0">
       {/* Mobile: simple full-width image */}
       <div className="md:hidden w-full relative aspect-video">
         <Image

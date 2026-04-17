@@ -2,11 +2,11 @@ import Image from "next/image"
 
 export function PropertyFeaturesSection() {
   return (
-    <div id="features" className="w-full bg-[#EBE9E2] flex flex-col items-center">
+    <div id="features" className="w-full bg-sand-drift flex flex-col items-center">
 
       {/* Mobile: heading + full-width image stacked */}
-      <div className="md:hidden w-full flex flex-col items-center py-10 px-4 gap-6">
-        <h2 className="text-2xl font-bold text-center text-gray-900">
+      <div className="md:hidden w-full flex flex-col items-center py-20 px-4 gap-12">
+        <h2 className="font-serif text-3xl text-center text-deep-obsidian tracking-tighter">
           Built for Modern Living
         </h2>
         <div className="relative w-full aspect-video">
@@ -27,7 +27,7 @@ export function PropertyFeaturesSection() {
       >
         {/* Top 10% Margin Space - Holds the Heading */}
         <div className="flex-1 w-full flex flex-col justify-end items-center pb-4 md:pb-8 lg:pb-10 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 leading-none">
+          <h2 className="font-serif text-4xl md:text-6xl text-center text-deep-obsidian tracking-tighter leading-none">
             Built for Modern Living
           </h2>
         </div>

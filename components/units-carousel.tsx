@@ -91,8 +91,7 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
         <div
           ref={scrollContainerRef}
           onScroll={handleScroll}
-          className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-12"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex gap-8 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-12"
         >
           {units?.map((unit, index) => (
             <div key={`${unit.unitNo}-${index}`} className="flex-shrink-0 w-[85vw] sm:w-[380px] snap-center">
