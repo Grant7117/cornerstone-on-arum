@@ -65,9 +65,7 @@ export function VideoSection() {
             </div>
             
             <p className="text-warm-stone/50 text-xl leading-relaxed font-sans max-w-lg font-light">
-              Cornerstone on Arum sets a benchmark for residential living in Table View. 
-              The development offers premium apartments within a secure community, 
-              designed to deliver long-term value through superior design and sustainability.
+              In a modern landscape defined by transient spaces, Cornerstone on Arum offers a fundamental departure from the standard product-centric sales approach. We do not just offer an apartment; we offer a permanent statement of intent. By employing a form-follows-function philosophy, our apartments are meticulously planned from the inside out — studying the flow of space, the wash of natural light, and the integration of modern professional requirements to create a home that is supremely functional and intuitively designed for your life.
             </p>
 
             <Button

@@ -11,6 +11,7 @@ import { BetterBondSection } from "@/components/betterbond-section"
 import { DepositBanner } from "@/components/deposit-banner"
 import { PartnersBanner } from "@/components/partners-banner"
 import { ContactLocationSection } from "@/components/contact-location-section"
+import { CopywritingSection } from "@/components/copywriting-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
 import { Footer } from "@/components/footer"
@@ -43,6 +44,7 @@ export default function HomePage() {
         <PricingBanner />
         <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         <PropertyFeaturesSection />
+        <CopywritingSection />
         <DepositBanner />
         <BetterBondSection />
         <PartnersBanner />
