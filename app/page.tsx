@@ -39,7 +39,7 @@ export default function HomePage() {
       <div className="relative z-10">
         <Navigation onEnquire={openEnquiryModal} />
         <HeroSection />
-        <ManifestoSection />
+        <ManifestoSection onEnquire={openEnquiryModal} />
         <VideoSection />
         <PricingBanner />
         <UnitsCarousel onEnquire={openEnquiryModal} />

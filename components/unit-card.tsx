@@ -69,20 +69,49 @@ export function UnitCard({ unit }: UnitCardProps) {
         
         {unit.images && unit.images.length > 0 ? (
           <>
-            <Image
-              src={unit.images[currentImageIndex] || "/placeholder.svg"}
-              alt={`Unit ${unit.unitNo}`}
-              fill
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="400px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-transparent opacity-60" />
+            <div className="absolute inset-0 z-10">
+              <Image
+                key={currentImageIndex}
+                src={unit.images[currentImageIndex] || "/placeholder.svg"}
+                alt={`Unit ${unit.unitNo}`}
+                fill
+                className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
+                sizes="400px"
+                priority={currentImageIndex === 0}
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-transparent opacity-60 z-20" />
             
             {unit.images.length > 1 && (
-              <div className="absolute inset-0 flex items-center justify-between px-2 opacity-100 transition-opacity">
-                <button onClick={prevImage} className="p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:bg-black/40 transition-all z-30 pointer-events-auto"><ChevronLeft /></button>
-                <button onClick={nextImage} className="p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:bg-black/40 transition-all z-30 pointer-events-auto"><ChevronRight /></button>
-              </div>
+              <>
+                <div className="absolute inset-0 flex items-center justify-between px-2 z-40">
+                  <button
+                    onClick={prevImage}
+                    className="p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:bg-black/60 transition-all pointer-events-auto border border-white/10"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:bg-black/60 transition-all pointer-events-auto border border-white/10"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight />
+                  </button>
+                </div>
+                {/* Image Dots */}
+                <div className="absolute bottom-32 left-0 w-full flex justify-center gap-1.5 z-40">
+                  {unit.images.map((_, idx) => (
+                    <div
+                      key={idx}
+                      className={`h-1 rounded-full transition-all duration-300 ${
+                        idx === currentImageIndex ? "w-4 bg-muted-bronze" : "w-1 bg-white/30"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
             )}
           </>
         ) : (

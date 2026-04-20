@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Cornerstone on Arum — Core Brand Copywriting
 // Sections: Structural, Security, Financial, Returns
@@ -70,7 +72,7 @@ export function CopywritingSection() {
       {/* ── FINANCIAL INTELLIGENCE ── */}
       <section id="financing" className="py-24 md:py-32 border-b border-muted-bronze/10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
             <div className="space-y-6">
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">
                 Financing
@@ -96,6 +98,48 @@ export function CopywritingSection() {
                 <p className="font-sans text-lg text-deep-obsidian/70 leading-relaxed font-light">
                   Increase your capital efficiency and experience a frictionless acquisition process. There are absolutely zero transfer duties to pay. Through our exclusive partnership with BetterBond, your home loan application is submitted to multiple leading banks at no cost to you. Benefit from rapid 48-hour pre-approvals and up to 100 percent bond financing with no deposit required for qualifying buyers, ensuring your liquidity remains intact.
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* BetterBond Integration */}
+          <div className="bg-white/50 backdrop-blur-sm border border-muted-bronze/20 p-8 md:p-12 rounded-sm">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+              <div className="w-full md:w-1/3 flex flex-col items-center md:items-start space-y-6">
+                <Image
+                  src="/images/betterbond-logo.png"
+                  alt="BetterBond Logo"
+                  width={200}
+                  height={60}
+                  className="grayscale brightness-50"
+                />
+                <div className="text-center md:text-left space-y-2">
+                  <p className="font-sans text-[10px] uppercase tracking-widest text-muted-bronze font-bold">Our Dedicated Consultant</p>
+                  <h4 className="font-serif text-2xl text-deep-obsidian">Yolanda Kensley</h4>
+                  <div className="space-y-1">
+                    <a href="tel:0846457216" className="block font-sans text-deep-obsidian/70 hover:text-muted-bronze transition-colors">084 645 7216</a>
+                    <a href="mailto:yolanda.kensley@betterbond.co.za" className="block font-sans text-deep-obsidian/70 hover:text-muted-bronze transition-colors text-sm break-all">yolanda.kensley@betterbond.co.za</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/2 flex flex-col items-center md:items-end space-y-8">
+                <div className="relative w-full aspect-video overflow-hidden rounded-sm border border-muted-bronze/10">
+                  <Image
+                    src="/images/Frictionless Financing Betterbond.png"
+                    alt="BetterBond Frictionless Financing"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <a
+                  href="https://v6.betterbond.co.za/HomeLoans/Lead/QuickApply?id=2D7F395F-89B7-4D24-81EA-0E2E394A76ED"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full md:w-auto px-12 py-5 bg-deep-obsidian text-warm-stone font-sans text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-muted-bronze transition-all duration-500 text-center"
+                >
+                  Get Pre-Approved
+                </a>
               </div>
             </div>
           </div>
