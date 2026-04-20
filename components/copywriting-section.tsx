@@ -16,21 +16,17 @@ export function CopywritingSection() {
             Cornerstone on Arum
           </span>
           <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-warm-stone leading-[0.9] tracking-tighter">
-            A Place to Truly{" "}
-            <span className="italic text-muted-bronze font-light">Call Home</span>
+            Designed For Living, <br />
+            <span className="italic text-muted-bronze font-light">Crafted For Life</span>
           </h2>
           <p className="font-sans text-xl md:text-2xl text-warm-stone/60 font-light leading-relaxed max-w-3xl mx-auto">
-            Where Enduring Engineering Meets Urban Sophistication. Beyond the standard.
-            Beyond square meterage. Welcome to a curated sanctuary in Table View designed
-            for those who seek absolute stability, investment integrity, and a home crafted
-            to endure.
+            Cornerstone on Arum sets a benchmark for residential living in Table View. The development offers premium apartments within a secure and well-managed community, designed to deliver long-term value through superior standards of design, sustainability, and comfort.
           </p>
           <div className="flex justify-center">
             <div className="h-[1px] w-24 bg-muted-bronze/40" />
           </div>
           <p className="font-serif text-lg md:text-xl text-warm-stone/50 italic max-w-2xl mx-auto leading-relaxed">
-            Cornerstone on Arum is more than a premium development; it is a secure
-            sanctuary, a vibrant community, and a foundation for your future.
+            Featuring 22 thoughtfully designed one- and two-bedroom units, the project presents an exceptional investment opportunity.
           </p>
         </div>
       </section>
@@ -46,8 +42,8 @@ export function CopywritingSection() {
                 Structural Integrity
               </span>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-stone leading-[0.9] tracking-tighter">
-                Built on Excellence,{" "}
-                <span className="italic text-muted-bronze font-light">Not Compromise</span>
+                A Foundation You{" "}
+                <span className="italic text-muted-bronze font-light">Can Trust</span>
               </h2>
               <div className="h-[1px] w-16 bg-muted-bronze/40" />
             </div>
@@ -55,17 +51,10 @@ export function CopywritingSection() {
             {/* Right: body copy */}
             <div className="space-y-6">
               <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
-                While others cut corners, we build on a legacy of excellence. Cornerstone on
-                Arum is defined by unmatched structural integrity. The development is built
-                using a proprietary full concrete frame — a revolutionary construction method
-                derived from years of international research.
+                Our development features a proprietary full concrete frame. A superior construction method that ensures unmatched structural integrity. For you, this means more than just safety; it means a quieter home with significantly reduced noise transfer and a structure that resists the typical cracks of standard builds.
               </p>
               <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
-                This superior engineering technique virtually eliminates the structural
-                cracking common in standard residential builds, significantly reduces noise
-                transfer between apartments, and ensures complete earthquake resistance. This
-                is an investment in lasting security and comfort, providing a standard
-                designed to endure for generations.
+                It is an investment in absolute stability and lasting comfort. This superior engineering technique virtually eliminates the structural cracking common in standard residential builds, ensuring a standard designed to endure for generations.
               </p>
             </div>
           </div>
@@ -82,8 +71,8 @@ export function CopywritingSection() {
               Community & Security
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-warm-stone leading-[0.9] tracking-tighter">
-              The Pillars of{" "}
-              <span className="italic text-muted-bronze font-light">Stability</span>
+              Peace of{" "}
+              <span className="italic text-muted-bronze font-light">Mind</span>
             </h2>
           </div>
 
@@ -94,20 +83,13 @@ export function CopywritingSection() {
             <div className="group bg-deep-obsidian border border-muted-bronze/20 p-8 md:p-10 space-y-5 hover:border-muted-bronze/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(176,141,87,0.3)]">
               <div className="w-10 h-[2px] bg-muted-bronze" />
               <h3 className="font-serif text-2xl text-warm-stone leading-tight">
-                Strict No-Airbnb Policy
+                No Airbnb or Short-Term Rental Policy
               </h3>
               <p className="font-sans text-base text-warm-stone/55 leading-relaxed font-light">
-                By enforcing a minimum six-month lease and prohibiting short-term rentals,
-                we offer a safe harbour for your investment. This proactive policy
-                effectively shields buyers from the City of Cape Town&apos;s impending
-                legislation, which threatens to reclassify residential short-term rentals
-                and impose commercial municipal rate increases of up to{" "}
-                <span className="text-muted-bronze font-semibold">176 percent</span>.
+                At Cornerstone on Arum, we are implementing a policy that mandates a minimum rental period of six months. Our strategy is to build a superior residential product. We are shielding investors from a volatile market while creating a secure, stable, and desirable community.
               </p>
               <p className="font-sans text-sm text-warm-stone/40 italic leading-relaxed">
-                Invest with confidence in a secure, stable community designed for
-                long-term capital preservation — entirely free from the wear and tear of
-                transient holidaymakers.
+                This commitment to long-term living is the foundation that will make Cornerstone on Arum a landmark success.
               </p>
             </div>
 
@@ -115,16 +97,13 @@ export function CopywritingSection() {
             <div className="group bg-deep-obsidian border border-muted-bronze/20 p-8 md:p-10 space-y-5 hover:border-muted-bronze/50 transition-all duration-500 hover:shadow-[0_0_40px_-10px_rgba(176,141,87,0.3)]">
               <div className="w-10 h-[2px] bg-muted-bronze" />
               <h3 className="font-serif text-2xl text-warm-stone leading-tight">
-                AI-Integrated CCTV Security
+                State-of-the-Art, AI-Integrated CCTV
               </h3>
               <p className="font-sans text-base text-warm-stone/55 leading-relaxed font-light">
-                Absolute peace of mind is engineered directly into our infrastructure.
-                Your home is protected by an invisible, proactive security shield featuring
-                24/7 CCTV off-site monitoring directly linked to an armed response team.
+                Absolute peace of mind is engineered directly into our infrastructure. Your home is protected by an invisible, proactive security shield featuring 24/7 CCTV off-site monitoring directly linked to an armed response team.
               </p>
               <p className="font-sans text-sm text-warm-stone/40 italic leading-relaxed">
-                Coupled with strict access control and dedicated, secure off-street parking
-                for every unit, we guarantee a seamless, undisturbed living experience.
+                Coupled with strict access control and dedicated, secure off-street parking for every unit, we guarantee a seamless, undisturbed living experience.
               </p>
             </div>
 
@@ -317,23 +296,48 @@ export function CopywritingSection() {
                 Financial Intelligence
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-warm-stone leading-[0.9] tracking-tighter">
-                100% Financing{" "}
+                BetterBond: 100% Financing{" "}
                 <span className="italic text-muted-bronze font-light">Available</span>
               </h2>
               <div className="h-[1px] w-16 bg-muted-bronze/40" />
               <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
-                Increase your capital efficiency and experience a frictionless acquisition
-                process. There are absolutely zero transfer duties to pay. Through our
-                exclusive partnership with BetterBond, your home loan application is
-                submitted to multiple leading banks at no cost to you.
+                Apartments at Cornerstone on Arum are VAT inclusive, and no transfer duties are payable, saving up to R80,000 in costs.
               </p>
               <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
-                Benefit from rapid{" "}
-                <span className="text-muted-bronze font-semibold">48-hour pre-approvals</span>{" "}
-                and up to{" "}
-                <span className="text-muted-bronze font-semibold">100% bond financing</span>{" "}
-                with no deposit required for qualifying buyers, ensuring your liquidity
-                remains intact.
+                Increase your capital efficiency and experience a frictionless acquisition process. There are absolutely zero transfer duties to pay. Through our exclusive partnership with BetterBond, your home loan application is submitted to multiple leading banks at no cost to you.
+              </p>
+              <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
+                Benefit from rapid <span className="text-muted-bronze font-semibold">48-hour pre-approvals</span> and up to <span className="text-muted-bronze font-semibold">100% bond financing</span> with no deposit required for qualifying buyers, ensuring your liquidity remains intact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SUPERIOR RETURNS ── */}
+      <section className="py-24 md:py-32 bg-warm-stone/5 border-t border-muted-bronze/10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left: heading block */}
+            <div className="space-y-6">
+              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">
+                Investment Analysis
+              </span>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-stone leading-[0.9] tracking-tighter">
+                Superior{" "}
+                <span className="italic text-muted-bronze font-light">Returns</span>
+              </h2>
+              <div className="h-[1px] w-16 bg-muted-bronze/40" />
+            </div>
+
+            {/* Right: body copy */}
+            <div className="space-y-6">
+              <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
+                Sectional title developments are the clear winner for the Blaauwberg Road Corridor in Table View because they align perfectly with the surging market demand for smaller, more efficient living spaces, which saw a <span className="text-muted-bronze font-semibold">27% value growth</span> in flats and townhouses over the past year.
+              </p>
+              <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
+                Table View rental demand remains intensely high and is projected to provide returns of <span className="text-muted-bronze font-semibold">8% to 10%+</span>. You are risking far less capital to achieve a functionally superior percentage return, all while maintaining the same world-class Cape Town tenant profile.
               </p>
             </div>
           </div>
