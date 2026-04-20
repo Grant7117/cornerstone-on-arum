@@ -42,9 +42,9 @@ export default function HomePage() {
         <ManifestoSection onEnquire={openEnquiryModal} />
         <VideoSection />
         <PricingBanner />
+        <CopywritingSection />
         <UnitsCarousel onEnquire={openEnquiryModal} />
         <PropertyFeaturesSection />
-        <CopywritingSection />
         <DepositBanner />
         <PartnersBanner />
         <ContactLocationSection />
