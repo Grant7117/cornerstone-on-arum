@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
+import { ManifestoSection } from "@/components/manifesto-section"
 import { VideoSection } from "@/components/video-section"
 import { PricingBanner } from "@/components/pricing-banner"
 import { UnitsCarousel } from "@/components/units-carousel"
@@ -39,6 +40,7 @@ export default function HomePage() {
       <div className="relative z-10">
         <Navigation onEnquire={openEnquiryModal} />
         <HeroSection />
+        <ManifestoSection />
         <VideoSection />
         <PricingBanner />
         <UnitsCarousel onEnquire={openEnquiryModal} />

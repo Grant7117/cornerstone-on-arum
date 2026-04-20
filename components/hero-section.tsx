@@ -25,28 +25,10 @@ export function HeroSection() {
         sizes="100vw"
       />
 
-      {/* Increased overlay for better readability */}
-      <div className="absolute inset-0 bg-deep-obsidian/50"></div>
+      {/* Hero overlay */}
+      <div className="absolute inset-0 bg-deep-obsidian/30"></div>
 
-      <div className="relative z-10 text-center px-6">
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-sand-drift tracking-tighter leading-tight mb-12 max-w-5xl mx-auto">
-          Designed For Living, <br className="hidden md:block" /> Crafted For Life
-        </h1>
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <button
-            onClick={handleScrollToProperties}
-            className="bg-sand-drift text-deep-obsidian px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-muted-bronze transition-colors"
-          >
-            View Portfolio
-          </button>
-          <button
-            onClick={handleScrollToAbout}
-            className="border border-sand-drift text-sand-drift px-10 py-4 text-xs uppercase tracking-widest backdrop-blur-sm hover:bg-sand-drift/10 transition-colors"
-          >
-            Our Vision
-          </button>
-        </div>
-      </div>
+      {/* Text removed as per request - "Designed For Living, Crafted For Life" moved to ManifestoSection below */}
     </section>
   )
 }

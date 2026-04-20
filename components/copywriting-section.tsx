@@ -2,28 +2,12 @@
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Cornerstone on Arum — Core Brand Copywriting
-// Sections: Manifesto, Structural, Security, Financial, Returns
+// Sections: Structural, Security, Financial, Returns
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function CopywritingSection() {
   return (
     <div className="bg-sand-drift">
-      {/* ── MANIFESTO ── */}
-      <section id="about" className="py-24 md:py-32 border-b border-muted-bronze/10">
-        <div className="max-w-5xl mx-auto px-6 text-center space-y-8">
-          <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">
-            The Manifesto
-          </span>
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-deep-obsidian leading-[0.9] tracking-tighter">
-            Designed For Living, <br />
-            <span className="italic text-muted-bronze font-light">Crafted For Life</span>
-          </h2>
-          <p className="font-sans text-xl md:text-2xl text-deep-obsidian/70 font-light leading-relaxed max-w-3xl mx-auto">
-            Cornerstone on Arum sets a benchmark for residential living in Table View. The development offers premium apartments within a secure and well-managed community, designed to deliver long-term value through superior standards of design, sustainability, and comfort. Featuring 22 thoughtfully designed one- and two-bedroom units, the project presents an exceptional investment opportunity.
-          </p>
-        </div>
-      </section>
-
       {/* ── STRUCTURAL INTEGRITY ── */}
       <section className="py-24 md:py-32 border-b border-muted-bronze/10">
         <div className="max-w-7xl mx-auto px-6">

@@ -14,7 +14,7 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
   const [selectedType, setSelectedType] = useState<"1-bedroom" | "2-bedroom" | "2-bedroom-loft">("1-bedroom")
   const [activeDot, setActiveDot] = useState(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const units = unitsData[selectedType]
+  const units = unitsData[selectedType]?.filter(unit => unit.status === "Available")
 
   const handleScroll = () => {
     if (scrollContainerRef.current) {
