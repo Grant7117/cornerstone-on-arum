@@ -8,7 +8,6 @@ import { VideoSection } from "@/components/video-section"
 import { PricingBanner } from "@/components/pricing-banner"
 import { UnitsCarousel } from "@/components/units-carousel"
 import { PropertyFeaturesSection } from "@/components/property-features-section"
-import { BetterBondSection } from "@/components/betterbond-section"
 import { DepositBanner } from "@/components/deposit-banner"
 import { PartnersBanner } from "@/components/partners-banner"
 import { ContactLocationSection } from "@/components/contact-location-section"
@@ -47,7 +46,6 @@ export default function HomePage() {
         <PropertyFeaturesSection />
         <CopywritingSection />
         <DepositBanner />
-        <BetterBondSection />
         <PartnersBanner />
         <ContactLocationSection />
         <WhatsAppButton />
