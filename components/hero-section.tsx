@@ -29,10 +29,10 @@ export function HeroSection() {
 
       <div className="relative z-10 text-center px-6">
         <h1 className="font-serif text-6xl md:text-8xl text-sand-drift tracking-tighter leading-none mb-6">
-          Elevating <br /> Urban Living
+          Designed For Living, <br /> Crafted For Life
         </h1>
         <p className="font-sans text-sand-drift/80 max-w-xl mx-auto text-sm uppercase tracking-[0.3em] mb-12">
-          Architectural permanence & intentional space management
+          A Benchmark for Residential Excellence in Table View
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <button
