@@ -5,7 +5,7 @@ export interface Unit {
     bathrooms: number;
     size: number; // Total size
     color: string;
-            status: "Sold",
+    status: "Available" | "Sold";
     price: string;
     images?: string[];
     floorPlan?: string;

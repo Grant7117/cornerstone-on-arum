@@ -37,7 +37,7 @@ export function CopywritingSection() {
             <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">
               Security
             </span>
-            <h2 className="font-serif text-4xl md:text-5xl text-deep-obsidian leading-[0.9] tracking-tighter">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-deep-obsidian leading-[0.9] tracking-tighter">
               Peace of{" "}
               <span className="italic text-muted-bronze font-light">Mind</span>
             </h2>
