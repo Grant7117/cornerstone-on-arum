@@ -59,13 +59,13 @@ export function VideoSection() {
             <div className="space-y-4">
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">The Location</span>
               <h2 className="font-serif text-5xl md:text-7xl text-warm-stone leading-[0.9] tracking-tighter">
-                Designed For Living, <br/> 
-                <span className="italic text-muted-bronze font-light">Crafted For Life</span>
+                Quietly <br/>
+                <span className="italic text-muted-bronze font-light">Connected</span>
               </h2>
             </div>
             
             <p className="text-warm-stone/50 text-xl leading-relaxed font-sans max-w-lg font-light">
-              In a modern landscape defined by transient spaces, Cornerstone on Arum offers a fundamental departure from the standard product-centric sales approach. We do not just offer an apartment; we offer a permanent statement of intent. By employing a form-follows-function philosophy, our apartments are meticulously planned from the inside out — studying the flow of space, the wash of natural light, and the integration of modern professional requirements to create a home that is supremely functional and intuitively designed for your life.
+              Positioned at the pulse of Table View, Cornerstone on Arum serves as the starting point for your daily lifestyle journey. You are situated just 2.4 km from the world-renowned Blaauwbergstrand coastline and the vibrant Kite Beach surfing scene.
             </p>
 
             <Button

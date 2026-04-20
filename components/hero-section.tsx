@@ -25,15 +25,13 @@ export function HeroSection() {
         sizes="100vw"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-obsidian/20 via-transparent to-deep-obsidian/40"></div>
+      {/* Increased overlay for better readability */}
+      <div className="absolute inset-0 bg-deep-obsidian/50"></div>
 
       <div className="relative z-10 text-center px-6">
-        <h1 className="font-serif text-6xl md:text-8xl text-sand-drift tracking-tighter leading-none mb-6">
-          Designed For Living, <br /> Crafted For Life
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-sand-drift tracking-tighter leading-tight mb-12 max-w-5xl mx-auto">
+          Designed For Living, <br className="hidden md:block" /> Crafted For Life
         </h1>
-        <p className="font-sans text-sand-drift/80 max-w-xl mx-auto text-sm uppercase tracking-[0.3em] mb-12">
-          A Benchmark for Residential Excellence in Table View
-        </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <button
             onClick={handleScrollToProperties}
