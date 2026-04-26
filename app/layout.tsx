@@ -4,6 +4,7 @@ import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import ClientOnly from './components/ClientOnly';
 import ChatLauncher from './components/ChatLauncher';
+import { WhatsAppButton } from './components/whatsapp-button';
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'], 
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     siteName: 'Cornerstone on Arum',
     images: [
       {
-        url: '/og-image.jpg', // Ensure this file exists in your /public folder
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Cornerstone on Arum Luxury Apartments'
@@ -78,9 +79,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased font-sans bg-deep-obsidian text-warm-stone" suppressHydrationWarning>
         {children}
         <ClientOnly>
+          {/* Main Property AI Assistant */}
           <ChatLauncher />
+          {/* Floating WhatsApp Enquiry Button (The one we just fixed) */}
+          <WhatsAppButton />
         </ClientOnly>
-        {/* Update G-ID when ready, but keeping structure intact */}
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>
     </html>
