@@ -4,7 +4,7 @@ import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import ClientOnly from './components/ClientOnly';
 import ChatLauncher from './components/ChatLauncher';
-import { WhatsAppButton } from './components/WhatsAppButton'; // <-- Changed to match the component file name
+import { WhatsAppButton } from './components/whatsapp-button'; // Keep this lowercase for now to match the most likely git state
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'], 
@@ -79,9 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased font-sans bg-deep-obsidian text-warm-stone" suppressHydrationWarning>
         {children}
         <ClientOnly>
-          {/* Main Property AI Assistant */}
           <ChatLauncher />
-          {/* Floating WhatsApp Enquiry Button */}
           <WhatsAppButton />
         </ClientOnly>
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
