@@ -11,8 +11,6 @@ import { BetterBondSection } from "@/components/betterbond-section"
 import { DepositBanner } from "@/components/deposit-banner"
 import { PartnersBanner } from "@/components/partners-banner"
 import { ContactLocationSection } from "@/components/contact-location-section"
-import { WhatsAppButton } from "@/components/whatsapp-button"
-
 import { Footer } from "@/components/footer"
 import { EnquiryModal } from "@/components/enquiry-modal"
 
@@ -22,7 +20,6 @@ export default function HomePage() {
   const openEnquiryModal = () => setIsEnquiryModalOpen(true)
   const closeEnquiryModal = () => setIsEnquiryModalOpen(false)
 
-  // Structured Data for Google (Schema.org) to fix the 'null' report
   const jsonLd = {
     "@context": "https://schema.org/",
     "@type": "RealEstateListing",
@@ -52,7 +49,6 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-background relative">
-      {/* Injecting Schema for SEO Recovery */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -69,7 +65,6 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
       </div>
 
-      {/* Content layer - all sections maintain original styling */}
       <div className="relative z-10">
         <Navigation onEnquire={openEnquiryModal} />
         <HeroSection />
@@ -81,7 +76,6 @@ export default function HomePage() {
         <BetterBondSection />
         <PartnersBanner />
         <ContactLocationSection />
-        <WhatsAppButton />
         <Footer />
       </div>
 
