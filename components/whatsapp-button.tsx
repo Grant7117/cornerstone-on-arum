@@ -1,9 +1,12 @@
 "use client"
+
 export function WhatsAppButton() {
-  const formUrl = "https://www.privyr.com/form/zw8VR1xt#cornerstone-on-arum-contact-form"
+  // DIRECT WHATSAPP LINK - Bypasses Privyr entirely
+  const whatsappUrl = "https://wa.me/27724503626?text=Hello,%20I'm%20enquiring%20about%20Cornerstone%20on%20Arum%20via%20the%20floating%20enquiry%20button."
+
   return (
     <button
-      onClick={() => window.open(formUrl, "_blank")}
+      onClick={() => window.open(whatsappUrl, "_blank")}
       style={{ 
         backgroundColor: "#0066FF", 
         color: "#ffffff", 
