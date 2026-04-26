@@ -37,12 +37,18 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
             </a>
           </Button>
 
-          {/* ENQUIRE NOW - Triggers the Make.com Modal */}
+          {/* ENQUIRE NOW - Direct WhatsApp (The fast fix to bypass Privyr) */}
           <Button 
-            onClick={onEnquire}
+            asChild
             className="bg-[#0066ff] hover:bg-[#0052cc] text-white h-14 px-8 text-lg font-bold rounded-xl shadow-xl transition-all active:scale-95"
           >
-            Enquire Now
+            <a 
+              href="https://wa.me/27724503626?text=Hello,%20I'm%20interested%20in%20an%20apartment%20at%20Cornerstone%20on%20Arum.%20Please%20contact%20me%20with%20more%20details."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enquire Now
+            </a>
           </Button>
 
         </div>

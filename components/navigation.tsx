@@ -3,7 +3,9 @@ import { useState } from "react"
 
 export function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const formUrl = "https://www.privyr.com/form/zw8VR1xt#cornerstone-on-arum-contact-form"
+  
+  // DIRECT WHATSAPP LINK - Bypasses Privyr entirely
+  const whatsappUrl = "https://wa.me/27724503626?text=Hello,%20I'm%20enquiring%20about%20Cornerstone%20on%20Arum%20via%20the%20website%20navigation."
 
   const handleNavClick = (id: string) => {
     setMenuOpen(false)
@@ -42,9 +44,9 @@ export function Navigation() {
             </button>
           ))}
           
-          {/* THE DUPLICATE BUTTON - EXACT MATCH TO BOTTOM RIGHT */}
+          {/* UPDATED: DIRECT WHATSAPP BUTTON */}
           <button
-            onClick={() => window.open(formUrl, "_blank")}
+            onClick={() => window.open(whatsappUrl, "_blank")}
             style={{ 
               backgroundColor: "#0066FF", 
               color: "#ffffff", 
@@ -64,7 +66,7 @@ export function Navigation() {
         {/* Mobile View */}
         <div className="md:hidden flex items-center gap-3">
           <button
-            onClick={() => window.open(formUrl, "_blank")}
+            onClick={() => window.open(whatsappUrl, "_blank")}
             style={{ backgroundColor: "#0066FF", color: "#ffffff", fontWeight: "700", padding: "8px 16px", borderRadius: "10px", fontSize: "12px", border: "none" }}
           >
             Enquire
