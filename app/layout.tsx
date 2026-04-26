@@ -4,7 +4,7 @@ import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import ClientOnly from './components/ClientOnly';
 import ChatLauncher from './components/ChatLauncher';
-import { WhatsAppButton } from './components/whatsapp-button'; // Keep this lowercase for now to match the most likely git state
+import { WhatsAppButton } from './components/whatsapp';
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'], 
