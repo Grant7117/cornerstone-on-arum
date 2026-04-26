@@ -36,20 +36,20 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
         e.preventDefault()
         setIsSubmitting(true)
 
-        // 1. Send data to Make.com Webhook (Google Sheets Integration)
-        // Note: You will replace the URL below once you have your Make.com Webhook URL
+        // 1. Send data to your Make.com Webhook (EU Server)
         try {
-            await fetch("https://hook.us1.make.com/YOUR_UNIQUE_WEBHOOK_ID", {
+            await fetch("https://hook.eu1.make.com/4ixks6nllov1z5kcye6qadkgx05j9y5i", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...formData,
                     source: "Website Enquiry Modal",
+                    project: "Cornerstone on Arum",
                     timestamp: new Date().toISOString()
                 }),
             })
         } catch (error) {
-            console.error("Lead backup failed, proceeding to WhatsApp", error)
+            console.error("Make.com sync failed, proceeding to WhatsApp", error)
         }
 
         // 2. Prepare WhatsApp Redirection
@@ -128,10 +128,13 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                     <Button 
                         type="submit" 
                         disabled={isSubmitting}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-7 text-xl rounded-xl shadow-lg mt-6 active:scale-95 transition-all"
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-7 text-xl rounded-xl shadow-lg mt-6 active:scale-95 transition-all flex items-center justify-center gap-2"
                     >
                         {isSubmitting ? (
-                            <><Loader2 className="mr-2 h-6 w-6 animate-spin" /> Processing...</>
+                            <>
+                                <Loader2 className="h-6 w-6 animate-spin" />
+                                <span>Syncing Lead...</span>
+                            </>
                         ) : (
                             "Enquire via WhatsApp"
                         )}
