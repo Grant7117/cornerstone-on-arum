@@ -22,8 +22,42 @@ export default function HomePage() {
   const openEnquiryModal = () => setIsEnquiryModalOpen(true)
   const closeEnquiryModal = () => setIsEnquiryModalOpen(false)
 
+  // Structured Data for Google (Schema.org) to fix the 'null' report
+  const jsonLd = {
+    "@context": "https://schema.org/",
+    "@type": "RealEstateListing",
+    "name": "Cornerstone on Arum",
+    "description": "6 Luxury apartments available for sale in Table View. Ready for occupation May 2026.",
+    "url": "https://www.cornerstoneonarum.co.za",
+    "image": "https://www.cornerstoneonarum.co.za/images/arum-hero-image.png",
+    "offers": {
+      "@type": "AggregateOffer",
+      "offerCount": "6",
+      "priceCurrency": "ZAR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "RealEstateAgent",
+        "name": "Igneous Property Development"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "154 Arum Road",
+      "addressLocality": "Table View",
+      "addressRegion": "Western Cape",
+      "postalCode": "7441",
+      "addressCountry": "ZA"
+    }
+  };
+
   return (
     <main className="min-h-screen bg-background relative">
+      {/* Injecting Schema for SEO Recovery */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -55,5 +89,3 @@ export default function HomePage() {
     </main>
   )
 }
-
-

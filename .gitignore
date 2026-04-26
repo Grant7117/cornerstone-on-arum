@@ -28,3 +28,4 @@ build-debug.log
 package.backup.json
 package.broken.*.json
 
+.env*.local
