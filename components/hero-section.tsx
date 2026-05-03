@@ -15,7 +15,7 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
         alt="Cornerstone on Arum"
         width={1920}
         height={1080}
-        className="w-full h-auto object-cover"
+        className="w-full h-auto min-h-[450px] sm:min-h-0 object-cover object-center"
         priority
         sizes="100vw"
       />

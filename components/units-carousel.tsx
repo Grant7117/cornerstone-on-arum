@@ -54,8 +54,8 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
       </h2>
 
       {/* Architectural Tab Navigation */}
-      <div className="max-w-5xl mx-auto w-full px-4 mb-16">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 border-b border-white/10 pb-10">
+      <div className="max-w-5xl mx-auto w-full px-4 mb-10 sm:mb-16">
+        <div className="flex flex-row flex-wrap justify-center items-center gap-6 sm:gap-8 border-b border-white/10 pb-6 sm:pb-10">
           {[
             { id: "1-bedroom", label: "1 Bedroom", size: "45-48m²" },
             { id: "2-bedroom", label: "2 Bedroom", size: "67m²" },
@@ -64,7 +64,7 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
             <button
               key={type.id}
               onClick={() => setSelectedType(type.id as any)}
-              className={`group flex flex-col items-center sm:items-start transition-all relative pb-4 ${
+              className={`group flex flex-col items-center transition-all relative pb-4 ${
                 selectedType === type.id ? "text-warm-stone" : "text-warm-stone/30 hover:text-warm-stone/60"
               }`}
             >
