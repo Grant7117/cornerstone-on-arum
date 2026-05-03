@@ -48,7 +48,7 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                                     e.preventDefault();
                                     onSignUpClick();
                                 }}
-                                className="text-white hover:text-blue-100 underline decoration-2 underline-offset-4 cursor-pointer focus:outline-none font-black px-1 transition-all"
+                                className="min-h-[44px] min-w-[44px] inline-flex items-center justify-center text-white hover:text-blue-100 underline decoration-2 underline-offset-4 cursor-pointer focus:outline-none font-black px-1 transition-all"
                             >
                                 here
                             </button>{" "}

@@ -64,7 +64,7 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
             <button
               key={type.id}
               onClick={() => setSelectedType(type.id as any)}
-              className={`group flex flex-col items-center sm:items-start transition-all relative pb-4 ${
+              className={`min-h-[44px] min-w-[44px] group flex flex-col items-center justify-center sm:items-start transition-all relative pb-4 ${
                 selectedType === type.id ? "text-warm-stone" : "text-warm-stone/30 hover:text-warm-stone/60"
               }`}
             >

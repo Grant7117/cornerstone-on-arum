@@ -37,13 +37,13 @@ export function HeroSection() {
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <button
             onClick={handleScrollToProperties}
-            className="bg-sand-drift text-deep-obsidian px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-muted-bronze transition-colors"
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center bg-sand-drift text-deep-obsidian px-10 py-4 text-xs uppercase tracking-widest font-bold hover:bg-muted-bronze transition-colors"
           >
             View Portfolio
           </button>
           <button
             onClick={handleScrollToAbout}
-            className="border border-sand-drift text-sand-drift px-10 py-4 text-xs uppercase tracking-widest backdrop-blur-sm hover:bg-sand-drift/10 transition-colors"
+            className="min-h-[44px] min-w-[44px] flex items-center justify-center border border-sand-drift text-sand-drift px-10 py-4 text-xs uppercase tracking-widest backdrop-blur-sm hover:bg-sand-drift/10 transition-colors"
           >
             Our Vision
           </button>

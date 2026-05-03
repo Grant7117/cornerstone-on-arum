@@ -107,7 +107,7 @@ export default function FloatingChatWidget() {
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="rounded-lg p-1 hover:bg-white/20 transition-colors"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg p-1 hover:bg-white/20 transition-colors"
               aria-label="Close chat"
             >
               <X className="h-5 w-5" />
@@ -189,7 +189,7 @@ export default function FloatingChatWidget() {
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="flex items-center justify-center rounded-lg bg-gradient-to-br from-slate-700 to-slate-900 px-4 py-2 text-white hover:from-slate-800 hover:to-slate-950 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg bg-gradient-to-br from-slate-700 to-slate-900 px-4 py-2 text-white hover:from-slate-800 hover:to-slate-950 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />

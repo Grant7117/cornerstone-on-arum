@@ -18,6 +18,8 @@
     background: var(--background);
     font-family: var(--font-sans), sans-serif;
     -webkit-font-smoothing: antialiased;
+    font-size: clamp(16px, 1vw + 14px, 18px);
+    line-height: 1.5;
   }
 
   /* Prevent iOS zoom on input focus */

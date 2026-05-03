@@ -60,7 +60,7 @@ export function Navigation({ onEnquire }: NavigationProps) {
         <div className="flex items-center gap-4">
           <button
             onClick={handleEnquire}
-            className="bg-deep-obsidian text-sand-drift px-6 py-2 text-xs uppercase tracking-widest hover:bg-muted-bronze transition-colors"
+            className="min-h-[44px] min-w-[44px] bg-deep-obsidian text-sand-drift px-6 py-2 text-xs uppercase tracking-widest hover:bg-muted-bronze transition-colors flex items-center justify-center"
           >
             Enquire
           </button>
@@ -68,7 +68,7 @@ export function Navigation({ onEnquire }: NavigationProps) {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-deep-obsidian/5 rounded-lg"
+            className="md:hidden w-[44px] h-[44px] flex flex-col items-center justify-center gap-1.5 bg-deep-obsidian/5 rounded-lg"
           >
             <span className={`block h-0.5 w-6 bg-deep-obsidian transition-all ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
             <span className={`block h-0.5 w-6 bg-deep-obsidian transition-all ${menuOpen ? 'opacity-0' : ''}`}></span>
@@ -84,7 +84,7 @@ export function Navigation({ onEnquire }: NavigationProps) {
             <button
               key={link.id}
               onClick={() => handleNavClick(link.id)}
-              className="block w-full text-left py-4 font-sans text-xs uppercase tracking-widest text-deep-obsidian/60 border-b border-deep-obsidian/5"
+              className="block w-full text-left py-4 min-h-[44px] font-sans text-xs uppercase tracking-widest text-deep-obsidian/60 border-b border-deep-obsidian/5"
             >
               {link.label}
             </button>

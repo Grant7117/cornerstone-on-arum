@@ -79,9 +79,9 @@ export function UnitCard({ unit }: UnitCardProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-transparent opacity-60" />
             
             {unit.images.length > 1 && (
-              <div className="absolute inset-0 flex items-center justify-between px-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button onClick={prevImage} className="p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:bg-black/40 transition-all z-30 pointer-events-auto"><ChevronLeft /></button>
-                <button onClick={nextImage} className="p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:bg-black/40 transition-all z-30 pointer-events-auto"><ChevronRight /></button>
+              <div className="absolute inset-0 flex items-center justify-between px-2 opacity-100 transition-opacity">
+                <button onClick={prevImage} className="p-2 min-h-[44px] min-w-[44px] flex items-center justify-center bg-black/20 backdrop-blur-md rounded-full text-white hover:bg-black/40 transition-all z-30 pointer-events-auto"><ChevronLeft /></button>
+                <button onClick={nextImage} className="p-2 min-h-[44px] min-w-[44px] flex items-center justify-center bg-black/20 backdrop-blur-md rounded-full text-white hover:bg-black/40 transition-all z-30 pointer-events-auto"><ChevronRight /></button>
               </div>
             )}
           </>
