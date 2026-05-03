@@ -20,7 +20,7 @@ export function HeroSection() {
         src="/images/arum-hero-clean.png"
         alt="Cornerstone Architecture"
         fill
-        className="absolute inset-0 w-full h-full object-cover object-[center_35%] scale-105"
+        className="absolute inset-0 w-full h-full object-cover object-center"
         priority
         sizes="100vw"
       />
@@ -32,7 +32,7 @@ export function HeroSection() {
           Designed For Living, <br /> Crafted For Life
         </h1>
         <p className="font-sans text-slate-shadow/90 font-semibold max-w-xl mx-auto text-sm uppercase tracking-[0.3em] mb-12 drop-shadow-sm">
-          A Benchmark for Residential Excellence in Table View
+          A BENCHMARK FOR RESIDENTIAL EXCELLENCE IN TABLE VIEW
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
           <button
