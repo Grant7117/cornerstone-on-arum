@@ -96,6 +96,7 @@ export function DocumentsSection() {
                                 <Input
                                     id="contact"
                                     name="contact"
+                                    type="tel"
                                     required
                                     value={formData.contact}
                                     onChange={handleInputChange}

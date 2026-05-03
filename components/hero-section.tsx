@@ -14,18 +14,19 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section className="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-deep-obsidian">
       {/* Master Hero Image Foundation */}
-      <Image
-        src="/images/Cornerstone-on-arum-hero-image.png"
-        alt="Cornerstone Architecture"
-        fill
-        className="absolute inset-0 w-full h-full object-cover scale-105"
-        priority
-        sizes="100vw"
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-obsidian/20 via-transparent to-deep-obsidian/40"></div>
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/images/arum-hero-clean.png"
+          alt="Cornerstone Architecture"
+          fill
+          className="object-contain"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-deep-obsidian/40" />
+      </div>
 
       <div className="relative z-10 text-center px-6">
         <h1 className="font-serif text-6xl md:text-8xl text-sand-drift tracking-tighter leading-none mb-6">
