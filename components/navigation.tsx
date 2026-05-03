@@ -28,8 +28,8 @@ export function Navigation() {
     <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-[100]">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex flex-col">
-          <div className="text-lg sm:text-xl font-bold leading-tight uppercase tracking-wider">CORNERSTONE</div>
-          <div className="text-[10px] sm:text-xs text-blue-400 font-semibold tracking-[0.2em] leading-tight">ON ARUM</div>
+          <div className="text-lg sm:text-xl font-bold leading-tight uppercase tracking-wider text-slate-900">CORNERSTONE</div>
+          <div className="text-[10px] sm:text-xs text-slate-800 font-bold tracking-[0.2em] leading-tight">ON ARUM</div>
         </div>
 
         {/* Desktop Navigation */}

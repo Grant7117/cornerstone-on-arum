@@ -109,13 +109,7 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
         </button>
       </div>
 
-      <div className="flex justify-center mt-12 px-4">
-        <Button
-          onClick={onEnquire}
-          className="w-full sm:w-auto bg-transparent border border-muted-bronze/50 text-muted-bronze hover:bg-muted-bronze hover:text-deep-obsidian font-sans uppercase tracking-[0.3em] py-10 px-20 text-[10px] font-bold transition-all duration-700 rounded-none h-auto"
-        >
-          Request Private Portfolio
-        </Button>
+        </div>
       </div>
     </div>
   )

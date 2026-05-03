@@ -77,8 +77,6 @@ export default function HomePage() {
         <PricingBanner />
         <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         <PropertyFeaturesSection />
-        <DepositBanner />
-        <BetterBondSection />
         <PartnersBanner />
         <ContactLocationSection />
         <WhatsAppButton />
