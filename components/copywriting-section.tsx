@@ -15,17 +15,17 @@ export function CopywritingSection() {
           <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">
             Cornerstone on Arum
           </span>
-          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-warm-stone leading-[0.9] tracking-tighter">
+          <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl text-slate-shadow leading-[0.9] tracking-tighter">
             Designed For Living, <br />
             <span className="italic text-muted-bronze font-light">Crafted For Life</span>
           </h2>
-          <p className="font-sans text-xl md:text-2xl text-warm-stone/60 font-light leading-relaxed max-w-3xl mx-auto">
+          <p className="font-sans text-xl md:text-2xl text-slate-shadow/80 font-light leading-relaxed max-w-3xl mx-auto">
             Cornerstone on Arum sets a benchmark for residential living in Table View. The development offers premium apartments within a secure and well-managed community, designed to deliver long-term value through superior standards of design, sustainability, and comfort.
           </p>
           <div className="flex justify-center">
             <div className="h-[1px] w-24 bg-muted-bronze/40" />
           </div>
-          <p className="font-serif text-lg md:text-xl text-warm-stone/50 italic max-w-2xl mx-auto leading-relaxed">
+          <p className="font-serif text-lg md:text-xl text-slate-shadow/70 italic max-w-2xl mx-auto leading-relaxed">
             Featuring 22 thoughtfully designed one- and two-bedroom units, the project presents an exceptional investment opportunity.
           </p>
         </div>
@@ -217,19 +217,19 @@ export function CopywritingSection() {
                 <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">
                   Location Intelligence
                 </span>
-                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-stone leading-[0.9] tracking-tighter">
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-shadow leading-[0.9] tracking-tighter">
                   154 Arum Road:{" "}
                   <span className="italic text-muted-bronze font-light">Quietly Connected</span>
                 </h2>
               </div>
-              <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
+              <p className="font-sans text-lg text-slate-shadow/80 leading-relaxed font-light">
                 Positioned at the pulse of Table View, Cornerstone on Arum serves as the
                 starting point for your daily lifestyle journey. You are situated just{" "}
                 <span className="text-muted-bronze font-semibold">2.4 km</span> from the
                 world-renowned Blaauwbergstrand coastline and the vibrant Kite Beach surfing
                 scene.
               </p>
-              <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
+              <p className="font-sans text-lg text-slate-shadow/80 leading-relaxed font-light">
                 Enjoy the perfect balance of coastal charm and urban convenience, with
                 walking distance access to Bayside Shopping Centre, the Medicross Medical
                 Facility, top-tier schools, and the MyCiTi transport network.
@@ -324,7 +324,7 @@ export function CopywritingSection() {
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">
                 Investment Analysis
               </span>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-stone leading-[0.9] tracking-tighter">
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-shadow leading-[0.9] tracking-tighter">
                 Superior{" "}
                 <span className="italic text-muted-bronze font-light">Returns</span>
               </h2>
@@ -333,10 +333,10 @@ export function CopywritingSection() {
 
             {/* Right: body copy */}
             <div className="space-y-6">
-              <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
+              <p className="font-sans text-lg text-slate-shadow/80 leading-relaxed font-light">
                 Sectional title developments are the clear winner for the Blaauwberg Road Corridor in Table View because they align perfectly with the surging market demand for smaller, more efficient living spaces, which saw a <span className="text-muted-bronze font-semibold">27% value growth</span> in flats and townhouses over the past year.
               </p>
-              <p className="font-sans text-lg text-warm-stone/60 leading-relaxed font-light">
+              <p className="font-sans text-lg text-slate-shadow/80 leading-relaxed font-light">
                 Table View rental demand remains intensely high and is projected to provide returns of <span className="text-muted-bronze font-semibold">8% to 10%+</span>. You are risking far less capital to achieve a functionally superior percentage return, all while maintaining the same world-class Cape Town tenant profile.
               </p>
             </div>
