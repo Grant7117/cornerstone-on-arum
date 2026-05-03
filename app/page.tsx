@@ -51,7 +51,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-background relative">
+    <main className="min-h-screen bg-background relative overflow-x-hidden w-full max-w-[100vw]">
       {/* Injecting Schema for SEO Recovery */}
       <script
         type="application/ld+json"

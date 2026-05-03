@@ -57,7 +57,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} overflow-x-hidden`}>
       <head>
         {/* Facebook Pixel */}
         <script dangerouslySetInnerHTML={{
@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `
         }} />
       </head>
-      <body className="antialiased font-sans bg-deep-obsidian text-warm-stone" suppressHydrationWarning>
+      <body className="antialiased font-sans bg-deep-obsidian text-warm-stone overflow-x-hidden w-full" suppressHydrationWarning>
         {children}
         <ClientOnly>
           <ChatLauncher />
