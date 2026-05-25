@@ -91,6 +91,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                                 id="contact"
                                 name="contact"
                                 type="tel"
+                                inputMode="tel"
                                 required
                                 value={formData.contact}
                                 onChange={handleChange}

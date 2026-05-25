@@ -1,6 +1,6 @@
 import { StandardBanner } from "./standard-banner"
 import { Button } from "@/components/ui/button"
-import { Phone, ExternalLink } from "lucide-react"
+import { Phone, Mail, ExternalLink } from "lucide-react"
 
 export function BetterBondSection() {
   return (
@@ -17,22 +17,42 @@ export function BetterBondSection() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             
             {/* Yolanda's Contact Info */}
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Expert Financing Advice</h3>
-              <p className="text-slate-600 mb-4">
-                Contact our dedicated BetterBond consultant for personalized assistance.
+            <div className="flex-1 w-full text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2 tracking-tight">
+                Expert Financing Advice
+              </h3>
+              <p className="text-slate-600 mb-6 text-sm md:text-base">
+                Contact our dedicated BetterBond consultant for personalized assistance:
               </p>
-              <div className="flex items-center justify-center md:justify-start gap-3">
-                <div className="bg-blue-100 p-2 rounded-full">
-                  <Phone className="w-5 h-5 text-blue-600" />
-                </div>
-                <div>
-                  <p className="text-sm text-slate-500 font-medium uppercase tracking-wider">Yolanda</p>
+              
+              <div className="flex flex-col gap-4 items-center md:items-start w-full">
+                <p className="text-base md:text-lg font-bold text-slate-800">
+                  Yolanda Kensley
+                </p>
+
+                {/* Phone Link (Target min-h-[44px] touch target) */}
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-100 p-2.5 rounded-full flex-shrink-0">
+                    <Phone className="w-5 h-5 text-blue-600" />
+                  </div>
                   <a 
                     href="tel:+27846457216" 
-                    className="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors"
+                    className="inline-flex items-center text-base md:text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors min-h-[44px] py-1"
                   >
                     084 645 7216
+                  </a>
+                </div>
+
+                {/* Email Link (Target min-h-[44px] touch target) */}
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-100 p-2.5 rounded-full flex-shrink-0">
+                    <Mail className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <a 
+                    href="mailto:yolanda.kensley@betterbond.co.za" 
+                    className="inline-flex items-center text-base md:text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors min-h-[44px] py-1 break-all"
+                  >
+                    yolanda.kensley@betterbond.co.za
                   </a>
                 </div>
               </div>
@@ -42,7 +62,7 @@ export function BetterBondSection() {
             <div className="flex-1 w-full md:w-auto">
               <Button 
                 asChild
-                className="w-full bg-[#1a365d] hover:bg-[#2a4a7d] text-white py-8 text-lg rounded-2xl shadow-md transition-all active:scale-95"
+                className="w-full bg-[#1a365d] hover:bg-[#2a4a7d] text-white py-8 text-lg rounded-2xl shadow-md transition-all active:scale-95 min-h-[48px]"
               >
                 <a 
                   href="https://online.consultant.betterbond.co.za/dev/C-638918922458058838-deb2db" 
