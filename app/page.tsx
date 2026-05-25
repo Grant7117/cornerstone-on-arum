@@ -80,16 +80,16 @@ export default function HomePage() {
         <PricingBanner />
         <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         
-        {/* Color-Coded Floor Plans Section */}
+        {/* Colour-Coded Floor Plans Section */}
         <div id="floor-plans" className="w-full bg-[#1a1c23] py-12 sm:py-20 px-4 flex flex-col items-center">
           <div className="w-full max-w-6xl flex flex-col items-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-warm-stone mb-10 sm:mb-16 tracking-tight">
-              Color-Coded Floor Plans
+              Colour-Coded Floor Plans
             </h2>
             <div className="w-full max-w-5xl overflow-hidden rounded-lg border border-white/10 shadow-2xl bg-zinc-900 flex justify-center">
               <Image
                 src="/images/cornerstone-color-coded-floor-plans.jpg"
-                alt="Cornerstone Color-Coded Floor Plans"
+                alt="Cornerstone Colour-Coded Floor Plans"
                 width={1200}
                 height={800}
                 className="w-full h-auto object-contain"
