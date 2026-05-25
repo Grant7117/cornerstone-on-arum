@@ -18,8 +18,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Cornerstone on Arum | 6 Luxury Units Remaining | Ready May 2026',
-  description: 'Limited availability: 6 exclusive units back on the market at Cornerstone on Arum, Table View. Ready for occupation May 2026. No transfer duty. Contact Grant at 072 450 3626.',
+  title: 'Cornerstone on Arum | 5 Luxury Units Remaining | Available Now',
+  description: 'Limited availability: 5 exclusive luxury units remaining at Cornerstone on Arum, Table View. Available now. No transfer duty. Contact Grant at 072 450 3626.',
   keywords: [
     'Table View apartments for sale', 
     'Cornerstone on Arum', 
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     'No transfer duty apartments'
   ],
   openGraph: {
-    title: 'Cornerstone on Arum - 6 Units Back on the Market',
-    description: 'Final 6 luxury units available for immediate occupation in May 2026. Secure your spot in Table View.',
+    title: 'Cornerstone on Arum - 5 Luxury Units Remaining',
+    description: 'Final 5 luxury units available for immediate occupation. Secure your spot in Table View.',
     type: 'website',
     locale: 'en_ZA',
     url: 'https://www.cornerstoneonarum.co.za',

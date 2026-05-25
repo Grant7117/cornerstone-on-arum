@@ -9,6 +9,7 @@ export interface Unit {
     price: string;
     images?: string[];
     floorPlan?: string;
+    isActive?: boolean;
 }
 
 export const unitsData: Record<string, Unit[]> = {
@@ -38,7 +39,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 45,
             color: "#F4E96D",
-            status: "Available",
+            status: "Sold",
+            isActive: false,
             price: "R1,700,000",
             images:
                 [
@@ -58,7 +60,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 48,
             color: "#FF6B6B",
-            status: "Available",
+            status: "Sold",
+            isActive: false,
             price: "R1,700,000",
             images:
                 [
@@ -358,7 +361,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 2,
             size: 77,
             color: "#9B9FD8",
-            status: "Available",
+            status: "Sold",
+            isActive: false,
             price: "R2,725,000",
             images:
                 [

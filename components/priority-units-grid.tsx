@@ -17,6 +17,7 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
 
   // Specific m2 breakdown map based on the user's table
   const m2Map: Record<string, { int: string; bal: string }> = {
+    "101": { int: "42", bal: "5" },
     "102": { int: "59", bal: "8" },
     "103": { int: "39", bal: "6" },
     "104": { int: "44", bal: "4" },
@@ -127,9 +128,8 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
   }
 
   const rows = [
-    { units: ["102", "103"] },
-    { units: ["104", "106"] },
-    { units: ["302", "303"] },
+    { units: ["101", "102"] },
+    { units: ["106", "303"] },
     { units: ["304"] },
   ]
 
@@ -137,7 +137,7 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
     <div id="properties" className="w-full bg-gray-50/30 py-12 sm:py-20">
       <div className="container mx-auto max-w-6xl px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 uppercase">
-          6 WEEKS TO GO - 6 UNITS LEFT
+          5 UNITS AVAILABLE
         </h2>
 
         <div className="flex flex-col gap-12 sm:gap-16">

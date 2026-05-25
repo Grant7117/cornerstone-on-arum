@@ -27,12 +27,14 @@ export default function HomePage() {
     "@context": "https://schema.org/",
     "@type": "RealEstateListing",
     "name": "Cornerstone on Arum",
-    "description": "6 Luxury apartments available for sale in Table View. Ready for occupation May 2026.",
+    "description": "5 Luxury apartments available for sale in Table View. Available now.",
     "url": "https://www.cornerstoneonarum.co.za",
     "image": "https://www.cornerstoneonarum.co.za/images/arum-hero-image.png",
     "offers": {
       "@type": "AggregateOffer",
-      "offerCount": "6",
+      "offerCount": "5",
+      "lowPrice": "1700000",
+      "highPrice": "2725000",
       "priceCurrency": "ZAR",
       "availability": "https://schema.org/InStock",
       "seller": {
