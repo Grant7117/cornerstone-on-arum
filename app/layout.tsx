@@ -19,7 +19,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Cornerstone on Arum | 5 Luxury Units Remaining | Available Now',
-  description: 'Limited availability: 5 exclusive luxury units remaining at Cornerstone on Arum, Table View. Available now. No transfer duty. Contact Grant at 072 450 3626.',
+  description: '5 luxury units remaining at Cornerstone on Arum, Table View. Available now. No transfer duty.',
   keywords: [
     'Table View apartments for sale', 
     'Cornerstone on Arum', 

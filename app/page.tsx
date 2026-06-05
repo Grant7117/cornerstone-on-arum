@@ -30,7 +30,7 @@ export default function HomePage() {
     "name": "Cornerstone on Arum",
     "description": "5 Luxury apartments available for sale in Table View. Available now.",
     "url": "https://www.cornerstoneonarum.co.za",
-    "image": "https://www.cornerstoneonarum.co.za/images/arum-hero-image.png",
+    "image": "https://www.cornerstoneonarum.co.za/images/Cornerstone-on-arum-hero-image.png",
     "offers": {
       "@type": "AggregateOffer",
       "offerCount": "5",
@@ -55,6 +55,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-background relative overflow-x-hidden w-full max-w-[100vw]">
+      <h1 className="sr-only">Cornerstone on Arum - Luxury Apartments in Table View</h1>
       {/* Injecting Schema for SEO Recovery */}
       <script
         type="application/ld+json"
@@ -62,12 +63,13 @@ export default function HomePage() {
       />
 
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url(/images/arum-hero-image.png)",
-            opacity: 0.4,
-          }}
+        <Image
+          src="/images/Cornerstone-on-arum-hero-image.png"
+          alt="Cornerstone on Arum Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
       </div>
@@ -93,7 +95,6 @@ export default function HomePage() {
                 width={1200}
                 height={800}
                 className="w-full h-auto object-contain"
-                priority
               />
             </div>
           </div>
