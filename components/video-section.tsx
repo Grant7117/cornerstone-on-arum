@@ -58,13 +58,13 @@ export function VideoSection() {
           <div className="space-y-10 order-2 lg:order-1">
             <div className="space-y-4">
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-muted-bronze font-bold">The Location</span>
-              <h2 className="font-serif text-5xl md:text-7xl text-warm-stone leading-[0.9] tracking-tighter">
+              <h2 className="font-serif text-5xl md:text-7xl text-white leading-[0.9] tracking-tighter">
                 Designed For Living, <br/> 
                 <span className="italic text-muted-bronze font-light">Crafted For Life</span>
               </h2>
             </div>
             
-            <p className="text-warm-stone/50 text-xl leading-relaxed font-sans max-w-lg font-light">
+            <p className="text-zinc-300 text-lg sm:text-xl leading-relaxed font-sans max-w-lg font-light">
               Cornerstone on Arum sets a benchmark for residential living in Table View. 
               The development offers premium apartments within a secure community, 
               designed to deliver long-term value through superior design and sustainability.
@@ -90,14 +90,14 @@ export function VideoSection() {
                 src={areaImages[currentIndex].image}
                 alt={areaImages[currentIndex].title}
                 fill
-                className="object-cover transition-all duration-[2000ms] ease-out scale-110 group-hover:scale-100"
+                className="object-cover transition-all duration-[2000ms] ease-out scale-110 group-hover:scale-100 brightness-110 contrast-105"
               />
               
               {/* Cinematic Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-deep-obsidian via-transparent to-transparent opacity-90" />
-              <div className="absolute inset-0 bg-deep-obsidian/10 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+              <div className="absolute inset-0 bg-black/5 mix-blend-overlay z-10" />
               
-              <div className="absolute bottom-10 left-10 text-white space-y-2">
+              <div className="absolute bottom-10 left-10 text-white space-y-2 z-20">
                 <p className="font-serif text-3xl tracking-tight">{areaImages[currentIndex].title}</p>
                 <div className="flex items-center gap-4">
                   <div className="h-[1px] w-8 bg-muted-bronze" />

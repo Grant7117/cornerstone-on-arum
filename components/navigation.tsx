@@ -21,7 +21,7 @@ export function Navigation() {
     { label: "Features", id: "features" },
     { label: "Financing", id: "financing" },
     { label: "Location", id: "contact" },
-    { label: "Documents", id: "documents" },
+    { label: "Brochure", id: "media-resources" },
   ]
 
   return (

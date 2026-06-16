@@ -159,7 +159,7 @@ export function MediaAssetsSection() {
                 <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-bronze font-bold block mb-1">Finished Portfolio</span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
-                    Ground Floor Gallery
+                    First Floor Two Bedroom
                   </h4>
                   <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400 group-hover:text-muted-bronze group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
                 </div>
