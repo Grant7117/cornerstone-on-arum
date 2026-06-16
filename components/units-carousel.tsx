@@ -108,9 +108,6 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
-
-        </div>
-      </div>
     </div>
   )
 }

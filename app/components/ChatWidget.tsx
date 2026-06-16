@@ -12,7 +12,7 @@ export default function ChatWidget() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const next = [...messages, { role: 'user', content: input }];
+    const next: Msg[] = [...messages, { role: 'user', content: input }];
     setMessages(next);
     setInput('');
 
