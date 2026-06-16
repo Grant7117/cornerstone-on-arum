@@ -32,7 +32,7 @@ export function MediaAssetsSection() {
                 Official Project Documentation
               </h3>
               <p className="text-xs sm:text-base text-zinc-300 leading-relaxed">
-                Download the official marketing brochure and final color-coded floor plan schematics to view comprehensive unit elevations, layouts, specifications, and pricing structures.
+                Download the official marketing brochure to view comprehensive unit elevations, layouts, specifications, and pricing structures.
               </p>
             </div>
 
@@ -50,24 +50,6 @@ export function MediaAssetsSection() {
                   <div className="text-left">
                     <span className="block text-[9px] uppercase tracking-wider opacity-90 font-bold">Download</span>
                     <span className="text-sm font-extrabold">Property Brochure</span>
-                  </div>
-                </div>
-                <Download className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
-              </a>
-
-              {/* Floor Plan Document Download */}
-              <a
-                href="https://drive.google.com/uc?export=download&id=1qkwYhPYXU_pAUPKlxSOmsgX5b342qni-"
-                download="Cornerstone_on_Arum_Floor_Plans.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-4 border-2 border-muted-bronze text-muted-bronze hover:bg-muted-bronze/10 font-sans font-bold py-3.5 px-5 sm:py-4 sm:px-6 rounded-lg transition-all duration-200 w-full sm:w-auto transform hover:-translate-y-0.5 active:scale-[0.98] active:bg-muted-bronze/20 touch-manipulation"
-              >
-                <div className="flex items-center gap-3">
-                  <FileText className="w-5 h-5 flex-shrink-0" />
-                  <div className="text-left">
-                    <span className="block text-[9px] uppercase tracking-wider opacity-90 font-bold text-zinc-400">Download</span>
-                    <span className="text-sm font-extrabold">Detailed Floor Plans</span>
                   </div>
                 </div>
                 <Download className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
@@ -218,7 +200,7 @@ export function MediaAssetsSection() {
 
               {/* Top Right Tag */}
               <div className="absolute top-3 right-3 bg-muted-bronze text-deep-obsidian font-extrabold text-[8px] sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
-                Suite 303 Penthouse
+                Duplex units 303 & 304
               </div>
             </div>
 
