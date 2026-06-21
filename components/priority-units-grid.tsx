@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Camera } from "lucide-react"
 import { unitsData, Unit } from "@/data/units"
 
 interface MinimalistUnitCardProps {
@@ -136,9 +136,18 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
   return (
     <div id="properties" className="w-full bg-gray-50/30 py-12 sm:py-20">
       <div className="container mx-auto max-w-6xl px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16 uppercase">
-          5 UNITS AVAILABLE
-        </h2>
+        <div className="text-center mb-12 sm:mb-16 flex flex-col items-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 uppercase">
+            5 UNITS AVAILABLE
+          </h2>
+          <a
+            href="#media-resources"
+            className="mt-6 inline-flex items-center gap-2 bg-[#1a1c23] hover:bg-[#2d303b] text-white font-sans text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+          >
+            <Camera className="w-4 h-4" />
+            Photo Gallery
+          </a>
+        </div>
 
         <div className="flex flex-col gap-12 sm:gap-16">
           {rows.map((row, rowIndex) => (

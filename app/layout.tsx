@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import './globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 import ClientOnly from './components/ClientOnly';
 import ChatLauncher from './components/ChatLauncher';
 
@@ -19,7 +20,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Cornerstone on Arum | 5 Luxury Units Remaining | Available Now',
-  description: 'Limited availability: 5 exclusive luxury units remaining at Cornerstone on Arum, Table View. Available now. No transfer duty. Contact Grant at 072 450 3626.',
+  description: 'Final 5 luxury units remaining at Cornerstone on Arum, Table View. Available now. No transfer duty. Contact Grant Whitburn at 072 450 3626.',
   keywords: [
     'Table View apartments for sale', 
     'Cornerstone on Arum', 
@@ -58,24 +59,27 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} overflow-x-hidden`}>
-      <head>
-        {/* Facebook Pixel */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '2421305398312777'); 
-            fbq('track', 'PageView');
-          `
-        }} />
-      </head>
+      <head />
       <body className="antialiased font-sans bg-deep-obsidian text-warm-stone overflow-x-hidden w-full" suppressHydrationWarning>
+        {/* Facebook Pixel */}
+        <Script
+          id="fb-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '2421305398312777'); 
+              fbq('track', 'PageView');
+            `
+          }}
+        />
         {children}
         <ClientOnly>
           <ChatLauncher />

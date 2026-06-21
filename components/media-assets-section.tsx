@@ -69,11 +69,11 @@ export function MediaAssetsSection() {
         </div>
 
         {/* External Gallery Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           
           {/* Card A: Main Cornerstone on Arum Gallery (Exterior & Build) */}
           <a
-            href="https://photos.app.goo.gl/U3Ex6DyFJTRKyqXb6"
+            href="https://photos.app.goo.gl/ECMHSh5BdWXoMp6J9"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col justify-between bg-[#16171e] border-2 border-white/10 hover:border-muted-bronze/80 rounded-2xl p-5 transition-all duration-300 shadow-lg min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] active:border-muted-bronze/60 touch-manipulation"
@@ -124,9 +124,60 @@ export function MediaAssetsSection() {
             </div>
           </a>
 
-          {/* Card B: General Development Gallery (Unit 102) */}
+          {/* Card B: Unit 106 Gallery (First Floor One Bedroom) */}
           <a
-            href="https://photos.app.goo.gl/7xye2HtwmVia9hQX9"
+            href="https://photos.app.goo.gl/65sWTTTdoX46ne7v8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col justify-between bg-[#16171e] border-2 border-white/10 hover:border-muted-bronze/80 rounded-2xl p-5 transition-all duration-300 shadow-lg min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] active:border-muted-bronze/60 touch-manipulation"
+          >
+            {/* Visual Preview Image */}
+            <div className="w-full h-40 sm:h-48 rounded-xl border border-white/10 relative flex items-center justify-center overflow-hidden mb-5 select-none pointer-events-none">
+              <Image
+                src="/images/units/106-a.jpg"
+                alt="Unit 106 Gallery Preview"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-110 contrast-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+
+              {/* Camera Focal Icon overlay */}
+              <div className="absolute z-20 bg-black/60 backdrop-blur-md border border-white/30 p-3 sm:p-3.5 rounded-full text-white group-hover:scale-110 group-hover:bg-muted-bronze group-hover:text-deep-obsidian group-hover:border-muted-bronze transition-all duration-300 shadow-xl">
+                <Camera className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+
+              {/* Top Right Tag */}
+              <div className="absolute top-3 right-3 bg-muted-bronze text-deep-obsidian font-extrabold text-[8px] sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
+                Unit 106 Interior
+              </div>
+            </div>
+
+            {/* Content Details */}
+            <div className="flex-grow flex flex-col justify-between">
+              <div>
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-bronze font-bold block mb-1">Finished Portfolio</span>
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
+                    First Floor One Bedroom
+                  </h4>
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400 group-hover:text-muted-bronze group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
+                </div>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-6">
+                  Inspect the layout and premium finishes of Unit 106, showcasing modern open-plan spaces, bedroom design, and private balcony detail.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
+                <span>Open Shared Album</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </a>
+
+          {/* Card C: Unit 102 Gallery (First Floor Two Bedroom) */}
+          <a
+            href="https://photos.app.goo.gl/K1fr1PhvXDoAbQ8Q7"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col justify-between bg-[#16171e] border-2 border-white/10 hover:border-muted-bronze/80 rounded-2xl p-5 transition-all duration-300 shadow-lg min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] active:border-muted-bronze/60 touch-manipulation"
@@ -175,9 +226,60 @@ export function MediaAssetsSection() {
             </div>
           </a>
 
-          {/* Card C: Premium Suites Gallery (Units 303 & 304) */}
+          {/* Card D: Unit 302 Gallery (Duplex Suite 302) */}
           <a
-            href="https://photos.app.goo.gl/8S9PDygvjcX6zg3s7"
+            href="https://photos.app.goo.gl/ob9zzgqMguQT2y649"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col justify-between bg-[#16171e] border-2 border-white/10 hover:border-muted-bronze/80 rounded-2xl p-5 transition-all duration-300 shadow-lg min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] active:border-muted-bronze/60 touch-manipulation"
+          >
+            {/* Visual Preview Image */}
+            <div className="w-full h-40 sm:h-48 rounded-xl border border-white/10 relative flex items-center justify-center overflow-hidden mb-5 select-none pointer-events-none">
+              <Image
+                src="/images/units/302-a.jpg"
+                alt="Unit 302 Gallery Preview"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-110 contrast-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
+
+              {/* Camera Focal Icon overlay */}
+              <div className="absolute z-20 bg-black/60 backdrop-blur-md border border-white/30 p-3 sm:p-3.5 rounded-full text-white group-hover:scale-110 group-hover:bg-muted-bronze group-hover:text-deep-obsidian group-hover:border-muted-bronze transition-all duration-300 shadow-xl">
+                <Camera className="w-5 h-5 sm:w-6 sm:h-6" />
+              </div>
+
+              {/* Top Right Tag */}
+              <div className="absolute top-3 right-3 bg-muted-bronze text-deep-obsidian font-extrabold text-[8px] sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
+                Unit 302 Interior
+              </div>
+            </div>
+
+            {/* Content Details */}
+            <div className="flex-grow flex flex-col justify-between">
+              <div>
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-bronze font-bold block mb-1">Double Volume Loft</span>
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
+                    Duplex Suite 302
+                  </h4>
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400 group-hover:text-muted-bronze group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
+                </div>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-6">
+                  Inspect the premium duplex loft Unit 302 showcasing double-volume lounge design, modern kitchen layout, loft bedroom, and private balcony.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
+                <span>Open Shared Album</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </a>
+
+          {/* Card E: Premium Suites Gallery (Units 303 & 304) */}
+          <a
+            href="https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col justify-between bg-[#16171e] border-2 border-white/10 hover:border-muted-bronze/80 rounded-2xl p-5 transition-all duration-300 shadow-lg min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] active:border-muted-bronze/60 touch-manipulation"

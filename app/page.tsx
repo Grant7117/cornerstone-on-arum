@@ -63,12 +63,13 @@ export default function HomePage() {
       />
 
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url(/images/arum-hero-image.png)",
-            opacity: 0.4,
-          }}
+        <Image
+          src="/images/Cornerstone-on-arum-hero-image.png"
+          alt="Background"
+          fill
+          priority={false}
+          sizes="100vw"
+          className="object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
       </div>
