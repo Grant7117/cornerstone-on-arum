@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "@/components/icons"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const areaImages = [
@@ -43,6 +43,10 @@ export function VideoSection() {
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex === areaImages.length - 1 ? 0 : prevIndex + 1))
+  }, [])
+
+  const goToPrev = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? areaImages.length - 1 : prevIndex - 1))
   }, [])
 
   useEffect(() => {
@@ -97,8 +101,42 @@ export function VideoSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
               <div className="absolute inset-0 bg-black/5 mix-blend-overlay z-10" />
               
-              <div className="absolute bottom-10 left-10 text-white space-y-2 z-20">
-                <p className="font-serif text-3xl tracking-tight">{areaImages[currentIndex].title}</p>
+              {/* Glass Navigation Buttons */}
+              <div className="absolute inset-y-0 left-4 right-4 flex items-center justify-between z-20 pointer-events-none">
+                <button
+                  onClick={(e) => { e.stopPropagation(); goToPrev(); }}
+                  className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-white hover:bg-black/50 hover:scale-110 active:scale-90 transition-all duration-300 shadow-lg"
+                  aria-label="Previous slide"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); goToNext(); }}
+                  className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-white hover:bg-black/50 hover:scale-110 active:scale-90 transition-all duration-300 shadow-lg"
+                  aria-label="Next slide"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Indicator Dots */}
+              <div className="absolute bottom-10 right-10 flex gap-2 z-20">
+                {areaImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={(e) => { e.stopPropagation(); setCurrentIndex(index); }}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 pointer-events-auto ${
+                      index === currentIndex
+                        ? "bg-white w-6 shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+                        : "bg-white/40 hover:bg-white/60"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              <div className="absolute bottom-10 left-10 text-white space-y-2 z-20 pr-32">
+                <p className="font-serif text-2xl sm:text-3xl tracking-tight leading-tight">{areaImages[currentIndex].title}</p>
                 <div className="flex items-center gap-4">
                   <div className="h-[1px] w-8 bg-muted-bronze" />
                   <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-bronze font-bold">Explore Table View</p>
