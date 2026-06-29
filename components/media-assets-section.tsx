@@ -73,7 +73,7 @@ export function MediaAssetsSection() {
           
           {/* Card A: Main Cornerstone on Arum Gallery (Exterior & Build) */}
           <a
-            href="https://photos.app.goo.gl/ECMHSh5BdWXoMp6J9"
+            href="https://photos.app.goo.gl/U3Ex6DyFJTRKyqXb6"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col justify-between bg-[#16171e] border-2 border-white/10 hover:border-muted-bronze/80 rounded-2xl p-5 transition-all duration-300 shadow-lg min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] active:border-muted-bronze/60 touch-manipulation"
