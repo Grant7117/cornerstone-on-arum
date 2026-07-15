@@ -98,7 +98,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 45,
             color: "#F4E96D",
-            status: "Available",
+            status: "Sold",
+            isActive: false,
             price: "R1,700,000",
             images:
                 [
@@ -136,7 +137,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 47,
             color: "#7FD957",
-            status: "Sold",
+            status: "Available",
             price: "R1,700,000",
             images:
                 [
@@ -154,7 +155,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 45,
             color: "#F4E96D",
-            status: "Sold",
+            status: "Available",
             price: "R1,700,000",
             images:
                 [
@@ -173,7 +174,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 48,
             color: "#FF6B6B",
-            status: "Sold",
+            status: "Available",
             price: "R1,700,000",
             images:
                 [
@@ -191,7 +192,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 48,
             color: "#FF6B6B",
-            status: "Sold",
+            status: "Available",
             price: "R1,700,000",
             images:
                 [
@@ -248,7 +249,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 67,
             color: "#F4C89D",
-            status: "Available",
+            status: "Sold",
+            isActive: false,
             price: "R2,300,000",
             images:
                 [
@@ -361,8 +363,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 2,
             size: 77,
             color: "#9B9FD8",
-            status: "Sold",
-            isActive: false,
+            status: "Available",
             price: "R2,725,000",
             images:
                 [

@@ -68,7 +68,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 <DialogHeader>
                     <DialogTitle className="text-2xl font-bold text-slate-900">Enquire Now</DialogTitle>
                     <DialogDescription className="text-slate-600">
-                        Secure one of the final 5 units. Fill in your details and we'll connect with you immediately.
+                        Secure your unit today. Fill in your details and we'll connect with you immediately.
                     </DialogDescription>
                 </DialogHeader>
                 <form onSubmit={handleSubmit} className="space-y-4 py-4">

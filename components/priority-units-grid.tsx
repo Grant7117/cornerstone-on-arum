@@ -17,11 +17,11 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
 
   // Specific m2 breakdown map based on the user's table
   const m2Map: Record<string, { int: string; bal: string }> = {
-    "101": { int: "42", bal: "5" },
-    "102": { int: "59", bal: "8" },
-    "103": { int: "39", bal: "6" },
-    "104": { int: "44", bal: "4" },
-    "106": { int: "39", bal: "6" },
+    "101": { int: "43", bal: "4" },
+    "201": { int: "43", bal: "4" },
+    "203": { int: "39", bal: "6" },
+    "204": { int: "44", bal: "4" },
+    "205": { int: "44", bal: "4" },
     "302": { int: "72", bal: "5" },
     "303": { int: "71", bal: "6" },
     "304": { int: "71", bal: "6" },
@@ -128,9 +128,10 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
   }
 
   const rows = [
-    { units: ["101", "102"] },
-    { units: ["106", "303"] },
-    { units: ["304"] },
+    { units: ["101", "201"] },
+    { units: ["203", "204"] },
+    { units: ["205", "302"] },
+    { units: ["303", "304"] },
   ]
 
   return (
@@ -138,7 +139,7 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-12 sm:mb-16 flex flex-col items-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 uppercase">
-            5 UNITS AVAILABLE
+            AVAILABLE UNITS
           </h2>
           <a
             href="#media-resources"

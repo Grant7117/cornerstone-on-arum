@@ -3,7 +3,7 @@
     "@context": "https://schema.org/",
     "@type": "RealEstateListing",
     "name": "Cornerstone on Arum - Luxury Apartments",
-    "description": "Premium residential living in Table View. 5 luxury units remaining. Available units: 101, 102, 106, 303, 304.",
+    "description": "Premium residential living in Table View. 8 luxury units remaining. Available units: 101, 201, 203, 204, 205, 302, 303, 304.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "154 Arum Road",
@@ -14,7 +14,7 @@
     },
     "offers": {
       "@type": "AggregateOffer",
-      "offerCount": "5",
+      "offerCount": "8",
       "lowPrice": "1700000",
       "highPrice": "2725000",
       "priceCurrency": "ZAR",
@@ -43,31 +43,31 @@
     {
       "id": "pricing-range",
       "question": "What is the price range for units?",
-      "answer": "1-bedroom units (101, 106) are priced at R1,700,000. The 2-bedroom unit (102) is R2,300,000. The 2-bedroom loft units (303, 304) are R2,725,000.",
+      "answer": "1-bedroom units (101, 201, 203, 204, 205) are priced at R1,700,000. The 2-bedroom loft units (302, 303, 304) are R2,725,000.",
       "category": "Pricing"
     },
     {
       "id": "availability",
       "question": "Which units are sold or available?",
-      "answer": "There are currently 5 units available: 101, 102, 106, 303, and 304. Units 103, 104, and 302 have been sold. A R5,000 deposit secures your unit. Contact Grant Whitburn on 072 450 3626 immediately.",
+      "answer": "There are currently 8 units available: 101, 201, 203, 204, 205, 302, 303, and 304. Other units have been sold. A R5,000 deposit secures your unit. Contact Grant Whitburn on 072 450 3626 immediately.",
       "category": "Availability"
     },
     {
       "id": "72hr-clause",
       "question": "What is a 72-hour clause?",
-      "answer": "A 72-hour clause applies to units with suspensive offers. However, all currently available units (101, 102, 106, 303, 304) are fully available with no current 72-hour restrictions.",
+      "answer": "A 72-hour clause applies to units with suspensive offers. However, all currently available units (101, 201, 203, 204, 205, 302, 303, 304) are fully available with no current 72-hour restrictions.",
       "category": "Availability"
     },
     {
       "id": "72hr-units",
       "question": "Which specific units have a 72-hour clause?",
-      "answer": "Units 103, 104, and 302 are SOLD and no longer available. The remaining available units (101, 102, 106, 303, and 304) are fully available with no current clause restrictions.",
+      "answer": "The remaining available units (101, 201, 203, 204, 205, 302, 303, and 304) are fully available with no current clause restrictions.",
       "category": "Availability"
     },
     {
       "id": "unit-specs",
       "question": "What are the floor levels and sizes of the units?",
-      "answer": "Remaining units: 101 (47m²), 102 (67m²), 106 (45m²), 303 (77m²), 304 (77m²). Sizes include internal area plus balcony. All units include 1 dedicated parking bay.",
+      "answer": "Remaining units: 101 (47m²), 201 (47m²), 203 (45m²), 204 (48m²), 205 (48m²), 302 (77m²), 303 (77m²), 304 (77m²). Sizes include internal area plus balcony. All units include 1 dedicated parking bay.",
       "category": "General"
     },
     {
