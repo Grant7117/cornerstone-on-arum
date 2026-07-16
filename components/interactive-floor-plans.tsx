@@ -3,6 +3,8 @@
 import { useState, useRef } from "react"
 import Image from "next/image"
 import { unitsData, Unit } from "@/data/units"
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { UnitCard } from "@/components/unit-card"
 
 interface Hotspot {
   id: string
@@ -89,6 +91,7 @@ const hotspots: Hotspot[] = [
 
 export function InteractiveFloorPlans() {
   const [hoveredHotspot, setHoveredHotspot] = useState<Hotspot | null>(null)
+  const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null)
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -120,6 +123,10 @@ export function InteractiveFloorPlans() {
     setHoveredHotspot(null)
   }
 
+  const handleHotspotClick = (hotspot: Hotspot) => {
+    setSelectedHotspot(hotspot)
+  }
+
   // Get specs of units for rendering the tooltip
   const activeUnits = hoveredHotspot
     ? hoveredHotspot.unitNos
@@ -127,91 +134,120 @@ export function InteractiveFloorPlans() {
         .filter((u): u is Unit => u !== null)
     : []
 
+  // Get specs for the clicked hotspot modal
+  const selectedUnits = selectedHotspot
+    ? selectedHotspot.unitNos
+        .map((num) => getUnitDetails(num))
+        .filter((u): u is Unit => u !== null)
+    : []
+
   return (
-    <div ref={containerRef} className="relative w-full aspect-square max-w-[850px] mx-auto overflow-visible select-none">
-      {/* Base floor plans image */}
-      <Image
-        src="/images/Colour-coded-plans.png"
-        alt="Cornerstone Colour-Coded Floor Plans"
-        fill
-        sizes="(max-width: 1024px) 100vw, 850px"
-        className="object-contain rounded-lg shadow-xl"
-        priority
-      />
+    <>
+      <div ref={containerRef} className="relative w-full aspect-square max-w-[850px] mx-auto overflow-visible select-none">
+        {/* Base floor plans image */}
+        <Image
+          src="/images/Colour-coded-plans.png"
+          alt="Cornerstone Colour-Coded Floor Plans"
+          fill
+          sizes="(max-width: 1024px) 100vw, 850px"
+          className="object-contain rounded-lg shadow-xl"
+          priority
+        />
 
-      {/* SVG overlay for interactive hotspots */}
-      <svg
-        viewBox="0 0 1024 1024"
-        className="absolute inset-0 w-full h-full z-10 cursor-pointer"
-        onMouseMove={handleMouseMove}
-      >
-        {hotspots.map((hotspot) =>
-          hotspot.shapes.map((shape, sIdx) => {
-            const isHovered = hoveredHotspot?.id === hotspot.id
-            return (
-              <rect
-                key={`${hotspot.id}-${sIdx}`}
-                x={shape.x}
-                y={shape.y}
-                width={shape.width}
-                height={shape.height}
-                fill={isHovered ? `${hotspot.color}33` : "transparent"} // 20% opacity color when hovered
-                stroke={isHovered ? hotspot.color : "transparent"}
-                strokeWidth={2}
-                className="transition-all duration-200"
-                onMouseOver={() => handleMouseOver(hotspot)}
-                onMouseOut={handleMouseOut}
-              />
-            )
-          })
-        )}
-      </svg>
-
-      {/* Custom Floating Glassmorphic Tooltip */}
-      {hoveredHotspot && activeUnits.length > 0 && (
-        <div
-          className="absolute z-30 pointer-events-none transition-all duration-75 ease-out"
-          style={{
-            left: `${tooltipPos.x}px`,
-            top: `${tooltipPos.y}px`,
-            maxWidth: "280px"
-          }}
+        {/* SVG overlay for interactive hotspots */}
+        <svg
+          viewBox="0 0 1024 1024"
+          className="absolute inset-0 w-full h-full z-10 cursor-pointer"
+          onMouseMove={handleMouseMove}
         >
-          <div className="bg-slate-950/90 backdrop-blur-md border border-white/10 text-white rounded-xl shadow-2xl p-4 flex flex-col gap-3 font-sans w-64">
-            <div className="flex items-center justify-between border-b border-white/10 pb-2">
-              <span className="font-serif text-lg tracking-tight text-warm-stone font-semibold">
-                {hoveredHotspot.name}
-              </span>
-              <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 uppercase">
-                Available
-              </span>
-            </div>
+          {hotspots.map((hotspot) =>
+            hotspot.shapes.map((shape, sIdx) => {
+              const isHovered = hoveredHotspot?.id === hotspot.id
+              return (
+                <rect
+                  key={`${hotspot.id}-${sIdx}`}
+                  x={shape.x}
+                  y={shape.y}
+                  width={shape.width}
+                  height={shape.height}
+                  fill={isHovered ? `${hotspot.color}33` : "transparent"} // 20% opacity color when hovered
+                  stroke={isHovered ? hotspot.color : "transparent"}
+                  strokeWidth={2}
+                  className="transition-all duration-200"
+                  onMouseOver={() => handleMouseOver(hotspot)}
+                  onMouseOut={handleMouseOut}
+                  onClick={() => handleHotspotClick(hotspot)}
+                />
+              )
+            })
+          )}
+        </svg>
 
-            <div className="flex flex-col gap-1.5">
-              {activeUnits.map((unit) => (
-                <div key={unit.unitNo} className="text-xs text-slate-300 flex flex-col gap-0.5 border-b border-white/5 last:border-b-0 pb-1.5 last:pb-0">
-                  <div className="flex justify-between font-medium">
-                    <span className="text-slate-400">Level:</span>
-                    <span>{unit.floor} Floor</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Specs:</span>
-                    <span>{unit.bedrooms} Bed • {unit.bathrooms} Bath • {unit.size}m²</span>
-                  </div>
-                  <div className="flex justify-between text-warm-stone font-semibold mt-0.5">
-                    <span>Investment:</span>
-                    <span>{unit.price}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Custom Floating Glassmorphic Tooltip */}
+        {hoveredHotspot && activeUnits.length > 0 && (
+          <div
+            className="absolute z-30 pointer-events-none transition-all duration-75 ease-out hidden md:block"
+            style={{
+              left: `${tooltipPos.x}px`,
+              top: `${tooltipPos.y}px`,
+              maxWidth: "280px"
+            }}
+          >
+            <div className="bg-slate-950/90 backdrop-blur-md border border-white/10 text-white rounded-xl shadow-2xl p-4 flex flex-col gap-3 font-sans w-64">
+              <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                <span className="font-serif text-lg tracking-tight text-warm-stone font-semibold">
+                  {hoveredHotspot.name}
+                </span>
+                <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 uppercase">
+                  Available
+                </span>
+              </div>
 
-            <div className="text-[9px] text-slate-500 text-center tracking-wider uppercase mt-1">
-              Click properties below to enquire
+              <div className="flex flex-col gap-1.5">
+                {activeUnits.map((unit) => (
+                  <div key={unit.unitNo} className="text-xs text-slate-300 flex flex-col gap-0.5 border-b border-white/5 last:border-b-0 pb-1.5 last:pb-0">
+                    <div className="flex justify-between font-medium">
+                      <span className="text-slate-400">Level:</span>
+                      <span>{unit.floor} Floor</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Specs:</span>
+                      <span>{unit.bedrooms} Bed • {unit.bathrooms} Bath • {unit.size}m²</span>
+                    </div>
+                    <div className="flex justify-between text-warm-stone font-semibold mt-0.5">
+                      <span>Investment:</span>
+                      <span>{unit.price}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-[9px] text-slate-500 text-center tracking-wider uppercase mt-1">
+                Click properties below to view
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+
+      <Dialog open={!!selectedHotspot} onOpenChange={(open) => !open && setSelectedHotspot(null)}>
+        <DialogContent className="max-w-4xl bg-slate-900 border-white/10 text-white p-6 max-h-[90vh] overflow-y-auto">
+          <DialogTitle className="font-serif text-2xl sm:text-3xl text-warm-stone mb-1">
+            {selectedHotspot?.name}
+          </DialogTitle>
+          <DialogDescription className="text-slate-400 mb-6">
+            Detailed information for the selected property.
+          </DialogDescription>
+          
+          <div className={`grid grid-cols-1 ${selectedUnits.length > 1 ? 'md:grid-cols-2' : ''} gap-6`}>
+            {selectedUnits.map((unit) => (
+              <div key={unit.unitNo} className="h-[500px]">
+                <UnitCard unit={unit} />
+              </div>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   )
 }
