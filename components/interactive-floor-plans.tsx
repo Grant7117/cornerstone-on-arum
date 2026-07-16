@@ -38,8 +38,8 @@ const hotspots: Hotspot[] = [
     name: "Unit 204",
     color: "#FF6B6B",
     shapes: [
-      { x: 45, y: 235, width: 40, height: 70 }, // Protruding stairs
-      { x: 85, y: 235, width: 180, height: 70 } // Top red
+      { x: 45, y: 235, width: 40, height: 35 }, // Protruding stairs
+      { x: 85, y: 235, width: 180, height: 35 } // Top red
     ]
   },
   {
@@ -48,8 +48,8 @@ const hotspots: Hotspot[] = [
     name: "Unit 205",
     color: "#FF6B6B",
     shapes: [
-      { x: 45, y: 305, width: 40, height: 70 }, // Protruding stairs
-      { x: 85, y: 305, width: 180, height: 70 } // Bottom red
+      { x: 45, y: 270, width: 40, height: 35 }, // Protruding stairs
+      { x: 85, y: 270, width: 180, height: 35 } // Bottom red
     ]
   },
   {
@@ -68,10 +68,10 @@ const hotspots: Hotspot[] = [
     name: "Unit 303",
     color: "#9B9FD8",
     shapes: [
-      { x: 375, y: 235, width: 40, height: 70 }, // 3rd Floor protruding stairs
-      { x: 415, y: 235, width: 185, height: 70 }, // 3rd Floor area middle purple
-      { x: 685, y: 235, width: 40, height: 70 }, // Loft protruding stairs
-      { x: 725, y: 235, width: 155, height: 70 }  // Loft area bottom purple
+      { x: 375, y: 235, width: 40, height: 35 }, // 3rd Floor protruding stairs
+      { x: 415, y: 235, width: 185, height: 35 }, // 3rd Floor area middle purple
+      { x: 685, y: 235, width: 40, height: 35 }, // Loft protruding stairs
+      { x: 725, y: 235, width: 155, height: 35 }  // Loft area bottom purple
     ]
   },
   {
@@ -80,10 +80,10 @@ const hotspots: Hotspot[] = [
     name: "Unit 304",
     color: "#9B9FD8",
     shapes: [
-      { x: 375, y: 305, width: 40, height: 70 }, // 3rd Floor protruding stairs
-      { x: 415, y: 305, width: 185, height: 70 }, // 3rd Floor area bottom purple
-      { x: 685, y: 305, width: 40, height: 70 }, // Loft protruding stairs
-      { x: 725, y: 305, width: 155, height: 70 }  // Loft area bottom purple? (Wait, loft only has 2 units?)
+      { x: 375, y: 270, width: 40, height: 35 }, // 3rd Floor protruding stairs
+      { x: 415, y: 270, width: 185, height: 35 }, // 3rd Floor area bottom purple
+      { x: 685, y: 270, width: 40, height: 35 }, // Loft protruding stairs
+      { x: 725, y: 270, width: 155, height: 35 }  // Loft area bottom purple? (Wait, loft only has 2 units?)
     ]
   }
 ]
