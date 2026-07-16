@@ -19,8 +19,8 @@ const hotspots: Hotspot[] = [
     name: "Units 101 & 201",
     color: "#7FD957",
     shapes: [
-      { x: 85, y: 85, width: 90, height: 90 }, // Top-left green (101/201)
-      { x: 85, y: 375, width: 90, height: 90 }  // Bottom-left green (101/201)
+      { x: 85, y: 85, width: 90, height: 90 }, // Top-left green (square)
+      { x: 85, y: 375, width: 90, height: 90 }  // Bottom-left green (square)
     ]
   },
   {
@@ -29,7 +29,7 @@ const hotspots: Hotspot[] = [
     name: "Unit 203",
     color: "#F4E96D",
     shapes: [
-      { x: 125, y: 175, width: 140, height: 30 } // Upper-middle right yellow (landscape)
+      { x: 125, y: 180, width: 140, height: 20 } // Upper-middle right yellow (narrow landscape)
     ]
   },
   {
@@ -38,7 +38,7 @@ const hotspots: Hotspot[] = [
     name: "Unit 204",
     color: "#FF6B6B",
     shapes: [
-      { x: 85, y: 205, width: 90, height: 105 } // Middle-left red (shifted up to y=205)
+      { x: 85, y: 235, width: 90, height: 45 } // Middle-left red (narrow landscape)
     ]
   },
   {
@@ -47,7 +47,7 @@ const hotspots: Hotspot[] = [
     name: "Unit 205",
     color: "#FF6B6B",
     shapes: [
-      { x: 175, y: 205, width: 90, height: 105 } // Middle-right red (shifted up to y=205)
+      { x: 175, y: 235, width: 90, height: 45 } // Middle-right red (narrow landscape)
     ]
   },
   {
@@ -56,8 +56,8 @@ const hotspots: Hotspot[] = [
     name: "Unit 302",
     color: "#9B9FD8",
     shapes: [
-      { x: 415, y: 175, width: 185, height: 95 }, // 3rd Floor area
-      { x: 725, y: 175, width: 155, height: 95 }  // Loft area
+      { x: 415, y: 200, width: 185, height: 45 }, // 3rd Floor area (narrow landscape)
+      { x: 725, y: 200, width: 155, height: 45 }  // Loft area (narrow landscape)
     ]
   },
   {
@@ -66,8 +66,8 @@ const hotspots: Hotspot[] = [
     name: "Unit 303",
     color: "#F4B4C4",
     shapes: [
-      { x: 415, y: 270, width: 185, height: 95 }, // 3rd Floor area
-      { x: 725, y: 270, width: 155, height: 95 }  // Loft area
+      { x: 415, y: 295, width: 185, height: 45 }, // 3rd Floor area (narrow landscape)
+      { x: 725, y: 295, width: 155, height: 45 }  // Loft area (narrow landscape)
     ]
   },
   {
@@ -76,8 +76,8 @@ const hotspots: Hotspot[] = [
     name: "Unit 304",
     color: "#9B9FD8",
     shapes: [
-      { x: 415, y: 365, width: 185, height: 95 }, // 3rd Floor area
-      { x: 725, y: 365, width: 155, height: 95 }  // Loft area
+      { x: 415, y: 390, width: 185, height: 45 }, // 3rd Floor area (narrow landscape)
+      { x: 725, y: 390, width: 155, height: 45 }  // Loft area (narrow landscape)
     ]
   }
 ]
