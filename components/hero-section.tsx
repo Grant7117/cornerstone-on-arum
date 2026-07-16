@@ -30,18 +30,15 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
           className="object-cover dusk-fade"
         />
 
-        {/* Features Badges Overlay */}
-        <div className="absolute top-3 right-3 sm:top-12 sm:right-12 z-20 flex flex-col gap-1.5 sm:gap-3 items-end">
-          <div className="bg-slate-900/50 backdrop-blur-md border border-white/20 px-2.5 py-1 sm:px-5 sm:py-2.5 rounded-full shadow-lg">
-            <span className="text-white text-[8px] sm:text-xs md:text-sm font-semibold tracking-wider uppercase whitespace-nowrap">
-              New Apartments, Table View
-            </span>
-          </div>
-          <div className="bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 px-2.5 py-1 sm:px-5 sm:py-2.5 rounded-full shadow-lg">
-            <span className="text-emerald-400 text-[8px] sm:text-xs md:text-sm font-semibold tracking-wider uppercase whitespace-nowrap">
-              No Transfer Duties
-            </span>
-          </div>
+        {/* Features Typography Overlay */}
+        <div className="absolute top-4 right-4 sm:top-12 sm:right-12 z-20 flex flex-col gap-1 sm:gap-2 items-end text-right drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+          <span className="font-sans text-[8px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-bronze font-bold">
+            Table View
+          </span>
+          <h2 className="font-serif text-xl sm:text-3xl md:text-4xl text-white leading-[1.1] tracking-tight">
+            New Apartments, <br />
+            <span className="italic text-muted-bronze font-light font-serif">No Transfer Duties</span>
+          </h2>
         </div>
 
         {/* Glassmorphic Banner Overlay */}
