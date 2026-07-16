@@ -19,8 +19,7 @@ const hotspots: Hotspot[] = [
     name: "Units 101 & 201",
     color: "#7FD957",
     shapes: [
-      { x: 85, y: 85, width: 90, height: 90 }, // Top-left green (square)
-      { x: 85, y: 375, width: 90, height: 90 }  // Bottom-left green (square)
+      { x: 85, y: 85, width: 90, height: 90 } // Top-left green (square)
     ]
   },
   {
@@ -130,13 +129,13 @@ export function InteractiveFloorPlans() {
 
   return (
     <div ref={containerRef} className="relative w-full aspect-square max-w-[850px] mx-auto overflow-visible select-none">
-      {/* Base floor plans image with CSS filters for premium blueprint look */}
+      {/* Base floor plans image */}
       <Image
         src="/images/Colour-coded-plans.png"
         alt="Cornerstone Colour-Coded Floor Plans"
         fill
         sizes="(max-width: 1024px) 100vw, 850px"
-        className="object-contain rounded-lg shadow-xl invert grayscale opacity-70 contrast-125 brightness-110"
+        className="object-contain rounded-lg shadow-xl"
         priority
       />
 
@@ -156,11 +155,10 @@ export function InteractiveFloorPlans() {
                 y={shape.y}
                 width={shape.width}
                 height={shape.height}
-                fill={isHovered ? "#b3937333" : "transparent"} // Uniform premium gold 20% opacity
-                stroke={isHovered ? "#b39373" : "transparent"}
-                strokeWidth={isHovered ? 2 : 0}
-                className="transition-all duration-300 ease-out drop-shadow-md"
-                style={isHovered ? { filter: "drop-shadow(0 0 8px rgba(179,147,115,0.6))" } : {}}
+                fill={isHovered ? `${hotspot.color}33` : "transparent"} // 20% opacity color when hovered
+                stroke={isHovered ? hotspot.color : "transparent"}
+                strokeWidth={2}
+                className="transition-all duration-200"
                 onMouseOver={() => handleMouseOver(hotspot)}
                 onMouseOut={handleMouseOut}
               />

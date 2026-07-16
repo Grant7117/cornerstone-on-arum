@@ -83,11 +83,11 @@ export default function HomePage() {
         <PricingBanner />
         <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         
-        {/* Colour-Coded Floor Plans Section */}
+        {/* Interactive Floor Plans Section */}
         <div id="floor-plans" className="w-full bg-[#1a1c23] py-12 sm:py-20 px-4 flex flex-col items-center">
           <div className="w-full max-w-6xl flex flex-col items-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-warm-stone mb-10 sm:mb-16 tracking-tight">
-              Colour-Coded Floor Plans
+              Interactive Floor Plans
             </h2>
             <div className="w-full max-w-5xl overflow-visible rounded-lg border border-white/10 shadow-2xl bg-zinc-900/50 p-4">
               <InteractiveFloorPlans />
