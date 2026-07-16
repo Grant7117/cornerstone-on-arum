@@ -130,13 +130,13 @@ export function InteractiveFloorPlans() {
 
   return (
     <div ref={containerRef} className="relative w-full aspect-square max-w-[850px] mx-auto overflow-visible select-none">
-      {/* Base floor plans image */}
+      {/* Base floor plans image with CSS filters for premium blueprint look */}
       <Image
         src="/images/Colour-coded-plans.png"
         alt="Cornerstone Colour-Coded Floor Plans"
         fill
         sizes="(max-width: 1024px) 100vw, 850px"
-        className="object-contain rounded-lg shadow-xl"
+        className="object-contain rounded-lg shadow-xl invert grayscale opacity-70 contrast-125 brightness-110"
         priority
       />
 
@@ -156,10 +156,11 @@ export function InteractiveFloorPlans() {
                 y={shape.y}
                 width={shape.width}
                 height={shape.height}
-                fill={isHovered ? `${hotspot.color}33` : "transparent"} // 20% opacity color when hovered
-                stroke={isHovered ? hotspot.color : "transparent"}
-                strokeWidth={2}
-                className="transition-all duration-200"
+                fill={isHovered ? "#b3937333" : "transparent"} // Uniform premium gold 20% opacity
+                stroke={isHovered ? "#b39373" : "transparent"}
+                strokeWidth={isHovered ? 2 : 0}
+                className="transition-all duration-300 ease-out drop-shadow-md"
+                style={isHovered ? { filter: "drop-shadow(0 0 8px rgba(179,147,115,0.6))" } : {}}
                 onMouseOver={() => handleMouseOver(hotspot)}
                 onMouseOut={handleMouseOut}
               />
