@@ -29,7 +29,7 @@ const hotspots: Hotspot[] = [
     name: "Unit 203",
     color: "#F4E96D",
     shapes: [
-      { x: 125, y: 180, width: 140, height: 20 } // Upper-middle right yellow (narrow landscape)
+      { x: 85, y: 175, width: 180, height: 60 } // Full width yellow
     ]
   },
   {
@@ -38,7 +38,7 @@ const hotspots: Hotspot[] = [
     name: "Unit 204",
     color: "#FF6B6B",
     shapes: [
-      { x: 85, y: 235, width: 90, height: 45 } // Middle-left red (narrow landscape)
+      { x: 85, y: 235, width: 180, height: 70 } // Top red
     ]
   },
   {
@@ -47,27 +47,27 @@ const hotspots: Hotspot[] = [
     name: "Unit 205",
     color: "#FF6B6B",
     shapes: [
-      { x: 175, y: 235, width: 90, height: 45 } // Middle-right red (narrow landscape)
+      { x: 85, y: 305, width: 180, height: 70 } // Bottom red
     ]
   },
   {
     id: "302",
     unitNos: ["302"],
     name: "Unit 302",
-    color: "#9B9FD8",
+    color: "#F4B4C4",
     shapes: [
-      { x: 415, y: 200, width: 185, height: 45 }, // 3rd Floor area (narrow landscape)
-      { x: 725, y: 200, width: 155, height: 45 }  // Loft area (narrow landscape)
+      { x: 415, y: 175, width: 185, height: 60 }, // 3rd Floor area top pink
+      { x: 725, y: 175, width: 155, height: 60 }  // Loft area top pink
     ]
   },
   {
     id: "303",
     unitNos: ["303"],
     name: "Unit 303",
-    color: "#F4B4C4",
+    color: "#9B9FD8",
     shapes: [
-      { x: 415, y: 295, width: 185, height: 45 }, // 3rd Floor area (narrow landscape)
-      { x: 725, y: 295, width: 155, height: 45 }  // Loft area (narrow landscape)
+      { x: 415, y: 235, width: 185, height: 70 }, // 3rd Floor area middle purple
+      { x: 725, y: 235, width: 155, height: 70 }  // Loft area bottom purple
     ]
   },
   {
@@ -76,8 +76,8 @@ const hotspots: Hotspot[] = [
     name: "Unit 304",
     color: "#9B9FD8",
     shapes: [
-      { x: 415, y: 390, width: 185, height: 45 }, // 3rd Floor area (narrow landscape)
-      { x: 725, y: 390, width: 155, height: 45 }  // Loft area (narrow landscape)
+      { x: 415, y: 305, width: 185, height: 70 }, // 3rd Floor area bottom purple
+      { x: 725, y: 305, width: 155, height: 70 }  // Loft area bottom purple? (Wait, loft only has 2 units?)
     ]
   }
 ]

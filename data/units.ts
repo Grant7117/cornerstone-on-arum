@@ -362,7 +362,7 @@ export const unitsData: Record<string, Unit[]> = {
             bedrooms: 2,
             bathrooms: 2,
             size: 77,
-            color: "#9B9FD8",
+            color: "#F4B4C4",
             status: "Available",
             price: "R2,725,000",
             images:
@@ -382,7 +382,7 @@ export const unitsData: Record<string, Unit[]> = {
             bedrooms: 2,
             bathrooms: 2,
             size: 77,
-            color: "#F4B4C4",
+            color: "#9B9FD8",
             status: "Available",
             price: "R2,725,000",
             images:
