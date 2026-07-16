@@ -14,6 +14,7 @@ import { PartnersBanner } from "@/components/partners-banner"
 import { ContactLocationSection } from "@/components/contact-location-section"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { MediaAssetsSection } from "@/components/media-assets-section"
+import { InteractiveFloorPlans } from "@/components/interactive-floor-plans"
 
 import { Footer } from "@/components/footer"
 import { EnquiryModal } from "@/components/enquiry-modal"
@@ -88,15 +89,8 @@ export default function HomePage() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-center text-warm-stone mb-10 sm:mb-16 tracking-tight">
               Colour-Coded Floor Plans
             </h2>
-            <div className="w-full max-w-5xl overflow-hidden rounded-lg border border-white/10 shadow-2xl bg-zinc-900 flex justify-center">
-              <Image
-                src="/images/Colour-coded-plans.png"
-                alt="Cornerstone Colour-Coded Floor Plans"
-                width={1200}
-                height={800}
-                className="w-full h-auto object-contain"
-                priority
-              />
+            <div className="w-full max-w-5xl overflow-visible rounded-lg border border-white/10 shadow-2xl bg-zinc-900/50 p-4">
+              <InteractiveFloorPlans />
             </div>
           </div>
         </div>
