@@ -3,7 +3,7 @@
     "@context": "https://schema.org/",
     "@type": "RealEstateListing",
     "name": "Cornerstone on Arum - Luxury Apartments",
-    "description": "Premium residential living in Table View. 8 luxury units remaining. Available units: 101, 201, 203, 204, 205, 302, 303, 304.",
+    "description": "Premium residential living in Table View. 8 new residential apartments. Available units: 101, 201, 203, 204, 205, 302, 303, 304.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "154 Arum Road",

@@ -100,10 +100,10 @@ export default function HomePage() {
                   View Floor Plans
                 </button>
               </DialogTrigger>
-              <DialogContent className="max-w-[95vw] w-full max-h-[95vh] h-full overflow-y-auto bg-slate-50 border-white/20 p-2 sm:p-6 rounded-xl">
+              <DialogContent className="max-w-[95vw] sm:max-w-[95vw] md:max-w-[90vw] lg:max-w-[90vw] xl:max-w-[85vw] w-full max-h-[95vh] h-[90vh] bg-slate-50 border-white/20 p-2 sm:p-6 rounded-xl overflow-hidden flex flex-col justify-center">
                 <DialogTitle className="sr-only">Interactive Floor Plans</DialogTitle>
                 <DialogDescription className="sr-only">View color-coded floor plans and unit availability.</DialogDescription>
-                <div className="w-full h-full flex items-center justify-center pt-8 sm:pt-0">
+                <div className="w-full h-full flex items-center justify-center pt-6 sm:pt-0">
                   <InteractiveFloorPlans />
                 </div>
               </DialogContent>

@@ -55,9 +55,9 @@ export function VideoSection() {
   }, [goToNext])
 
   return (
-    <section id="about" className="py-32 bg-deep-obsidian overflow-hidden">
+    <section id="about" className="pt-2 pb-8 lg:py-32 bg-deep-obsidian overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           
           <div className="space-y-10 order-2 lg:order-1">
             <div className="space-y-4">

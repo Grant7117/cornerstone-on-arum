@@ -20,8 +20,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.cornerstoneonarum.co.za'),
-  title: 'Cornerstone on Arum | Luxury Units Remaining | Available Now',
-  description: 'Luxury units remaining at Cornerstone on Arum, Table View. Available now. No transfer duty. Contact Grant Whitburn at 072 450 3626.',
+  title: 'Cornerstone on Arum | New Residential Apartments | Available Now',
+  description: 'New residential apartments at Cornerstone on Arum, Table View. Available now. No transfer duty. Contact Grant Whitburn at 072 450 3626.',
   keywords: [
     'Table View apartments for sale', 
     'Cornerstone on Arum', 
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     'No transfer duty apartments'
   ],
   openGraph: {
-    title: 'Cornerstone on Arum - Luxury Units Remaining',
-    description: 'Luxury units available for immediate occupation. Secure your spot in Table View.',
+    title: 'Cornerstone on Arum - New Residential Apartments',
+    description: 'New residential apartments available for immediate occupation. Secure your spot in Table View.',
     type: 'website',
     locale: 'en_ZA',
     url: 'https://www.cornerstoneonarum.co.za',

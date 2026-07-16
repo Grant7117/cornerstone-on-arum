@@ -143,13 +143,13 @@ export function InteractiveFloorPlans() {
 
   return (
     <>
-      <div ref={containerRef} className="relative w-full aspect-square max-w-[850px] mx-auto overflow-visible select-none">
+      <div ref={containerRef} className="relative w-[min(90vw,70vh)] h-[min(90vw,70vh)] mx-auto overflow-visible select-none">
         {/* Base floor plans image */}
         <Image
           src="/images/Colour-coded-plans.png"
           alt="Cornerstone Colour-Coded Floor Plans"
           fill
-          sizes="(max-width: 1024px) 100vw, 850px"
+          sizes="100vw"
           className="object-contain rounded-lg shadow-xl"
           priority
         />
@@ -231,7 +231,7 @@ export function InteractiveFloorPlans() {
       </div>
 
       <Dialog open={!!selectedHotspot} onOpenChange={(open) => !open && setSelectedHotspot(null)}>
-        <DialogContent className="max-w-4xl bg-slate-900 border-white/10 text-white p-6 max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl sm:max-w-4xl bg-slate-900 border-white/10 text-white p-6 max-h-[90vh] overflow-y-auto">
           <DialogTitle className="font-serif text-2xl sm:text-3xl text-warm-stone mb-1">
             {selectedHotspot?.name}
           </DialogTitle>
