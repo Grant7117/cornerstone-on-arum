@@ -29,7 +29,7 @@ const hotspots: Hotspot[] = [
     name: "Unit 203",
     color: "#F4E96D",
     shapes: [
-      { x: 175, y: 175, width: 90, height: 95 } // Upper-middle right yellow
+      { x: 125, y: 175, width: 140, height: 30 } // Upper-middle right yellow (landscape)
     ]
   },
   {
@@ -38,7 +38,7 @@ const hotspots: Hotspot[] = [
     name: "Unit 204",
     color: "#FF6B6B",
     shapes: [
-      { x: 85, y: 270, width: 90, height: 105 } // Middle-left red
+      { x: 85, y: 205, width: 90, height: 105 } // Middle-left red (shifted up to y=205)
     ]
   },
   {
@@ -47,7 +47,7 @@ const hotspots: Hotspot[] = [
     name: "Unit 205",
     color: "#FF6B6B",
     shapes: [
-      { x: 175, y: 270, width: 90, height: 105 } // Middle-right red
+      { x: 175, y: 205, width: 90, height: 105 } // Middle-right red (shifted up to y=205)
     ]
   },
   {
