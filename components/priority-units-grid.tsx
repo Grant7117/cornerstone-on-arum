@@ -40,76 +40,72 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
   }
 
   return (
-    <div className="group relative w-full bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 flex flex-col md:flex-row transition-all duration-300 font-sans" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+    <div className="group relative w-full bg-[#1e293b]/50 backdrop-blur-md rounded-sm overflow-hidden border border-white/10 hover:border-[#b39373]/50 flex flex-col md:flex-row transition-all duration-500 font-sans shadow-xl">
       {/* Left Image Carousel */}
-      <div className="relative w-full md:w-[62%] aspect-video md:aspect-auto md:min-h-[300px] bg-gray-50 overflow-hidden">
+      <div className="relative w-full md:w-[55%] aspect-[4/3] md:aspect-auto md:min-h-[280px] bg-slate-900 overflow-hidden">
         <Image
           src={images[currentImage]}
           alt={`Unit ${unit.unitNo} Interior`}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover transition-transform duration-1000 group-hover:scale-105"
           priority={parseInt(unit.unitNo) < 200}
         />
         
-        {/* Navigation Arrows - always visible on mobile, hover-reveal on desktop */}
+        {/* Navigation Arrows */}
         <div className="absolute inset-0 flex items-center justify-between px-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-          <button onClick={prevImage} className="bg-white/90 p-2 rounded-full shadow hover:bg-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
-            <ChevronLeft className="w-5 h-5 text-gray-900" />
+          <button onClick={prevImage} className="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition-colors z-20">
+            <ChevronLeft className="w-5 h-5" />
           </button>
-          <button onClick={nextImage} className="bg-white/90 p-2 rounded-full shadow hover:bg-white transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
-            <ChevronRight className="w-5 h-5 text-gray-900" />
+          <button onClick={nextImage} className="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition-colors z-20">
+            <ChevronRight className="w-5 h-5" />
           </button>
         </div>
 
         {/* Unit Badge */}
-        <div className="absolute top-3 left-3 bg-white px-4 py-1.5 rounded-full shadow-sm">
-          <span className="text-[11px] font-bold text-gray-900 uppercase">UNIT {unit.unitNo}</span>
+        <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-sm z-10">
+          <span className="text-[10px] font-bold text-white tracking-[0.2em] uppercase">UNIT {unit.unitNo}</span>
         </div>
+        
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1c23] via-transparent to-transparent opacity-60 md:hidden" />
       </div>
 
-      {/* Right Minimalist Spec Column */}
-      <div className="w-full md:w-[38%] flex flex-col p-5 lg:p-6 bg-white">
+      {/* Right Premium Spec Column */}
+      <div className="w-full md:w-[45%] flex flex-col p-6 lg:p-8 relative">
         
-        {/* Dynamic Mathematical Spacing for Header */}
-        <div className="flex-grow flex flex-col items-center text-center">
-          {/* Gap 1 (50% of X) */}
-          <div className="flex-1 min-h-[8px]"></div>
-          
-          <div className="w-full">
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#00E676] leading-[1.1] tracking-tight">
-              Available<br/>Now!
-            </h3>
+        <div className="flex-grow flex flex-col justify-center items-start">
+          <div className="inline-flex px-3 py-1 mb-4 rounded-sm border border-[#b39373]/50 bg-[#b39373]/10">
+            <span className="text-[9px] font-bold tracking-widest uppercase text-[#b39373]">Available Now</span>
           </div>
           
-          {/* Gap 2 (50% of X) */}
-          <div className="flex-1 min-h-[8px]"></div>
-          
-          <p className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight leading-none mb-4">
+          <p className="font-serif text-3xl sm:text-4xl text-[#d6c5b3] tracking-tight leading-none mb-6">
             {unit.price}
           </p>
+          
+          {/* Custom separator */}
+          <div className="w-12 h-px bg-[#b39373]/30 mb-6"></div>
         </div>
 
-        {/* Static Specs Block fixed at bottom relative to available space */}
-        <div className="space-y-1.5 w-full max-w-[220px] mx-auto mt-auto pb-1">
-          <div className="flex justify-between items-center">
-            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Bedrooms</span>
-            <span className="text-sm font-medium text-gray-900">{unit.bedrooms}</span>
+        {/* Static Specs Block */}
+        <div className="space-y-2 w-full mt-auto">
+          <div className="flex justify-between items-center border-b border-white/5 pb-2">
+            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-medium">Bedrooms</span>
+            <span className="text-sm font-semibold text-slate-200">{unit.bedrooms}</span>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Bathrooms</span>
-            <span className="text-sm font-medium text-gray-900">{unit.bathrooms}</span>
+          <div className="flex justify-between items-center border-b border-white/5 pb-2">
+            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-medium">Bathrooms</span>
+            <span className="text-sm font-semibold text-slate-200">{unit.bathrooms}</span>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Interior</span>
-            <span className="text-sm font-medium text-gray-900">{breakdown.int}m²</span>
+          <div className="flex justify-between items-center border-b border-white/5 pb-2">
+            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-medium">Interior</span>
+            <span className="text-sm font-semibold text-slate-200">{breakdown.int}m²</span>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Balcony</span>
-            <span className="text-sm font-medium text-gray-900">{breakdown.bal}m²</span>
+          <div className="flex justify-between items-center border-b border-white/5 pb-2">
+            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-medium">Balcony</span>
+            <span className="text-sm font-semibold text-slate-200">{breakdown.bal}m²</span>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-[11px] text-gray-500 uppercase tracking-widest">Total Size</span>
-            <span className="text-sm font-medium text-gray-900">{unit.size}m²</span>
+          <div className="flex justify-between items-center pt-1">
+            <span className="text-[10px] text-[#b39373] uppercase tracking-widest font-bold">Total Size</span>
+            <span className="text-sm font-bold text-[#b39373]">{unit.size}m²</span>
           </div>
         </div>
       </div>
@@ -135,15 +131,15 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
   ]
 
   return (
-    <div id="properties" className="w-full bg-gray-50/30 py-12 sm:py-20">
+    <div id="properties" className="w-full bg-[#1a1c23] border-b border-white/5 py-12 sm:py-24">
       <div className="container mx-auto max-w-6xl px-4">
-        <div className="text-center mb-12 sm:mb-16 flex flex-col items-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 uppercase">
-            AVAILABLE UNITS
+        <div className="text-center mb-12 sm:mb-20 flex flex-col items-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#d6c5b3] tracking-tight">
+            Available Units
           </h2>
           <a
             href="#media-resources"
-            className="mt-6 inline-flex items-center gap-2 bg-[#1a1c23] hover:bg-[#2d303b] text-white font-sans text-sm font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+            className="mt-8 inline-flex items-center gap-2 bg-[#b39373] hover:bg-[#c9a784] text-[#1a1c23] font-sans text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-sm shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
           >
             <Camera className="w-4 h-4" />
             Photo Gallery
