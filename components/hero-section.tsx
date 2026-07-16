@@ -31,7 +31,7 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
         />
 
         {/* Subtle Vignette Gradient Overlay (Right-side on desktop, full-width on mobile) */}
-        <div className="absolute inset-y-0 right-0 w-full sm:w-1/2 bg-gradient-to-l from-black/65 via-black/25 to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 right-0 w-full sm:w-1/2 bg-gradient-to-l from-black/75 via-black/30 to-transparent pointer-events-none z-10" />
 
         {/* Features Typography Overlay */}
         <div className="absolute top-4 right-4 sm:top-12 sm:right-12 z-20 flex flex-col gap-1 sm:gap-2 items-end text-right drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
@@ -45,22 +45,23 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
         </div>
 
         {/* Glassmorphic Banner Overlay */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 sm:top-12 sm:bottom-auto sm:left-12 sm:translate-x-0 z-20 w-max max-w-[92vw] sm:max-w-[90vw]">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:top-12 sm:bottom-auto sm:left-12 sm:translate-x-0 z-20 w-max max-w-[90vw]">
           <a 
             href="https://wa.me/27724503626?text=Hello,%20I'd%20like%20to%20book%20a%20viewing%20for%20Cornerstone%20on%20Arum."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-row sm:flex-col items-center sm:items-start justify-between sm:justify-start gap-4 sm:gap-0 bg-slate-900/50 backdrop-blur-md border border-white/20 p-2 sm:p-6 rounded-lg sm:rounded-2xl shadow-2xl hover:bg-slate-900/60 sm:hover:scale-105 active:scale-95 sm:active:scale-100 transition-all duration-300 group cursor-pointer"
+            className="flex flex-col items-center justify-center text-center bg-slate-950/70 backdrop-blur-md border border-white/10 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] hover:bg-slate-950/80 sm:hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-56 sm:w-64"
           >
-            <div className="flex flex-col items-start">
-              <span className="text-white text-[10px] sm:text-base font-semibold tracking-wide uppercase mb-0.5 sm:mb-1 whitespace-nowrap">
-                Viewings Now Available
-              </span>
-              <span className="text-white/80 text-[8px] sm:text-sm font-medium">
-                By Appointment
-              </span>
-            </div>
-            <span className="text-[#0066FF] font-bold text-[9px] sm:text-sm bg-white px-2.5 py-1 sm:px-4 sm:py-2 rounded-full shadow-md group-hover:bg-[#0066FF] group-hover:text-white transition-colors duration-300 shrink-0">
+            <span className="font-sans text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-muted-bronze font-bold mb-0.5">
+              Cornerstone on Arum
+            </span>
+            <span className="text-white text-[11px] sm:text-[13px] font-semibold tracking-wider uppercase mb-0.5 whitespace-nowrap">
+              Viewings Now Available
+            </span>
+            <span className="text-white/70 text-[9px] sm:text-xs font-light mb-3">
+              By Appointment Only
+            </span>
+            <span className="w-full text-center text-white bg-[#0066FF] hover:bg-[#0055DD] font-bold text-[10px] sm:text-xs px-4 py-2 sm:py-2.5 rounded-lg shadow-md transition-all duration-300 uppercase tracking-[0.15em]">
               Click Here
             </span>
           </a>
