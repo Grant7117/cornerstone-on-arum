@@ -90,7 +90,7 @@ export default function HomePage() {
             </h2>
             <div className="w-full max-w-5xl overflow-hidden rounded-lg border border-white/10 shadow-2xl bg-zinc-900 flex justify-center">
               <Image
-                src="/images/Colour-coded-floor-plan-final-four.png"
+                src="/images/Colour-coded-plans.png"
                 alt="Cornerstone Colour-Coded Floor Plans"
                 width={1200}
                 height={800}
