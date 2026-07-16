@@ -18,6 +18,7 @@ import { InteractiveFloorPlans } from "@/components/interactive-floor-plans"
 
 import { Footer } from "@/components/footer"
 import { EnquiryModal } from "@/components/enquiry-modal"
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 
 export default function HomePage() {
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false)
@@ -83,15 +84,30 @@ export default function HomePage() {
         <PricingBanner />
         <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         
-        {/* Interactive Floor Plans Section */}
-        <div id="floor-plans" className="w-full bg-[#f8f9fa] py-12 sm:py-20 px-4 flex flex-col items-center">
-          <div className="w-full max-w-6xl flex flex-col items-center">
-            <h2 className="text-3xl md:text-5xl font-serif text-[#1a1c23] tracking-tight mb-10 sm:mb-16">
+        {/* Interactive Floor Plans Section (Hidden behind button) */}
+        <div id="floor-plans" className="w-full bg-[#f8f9fa] py-16 sm:py-24 px-4 flex flex-col items-center">
+          <div className="w-full max-w-4xl flex flex-col items-center text-center">
+            <h2 className="text-3xl md:text-5xl font-serif text-[#1a1c23] tracking-tight mb-6">
               Interactive Floor Plans
             </h2>
-            <div className="w-full max-w-5xl overflow-visible p-4">
-              <InteractiveFloorPlans />
-            </div>
+            <p className="text-gray-600 mb-10 max-w-2xl font-sans text-sm sm:text-base leading-relaxed">
+              Explore the layout of Cornerstone on Arum in detail. Click below to open our interactive, color-coded floor plans and view specifications for each available property.
+            </p>
+            
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="bg-[#1a1c23] hover:bg-[#2d303b] text-white font-sans text-sm font-bold uppercase tracking-widest py-4 px-8 rounded-sm shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                  View Floor Plans
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-[95vw] w-full max-h-[95vh] h-full overflow-y-auto bg-slate-50 border-white/20 p-2 sm:p-6 rounded-xl">
+                <DialogTitle className="sr-only">Interactive Floor Plans</DialogTitle>
+                <DialogDescription className="sr-only">View color-coded floor plans and unit availability.</DialogDescription>
+                <div className="w-full h-full flex items-center justify-center pt-8 sm:pt-0">
+                  <InteractiveFloorPlans />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
 

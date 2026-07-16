@@ -19,6 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.cornerstoneonarum.co.za'),
   title: 'Cornerstone on Arum | Luxury Units Remaining | Available Now',
   description: 'Luxury units remaining at Cornerstone on Arum, Table View. Available now. No transfer duty. Contact Grant Whitburn at 072 450 3626.',
   keywords: [
