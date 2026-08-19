@@ -25,8 +25,15 @@ export function Navigation() {
   ]
 
   return (
-    <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-[100]">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <>
+      {/* ON SHOW DAILY ANNOUNCEMENT BAR */}
+      <div className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-slate-950 font-bold text-center py-2 px-4 text-xs sm:text-sm tracking-wide shadow-md flex items-center justify-center gap-2">
+        <span className="inline-block w-2 h-2 rounded-full bg-slate-950 animate-ping mr-1" />
+        <span>ON SHOW EVERY AFTERNOON: 1:00 PM – 5:00 PM at 154 Arum Road, Table View</span>
+      </div>
+
+      <nav className="bg-[#1e293b] text-white px-4 sm:px-6 py-4 relative z-[100]">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex flex-col">
           <div className="text-lg sm:text-xl font-bold leading-tight uppercase tracking-wider text-white">CORNERSTONE</div>
           <div className="text-[10px] sm:text-xs text-slate-300 font-bold tracking-[0.2em] leading-tight">ON ARUM</div>
@@ -88,6 +95,7 @@ export function Navigation() {
           ))}
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   )
 }

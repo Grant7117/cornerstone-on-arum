@@ -55,14 +55,14 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
             <span className="font-sans text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-muted-bronze font-bold mb-0.5">
               Cornerstone on Arum
             </span>
-            <span className="text-white text-[11px] sm:text-[13px] font-semibold tracking-wider uppercase mb-0.5 whitespace-nowrap">
-              Viewings Now Available
+            <span className="text-white text-[11px] sm:text-[13px] font-bold tracking-wider uppercase mb-0.5 whitespace-nowrap text-amber-400">
+              ON SHOW DAILY
             </span>
-            <span className="text-white/70 text-[9px] sm:text-xs font-light mb-3">
-              By Appointment Only
+            <span className="text-white text-[10px] sm:text-xs font-semibold mb-3">
+              1:00 PM – 5:00 PM
             </span>
             <span className="w-full text-center text-white bg-[#0066FF] hover:bg-[#0055DD] font-bold text-[10px] sm:text-xs px-4 py-2 sm:py-2.5 rounded-lg shadow-md transition-all duration-300 uppercase tracking-[0.15em]">
-              Click Here
+              Book / Enquire
             </span>
           </a>
         </div>
