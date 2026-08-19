@@ -94,6 +94,7 @@ export function VideoSection() {
                 src={areaImages[currentIndex].image}
                 alt={areaImages[currentIndex].title}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-all duration-[2000ms] ease-out scale-110 group-hover:scale-100 brightness-110 contrast-105"
               />
               

@@ -47,16 +47,25 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
           src={images[currentImage]}
           alt={`Unit ${unit.unitNo} Interior`}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-1000 group-hover:scale-105"
-          priority={parseInt(unit.unitNo) < 200}
+          priority={parseInt(unit.unitNo) === 101}
         />
         
-        {/* Navigation Arrows */}
-        <div className="absolute inset-0 flex items-center justify-between px-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
-          <button onClick={prevImage} className="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition-colors z-20">
+        {/* Navigation Arrows with touch-friendly targets */}
+        <div className="absolute inset-0 flex items-center justify-between px-2 sm:px-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity pointer-events-none">
+          <button 
+            onClick={prevImage} 
+            className="pointer-events-auto bg-black/40 backdrop-blur-md p-2.5 sm:p-2 rounded-full text-white hover:bg-black/60 active:scale-90 transition-all z-20 touch-manipulation"
+            aria-label="Previous photo"
+          >
             <ChevronLeft className="w-5 h-5" />
           </button>
-          <button onClick={nextImage} className="bg-black/30 backdrop-blur-md p-2 rounded-full text-white hover:bg-black/50 transition-colors z-20">
+          <button 
+            onClick={nextImage} 
+            className="pointer-events-auto bg-black/40 backdrop-blur-md p-2.5 sm:p-2 rounded-full text-white hover:bg-black/60 active:scale-90 transition-all z-20 touch-manipulation"
+            aria-label="Next photo"
+          >
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>

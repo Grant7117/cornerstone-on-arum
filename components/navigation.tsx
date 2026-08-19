@@ -74,22 +74,33 @@ export function Navigation() {
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={() => window.open(whatsappUrl, "_blank")}
-            style={{ backgroundColor: "#0066FF", color: "#ffffff", fontWeight: "700", padding: "8px 16px", borderRadius: "10px", fontSize: "12px", border: "none" }}
+            style={{ backgroundColor: "#0066FF", color: "#ffffff", fontWeight: "700", padding: "10px 18px", borderRadius: "10px", fontSize: "13px", border: "none", minHeight: "44px" }}
+            className="active:scale-95 transition-transform touch-manipulation shadow-md"
+            aria-label="Enquire on WhatsApp"
           >
             Enquire
           </button>
-          <button onClick={() => setMenuOpen(!menuOpen)} className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 bg-white/5 rounded-lg">
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="block h-0.5 w-6 bg-white"></span>
-            <span className="block h-0.5 w-6 bg-white"></span>
+          <button 
+            onClick={() => setMenuOpen(!menuOpen)} 
+            className="w-11 h-11 flex flex-col items-center justify-center gap-1.5 bg-white/10 active:bg-white/20 rounded-lg transition-colors touch-manipulation"
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+          >
+            <span className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-white transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </div>
       </div>
 
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#1e293b] border-t border-white/10 p-4">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#1e293b]/98 backdrop-blur-xl border-t border-white/10 p-4 shadow-2xl animate-in slide-in-from-top-2 duration-200">
           {navLinks.map((link) => (
-            <button key={link.id} onClick={() => handleNavClick(link.id)} className="block w-full text-left py-4 font-bold border-b border-white/5">
+            <button 
+              key={link.id} 
+              onClick={() => handleNavClick(link.id)} 
+              className="block w-full text-left py-3.5 px-3 font-semibold text-base border-b border-white/5 active:bg-white/10 rounded-md transition-colors touch-manipulation"
+            >
               {link.label}
             </button>
           ))}

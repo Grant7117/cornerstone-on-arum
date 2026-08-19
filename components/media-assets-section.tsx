@@ -86,7 +86,6 @@ export function MediaAssetsSection() {
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-110 contrast-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
-                priority
               />
               {/* Semi-transparent dark gradient overlay just at the bottom for readability */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
