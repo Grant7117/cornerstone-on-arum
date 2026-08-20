@@ -36,9 +36,14 @@ export function UnitCard({ unit }: UnitCardProps) {
 
   const getStatusBadge = (status: string) => {
     const isSold = status === "Sold" || status === "Clause"
+    const isUnderOffer = status === "Under Offer"
     return (
       <span className={`px-3 py-1 rounded-sm text-[10px] font-bold tracking-widest uppercase border ${
-        isSold ? "border-red-500/50 text-red-500 bg-red-500/10" : "border-muted-bronze/50 text-muted-bronze bg-muted-bronze/10"
+        isSold 
+          ? "border-red-500/50 text-red-500 bg-red-500/10" 
+          : isUnderOffer
+            ? "border-amber-500/50 text-amber-400 bg-amber-500/10"
+            : "border-muted-bronze/50 text-muted-bronze bg-muted-bronze/10"
       }`}>
         {status === "Clause" ? "SOLD (72hr)" : status}
       </span>

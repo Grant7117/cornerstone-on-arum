@@ -82,9 +82,15 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
       <div className="w-full md:w-[45%] flex flex-col p-6 lg:p-8 relative">
         
         <div className="flex-grow flex flex-col justify-center items-start">
-          <div className="inline-flex px-3 py-1 mb-4 rounded-sm border border-[#b39373]/50 bg-[#b39373]/10">
-            <span className="text-[9px] font-bold tracking-widest uppercase text-[#b39373]">Available Now</span>
-          </div>
+          {unit.status === "Under Offer" || unit.unitNo === "302" ? (
+            <div className="inline-flex px-3 py-1 mb-4 rounded-sm border border-amber-500/50 bg-amber-500/10">
+              <span className="text-[9px] font-bold tracking-widest uppercase text-amber-400">Under Offer</span>
+            </div>
+          ) : (
+            <div className="inline-flex px-3 py-1 mb-4 rounded-sm border border-[#b39373]/50 bg-[#b39373]/10">
+              <span className="text-[9px] font-bold tracking-widest uppercase text-[#b39373]">Available Now</span>
+            </div>
+          )}
           
           <p className="font-serif text-3xl sm:text-4xl text-[#d6c5b3] tracking-tight leading-none mb-6">
             {unit.price}
@@ -132,12 +138,7 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
     return null
   }
 
-  const rows = [
-    { units: ["101", "201"] },
-    { units: ["203", "204"] },
-    { units: ["205", "302"] },
-    { units: ["303", "304"] },
-  ]
+  const availableUnitsList = ["101", "201", "203", "204", "302", "303", "304"]
 
   return (
     <div id="properties" className="w-full bg-[#1a1c23] border-b border-white/5 py-12 sm:py-24">
@@ -155,20 +156,16 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
           </a>
         </div>
 
-        <div className="flex flex-col gap-12 sm:gap-16">
-          {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
-              {row.units.map(unitNo => {
-                const unit = findUnit(unitNo)
-                if (!unit) return null
-                return (
-                  <div key={unitNo} className={row.units.length === 1 ? "md:col-span-2 md:max-w-[calc(50%-1.5rem)] md:mx-auto w-full" : "w-full"}>
-                    <MinimalistUnitCard unit={unit} onEnquire={onEnquire} />
-                  </div>
-                )
-              })}
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+          {availableUnitsList.map((unitNo) => {
+            const unit = findUnit(unitNo)
+            if (!unit) return null
+            return (
+              <div key={unitNo} className="w-full">
+                <MinimalistUnitCard unit={unit} onEnquire={onEnquire} />
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>

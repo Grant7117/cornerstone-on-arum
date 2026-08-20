@@ -5,7 +5,7 @@ export interface Unit {
     bathrooms: number;
     size: number; // Total size
     color: string;
-    status: "Available" | "Sold" | "Reserved" | "Clause";
+    status: "Available" | "Sold" | "Reserved" | "Clause" | "Under Offer";
     price: string;
     images?: string[];
     floorPlan?: string;
@@ -192,7 +192,8 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 48,
             color: "#FF6B6B",
-            status: "Available",
+            status: "Sold",
+            isActive: false,
             price: "R1,700,000",
             images:
                 [
@@ -363,7 +364,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 2,
             size: 77,
             color: "#F4B4C4",
-            status: "Available",
+            status: "Under Offer",
             price: "R2,725,000",
             images:
                 [

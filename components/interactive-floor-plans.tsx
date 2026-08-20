@@ -44,16 +44,6 @@ const hotspots: Hotspot[] = [
     ]
   },
   {
-    id: "205",
-    unitNos: ["205"],
-    name: "Unit 205",
-    color: "#FF6B6B",
-    shapes: [
-      { x: 45, y: 270, width: 40, height: 35 }, // Protruding stairs
-      { x: 85, y: 270, width: 180, height: 35 } // Bottom red
-    ]
-  },
-  {
     id: "302",
     unitNos: ["302"],
     name: "Unit 302",
@@ -198,9 +188,15 @@ export function InteractiveFloorPlans() {
                 <span className="font-serif text-lg tracking-tight text-warm-stone font-semibold">
                   {hoveredHotspot.name}
                 </span>
-                <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 uppercase">
-                  Available
-                </span>
+                {activeUnits.some(u => u.status === "Under Offer") ? (
+                  <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase">
+                    Under Offer
+                  </span>
+                ) : (
+                  <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 uppercase">
+                    Available
+                  </span>
+                )}
               </div>
 
               <div className="flex flex-col gap-1.5">
