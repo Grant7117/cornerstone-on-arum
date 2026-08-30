@@ -138,7 +138,7 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
     return null
   }
 
-  const availableUnitsList = ["101", "201", "203", "204", "302", "303", "304"]
+  const availableUnitsList = ["101", "203", "204", "303", "304"]
 
   return (
     <div id="properties" className="w-full bg-[#1a1c23] border-b border-white/5 py-12 sm:py-24">

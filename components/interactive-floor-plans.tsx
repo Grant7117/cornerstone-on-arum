@@ -16,9 +16,9 @@ interface Hotspot {
 
 const hotspots: Hotspot[] = [
   {
-    id: "101-201",
-    unitNos: ["101", "201"],
-    name: "Units 101 & 201",
+    id: "101",
+    unitNos: ["101"],
+    name: "Unit 101",
     color: "#7FD957",
     shapes: [
       { x: 85, y: 85, width: 90, height: 90 } // Top-left green (square)
@@ -41,16 +41,6 @@ const hotspots: Hotspot[] = [
     shapes: [
       { x: 45, y: 235, width: 40, height: 35 }, // Protruding stairs
       { x: 85, y: 235, width: 180, height: 35 } // Top red
-    ]
-  },
-  {
-    id: "302",
-    unitNos: ["302"],
-    name: "Unit 302",
-    color: "#F4B4C4",
-    shapes: [
-      { x: 415, y: 175, width: 185, height: 60 }, // 3rd Floor area top pink
-      { x: 725, y: 175, width: 155, height: 60 }  // Loft area top pink
     ]
   },
   {

@@ -137,7 +137,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 47,
             color: "#7FD957",
-            status: "Available",
+            status: "Sold",
             price: "R1,700,000",
             images:
                 [
@@ -364,7 +364,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 2,
             size: 77,
             color: "#F4B4C4",
-            status: "Under Offer",
+            status: "Sold",
             price: "R2,725,000",
             images:
                 [
