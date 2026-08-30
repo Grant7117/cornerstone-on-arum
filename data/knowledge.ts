@@ -14,7 +14,7 @@ export const knowledge: KBItem[] = [
   { id: "deposit", question: "What deposit is required?", answer: "R5,000 reservation deposit is payable within 7 days of Offer to Purchase signature. Applies to cash and bond buyers.", category: "Finance" },
   { id: "bond-window", question: "How long is the bond approval window?", answer: "30 days from Offer to Purchase signature.", category: "Finance" },
   { id: "transfers", question: "When do transfers start and when is completion?", answer: "Transfers commence approximately 60 days before completion. The development is completed and available for immediate occupation. Transfer costs are payable by the Purchaser.", category: "Process" },
-  { id: "viewings", question: "Are viewings available?", answer: "Yes! Cornerstone on Arum is on show daily by booking/enquiry only. Contact Grant Whitburn on 072 450 3626 to arrange a viewing.", category: "General" },
+  { id: "viewings", question: "Are viewings available?", answer: "Yes! Cornerstone on Arum is on show daily by booking/enquiry. Contact Grant Whitburn on 072 450 3626 to arrange a viewing.", category: "General" },
   { id: "size-policy", question: "Which size should be quoted?", answer: "Always quote Total m², which includes interior plus balcony if applicable.", category: "Policy" },
   { id: "finance-help", question: "Do you offer help with home loans?", answer: "Yes. Yolanda Kensley from BetterBond is our dedicated bond originator and can assist with up to 100% finance.", category: "Finance" },
   { id: "flooring", question: "What type of flooring is used?", answer: "Living areas and bedrooms feature premium timber-look vinyl flooring. Bathrooms and balconies use slip-resistant ceramic tiles.", category: "Finishes" },

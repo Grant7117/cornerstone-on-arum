@@ -59,7 +59,7 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
               ON SHOW DAILY
             </span>
             <span className="text-slate-300 text-[10px] sm:text-xs font-medium mb-3">
-              Book / Enquire Only
+              Book / Enquire
             </span>
             <span className="w-full text-center text-white bg-[#0066FF] hover:bg-[#0055DD] font-bold text-[10px] sm:text-xs px-4 py-2 sm:py-2.5 rounded-lg shadow-md transition-all duration-300 uppercase tracking-[0.15em]">
               Book / Enquire
