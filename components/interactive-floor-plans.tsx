@@ -129,9 +129,9 @@ export function InteractiveFloorPlans() {
           src="/images/Colour-coded-plans.png"
           alt="Cornerstone Colour-Coded Floor Plans"
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 90vw, 70vh"
           className="object-contain rounded-lg shadow-xl"
-          priority
+          loading="lazy"
         />
 
         {/* SVG overlay for interactive hotspots */}

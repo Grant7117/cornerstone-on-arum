@@ -38,10 +38,10 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
           <span className="font-sans text-[8px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-bronze font-bold">
             Table View
           </span>
-          <h2 className="font-serif text-xl sm:text-3xl md:text-4xl text-white leading-[1.1] tracking-tight">
+          <h1 className="font-serif text-xl sm:text-3xl md:text-4xl text-white leading-[1.1] tracking-tight">
             New Apartments, <br />
             <span className="italic text-muted-bronze font-light font-serif">No Transfer Duties</span>
-          </h2>
+          </h1>
         </div>
 
         {/* Glassmorphic Banner Overlay */}
@@ -55,11 +55,11 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
             <span className="font-sans text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-muted-bronze font-bold mb-0.5">
               Cornerstone on Arum
             </span>
-            <span className="text-white text-[11px] sm:text-[13px] font-bold tracking-wider uppercase mb-0.5 whitespace-nowrap text-amber-400">
+            <span className="text-white text-[11px] sm:text-[13px] font-bold tracking-wider uppercase mb-1 whitespace-nowrap text-amber-400">
               ON SHOW DAILY
             </span>
-            <span className="text-white text-[10px] sm:text-xs font-semibold mb-3">
-              1:00 PM – 5:00 PM
+            <span className="text-slate-300 text-[10px] sm:text-xs font-medium mb-3">
+              Book / Enquire Only
             </span>
             <span className="w-full text-center text-white bg-[#0066FF] hover:bg-[#0055DD] font-bold text-[10px] sm:text-xs px-4 py-2 sm:py-2.5 rounded-lg shadow-md transition-all duration-300 uppercase tracking-[0.15em]">
               Book / Enquire

@@ -20,30 +20,57 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.cornerstoneonarum.co.za'),
-  title: 'Cornerstone on Arum | New Residential Apartments | Available Now',
-  description: 'New residential apartments at Cornerstone on Arum, Table View. Available now. No transfer duty. Contact Grant Whitburn at 072 450 3626.',
+  title: 'Cornerstone on Arum | New Residential Apartments | Table View',
+  description: 'New residential apartments at Cornerstone on Arum, 154 Arum Road, Table View, Cape Town. Available now from R1,700,000. No transfer duty. Contact Grant Whitburn at 072 450 3626.',
   keywords: [
     'Table View apartments for sale', 
     'Cornerstone on Arum', 
-    'Luxury property Cape Town', 
+    '154 Arum Road Table View',
+    'Luxury apartments Cape Town', 
     'New apartments Table View',
-    'No transfer duty apartments'
+    'No transfer duty apartments Cape Town',
+    'Igneous Property Development'
   ],
+  authors: [{ name: 'Igneous Property Development', url: 'https://www.cornerstoneonarum.co.za' }],
+  creator: 'Igneous Property Development',
+  publisher: 'Igneous Property Development',
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
-    title: 'Cornerstone on Arum - New Residential Apartments',
-    description: 'New residential apartments available for immediate occupation. Secure your spot in Table View.',
+    title: 'Cornerstone on Arum | New Residential Apartments | Table View',
+    description: 'New residential apartments at 154 Arum Road, Table View. Available now from R1,700,000. No transfer duty. Secure your unit today.',
     type: 'website',
     locale: 'en_ZA',
     url: 'https://www.cornerstoneonarum.co.za',
     siteName: 'Cornerstone on Arum',
     images: [
       {
-        url: '/og-image.jpg', // Ensure this file exists in your /public folder
+        url: '/images/Cornerstone-on-arum-hero-image.png',
         width: 1200,
         height: 630,
-        alt: 'Cornerstone on Arum Luxury Apartments'
+        alt: 'Cornerstone on Arum Luxury Residential Apartments Table View'
       }
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cornerstone on Arum | New Residential Apartments in Table View',
+    description: 'New residential apartments at 154 Arum Road, Table View. Available from R1,700,000 with no transfer duty.',
+    images: ['/images/Cornerstone-on-arum-hero-image.png'],
   },
   alternates: {
     canonical: 'https://www.cornerstoneonarum.co.za',
@@ -53,8 +80,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
+  themeColor: '#1e293b',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

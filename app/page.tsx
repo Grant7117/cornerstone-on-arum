@@ -26,34 +26,66 @@ export default function HomePage() {
   const openEnquiryModal = () => setIsEnquiryModalOpen(true)
   const closeEnquiryModal = () => setIsEnquiryModalOpen(false)
 
-  // Structured Data for Google (Schema.org) to fix the 'null' report
+  // Structured Data for Google (Schema.org) with RealEstateListing & ApartmentComplex
   const jsonLd = {
-    "@context": "https://schema.org/",
-    "@type": "RealEstateListing",
-    "name": "Cornerstone on Arum",
-    "description": "Luxury apartments available for sale in Table View. Available units: 101, 203, 204, 303, 304.",
-    "url": "https://www.cornerstoneonarum.co.za",
-    "image": "https://www.cornerstoneonarum.co.za/images/arum-hero-image.png",
-    "offers": {
-      "@type": "AggregateOffer",
-      "offerCount": "5",
-      "lowPrice": "1700000",
-      "highPrice": "2725000",
-      "priceCurrency": "ZAR",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "RealEstateAgent",
-        "name": "Igneous Property Development"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ApartmentComplex",
+        "@id": "https://www.cornerstoneonarum.co.za/#complex",
+        "name": "Cornerstone on Arum",
+        "description": "New residential apartment development located at 154 Arum Road, Table View, Cape Town. Available units from R1,700,000 with no transfer duty.",
+        "url": "https://www.cornerstoneonarum.co.za",
+        "telephone": "+27724503626",
+        "image": "https://www.cornerstoneonarum.co.za/images/Cornerstone-on-arum-hero-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "154 Arum Road",
+          "addressLocality": "Table View",
+          "addressRegion": "Western Cape",
+          "postalCode": "7441",
+          "addressCountry": "ZA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -33.824,
+          "longitude": 18.491
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "NFC Access Control", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "CCTV", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Fibre Ready", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Prepaid Electricity & Water Meters", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Gas Hob & Electric Oven", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Dedicated Parking Bay", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Centralised Heat Pump Hot Water System", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Battery Power Backup for Common Areas and Access Control Systems", "value": true }
+        ]
+      },
+      {
+        "@type": "RealEstateListing",
+        "@id": "https://www.cornerstoneonarum.co.za/#listing",
+        "name": "Cornerstone on Arum Residential Apartments for Sale",
+        "description": "Exclusive 1 and 2-bedroom luxury apartments in Table View. Available units: 101, 203, 204, 303, 304.",
+        "url": "https://www.cornerstoneonarum.co.za",
+        "image": "https://www.cornerstoneonarum.co.za/images/Cornerstone-on-arum-hero-image.png",
+        "offers": {
+          "@type": "AggregateOffer",
+          "offerCount": "5",
+          "lowPrice": "1700000",
+          "highPrice": "2725000",
+          "priceCurrency": "ZAR",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "RealEstateAgent",
+            "name": "Igneous Property Development",
+            "telephone": "+27724503626",
+            "email": "sales@igneousproperty.co.za",
+            "url": "https://www.cornerstoneonarum.co.za"
+          }
+        }
       }
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "154 Arum Road",
-      "addressLocality": "Table View",
-      "addressRegion": "Western Cape",
-      "postalCode": "7441",
-      "addressCountry": "ZA"
-    }
+    ]
   };
 
   return (

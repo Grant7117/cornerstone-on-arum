@@ -1,5 +1,14 @@
+import type { Metadata } from 'next'
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Cornerstone on Arum',
+  description: 'Privacy Policy for Cornerstone on Arum. POPIA compliance and data protection standards for Igneous Property Development.',
+  alternates: {
+    canonical: 'https://www.cornerstoneonarum.co.za/privacy-policy',
+  },
+}
 
 export default function PrivacyPolicyPage() {
     return (

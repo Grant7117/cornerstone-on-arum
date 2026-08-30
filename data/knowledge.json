@@ -103,13 +103,13 @@
     {
       "id": "tech-utilities",
       "question": "What tech and utilities are provided?",
-      "answer": "Fibre ready, smart prepaid meters, and a centralised heat pump system (saving up to 40% on hot water). Battery backup for common areas and security.",
+      "answer": "Fibre ready, smart prepaid meters, and a centralised heat pump system (saving up to 40% on hot water). Battery power backup for common areas and access control systems.",
       "category": "Tech"
     },
     {
       "id": "security",
       "question": "What security features does the building have?",
-      "answer": "Access control, 24/7 off-site CCTV monitoring with armed response, and secure perimeter fencing. Note: There is no lift in the building.",
+      "answer": "NFC access control, CCTV, and secure perimeter fencing. Note: There is no lift in the building.",
       "category": "Security"
     },
     {

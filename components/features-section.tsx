@@ -41,9 +41,9 @@ export function FeaturesSection() {
     {
       title: "Safety and Security",
       shortDescription:
-        "Access control, CCTV off-site monitoring, linked to armed response.",
+        "NFC access control, CCTV, and secure perimeter fencing.",
       fullDescription:
-        "Access control, CCTV off-site monitoring, linked to armed response. These security measures ensure peace of mind for all residents, creating a safe and secure living environment.",
+        "NFC access control, CCTV, and secure perimeter fencing. These security measures ensure peace of mind for all residents, creating a safe and secure living environment.",
     },
     {
       title: "Local Advantage",
