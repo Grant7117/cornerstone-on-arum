@@ -65,14 +65,14 @@ export default function HomePage() {
       {
         "@type": "RealEstateListing",
         "@id": "https://www.cornerstoneonarum.co.za/#listing",
-        "name": "Cornerstone on Arum Residential Apartments for Sale",
-        "description": "Exclusive 1 and 2-bedroom luxury apartments in Table View. Available units: 101, 203, 204, 303, 304.",
+        "name": "Cornerstone on Arum Residential Duplex Apartments for Sale",
+        "description": "Only 2 luxury duplex units remaining: Unit 303 and Unit 304 (2-bedroom, 2-bathroom duplex lofts measuring 77m² total) at Cornerstone on Arum, 154 Arum Road, Table View. All other units SOLD.",
         "url": "https://www.cornerstoneonarum.co.za",
         "image": "https://www.cornerstoneonarum.co.za/images/Cornerstone-on-arum-hero-image.png",
         "offers": {
           "@type": "AggregateOffer",
-          "offerCount": "5",
-          "lowPrice": "1700000",
+          "offerCount": "2",
+          "lowPrice": "2725000",
           "highPrice": "2725000",
           "priceCurrency": "ZAR",
           "availability": "https://schema.org/InStock",

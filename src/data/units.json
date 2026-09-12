@@ -6,7 +6,7 @@
         "Floor": "First",
         "Total m²": 47,
         "Price": 1700000,
-        "Status": "Available",
+        "Status": "SOLD",
         "Occupation": "Immediate"
     },
     {
@@ -106,7 +106,7 @@
         "Floor": "Second",
         "Total m²": 45,
         "Price": 1700000,
-        "Status": "Available",
+        "Status": "SOLD",
         "Occupation": "Immediate"
     },
     {
@@ -116,7 +116,7 @@
         "Floor": "Second",
         "Total m²": 48,
         "Price": 1700000,
-        "Status": "Available",
+        "Status": "SOLD",
         "Occupation": "Immediate"
     },
     {

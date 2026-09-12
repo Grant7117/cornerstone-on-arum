@@ -10,6 +10,7 @@ export interface Unit {
     images?: string[];
     floorPlan?: string;
     isActive?: boolean;
+    galleryUrl?: string;
 }
 
 export const unitsData: Record<string, Unit[]> = {
@@ -21,7 +22,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 47,
             color: "#7FD957",
-            status: "Available",
+            status: "Sold",
             price: "R1,700,000",
             images:
                 [
@@ -155,7 +156,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 45,
             color: "#F4E96D",
-            status: "Available",
+            status: "Sold",
             price: "R1,700,000",
             images:
                 [
@@ -174,7 +175,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 1,
             size: 48,
             color: "#FF6B6B",
-            status: "Available",
+            status: "Sold",
             price: "R1,700,000",
             images:
                 [
@@ -386,6 +387,7 @@ export const unitsData: Record<string, Unit[]> = {
             color: "#9B9FD8",
             status: "Available",
             price: "R2,725,000",
+            galleryUrl: "https://photos.app.goo.gl/wWBD4uTkddX7WDAr6",
             images:
                 [
                     "/images/units/303-a.jpg",
@@ -406,6 +408,7 @@ export const unitsData: Record<string, Unit[]> = {
             color: "#9B9FD8",
             status: "Available",
             price: "R2,725,000",
+            galleryUrl: "https://photos.app.goo.gl/wWBD4uTkddX7WDAr6",
             images:
                 [
                     "/images/units/304-a.jpg",

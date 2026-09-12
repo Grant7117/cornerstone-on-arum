@@ -20,12 +20,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.cornerstoneonarum.co.za'),
-  title: 'Cornerstone on Arum | New Residential Apartments | Table View',
-  description: 'New residential apartments at Cornerstone on Arum, 154 Arum Road, Table View, Cape Town. Available now from R1,700,000. No transfer duty. Contact Grant Whitburn at 072 450 3626.',
+  title: 'Cornerstone on Arum | Only 2 Units Left (Unit 303 & 304) | Table View',
+  description: 'Only 2 duplex units remaining at Cornerstone on Arum: Units 303 & 304 (2-bedroom, 2-bathroom duplex lofts measuring 77m²). All other units SOLD. No transfer duty. Contact Grant Whitburn at 072 450 3626.',
   keywords: [
     'Table View apartments for sale', 
     'Cornerstone on Arum', 
     '154 Arum Road Table View',
+    'Unit 303 Cornerstone on Arum',
+    'Unit 304 Cornerstone on Arum',
+    'Duplex apartments Table View',
     'Luxury apartments Cape Town', 
     'New apartments Table View',
     'No transfer duty apartments Cape Town',
@@ -51,8 +54,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Cornerstone on Arum | New Residential Apartments | Table View',
-    description: 'New residential apartments at 154 Arum Road, Table View. Available now from R1,700,000. No transfer duty. Secure your unit today.',
+    title: 'Cornerstone on Arum | Final 2 Duplex Units Available | Table View',
+    description: 'Only 2 luxury duplex units left: Unit 303 & Unit 304 (2 Bed, 2 Bath, 77m²). All other units SOLD. No transfer duty. Secure your unit today.',
     type: 'website',
     locale: 'en_ZA',
     url: 'https://www.cornerstoneonarum.co.za',
@@ -62,14 +65,14 @@ export const metadata: Metadata = {
         url: '/images/Cornerstone-on-arum-hero-image.png',
         width: 1200,
         height: 630,
-        alt: 'Cornerstone on Arum Luxury Residential Apartments Table View'
+        alt: 'Cornerstone on Arum Final Available Duplex Units 303 and 304 Table View'
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cornerstone on Arum | New Residential Apartments in Table View',
-    description: 'New residential apartments at 154 Arum Road, Table View. Available from R1,700,000 with no transfer duty.',
+    title: 'Cornerstone on Arum | Only 2 Duplex Units Left | Table View',
+    description: 'Final 2 luxury duplex units available at 154 Arum Road, Table View: Units 303 & 304 (2 Bed, 2 Bath, 77m²). All other units SOLD.',
     images: ['/images/Cornerstone-on-arum-hero-image.png'],
   },
   alternates: {
@@ -85,6 +88,8 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
+
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} overflow-x-hidden`}>
       <head />
@@ -112,8 +117,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ClientOnly>
           <ChatLauncher />
         </ClientOnly>
-        {/* Update G-ID when ready, but keeping structure intact */}
-        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+        {/* Google Analytics 4 (GA4) */}
+        <GoogleAnalytics gaId={gaId} />
       </body>
     </html>
   );

@@ -33,10 +33,10 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                 <div className="flex flex-col gap-4 text-center md:text-left pr-6">
                     <div className="space-y-2 mb-1">
                         <p className="text-red-600 text-xl md:text-2xl font-black leading-tight">
-                            5 Units back on market!
+                            Only 2 Units Left: Duplex Suites 303 & 304!
                         </p>
                         <p className="text-slate-900 text-lg md:text-xl font-bold">
-                            R5000 Deposit secures your unit!
+                            2 Bed • 2 Bath Duplex (77m²) • R5,000 Deposit Secures!
                         </p>
                     </div>
 

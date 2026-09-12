@@ -178,7 +178,11 @@ export function InteractiveFloorPlans() {
                 <span className="font-serif text-lg tracking-tight text-warm-stone font-semibold">
                   {hoveredHotspot.name}
                 </span>
-                {activeUnits.some(u => u.status === "Under Offer") ? (
+                {activeUnits.every(u => u.status === "Sold") ? (
+                  <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30 uppercase">
+                    Sold
+                  </span>
+                ) : activeUnits.some(u => u.status === "Under Offer") ? (
                   <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase">
                     Under Offer
                   </span>
