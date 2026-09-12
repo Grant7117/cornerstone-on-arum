@@ -143,12 +143,22 @@ export default function HomePage() {
           </div>
         </div>
 
-        <MediaAssetsSection />
+        <div className="content-auto">
+          <MediaAssetsSection />
+        </div>
 
-        <PropertyFeaturesSection />
-        <BetterBondSection />
-        <PartnersBanner />
-        <ContactLocationSection />
+        <div className="content-auto">
+          <PropertyFeaturesSection />
+        </div>
+        <div className="content-auto">
+          <BetterBondSection />
+        </div>
+        <div className="content-auto">
+          <PartnersBanner />
+        </div>
+        <div className="content-auto">
+          <ContactLocationSection />
+        </div>
         <WhatsAppButton />
         <Footer />
       </div>
