@@ -163,7 +163,7 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
   const availableUnitsList = ["303", "304"]
 
   return (
-    <div id="properties" className="w-full bg-[#1a1c23] border-b border-white/5 py-12 sm:py-24">
+    <div id="properties" className="w-full bg-[#1a1c23] border-b border-white/5 py-12 sm:py-24 scroll-mt-20">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-12 sm:mb-16 flex flex-col items-center">
           <div className="inline-flex px-4 py-1.5 mb-4 rounded-full border border-amber-500/40 bg-amber-500/10">

@@ -5,7 +5,7 @@ import { Download, ExternalLink, FileText, Camera, ArrowUpRight } from "lucide-r
 
 export function MediaAssetsSection() {
   return (
-    <section id="media-resources" className="w-full bg-[#0d0e12] py-16 sm:py-24 px-4 flex flex-col items-center border-t border-white/10 relative overflow-hidden select-none">
+    <section id="media-resources" className="w-full bg-[#0d0e12] py-16 sm:py-24 px-4 flex flex-col items-center border-t border-white/10 relative overflow-hidden scroll-mt-20">
       {/* Structural background lines for architectural feel */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-muted-bronze/10 rounded-full blur-[100px] sm:blur-[150px] pointer-events-none" />

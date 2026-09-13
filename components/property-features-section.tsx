@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function PropertyFeaturesSection() {
   return (
-    <div id="features" className="w-full bg-[#EBE9E2] flex flex-col items-center">
+    <div id="features" className="w-full bg-[#EBE9E2] flex flex-col items-center scroll-mt-20">
 
       {/* Mobile: heading + full-width image stacked */}
       <div className="md:hidden w-full flex flex-col items-center py-10 px-4 gap-6">

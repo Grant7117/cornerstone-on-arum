@@ -15,24 +15,12 @@
     @apply text-base text-slate-900;
     font-size: 16px;
     line-height: 1.5;
-    overscroll-behavior-y: none;
-    -webkit-overflow-scrolling: touch;
   }
 
-  /* Prevent iOS zoom on input focus and ensure instantaneous tap reaction */
-  input, select, textarea, button, a {
-    touch-action: manipulation;
-  }
-
+  /* Prevent iOS zoom on input focus */
   input, select, textarea {
     font-size: 16px !important;
   }
-}
-
-/* Mobile Performance Utilities */
-.content-auto {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 600px;
 }
 
 .gpu-accelerate {

@@ -4,7 +4,7 @@ import { Phone, Mail, ExternalLink } from "lucide-react"
 
 export function BetterBondSection() {
   return (
-    <section id="financing" className="bg-white pb-16">
+    <section id="financing" className="bg-white pb-16 scroll-mt-20">
       {/* Original Banner */}
       <StandardBanner
         src="/images/Frictionless%20Financing%20Betterbond.png"

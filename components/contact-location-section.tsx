@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export function ContactLocationSection() {
   return (
-    <section id="contact" className="py-24 bg-deep-obsidian px-6">
+    <section id="contact" className="py-24 bg-deep-obsidian px-6 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         
         {/* HEADER SECTION - TEXT CHANGED TO WHITE/WARM-STONE */}

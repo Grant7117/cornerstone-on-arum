@@ -89,7 +89,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-background relative overflow-x-hidden w-full max-w-[100vw]">
+    <main className="min-h-screen bg-background relative w-full overflow-x-clip">
       {/* Injecting Schema for SEO Recovery */}
       <script
         type="application/ld+json"
@@ -117,7 +117,7 @@ export default function HomePage() {
         <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         
         {/* Interactive Floor Plans Section (Hidden behind button) */}
-        <div id="floor-plans" className="w-full bg-[#f8f9fa] py-16 sm:py-24 px-4 flex flex-col items-center">
+        <div id="floor-plans" className="w-full bg-[#f8f9fa] py-16 sm:py-24 px-4 flex flex-col items-center scroll-mt-20">
           <div className="w-full max-w-4xl flex flex-col items-center text-center">
             <h2 className="text-3xl md:text-5xl font-serif text-[#1a1c23] tracking-tight mb-6">
               Interactive Floor Plans
@@ -143,22 +143,11 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="content-auto">
-          <MediaAssetsSection />
-        </div>
-
-        <div className="content-auto">
-          <PropertyFeaturesSection />
-        </div>
-        <div className="content-auto">
-          <BetterBondSection />
-        </div>
-        <div className="content-auto">
-          <PartnersBanner />
-        </div>
-        <div className="content-auto">
-          <ContactLocationSection />
-        </div>
+        <MediaAssetsSection />
+        <PropertyFeaturesSection />
+        <BetterBondSection />
+        <PartnersBanner />
+        <ContactLocationSection />
         <WhatsAppButton />
         <Footer />
       </div>

@@ -91,9 +91,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
 
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} overflow-x-hidden`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head />
-      <body className="antialiased font-sans bg-deep-obsidian text-warm-stone overflow-x-hidden w-full" suppressHydrationWarning>
+      <body className="antialiased font-sans bg-deep-obsidian text-warm-stone w-full min-h-screen" suppressHydrationWarning>
         {/* Facebook Pixel */}
         <Script
           id="fb-pixel"
