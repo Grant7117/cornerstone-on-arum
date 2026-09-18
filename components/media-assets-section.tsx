@@ -71,14 +71,14 @@ export function MediaAssetsSection() {
             Video Tour & Interactive Photo Galleries
           </h3>
           <span className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-bronze font-bold text-right ml-2">
-            Cloudflare Stream & Google Photos
+            HD Video & Google Photos
           </span>
         </div>
 
         {/* External Gallery Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
-          {/* Card 0 (FEATURED VIDEO): Cloudflare Video Tour (Units 303 & 304) */}
+          {/* Card 0 (FEATURED VIDEO): Video Tour (Units 303 & 304) */}
           <div
             onClick={scrollToVideoTour}
             className="group flex flex-col justify-between bg-[#16171e] border-2 border-amber-500/80 hover:border-amber-400 rounded-2xl p-5 transition-all duration-300 shadow-2xl min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] relative overflow-hidden cursor-pointer"
@@ -87,7 +87,7 @@ export function MediaAssetsSection() {
             <div className="w-full h-40 sm:h-48 rounded-xl border border-white/10 relative flex items-center justify-center overflow-hidden mb-5 select-none pointer-events-none bg-black">
               <Image
                 src="/images/units/303-a.jpg"
-                alt="Cloudflare Stream Video Walkthrough Preview (Units 303 & 304)"
+                alt="Video Walkthrough Preview (Units 303 & 304)"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-95"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -109,7 +109,7 @@ export function MediaAssetsSection() {
             <div className="flex-grow flex flex-col justify-between">
               <div>
                 <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-400 font-bold block mb-1">
-                  HD Video Tour • Cloudflare Stream
+                  HD Video Tour
                 </span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-amber-300 transition-colors duration-200">

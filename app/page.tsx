@@ -26,7 +26,7 @@ export default function HomePage() {
   const openEnquiryModal = () => setIsEnquiryModalOpen(true)
   const closeEnquiryModal = () => setIsEnquiryModalOpen(false)
 
-  // Structured Data for Google (Schema.org) with RealEstateListing & ApartmentComplex
+  // Structured Data for Google & AI Engines (Schema.org) with RealEstateListing, ApartmentComplex, VideoObject & FAQPage
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -84,13 +84,72 @@ export default function HomePage() {
             "url": "https://www.cornerstoneonarum.co.za"
           }
         }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://www.cornerstoneonarum.co.za/#video-tour",
+        "name": "Cornerstone on Arum - Units 303 & 304 Duplex Loft Video Walkthrough",
+        "description": "Virtual HD video walkthrough of the final 2 remaining duplex loft apartments (Units 303 and 304, 77m² total, 2 Bed, 2 Bath) at Cornerstone on Arum, 154 Arum Road, Table View.",
+        "thumbnailUrl": [
+          "https://www.cornerstoneonarum.co.za/images/units/303-a.jpg",
+          "https://customer-2qsi4jrxewznhq17.cloudflarestream.com/40d24c91d37fc98b6f7f135ca3261bb0/thumbnails/thumbnail.jpg"
+        ],
+        "uploadDate": "2026-09-18T20:00:00+02:00",
+        "embedUrl": "https://customer-2qsi4jrxewznhq17.cloudflarestream.com/40d24c91d37fc98b6f7f135ca3261bb0/iframe",
+        "contentUrl": "https://customer-2qsi4jrxewznhq17.cloudflarestream.com/40d24c91d37fc98b6f7f135ca3261bb0/manifest/video.m3u8"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.cornerstoneonarum.co.za/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which units are available at Cornerstone on Arum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only 2 units remain available: Unit 303 and Unit 304. Both are luxury 2-bedroom, 2-bathroom top floor loft duplex apartments measuring 77m² total (71m² interior + 6m² private balcony). All other units are SOLD."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the price of the remaining units at Cornerstone on Arum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The remaining duplex units (Unit 303 and Unit 304) are selling for R2,725,000 each with NO transfer duty."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What deposit is required to secure a unit at Cornerstone on Arum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A deposit of only R5,000 secures your unit, payable within 7 days of Offer to Purchase signature."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Cornerstone on Arum located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cornerstone on Arum is located at 154 Arum Road, Table View, Cape Town, 7441, close to pristine beaches, shopping centres, and MyCiTi transit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I book a viewing or watch the video tour?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can stream the official HD video walkthrough directly on our website or contact Grant Whitburn on 072 450 3626 to book an in-person viewing."
+            }
+          }
+        ]
       }
     ]
   };
 
   return (
     <main className="min-h-screen bg-background relative w-full overflow-x-clip">
-      {/* Injecting Schema for SEO Recovery */}
+      {/* Injecting Schema for SEO & LLM Optimization */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -113,7 +172,6 @@ export default function HomePage() {
         <Navigation />
         <HeroSection />
         <VideoSection />
-        <DepositBanner />
         <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         
         {/* Interactive Floor Plans Section (Hidden behind button) */}
