@@ -36,7 +36,7 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                             Only 2 Units Left: Duplex Suites 303 & 304!
                         </p>
                         <p className="text-slate-900 text-lg md:text-xl font-bold">
-                            2 Bed • 2 Bath Duplex (77m²) • R5,000 Deposit Secures!
+                            2 Bed • 2 Bath Duplex (77m²) • R2,725,000 • R5,000 Deposit Secures!
                         </p>
                     </div>
 
@@ -56,17 +56,29 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                         </p>
                     </div>
 
-                    <div className="flex justify-center md:justify-start">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-2.5">
                         <button
                             onClick={() => {
-                                const element = document.getElementById("about")
+                                const element = document.getElementById("video-tour")
+                                if (element) {
+                                    element.scrollIntoView({ behavior: "smooth", block: "start" })
+                                }
+                            }}
+                            className="bg-amber-500 hover:bg-amber-600 text-slate-950 px-4 py-3 rounded-lg text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all active:scale-95 shadow-sm"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                            <span>Watch Video Tour</span>
+                        </button>
+                        <button
+                            onClick={() => {
+                                const element = document.getElementById("properties")
                                 if (element) {
                                     element.scrollIntoView({ behavior: "smooth", block: "start" })
                                 }
                             }}
                             className="bg-slate-100 hover:bg-slate-200 text-[#0066FF] px-4 py-3 rounded-lg text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all active:scale-95 shadow-sm"
                         >
-                            <span>Project Information</span>
+                            <span>View Units 303 & 304</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                         </button>
                     </div>

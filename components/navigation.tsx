@@ -23,13 +23,13 @@ export function Navigation() {
   }
 
   const navLinks = [
-    { label: "About", id: "about" },
+    { label: "Video Tour", id: "video-tour" },
     { label: "Apartments", id: "properties" },
     { label: "Floor Plans", id: "floor-plans" },
     { label: "Features", id: "features" },
+    { label: "Location", id: "about" },
     { label: "Financing", id: "financing" },
-    { label: "Location", id: "contact" },
-    { label: "Brochure", id: "media-resources" },
+    { label: "Brochure & Media", id: "media-resources" },
   ]
 
   return (

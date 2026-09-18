@@ -11,6 +11,8 @@ export interface Unit {
     floorPlan?: string;
     isActive?: boolean;
     galleryUrl?: string;
+    videoId?: string;
+    videoUrl?: string;
 }
 
 export const unitsData: Record<string, Unit[]> = {
@@ -388,6 +390,8 @@ export const unitsData: Record<string, Unit[]> = {
             status: "Available",
             price: "R2,725,000",
             galleryUrl: "https://photos.app.goo.gl/wWBD4uTkddX7WDAr6",
+            videoId: "40d24c91d37fc98b6f7f135ca3261bb0",
+            videoUrl: "https://customer-2qsi4jrxewznhq17.cloudflarestream.com/40d24c91d37fc98b6f7f135ca3261bb0/iframe",
             images:
                 [
                     "/images/units/303-a.jpg",
@@ -409,6 +413,8 @@ export const unitsData: Record<string, Unit[]> = {
             status: "Available",
             price: "R2,725,000",
             galleryUrl: "https://photos.app.goo.gl/wWBD4uTkddX7WDAr6",
+            videoId: "40d24c91d37fc98b6f7f135ca3261bb0",
+            videoUrl: "https://customer-2qsi4jrxewznhq17.cloudflarestream.com/40d24c91d37fc98b6f7f135ca3261bb0/iframe",
             images:
                 [
                     "/images/units/304-a.jpg",

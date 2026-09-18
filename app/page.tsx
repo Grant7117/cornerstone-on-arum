@@ -34,7 +34,7 @@ export default function HomePage() {
         "@type": "ApartmentComplex",
         "@id": "https://www.cornerstoneonarum.co.za/#complex",
         "name": "Cornerstone on Arum",
-        "description": "New residential apartment development located at 154 Arum Road, Table View, Cape Town. Available units from R1,700,000 with no transfer duty.",
+        "description": "New residential apartment development located at 154 Arum Road, Table View, Cape Town. Final 2 luxury top floor duplex units (Units 303 & 304, 77m²) available at R2,725,000 with no transfer duty.",
         "url": "https://www.cornerstoneonarum.co.za",
         "telephone": "+27724503626",
         "image": "https://www.cornerstoneonarum.co.za/images/Cornerstone-on-arum-hero-image.png",
@@ -113,7 +113,7 @@ export default function HomePage() {
         <Navigation />
         <HeroSection />
         <VideoSection />
-        <PricingBanner />
+        <DepositBanner />
         <PriorityUnitsGrid onEnquire={openEnquiryModal} />
         
         {/* Interactive Floor Plans Section (Hidden behind button) */}

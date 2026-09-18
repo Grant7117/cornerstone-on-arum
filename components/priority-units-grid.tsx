@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Camera, ExternalLink } from "lucide-react"
+import { ChevronLeft, ChevronRight, Camera, ExternalLink, Video } from "lucide-react"
 import { unitsData, Unit } from "@/data/units"
 
 interface MinimalistUnitCardProps {
@@ -100,19 +100,31 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
             </p>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => {
+                const element = document.getElementById("video-tour")
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
+              }}
+              className="inline-flex items-center justify-center gap-1.5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-sans text-xs font-bold uppercase tracking-wider py-3 px-3.5 rounded-sm transition-all text-center"
+            >
+              <Video className="w-3.5 h-3.5 text-amber-400" />
+              <span>Video</span>
+            </button>
             <a
               href={galleryLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-sans text-xs font-bold uppercase tracking-wider py-3 px-4 rounded-sm transition-all text-center"
+              className="inline-flex items-center justify-center gap-1.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-sans text-xs font-bold uppercase tracking-wider py-3 px-3.5 rounded-sm transition-all text-center"
             >
-              <Camera className="w-4 h-4 text-muted-bronze" />
-              <span>Gallery</span>
+              <Camera className="w-3.5 h-3.5 text-muted-bronze" />
+              <span>Photos</span>
             </a>
             <Button
               onClick={onEnquire}
-              className="bg-[#0066FF] hover:bg-[#0055DD] text-white font-sans text-xs font-bold uppercase tracking-wider py-3 px-6 rounded-sm shadow-md transition-all active:scale-95"
+              className="bg-[#0066FF] hover:bg-[#0055DD] text-white font-sans text-xs font-bold uppercase tracking-wider py-3 px-5 rounded-sm shadow-md transition-all active:scale-95"
             >
               Enquire
             </Button>
@@ -178,16 +190,30 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
             Units 303 & 304 are luxury 2-bedroom, 2-bathroom duplex apartments measuring 77m² total with private balconies and dedicated parking.
           </p>
 
-          <a
-            href="https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 bg-[#b39373] hover:bg-[#c9a784] text-[#1a1c23] font-sans text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-sm shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
-          >
-            <Camera className="w-4 h-4" />
-            <span>View Units 303 & 304 Photo Gallery</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <button
+              onClick={() => {
+                const element = document.getElementById("video-tour")
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
+              }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-sans text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-sm shadow-lg transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+            >
+              <Video className="w-4 h-4 text-slate-950" />
+              <span>Watch Video Walkthrough</span>
+            </button>
+            <a
+              href="https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#b39373] hover:bg-[#c9a784] text-[#1a1c23] font-sans text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-sm shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+            >
+              <Camera className="w-4 h-4" />
+              <span>View Photos (Google Photos)</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">

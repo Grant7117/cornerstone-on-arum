@@ -1,9 +1,16 @@
 "use client"
 
 import Image from "next/image"
-import { Download, ExternalLink, FileText, Camera, ArrowUpRight } from "lucide-react"
+import { Download, ExternalLink, FileText, Camera, ArrowUpRight, Play, Video } from "lucide-react"
 
 export function MediaAssetsSection() {
+  const scrollToVideoTour = () => {
+    const element = document.getElementById("video-tour")
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
     <section id="media-resources" className="w-full bg-[#0d0e12] py-16 sm:py-24 px-4 flex flex-col items-center border-t border-white/10 relative overflow-hidden scroll-mt-20">
       {/* Structural background lines for architectural feel */}
@@ -20,7 +27,7 @@ export function MediaAssetsSection() {
             Media & Documentation
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-zinc-300 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2">
-            Download high-resolution documents and browse actual photo galleries of the property interiors, finishes, and exterior build progress.
+            Watch the video walkthrough, download high-resolution documents, and browse actual photo galleries of the property interiors, finishes, and exterior build progress.
           </p>
         </div>
 
@@ -61,15 +68,66 @@ export function MediaAssetsSection() {
         {/* Gallery Section Divider / Subheader */}
         <div className="mb-8 flex items-center justify-between border-b border-white/10 pb-4">
           <h3 className="text-lg sm:text-2xl font-serif text-white tracking-wide font-medium">
-            Interactive Photo Galleries
+            Video Tour & Interactive Photo Galleries
           </h3>
           <span className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-bronze font-bold text-right ml-2">
-            Albums open in Google Photos
+            Cloudflare Stream & Google Photos
           </span>
         </div>
 
         {/* External Gallery Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+          {/* Card 0 (FEATURED VIDEO): Cloudflare Video Tour (Units 303 & 304) */}
+          <div
+            onClick={scrollToVideoTour}
+            className="group flex flex-col justify-between bg-[#16171e] border-2 border-amber-500/80 hover:border-amber-400 rounded-2xl p-5 transition-all duration-300 shadow-2xl min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] relative overflow-hidden cursor-pointer"
+          >
+            {/* Visual Preview Image with Play Button */}
+            <div className="w-full h-40 sm:h-48 rounded-xl border border-white/10 relative flex items-center justify-center overflow-hidden mb-5 select-none pointer-events-none bg-black">
+              <Image
+                src="/images/units/303-a.jpg"
+                alt="Cloudflare Stream Video Walkthrough Preview (Units 303 & 304)"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-95"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
+
+              {/* Play Button Overlay */}
+              <div className="absolute z-20 bg-amber-500 text-slate-950 p-4 rounded-full group-hover:scale-110 group-hover:bg-amber-400 transition-all duration-300 shadow-[0_0_25px_rgba(245,158,11,0.6)]">
+                <Play className="w-6 h-6 fill-current translate-x-0.5" />
+              </div>
+
+              {/* Top Right Tag */}
+              <div className="absolute top-3 right-3 bg-amber-400 text-slate-950 font-black text-[9px] sm:text-[10px] tracking-widest uppercase px-2.5 py-1 rounded z-20 shadow-md">
+                Featured Video
+              </div>
+            </div>
+
+            {/* Content Details */}
+            <div className="flex-grow flex flex-col justify-between">
+              <div>
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-400 font-bold block mb-1">
+                  HD Video Tour • Cloudflare Stream
+                </span>
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-amber-300 transition-colors duration-200">
+                    Units 303 & 304 Video Walkthrough
+                  </h4>
+                  <Video className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
+                </div>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-6">
+                  Stream the 1080p full walk-through video showcasing the double-volume living area, sleek kitchen, and panoramic loft views of the remaining duplex units.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400 group-hover:text-amber-300 border-t border-white/10 pt-4">
+                <span>Watch Video Walkthrough</span>
+                <Play className="w-3.5 h-3.5 fill-current" />
+              </div>
+            </div>
+          </div>
 
           {/* Card 1 (PRIMARY FEATURED): Premium Suites Gallery (Units 303 & 304) */}
           <a
