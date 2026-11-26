@@ -34,7 +34,7 @@ export default function HomePage() {
         "@type": "ApartmentComplex",
         "@id": "https://www.cornerstoneonarum.co.za/#complex",
         "name": "Cornerstone on Arum",
-        "description": "New residential apartment development located at 154 Arum Road, Table View, Cape Town. Final 2 luxury top floor duplex units (Units 303 & 304, 77m²) available at R2,725,000 with no transfer duty.",
+        "description": "New residential apartment development located at 154 Arum Road, Table View, Cape Town. Final luxury top floor duplex unit (Unit 304, 77m²) available at R2,725,000 with no transfer duty. Levy R2,200.00 per month.",
         "url": "https://www.cornerstoneonarum.co.za",
         "telephone": "+27724503626",
         "image": "https://www.cornerstoneonarum.co.za/images/Cornerstone-on-arum-hero-image.png",
@@ -66,12 +66,12 @@ export default function HomePage() {
         "@type": "RealEstateListing",
         "@id": "https://www.cornerstoneonarum.co.za/#listing",
         "name": "Cornerstone on Arum Residential Duplex Apartments for Sale",
-        "description": "Only 2 luxury duplex units remaining: Unit 303 and Unit 304 (2-bedroom, 2-bathroom duplex lofts measuring 77m² total) at Cornerstone on Arum, 154 Arum Road, Table View. All other units SOLD.",
+        "description": "Final luxury duplex unit remaining: Unit 304 (2-bedroom, 2-bathroom duplex loft measuring 77m² total) at Cornerstone on Arum, 154 Arum Road, Table View. All other units SOLD.",
         "url": "https://www.cornerstoneonarum.co.za",
         "image": "https://www.cornerstoneonarum.co.za/images/Cornerstone-on-arum-hero-image.png",
         "offers": {
           "@type": "AggregateOffer",
-          "offerCount": "2",
+          "offerCount": "1",
           "lowPrice": "2725000",
           "highPrice": "2725000",
           "priceCurrency": "ZAR",
@@ -88,8 +88,8 @@ export default function HomePage() {
       {
         "@type": "VideoObject",
         "@id": "https://www.cornerstoneonarum.co.za/#video-tour",
-        "name": "Cornerstone on Arum - Units 303 & 304 Duplex Loft Video Walkthrough",
-        "description": "Virtual HD video walkthrough of the final 2 remaining duplex loft apartments (Units 303 and 304, 77m² total, 2 Bed, 2 Bath) at Cornerstone on Arum, 154 Arum Road, Table View.",
+        "name": "Cornerstone on Arum - Duplex Loft Video Walkthrough (Unit 304 layout)",
+        "description": "Virtual HD video walkthrough of the duplex loft layout of the final remaining unit (Unit 304, 77m² total, 2 Bed, 2 Bath) at Cornerstone on Arum, 154 Arum Road, Table View.",
         "thumbnailUrl": [
           "https://www.cornerstoneonarum.co.za/images/units/303-a.jpg",
           "https://customer-2qsi4jrxewznhq17.cloudflarestream.com/40d24c91d37fc98b6f7f135ca3261bb0/thumbnails/thumbnail.jpg"
@@ -107,7 +107,7 @@ export default function HomePage() {
             "name": "Which units are available at Cornerstone on Arum?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Only 2 units remain available: Unit 303 and Unit 304. Both are luxury 2-bedroom, 2-bathroom top floor loft duplex apartments measuring 77m² total (71m² interior + 6m² private balcony). All other units are SOLD."
+              "text": "Only 1 unit remains available: Unit 304, a luxury 2-bedroom, 2-bathroom top floor loft duplex apartment measuring 77m² total (71m² interior + 6m² private balcony). All other units are SOLD."
             }
           },
           {
@@ -115,7 +115,7 @@ export default function HomePage() {
             "name": "What is the price of the remaining units at Cornerstone on Arum?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The remaining duplex units (Unit 303 and Unit 304) are selling for R2,725,000 each with NO transfer duty."
+              "text": "The final duplex unit (Unit 304) is selling for R2,725,000 with NO transfer duty. The levy is R2,200.00 per month."
             }
           },
           {

@@ -22,7 +22,7 @@ export function VideoSection() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-amber-500/40 bg-amber-500/10">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-amber-400">
-              Only 2 Units Left • Units 303 & 304
+              Final Unit Left • Unit 304
             </span>
           </div>
           
@@ -45,7 +45,7 @@ export function VideoSection() {
               {/* Cloudflare Stream iFrame Player */}
               <iframe
                 src={cloudflareIframeUrl}
-                title="Cornerstone on Arum Units 303 & 304 Video Walkthrough"
+                title="Cornerstone on Arum Unit 304 Duplex Video Walkthrough"
                 className="w-full h-full border-0 absolute inset-0"
                 allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                 allowFullScreen
@@ -88,7 +88,7 @@ export function VideoSection() {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <span className="px-3 py-1 bg-muted-bronze/10 border border-muted-bronze/30 text-muted-bronze text-[10px] font-extrabold uppercase tracking-widest rounded-sm">
-                  Final 2 Units Available
+                  Final Unit Available
                 </span>
               </div>
 
@@ -144,7 +144,7 @@ export function VideoSection() {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button
                 onClick={() => {
-                  const message = encodeURIComponent("Hello Grant, I watched the video for Units 303 & 304 and would like to book a private viewing.")
+                  const message = encodeURIComponent("Hello Grant, I watched the video for Unit 304 and would like to book a private viewing.")
                   window.open(`https://wa.me/27724503626?text=${message}`, '_blank')
                 }}
                 className="bg-[#0066FF] hover:bg-[#0055DD] text-white font-sans font-bold text-xs uppercase tracking-widest py-6 px-6 rounded-lg shadow-xl hover:scale-105 active:scale-95 transition-all w-full sm:flex-1 text-center"

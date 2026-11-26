@@ -33,7 +33,7 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                 <div className="flex flex-col gap-4 text-center md:text-left pr-6">
                     <div className="space-y-2 mb-1">
                         <p className="text-red-600 text-xl md:text-2xl font-black leading-tight">
-                            Only 2 Units Left: Duplex Suites 303 & 304!
+                            Final Unit Left: Duplex Suite 304!
                         </p>
                         <p className="text-slate-900 text-lg md:text-xl font-bold">
                             2 Bed • 2 Bath Duplex (77m²) • R2,725,000 • R5,000 Deposit Secures!
@@ -78,7 +78,7 @@ export function FloatingBanner({ onSignUpClick }: FloatingBannerProps) {
                             }}
                             className="bg-slate-100 hover:bg-slate-200 text-[#0066FF] px-4 py-3 rounded-lg text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all active:scale-95 shadow-sm"
                         >
-                            <span>View Units 303 & 304</span>
+                            <span>View Unit 304</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                         </button>
                     </div>

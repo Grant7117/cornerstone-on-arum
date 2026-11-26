@@ -387,7 +387,7 @@ export const unitsData: Record<string, Unit[]> = {
             bathrooms: 2,
             size: 77,
             color: "#9B9FD8",
-            status: "Available",
+            status: "Sold",
             price: "R2,725,000",
             galleryUrl: "https://photos.app.goo.gl/wWBD4uTkddX7WDAr6",
             videoId: "40d24c91d37fc98b6f7f135ca3261bb0",
