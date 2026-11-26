@@ -14,7 +14,7 @@ interface MinimalistUnitCardProps {
 function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
   const [currentImage, setCurrentImage] = useState(0)
   const images = unit.images || ["/images/Cornerstone-on-arum-hero-image.png"]
-  const galleryLink = unit.galleryUrl || "https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
+  const galleryLink = unit.galleryUrl || "https://photos.app.goo.gl/3YutHUQom4YbtCsD6"
 
   // Specific m2 breakdown map based on the user's table
   const m2Map: Record<string, { int: string; bal: string }> = {
@@ -204,7 +204,7 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
               <span>Watch Video Walkthrough</span>
             </button>
             <a
-              href="https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
+              href="https://photos.app.goo.gl/3YutHUQom4YbtCsD6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#b39373] hover:bg-[#c9a784] text-[#1a1c23] font-sans text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-sm shadow-md transition-all transform hover:-translate-y-0.5 active:translate-y-0 active:scale-95"

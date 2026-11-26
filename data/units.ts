@@ -412,7 +412,7 @@ export const unitsData: Record<string, Unit[]> = {
             color: "#9B9FD8",
             status: "Available",
             price: "R2,725,000",
-            galleryUrl: "https://photos.app.goo.gl/wWBD4uTkddX7WDAr6",
+            galleryUrl: "https://photos.app.goo.gl/3YutHUQom4YbtCsD6",
             videoId: "40d24c91d37fc98b6f7f135ca3261bb0",
             videoUrl: "https://customer-2qsi4jrxewznhq17.cloudflarestream.com/40d24c91d37fc98b6f7f135ca3261bb0/iframe",
             images:
