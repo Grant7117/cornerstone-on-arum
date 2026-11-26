@@ -219,7 +219,14 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+        {/* One unit left: show it full width (capped); two-column grid only when several units are listed */}
+        <div
+          className={
+            availableUnitsList.length > 1
+              ? "grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12"
+              : "grid grid-cols-1 max-w-5xl mx-auto"
+          }
+        >
           {availableUnitsList.map((unitNo) => {
             const unit = findUnit(unitNo)
             if (!unit) return null
