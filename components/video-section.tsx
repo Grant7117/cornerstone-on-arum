@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Play, Camera, Sparkles, CheckCircle2, Video } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { trackContact } from "@/lib/meta-pixel"
 
 export function VideoSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
@@ -145,6 +146,7 @@ export function VideoSection() {
               <Button
                 onClick={() => {
                   const message = encodeURIComponent("Hello Grant, I watched the video for Unit 304 and would like to book a private viewing.")
+                  trackContact("whatsapp_video")
                   window.open(`https://wa.me/27724503626?text=${message}`, '_blank')
                 }}
                 className="bg-[#0066FF] hover:bg-[#0055DD] text-white font-sans font-bold text-xs uppercase tracking-widest py-6 px-6 rounded-lg shadow-xl hover:scale-105 active:scale-95 transition-all w-full sm:flex-1 text-center"

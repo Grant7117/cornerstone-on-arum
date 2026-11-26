@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FileText, Download, Lock } from "lucide-react"
+import { trackLead, trackContact } from "@/lib/meta-pixel"
 
 const documents = [
     {
@@ -40,6 +41,7 @@ export function DocumentsSection() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+        trackLead("documents_form")
 
         // Construct WhatsApp message
         const message = `Hello, I would like to download the documents for Cornerstone on Arum.%0A%0A*Name:* ${formData.name}%0A*Contact:* ${formData.contact}%0A*Email:* ${formData.email}`
@@ -153,7 +155,7 @@ export function DocumentsSection() {
                                     variant="outline"
                                     size="lg"
                                     className="border-green-500 text-green-600 hover:bg-green-50 hover:text-green-700"
-                                    onClick={() => window.open(`https://wa.me/27724503626`, "_blank")}
+                                    onClick={() => { trackContact("whatsapp_documents"); window.open(`https://wa.me/27724503626`, "_blank") }}
                                 >
                                     Chat on WhatsApp
                                 </Button>

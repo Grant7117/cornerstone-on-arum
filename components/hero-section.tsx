@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { trackContact } from "@/lib/meta-pixel"
 
 interface HeroSectionProps {
   onEnquire?: () => void
@@ -50,6 +51,7 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
             href="https://wa.me/27724503626?text=Hello,%20I'd%20like%20to%20book%20a%20viewing%20for%20Cornerstone%20on%20Arum."
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContact("whatsapp_hero")}
             className="flex flex-col items-center justify-center text-center bg-slate-950/70 backdrop-blur-md border border-white/10 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] hover:bg-slate-950/80 sm:hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-56 sm:w-64"
           >
             <span className="font-sans text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-muted-bronze font-bold mb-0.5">

@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import { trackContact } from "@/lib/meta-pixel"
 
 export function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -59,7 +60,7 @@ export function Navigation() {
             
             {/* UPDATED: DIRECT WHATSAPP BUTTON */}
             <button
-              onClick={() => window.open(whatsappUrl, "_blank")}
+              onClick={() => { trackContact("whatsapp_nav"); window.open(whatsappUrl, "_blank") }}
               style={{ 
                 backgroundColor: "#0066FF", 
                 color: "#ffffff", 
@@ -79,7 +80,7 @@ export function Navigation() {
           {/* Mobile View */}
           <div className="md:hidden flex items-center gap-3">
             <button
-              onClick={() => window.open(whatsappUrl, "_blank")}
+              onClick={() => { trackContact("whatsapp_nav"); window.open(whatsappUrl, "_blank") }}
               style={{ backgroundColor: "#0066FF", color: "#ffffff", fontWeight: "700", padding: "8px 16px", borderRadius: "10px", fontSize: "13px", border: "none", minHeight: "40px" }}
               className="active:scale-95 transition-transform touch-manipulation shadow-md"
               aria-label="Enquire on WhatsApp"
