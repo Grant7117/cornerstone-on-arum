@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { trackContact } from "@/lib/meta-pixel"
 
 interface HeroSectionProps {
   onEnquire?: () => void
@@ -45,29 +44,6 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
           </h1>
         </div>
 
-        {/* Glassmorphic Banner Overlay */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:top-12 sm:bottom-auto sm:left-12 sm:translate-x-0 z-20 w-max max-w-[90vw]">
-          <a 
-            href="https://wa.me/27724503626?text=Hello,%20I'd%20like%20to%20book%20a%20viewing%20for%20Cornerstone%20on%20Arum."
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackContact("whatsapp_hero")}
-            className="flex flex-col items-center justify-center text-center bg-slate-950/70 backdrop-blur-md border border-white/10 p-4 sm:p-5 rounded-xl sm:rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] hover:bg-slate-950/80 sm:hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-56 sm:w-64"
-          >
-            <span className="font-sans text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-muted-bronze font-bold mb-0.5">
-              Cornerstone on Arum
-            </span>
-            <span className="text-white text-[11px] sm:text-[13px] font-bold tracking-wider uppercase mb-1 whitespace-nowrap text-amber-400">
-              ON SHOW DAILY
-            </span>
-            <span className="text-slate-300 text-[10px] sm:text-xs font-medium mb-3">
-              Book / Enquire
-            </span>
-            <span className="w-full text-center text-white bg-[#0066FF] hover:bg-[#0055DD] font-bold text-[10px] sm:text-xs px-4 py-2 sm:py-2.5 rounded-lg shadow-md transition-all duration-300 uppercase tracking-[0.15em]">
-              Book / Enquire
-            </span>
-          </a>
-        </div>
       </div>
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes crossfade {
