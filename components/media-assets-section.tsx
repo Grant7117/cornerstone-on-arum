@@ -78,7 +78,7 @@ export function MediaAssetsSection() {
         {/* External Gallery Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
-          {/* Card 0 (FEATURED VIDEO): Video Tour (Units 303 & 304) */}
+          {/* Card 0 (FEATURED VIDEO): Video Tour (Unit 304 layout) */}
           <div
             onClick={scrollToVideoTour}
             className="group flex flex-col justify-between bg-[#16171e] border-2 border-amber-500/80 hover:border-amber-400 rounded-2xl p-5 transition-all duration-300 shadow-2xl min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] relative overflow-hidden cursor-pointer"
@@ -87,7 +87,7 @@ export function MediaAssetsSection() {
             <div className="w-full h-40 sm:h-48 rounded-xl border border-white/10 relative flex items-center justify-center overflow-hidden mb-5 select-none pointer-events-none bg-black">
               <Image
                 src="/images/units/303-a.jpg"
-                alt="Video Walkthrough Preview (Units 303 & 304)"
+                alt="Video Walkthrough Preview (Unit 304 duplex layout)"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-95"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -113,7 +113,7 @@ export function MediaAssetsSection() {
                 </span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-amber-300 transition-colors duration-200">
-                    Units 303 & 304 Video Walkthrough
+                    Unit 304 Duplex Video Walkthrough
                   </h4>
                   <Video className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
                 </div>
@@ -129,7 +129,7 @@ export function MediaAssetsSection() {
             </div>
           </div>
 
-          {/* Card 1 (PRIMARY FEATURED): Premium Suites Gallery (Units 303 & 304) */}
+          {/* Card 1 (PRIMARY FEATURED): Premium Suite Gallery (Unit 304) */}
           <a
             href="https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
             target="_blank"
@@ -140,7 +140,7 @@ export function MediaAssetsSection() {
             <div className="w-full h-40 sm:h-48 rounded-xl border border-white/10 relative flex items-center justify-center overflow-hidden mb-5 select-none pointer-events-none">
               <Image
                 src="/images/units/303-a.jpg"
-                alt="Available Duplex Suites Photo Gallery (Units 303 & 304)"
+                alt="Final Available Duplex Photo Gallery (Unit 304)"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-110 contrast-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -154,7 +154,7 @@ export function MediaAssetsSection() {
 
               {/* Top Right Tag */}
               <div className="absolute top-3 right-3 bg-amber-400 text-deep-obsidian font-black text-[9px] sm:text-[10px] tracking-widest uppercase px-2.5 py-1 rounded z-20 shadow-md">
-                Available: Units 303 & 304
+                Available: Final Unit 304
               </div>
             </div>
 
@@ -162,16 +162,16 @@ export function MediaAssetsSection() {
             <div className="flex-grow flex flex-col justify-between">
               <div>
                 <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-400 font-bold block mb-1">
-                  Only 2 Units Left • 77m² Duplex
+                  Final Unit • 77m² Duplex
                 </span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
-                    Units 303 & 304 Duplex Album
+                    Unit 304 Duplex Album
                   </h4>
                   <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 group-hover:text-muted-bronze group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" />
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-6">
-                  Browse real walkthrough photography of the final 2-bedroom, 2-bathroom duplex suites (77m² total) showing double-volume living spaces, designer kitchens, and private balconies.
+                  Browse real walkthrough photography of the final 2-bedroom, 2-bathroom duplex suite (77m² total) showing double-volume living spaces, designer kitchens, and private balconies.
                 </p>
               </div>
 

@@ -3,7 +3,7 @@
     "@context": "https://schema.org/",
     "@type": "RealEstateListing",
     "name": "Cornerstone on Arum - Luxury Duplex Apartments",
-    "description": "Premium residential living in Table View. Only 2 units left: Unit 303 and Unit 304 (2-Bedroom, 2-Bathroom Duplexes, 77m²). All other units SOLD.",
+    "description": "Premium residential living in Table View. Final unit: Unit 304 (2-Bedroom, 2-Bathroom Duplex, 77m²). All other units SOLD.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "154 Arum Road",
@@ -14,7 +14,7 @@
     },
     "offers": {
       "@type": "AggregateOffer",
-      "offerCount": "2",
+      "offerCount": "1",
       "lowPrice": "2725000",
       "highPrice": "2725000",
       "priceCurrency": "ZAR",
@@ -43,44 +43,50 @@
     {
       "id": "pricing-range",
       "question": "What is the price range for units?",
-      "answer": "Only two units are left: Unit 303 and Unit 304. Both are 2-bedroom, 2-bathroom duplex units measuring 77 square meters and priced at R2,725,000. All other units are SOLD.",
+      "answer": "Only one unit is left: Unit 304, a 2-bedroom, 2-bathroom duplex unit measuring 77 square meters, priced at R2,725,000 with no transfer duty. The levy is R2,200.00 per month. All other units are SOLD.",
       "category": "Pricing"
     },
     {
       "id": "availability",
       "question": "Which units are sold or available?",
-      "answer": "There are only 2 units left available: Unit 303 and Unit 304 (both 2-bedroom, 2-bathroom duplex units measuring 77m²). All other units at Cornerstone on Arum are SOLD. A R5,000 deposit secures your unit. Contact Grant Whitburn on 072 450 3626 immediately.",
+      "answer": "There is only 1 unit left: Unit 304 (2-bedroom, 2-bathroom duplex measuring 77m²). All other units at Cornerstone on Arum, including Unit 303, are SOLD. A R5,000 deposit secures it. Contact Grant Whitburn on 072 450 3626 immediately.",
       "category": "Availability"
     },
     {
       "id": "72hr-clause",
       "question": "What is a 72-hour clause?",
-      "answer": "A 72-hour clause applies to units with suspensive offers. Currently, available units (303 and 304) are fully available.",
+      "answer": "A 72-hour clause applies to units with suspensive offers. Currently, the final available unit (304) is fully available.",
       "category": "Availability"
     },
     {
       "id": "72hr-units",
       "question": "Which specific units have a 72-hour clause?",
-      "answer": "The remaining available units are Unit 303 and Unit 304.",
+      "answer": "The only remaining available unit is Unit 304.",
       "category": "Availability"
     },
     {
       "id": "unit-specs",
       "question": "What are the floor levels and sizes of the units?",
-      "answer": "Remaining available units: Unit 303 (77m²) and Unit 304 (77m²). Both are 2-bedroom, 2-bathroom duplex loft units with 71m² interior and 6m² balcony. All other units are SOLD. All units include 1 dedicated parking bay.",
+      "answer": "Remaining available unit: Unit 304 (77m²), a 2-bedroom, 2-bathroom duplex loft unit with 71m² interior and 6m² balcony. All other units are SOLD. All units include 1 dedicated parking bay.",
       "category": "General"
     },
     {
       "id": "photos",
       "question": "Where can I view photos of the remaining units?",
-      "answer": "You can view the photo gallery for Unit 303 and Unit 304 in the official Google Photos album: https://photos.app.goo.gl/wWBD4uTkddX7WDAr6",
+      "answer": "You can view the photo gallery for the Unit 304 duplex layout in the official Google Photos album: https://photos.app.goo.gl/wWBD4uTkddX7WDAr6",
       "category": "Media"
     },
     {
       "id": "video-walkthrough",
-      "question": "Is there a video tour of Unit 303 and Unit 304?",
-      "answer": "Yes! You can stream the official HD video walkthrough of remaining duplex loft units 303 and 304 directly on the website (Video ID: 40d24c91d37fc98b6f7f135ca3261bb0).",
+      "question": "Is there a video tour of Unit 304?",
+      "answer": "Yes! You can stream the official HD video walkthrough of the duplex loft layout (final Unit 304) directly on the website (Video ID: 40d24c91d37fc98b6f7f135ca3261bb0).",
       "category": "Media"
+    },
+    {
+      "id": "levies",
+      "question": "What are the monthly levies?",
+      "answer": "The levy for Unit 304 is R2,200.00 per month. (The draft levy schedule in the documents section is from 2025 and is superseded.)",
+      "category": "Finance"
     },
     {
       "id": "deposit",

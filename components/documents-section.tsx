@@ -20,7 +20,7 @@ const documents = [
         filename: "Cornerstone-schedule-of-finishes.pdf",
     },
     {
-        name: "Draft Levy Schedule",
+        name: "Draft Levy Schedule (2025, superseded: current levy R2,200.00 p/m)",
         filename: "draft-levy-cornerstone-on-arum.pdf",
     },
 ]

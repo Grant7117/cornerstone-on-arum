@@ -172,7 +172,7 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
     return null
   }
 
-  const availableUnitsList = ["303", "304"]
+  const availableUnitsList = ["304"]
 
   return (
     <div id="properties" className="w-full bg-[#1a1c23] border-b border-white/5 py-12 sm:py-24 scroll-mt-20">
@@ -180,14 +180,14 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
         <div className="text-center mb-12 sm:mb-16 flex flex-col items-center">
           <div className="inline-flex px-4 py-1.5 mb-4 rounded-full border border-amber-500/40 bg-amber-500/10">
             <span className="text-xs font-bold tracking-widest uppercase text-amber-400">
-              Only 2 Units Left • All Other Units Sold
+              Final Unit Left • All Other Units Sold
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#d6c5b3] tracking-tight mb-4">
-            Final Available Duplex Units
+            Final Available Duplex Unit
           </h2>
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl font-light leading-relaxed">
-            Units 303 & 304 are luxury 2-bedroom, 2-bathroom duplex apartments measuring 77m² total with private balconies and dedicated parking.
+            Unit 304 is a luxury 2-bedroom, 2-bathroom duplex apartment measuring 77m² total with a private balcony and dedicated parking. Levy R2,200.00 per month.
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-3">

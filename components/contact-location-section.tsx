@@ -47,7 +47,7 @@ export function ContactLocationSection() {
                     <MapPin className="w-6 h-6 text-muted-bronze" />
                   </div>
                   <div>
-                    <h4 className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-bronze mb-2 font-bold">The Residency</h4>
+                    <h4 className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-bronze mb-2 font-bold">Cornerstone on Arum</h4>
                     <p className="text-warm-stone/80 text-lg font-light">154 Arum Road, Table View, Cape Town</p>
                   </div>
                 </div>
