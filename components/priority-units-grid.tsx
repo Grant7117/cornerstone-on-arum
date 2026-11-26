@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Camera, ExternalLink, Video } from "lucide-react"
 import { unitsData, Unit } from "@/data/units"
+import { ShareUnitButton } from "@/components/share-unit-button"
 
 interface MinimalistUnitCardProps {
   unit: Unit
@@ -122,6 +123,7 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
               <Camera className="w-3.5 h-3.5 text-muted-bronze" />
               <span>Photos</span>
             </a>
+            <ShareUnitButton variant="compact" source="unit_card" />
             <Button
               onClick={onEnquire}
               className="bg-[#0066FF] hover:bg-[#0055DD] text-white font-sans text-xs font-bold uppercase tracking-wider py-3 px-5 rounded-sm shadow-md transition-all active:scale-95"
@@ -213,6 +215,7 @@ export function PriorityUnitsGrid({ onEnquire }: { onEnquire: () => void }) {
               <span>View Photos (Google Photos)</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
+            <ShareUnitButton variant="large" source="units_header" />
           </div>
         </div>
 

@@ -30,3 +30,12 @@ const track = (event: "Lead" | "Contact", source: string) => {
 
 export const trackLead = (source: string) => track("Lead", source)
 export const trackContact = (source: string) => track("Contact", source)
+
+// Custom event: a visitor shared Unit 304 with someone
+export const trackShare = (source: string) => {
+  try {
+    window.fbq?.("trackCustom", "ShareUnit", { ...DEFAULT_PARAMS, source })
+  } catch {
+    /* ignore */
+  }
+}
