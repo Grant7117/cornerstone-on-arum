@@ -71,7 +71,7 @@ export function VideoSection() {
                 </a>
                 <span>•</span>
                 <a
-                  href="https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
+                  href="https://photos.app.goo.gl/3YutHUQom4YbtCsD6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-amber-400 hover:underline flex items-center gap-1 font-semibold"
@@ -155,7 +155,7 @@ export function VideoSection() {
               </Button>
 
               <a
-                href="https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
+                href="https://photos.app.goo.gl/3YutHUQom4YbtCsD6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-sans font-bold text-xs uppercase tracking-widest py-3.5 px-5 rounded-lg transition-all text-center w-full sm:w-auto"

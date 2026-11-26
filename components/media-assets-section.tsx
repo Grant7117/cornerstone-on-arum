@@ -131,7 +131,7 @@ export function MediaAssetsSection() {
 
           {/* Card 1 (PRIMARY FEATURED): Premium Suite Gallery (Unit 304) */}
           <a
-            href="https://photos.app.goo.gl/wWBD4uTkddX7WDAr6"
+            href="https://photos.app.goo.gl/3YutHUQom4YbtCsD6"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col justify-between bg-[#16171e] border-2 border-muted-bronze hover:border-amber-400 rounded-2xl p-5 transition-all duration-300 shadow-2xl min-h-[400px] sm:min-h-[440px] transform hover:-translate-y-1 hover:shadow-glow active:scale-[0.98] relative overflow-hidden"
