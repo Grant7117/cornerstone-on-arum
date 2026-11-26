@@ -46,8 +46,8 @@ export function MediaAssetsSection() {
             <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto sm:flex-shrink-0">
               {/* Property Brochure Download */}
               <a
-                href="https://drive.google.com/uc?export=download&id=1eLhMZlwAJBFmdEjMsl_HOAczEwSab5nJ"
-                download="Cornerstone_on_Arum_Brochure.pdf"
+                href="/documents/Cornerstone-on-Arum-Unit-304-Brochure.pdf"
+                download="Cornerstone-on-Arum-Unit-304-Brochure.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-4 bg-muted-bronze text-deep-obsidian hover:bg-[#b0967c] hover:shadow-glow font-sans font-bold py-3.5 px-5 sm:py-4 sm:px-6 rounded-lg transition-all duration-200 w-full sm:w-auto transform hover:-translate-y-0.5 active:scale-[0.98] active:brightness-90 touch-manipulation"
