@@ -91,7 +91,7 @@ export default function HomePage() {
         "name": "Cornerstone on Arum - Duplex Loft Video Walkthrough (Unit 304 layout)",
         "description": "Virtual HD video walkthrough of the duplex loft layout of the final remaining unit (Unit 304, 77m² total, 2 Bed, 2 Bath) at Cornerstone on Arum, 154 Arum Road, Table View.",
         "thumbnailUrl": [
-          "https://www.cornerstoneonarum.co.za/images/units/303-a.jpg",
+          "https://www.cornerstoneonarum.co.za/images/units/304-photo-01.jpg",
           "https://customer-2qsi4jrxewznhq17.cloudflarestream.com/40d24c91d37fc98b6f7f135ca3261bb0/thumbnails/thumbnail.jpg"
         ],
         "uploadDate": "2026-09-18T20:00:00+02:00",

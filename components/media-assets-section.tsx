@@ -86,7 +86,7 @@ export function MediaAssetsSection() {
             {/* Visual Preview Image with Play Button */}
             <div className="w-full h-40 sm:h-48 rounded-xl border border-white/10 relative flex items-center justify-center overflow-hidden mb-5 select-none pointer-events-none bg-black">
               <Image
-                src="/images/units/303-a.jpg"
+                src="/images/units/304-photo-01.jpg"
                 alt="Video Walkthrough Preview (Unit 304 duplex layout)"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-95"
@@ -139,7 +139,7 @@ export function MediaAssetsSection() {
             {/* Visual Preview Image */}
             <div className="w-full h-40 sm:h-48 rounded-xl border border-white/10 relative flex items-center justify-center overflow-hidden mb-5 select-none pointer-events-none">
               <Image
-                src="/images/units/303-a.jpg"
+                src="/images/units/304-photo-01.jpg"
                 alt="Final Available Duplex Photo Gallery (Unit 304)"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-110 contrast-105"
