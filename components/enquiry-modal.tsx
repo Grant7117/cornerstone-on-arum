@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Loader2 } from "lucide-react"
+import { trackLead } from "@/lib/meta-pixel"
 
 interface EnquiryModalProps {
     isOpen: boolean
@@ -35,6 +36,7 @@ export function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsSubmitting(true)
+        trackLead("enquiry_form")
 
         // 1. Send data to your Make.com Webhook (EU Server)
         try {

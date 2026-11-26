@@ -1,4 +1,5 @@
 "use client"
+import { trackContact } from "@/lib/meta-pixel"
 
 export function WhatsAppButton() {
   // DIRECT WHATSAPP LINK - Bypasses Privyr entirely
@@ -6,7 +7,7 @@ export function WhatsAppButton() {
 
   return (
     <button
-      onClick={() => window.open(whatsappUrl, "_blank")}
+      onClick={() => { trackContact("whatsapp_floating"); window.open(whatsappUrl, "_blank") }}
       style={{ 
         backgroundColor: "#25D366", 
         color: "#ffffff", 

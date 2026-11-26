@@ -3,6 +3,7 @@
 import { MapPin, Phone, Mail, Youtube } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { trackContact } from "@/lib/meta-pixel"
 
 export function ContactLocationSection() {
   return (
@@ -59,7 +60,7 @@ export function ContactLocationSection() {
                   </div>
                   <div>
                     <h4 className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-bronze mb-2 font-bold">Direct Line</h4>
-                    <a href="tel:+27724503626" className="text-warm-stone/80 text-xl font-serif hover:text-warm-stone transition-colors">
+                    <a href="tel:+27724503626" onClick={() => trackContact("phone_contact_section")} className="text-warm-stone/80 text-xl font-serif hover:text-warm-stone transition-colors">
                       Grant — 072 450 3626
                     </a>
                   </div>
@@ -72,7 +73,7 @@ export function ContactLocationSection() {
                   </div>
                   <div className="flex flex-col">
                     <h4 className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#25D366] mb-2 font-bold">VIP Assistance</h4>
-                    <Link href="https://wa.me/27724503626" target="_blank" className="font-serif text-xl text-warm-stone hover:text-[#25D366] transition-all">
+                    <Link href="https://wa.me/27724503626" target="_blank" onClick={() => trackContact("whatsapp_contact_section")} className="font-serif text-xl text-warm-stone hover:text-[#25D366] transition-all">
                       Instant WhatsApp
                     </Link>
                   </div>
@@ -85,7 +86,7 @@ export function ContactLocationSection() {
                   </div>
                   <div>
                     <h4 className="font-sans text-[10px] uppercase tracking-[0.3em] text-muted-bronze mb-2 font-bold">Email Enquiry</h4>
-                    <Link href="mailto:sales@igneousproperty.co.za" className="text-warm-stone/80 text-lg hover:text-warm-stone transition-colors border-b border-muted-bronze/30">
+                    <Link href="mailto:sales@igneousproperty.co.za" onClick={() => trackContact("email_contact_section")} className="text-warm-stone/80 text-lg hover:text-warm-stone transition-colors border-b border-muted-bronze/30">
                       sales@igneousproperty.co.za
                     </Link>
                   </div>
