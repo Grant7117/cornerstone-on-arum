@@ -22,7 +22,7 @@ export function VideoSection() {
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-amber-500/40 bg-amber-500/10">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-amber-400">
+            <span className="text-xs sm:text-xs font-bold tracking-widest uppercase text-amber-400">
               Final Unit Left • Unit 304
             </span>
           </div>
@@ -88,7 +88,7 @@ export function VideoSection() {
             
             <div className="space-y-3">
               <div className="flex items-center gap-2">
-                <span className="px-3 py-1 bg-muted-bronze/10 border border-muted-bronze/30 text-muted-bronze text-[10px] font-extrabold uppercase tracking-widest rounded-sm">
+                <span className="px-3 py-1 bg-muted-bronze/10 border border-muted-bronze/30 text-muted-bronze text-xs sm:text-[10px] font-extrabold uppercase tracking-widest rounded-sm">
                   Final Unit Available
                 </span>
               </div>
@@ -108,19 +108,19 @@ export function VideoSection() {
             {/* Feature Specifications List */}
             <div className="grid grid-cols-2 gap-3 py-2">
               <div className="bg-[#16171e] border border-white/10 rounded-xl p-3.5">
-                <span className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold block mb-0.5">Layout</span>
+                <span className="text-xs sm:text-[10px] text-zinc-400 uppercase tracking-widest font-semibold block mb-0.5">Layout</span>
                 <p className="text-white text-sm font-bold">2 Bed • 2 Bath</p>
               </div>
               <div className="bg-[#16171e] border border-white/10 rounded-xl p-3.5">
-                <span className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold block mb-0.5">Total Size</span>
+                <span className="text-xs sm:text-[10px] text-zinc-400 uppercase tracking-widest font-semibold block mb-0.5">Total Size</span>
                 <p className="text-white text-sm font-bold">77m² (71m² + 6m² Balcony)</p>
               </div>
               <div className="bg-[#16171e] border border-white/10 rounded-xl p-3.5">
-                <span className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold block mb-0.5">Floor Level</span>
+                <span className="text-xs sm:text-[10px] text-zinc-400 uppercase tracking-widest font-semibold block mb-0.5">Floor Level</span>
                 <p className="text-white text-sm font-bold">Third Floor + Loft</p>
               </div>
               <div className="bg-[#16171e] border border-white/10 rounded-xl p-3.5">
-                <span className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold block mb-0.5">Parking</span>
+                <span className="text-xs sm:text-[10px] text-zinc-400 uppercase tracking-widest font-semibold block mb-0.5">Parking</span>
                 <p className="text-white text-sm font-bold">1 Dedicated Bay Included</p>
               </div>
             </div>

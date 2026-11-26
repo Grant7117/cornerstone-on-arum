@@ -179,15 +179,15 @@ export function InteractiveFloorPlans() {
                   {hoveredHotspot.name}
                 </span>
                 {activeUnits.every(u => u.status === "Sold") ? (
-                  <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30 uppercase">
+                  <span className="text-xs sm:text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30 uppercase">
                     Sold
                   </span>
                 ) : activeUnits.some(u => u.status === "Under Offer") ? (
-                  <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase">
+                  <span className="text-xs sm:text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase">
                     Under Offer
                   </span>
                 ) : (
-                  <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 uppercase">
+                  <span className="text-xs sm:text-[9px] font-bold tracking-widest px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 uppercase">
                     Available
                   </span>
                 )}
@@ -212,7 +212,7 @@ export function InteractiveFloorPlans() {
                 ))}
               </div>
 
-              <div className="text-[9px] text-slate-500 text-center tracking-wider uppercase mt-1">
+              <div className="text-xs sm:text-[9px] text-slate-500 text-center tracking-wider uppercase mt-1">
                 Click properties below to view
               </div>
             </div>

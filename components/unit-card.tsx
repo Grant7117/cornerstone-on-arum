@@ -38,7 +38,7 @@ export function UnitCard({ unit }: UnitCardProps) {
     const isSold = status === "Sold" || status === "Clause"
     const isUnderOffer = status === "Under Offer"
     return (
-      <span className={`px-3 py-1 rounded-sm text-[10px] font-bold tracking-widest uppercase border ${
+      <span className={`px-3 py-1 rounded-sm text-xs sm:text-[10px] font-bold tracking-widest uppercase border ${
         isSold 
           ? "border-red-500/50 text-red-500 bg-red-500/10" 
           : isUnderOffer
@@ -108,7 +108,7 @@ export function UnitCard({ unit }: UnitCardProps) {
 
         <div className="flex items-end justify-between border-t border-white/10 pt-4">
           <div>
-            <h3 className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-muted-bronze">
+            <h3 className="font-sans text-xs sm:text-[10px] font-medium uppercase tracking-[0.2em] text-muted-bronze">
               {unit.floor} Floor
             </h3>
             <p className="font-sans text-xs text-warm-stone/60 mt-1">
@@ -116,7 +116,7 @@ export function UnitCard({ unit }: UnitCardProps) {
             </p>
           </div>
           <div className="text-right">
-            <p className="font-sans text-[10px] uppercase tracking-widest text-warm-stone/40">Investment</p>
+            <p className="font-sans text-xs sm:text-[10px] uppercase tracking-widest text-warm-stone/40">Investment</p>
             <p className="font-serif text-lg text-warm-stone">{unit.price}</p>
           </div>
         </div>

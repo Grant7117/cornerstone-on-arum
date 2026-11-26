@@ -69,7 +69,7 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
         {/* Unit Badge */}
         <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-sm z-10 flex items-center gap-2">
           <span className="text-xs font-bold text-white tracking-[0.2em] uppercase">UNIT {unit.unitNo}</span>
-          <span className="text-[10px] text-muted-bronze uppercase tracking-widest font-semibold">• DUPLEX</span>
+          <span className="text-xs sm:text-[10px] text-muted-bronze uppercase tracking-widest font-semibold">• DUPLEX</span>
         </div>
         
         {/* Photo Gallery Direct Link Badge */}
@@ -77,7 +77,7 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
           href={galleryLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-4 right-4 bg-black/75 hover:bg-black/90 backdrop-blur-md border border-white/20 hover:border-muted-bronze px-3 py-1.5 rounded text-white text-[11px] font-bold tracking-wider uppercase flex items-center gap-1.5 z-20 transition-all transform hover:scale-105"
+          className="absolute bottom-4 right-4 bg-black/75 hover:bg-black/90 backdrop-blur-md border border-white/20 hover:border-muted-bronze px-3 py-1.5 rounded text-white text-xs sm:text-[11px] font-bold tracking-wider uppercase flex items-center gap-1.5 z-20 transition-all transform hover:scale-105"
         >
           <Camera className="w-3.5 h-3.5 text-muted-bronze" />
           <span>View Album ({images.length}+ Photos)</span>
@@ -92,7 +92,7 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
             <div className="inline-flex px-3 py-1 mb-2 rounded-sm border border-[#b39373]/50 bg-[#b39373]/10">
-              <span className="text-[10px] font-bold tracking-widest uppercase text-[#b39373]">
+              <span className="text-xs sm:text-[10px] font-bold tracking-widest uppercase text-[#b39373]">
                 Available • 2 Bed Duplex (77m²)
               </span>
             </div>
@@ -139,23 +139,23 @@ function MinimalistUnitCard({ unit, onEnquire }: MinimalistUnitCardProps) {
         {/* Static Specs Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 w-full">
           <div className="border border-white/5 bg-slate-900/40 p-3 rounded text-center">
-            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-medium block mb-1">Type</span>
+            <span className="text-xs sm:text-[10px] text-slate-400 uppercase tracking-widest font-medium block mb-1">Type</span>
             <span className="text-sm font-semibold text-slate-200">Duplex Loft</span>
           </div>
           <div className="border border-white/5 bg-slate-900/40 p-3 rounded text-center">
-            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-medium block mb-1">Bedrooms</span>
+            <span className="text-xs sm:text-[10px] text-slate-400 uppercase tracking-widest font-medium block mb-1">Bedrooms</span>
             <span className="text-sm font-semibold text-slate-200">{unit.bedrooms} Bed</span>
           </div>
           <div className="border border-white/5 bg-slate-900/40 p-3 rounded text-center">
-            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-medium block mb-1">Bathrooms</span>
+            <span className="text-xs sm:text-[10px] text-slate-400 uppercase tracking-widest font-medium block mb-1">Bathrooms</span>
             <span className="text-sm font-semibold text-slate-200">{unit.bathrooms} Bath</span>
           </div>
           <div className="border border-white/5 bg-slate-900/40 p-3 rounded text-center">
-            <span className="text-[10px] text-slate-400 uppercase tracking-widest font-medium block mb-1">Interior + Balcony</span>
+            <span className="text-xs sm:text-[10px] text-slate-400 uppercase tracking-widest font-medium block mb-1">Interior + Balcony</span>
             <span className="text-sm font-semibold text-slate-200">{breakdown.int}m² + {breakdown.bal}m²</span>
           </div>
           <div className="border border-muted-bronze/30 bg-muted-bronze/10 p-3 rounded text-center col-span-2 sm:col-span-1">
-            <span className="text-[10px] text-muted-bronze uppercase tracking-widest font-bold block mb-1">Total Size</span>
+            <span className="text-xs sm:text-[10px] text-muted-bronze uppercase tracking-widest font-bold block mb-1">Total Size</span>
             <span className="text-base font-bold text-muted-bronze">{unit.size}m²</span>
           </div>
         </div>

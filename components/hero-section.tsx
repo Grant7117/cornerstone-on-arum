@@ -35,7 +35,7 @@ export function HeroSection({ onEnquire }: HeroSectionProps) {
 
         {/* Features Typography Overlay */}
         <div className="absolute top-4 right-4 sm:top-12 sm:right-12 z-20 flex flex-col gap-1 sm:gap-2 items-end text-right drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-          <span className="font-sans text-[8px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-bronze font-bold">
+          <span className="font-sans text-xs sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-muted-bronze font-bold">
             Table View
           </span>
           <h1 className="font-serif text-xl sm:text-3xl md:text-4xl text-white leading-[1.1] tracking-tight">

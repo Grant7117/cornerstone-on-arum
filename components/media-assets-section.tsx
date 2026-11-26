@@ -55,7 +55,7 @@ export function MediaAssetsSection() {
                 <div className="flex items-center gap-3">
                   <FileText className="w-5 h-5 flex-shrink-0" />
                   <div className="text-left">
-                    <span className="block text-[9px] uppercase tracking-wider opacity-90 font-bold">Download</span>
+                    <span className="block text-xs sm:text-[9px] uppercase tracking-wider opacity-90 font-bold">Download</span>
                     <span className="text-sm font-extrabold">Property Brochure</span>
                   </div>
                 </div>
@@ -70,7 +70,7 @@ export function MediaAssetsSection() {
           <h3 className="text-lg sm:text-2xl font-serif text-white tracking-wide font-medium">
             Video Tour & Interactive Photo Galleries
           </h3>
-          <span className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-bronze font-bold text-right ml-2">
+          <span className="text-xs sm:text-xs uppercase tracking-wider text-muted-bronze font-bold text-right ml-2">
             HD Video & Google Photos
           </span>
         </div>
@@ -100,7 +100,7 @@ export function MediaAssetsSection() {
               </div>
 
               {/* Top Right Tag */}
-              <div className="absolute top-3 right-3 bg-amber-400 text-slate-950 font-black text-[9px] sm:text-[10px] tracking-widest uppercase px-2.5 py-1 rounded z-20 shadow-md">
+              <div className="absolute top-3 right-3 bg-amber-400 text-slate-950 font-black text-xs sm:text-[10px] tracking-widest uppercase px-2.5 py-1 rounded z-20 shadow-md">
                 Featured Video
               </div>
             </div>
@@ -108,7 +108,7 @@ export function MediaAssetsSection() {
             {/* Content Details */}
             <div className="flex-grow flex flex-col justify-between">
               <div>
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-400 font-bold block mb-1">
+                <span className="text-xs sm:text-[10px] uppercase tracking-widest text-amber-400 font-bold block mb-1">
                   HD Video Tour
                 </span>
                 <div className="flex items-center justify-between mb-2">
@@ -122,7 +122,7 @@ export function MediaAssetsSection() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400 group-hover:text-amber-300 border-t border-white/10 pt-4">
+              <div className="flex items-center gap-2 text-xs sm:text-xs font-bold uppercase tracking-wider text-amber-400 group-hover:text-amber-300 border-t border-white/10 pt-4">
                 <span>Watch Video Walkthrough</span>
                 <Play className="w-3.5 h-3.5 fill-current" />
               </div>
@@ -153,7 +153,7 @@ export function MediaAssetsSection() {
               </div>
 
               {/* Top Right Tag */}
-              <div className="absolute top-3 right-3 bg-amber-400 text-deep-obsidian font-black text-[9px] sm:text-[10px] tracking-widest uppercase px-2.5 py-1 rounded z-20 shadow-md">
+              <div className="absolute top-3 right-3 bg-amber-400 text-deep-obsidian font-black text-xs sm:text-[10px] tracking-widest uppercase px-2.5 py-1 rounded z-20 shadow-md">
                 Available: Final Unit 304
               </div>
             </div>
@@ -161,7 +161,7 @@ export function MediaAssetsSection() {
             {/* Content Details */}
             <div className="flex-grow flex flex-col justify-between">
               <div>
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-400 font-bold block mb-1">
+                <span className="text-xs sm:text-[10px] uppercase tracking-widest text-amber-400 font-bold block mb-1">
                   Final Unit • 77m² Duplex
                 </span>
                 <div className="flex items-center justify-between mb-2">
@@ -175,7 +175,7 @@ export function MediaAssetsSection() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-400 group-hover:text-muted-bronze border-t border-white/10 pt-4">
+              <div className="flex items-center gap-2 text-xs sm:text-xs font-bold uppercase tracking-wider text-amber-400 group-hover:text-muted-bronze border-t border-white/10 pt-4">
                 <span>Open Google Photos Album</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </div>
@@ -206,7 +206,7 @@ export function MediaAssetsSection() {
               </div>
 
               {/* Top Right Tag */}
-              <div className="absolute top-3 right-3 bg-muted-bronze text-deep-obsidian font-extrabold text-[8px] sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
+              <div className="absolute top-3 right-3 bg-muted-bronze text-deep-obsidian font-extrabold text-xs sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
                 Exterior & General
               </div>
             </div>
@@ -214,7 +214,7 @@ export function MediaAssetsSection() {
             {/* Content Details */}
             <div className="flex-grow flex flex-col justify-between">
               <div>
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-muted-bronze font-bold block mb-1">Main Development</span>
+                <span className="text-xs sm:text-[10px] uppercase tracking-widest text-muted-bronze font-bold block mb-1">Main Development</span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
                     Cornerstone Gallery
@@ -226,7 +226,7 @@ export function MediaAssetsSection() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
+              <div className="flex items-center gap-2 text-xs sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
                 <span>Open Shared Album</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </div>
@@ -257,7 +257,7 @@ export function MediaAssetsSection() {
               </div>
 
               {/* Top Right Tag */}
-              <div className="absolute top-3 right-3 bg-red-500/80 text-white font-extrabold text-[8px] sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
+              <div className="absolute top-3 right-3 bg-red-500/80 text-white font-extrabold text-xs sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
                 Unit 302 (SOLD)
               </div>
             </div>
@@ -265,7 +265,7 @@ export function MediaAssetsSection() {
             {/* Content Details */}
             <div className="flex-grow flex flex-col justify-between">
               <div>
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">Duplex Reference</span>
+                <span className="text-xs sm:text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">Duplex Reference</span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
                     Duplex Suite 302
@@ -277,7 +277,7 @@ export function MediaAssetsSection() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
+              <div className="flex items-center gap-2 text-xs sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
                 <span>Open Shared Album</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </div>
@@ -308,7 +308,7 @@ export function MediaAssetsSection() {
               </div>
 
               {/* Top Right Tag */}
-              <div className="absolute top-3 right-3 bg-red-500/80 text-white font-extrabold text-[8px] sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
+              <div className="absolute top-3 right-3 bg-red-500/80 text-white font-extrabold text-xs sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
                 Unit 101 (SOLD)
               </div>
             </div>
@@ -316,7 +316,7 @@ export function MediaAssetsSection() {
             {/* Content Details */}
             <div className="flex-grow flex flex-col justify-between">
               <div>
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">Finished Portfolio</span>
+                <span className="text-xs sm:text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">Finished Portfolio</span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
                     Unit 101 Interior
@@ -328,7 +328,7 @@ export function MediaAssetsSection() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
+              <div className="flex items-center gap-2 text-xs sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
                 <span>Open Shared Album</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </div>
@@ -359,7 +359,7 @@ export function MediaAssetsSection() {
               </div>
 
               {/* Top Right Tag */}
-              <div className="absolute top-3 right-3 bg-red-500/80 text-white font-extrabold text-[8px] sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
+              <div className="absolute top-3 right-3 bg-red-500/80 text-white font-extrabold text-xs sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
                 Unit 106 (SOLD)
               </div>
             </div>
@@ -367,7 +367,7 @@ export function MediaAssetsSection() {
             {/* Content Details */}
             <div className="flex-grow flex flex-col justify-between">
               <div>
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">Finished Portfolio</span>
+                <span className="text-xs sm:text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">Finished Portfolio</span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
                     Unit 106 Interior
@@ -379,7 +379,7 @@ export function MediaAssetsSection() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
+              <div className="flex items-center gap-2 text-xs sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
                 <span>Open Shared Album</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </div>
@@ -410,7 +410,7 @@ export function MediaAssetsSection() {
               </div>
 
               {/* Top Right Tag */}
-              <div className="absolute top-3 right-3 bg-red-500/80 text-white font-extrabold text-[8px] sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
+              <div className="absolute top-3 right-3 bg-red-500/80 text-white font-extrabold text-xs sm:text-[9px] tracking-widest uppercase px-2 py-0.5 rounded z-20 shadow-md">
                 Unit 102 (SOLD)
               </div>
             </div>
@@ -418,7 +418,7 @@ export function MediaAssetsSection() {
             {/* Content Details */}
             <div className="flex-grow flex flex-col justify-between">
               <div>
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">Finished Portfolio</span>
+                <span className="text-xs sm:text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">Finished Portfolio</span>
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="text-base sm:text-lg md:text-xl font-serif text-white font-semibold group-hover:text-muted-bronze transition-colors duration-200">
                     Unit 102 Interior
@@ -430,7 +430,7 @@ export function MediaAssetsSection() {
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
+              <div className="flex items-center gap-2 text-xs sm:text-xs font-bold uppercase tracking-wider text-muted-bronze border-t border-white/5 pt-4">
                 <span>Open Shared Album</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </div>

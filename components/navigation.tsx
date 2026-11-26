@@ -43,7 +43,7 @@ export function Navigation() {
             aria-label="Scroll to top of page"
           >
             <div className="text-lg sm:text-xl font-bold leading-tight uppercase tracking-wider text-white">CORNERSTONE</div>
-            <div className="text-[10px] sm:text-xs text-slate-300 font-bold tracking-[0.2em] leading-tight">ON ARUM</div>
+            <div className="text-xs sm:text-xs text-slate-300 font-bold tracking-[0.2em] leading-tight">ON ARUM</div>
           </button>
 
           {/* Desktop Navigation */}

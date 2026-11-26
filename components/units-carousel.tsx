@@ -69,7 +69,7 @@ export function UnitsCarousel({ onEnquire }: UnitsCarouselProps) {
               }`}
             >
               <span className="font-serif text-2xl md:text-3xl tracking-tight">{type.label}</span>
-              <span className="font-sans text-[10px] uppercase tracking-[0.3em] mt-2 text-muted-bronze font-bold">
+              <span className="font-sans text-xs sm:text-[10px] uppercase tracking-[0.3em] mt-2 text-muted-bronze font-bold">
                 {type.size}
               </span>
               {selectedType === type.id && (
